@@ -1,13 +1,14 @@
-import './App.css';
-import React from 'react';
-import { Button } from 'reactstrap';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+
+import HomePage from "./pages/homepage/homepage.component";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button color="danger">test</Button>
-      </header>
+    <div>
+      <Switch>
+        <Route exact path="/karsal" component={ HomePage } />
+      </Switch>
     </div>
   );
 }
