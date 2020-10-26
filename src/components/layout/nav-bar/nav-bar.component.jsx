@@ -1,39 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from '../../logo/logo.component';
+import Menu from '../../menu/menu.component';
 
 import "./nav-bar.styles.scss";
 
 function NavBar() {
   return (
-    <div className="navbar-container">
-      <div className="menu-container align-left">
-        <Link to="/hakkımızda" className="menu-item">
+    <nav className="navbar-container">
+      <Menu align="left">
+        <Link to="/karsal/hakkımızda" className="menu-item">
           HAKKIMIZDA
         </Link>
-        <Link to="/iletişim" className="menu-item">
+        <Link to="/karsal/iletişim" className="menu-item">
           İLETİŞİM
         </Link>
-      </div>
+      </Menu>
 
-      <Link className="logo-container" to="/">
-        <img
-          className="logo"
-          src="/karsal/karsal-logo.png"
-          alt="karsal-logo"
-          width={ 150 }
-          height={ 50 }
-        />
-      </Link>
+      <Logo/>
 
-      <div className="menu-container align-right">
-        <Link to="/fabrika" className="menu-item">
+      <Menu align="right">
+        <Link to="/karsal/fabrika" className="menu-item">
           FABRİKA
         </Link>
-        <Link to="/katalog" className="menu-item">
+        <Link to="/karsal/katalog" className="menu-item">
           KATALOG
         </Link>
-      </div>
-    </div>
+      </Menu>
+    </nav>
   );
 }
 

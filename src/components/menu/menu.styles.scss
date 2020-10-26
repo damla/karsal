@@ -1,0 +1,21 @@
+$margin-between-links: 1rem;
+
+.menu-container {
+    display: flex;
+
+    &.align-left {
+      flex-direction: row;
+      
+      :first-child {
+        margin-right: $margin-between-links;
+      }
+    }
+
+    &.align-right {
+      flex-direction: row-reverse;
+
+      :first-child {
+        margin-left: $margin-between-links;
+      }
+    }
+  }
