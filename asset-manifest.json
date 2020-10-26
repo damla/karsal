@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/karsal/static/css/main.70bc7c07.chunk.css",
-    "main.js": "/karsal/static/js/main.b54b3892.chunk.js",
-    "main.js.map": "/karsal/static/js/main.b54b3892.chunk.js.map",
-    "runtime-main.js": "/karsal/static/js/runtime-main.535fb49e.js",
-    "runtime-main.js.map": "/karsal/static/js/runtime-main.535fb49e.js.map",
+    "main.css": "/karsal/static/css/main.a2d51c2f.chunk.css",
+    "main.js": "/karsal/static/js/main.b58ef6dd.chunk.js",
+    "main.js.map": "/karsal/static/js/main.b58ef6dd.chunk.js.map",
+    "runtime-main.js": "/karsal/static/js/runtime-main.7fbbe2e3.js",
+    "runtime-main.js.map": "/karsal/static/js/runtime-main.7fbbe2e3.js.map",
     "static/js/2.8c125fb6.chunk.js": "/karsal/static/js/2.8c125fb6.chunk.js",
     "static/js/2.8c125fb6.chunk.js.map": "/karsal/static/js/2.8c125fb6.chunk.js.map",
-    "static/js/3.92fda301.chunk.js": "/karsal/static/js/3.92fda301.chunk.js",
-    "static/js/3.92fda301.chunk.js.map": "/karsal/static/js/3.92fda301.chunk.js.map",
+    "static/js/3.be2559ee.chunk.js": "/karsal/static/js/3.be2559ee.chunk.js",
+    "static/js/3.be2559ee.chunk.js.map": "/karsal/static/js/3.be2559ee.chunk.js.map",
     "index.html": "/karsal/index.html",
-    "static/css/main.70bc7c07.chunk.css.map": "/karsal/static/css/main.70bc7c07.chunk.css.map",
+    "static/css/main.a2d51c2f.chunk.css.map": "/karsal/static/css/main.a2d51c2f.chunk.css.map",
     "static/js/2.8c125fb6.chunk.js.LICENSE.txt": "/karsal/static/js/2.8c125fb6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.535fb49e.js",
+    "static/js/runtime-main.7fbbe2e3.js",
     "static/js/2.8c125fb6.chunk.js",
-    "static/css/main.70bc7c07.chunk.css",
-    "static/js/main.b54b3892.chunk.js"
+    "static/css/main.a2d51c2f.chunk.css",
+    "static/js/main.b58ef6dd.chunk.js"
   ]
 }
