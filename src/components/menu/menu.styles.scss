@@ -1,21 +1,32 @@
 $margin-between-links: 1rem;
 
 .menu-container {
-    display: flex;
+  display: flex;
 
-    &.align-left {
-      flex-direction: row;
+  .menu-item {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
 
-      :first-child {
-        margin-right: $margin-between-links;
-      }
-    }
-  
-    &.align-right {
-      flex-direction: row-reverse;
-
-      :first-child {
-        margin-left: $margin-between-links;
-      }
+    &:hover {
+      color: black;
+      text-decoration: underline;
     }
   }
+
+  &.align-left {
+    flex-direction: row;
+
+    :first-child {
+      margin-right: $margin-between-links;
+    }
+  }
+
+  &.align-right {
+    flex-direction: row-reverse;
+
+    :first-child {
+      margin-left: $margin-between-links;
+    }
+  }
+}

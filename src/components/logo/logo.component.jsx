@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import './logo.styles.scss';
+import "./logo.styles.scss";
 
 export default function Logo() {
   return (
@@ -10,8 +10,8 @@ export default function Logo() {
         className="logo"
         src="/karsal/karsal-logo.png"
         alt="karsal-logo"
-        width={150}
-        height={50}
+        width={250}
+        height={70}
       />
     </Link>
   );
