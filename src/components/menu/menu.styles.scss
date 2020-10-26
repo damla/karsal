@@ -5,12 +5,12 @@ $margin-between-links: 1rem;
 
     &.align-left {
       flex-direction: row;
-      
+
       :first-child {
         margin-right: $margin-between-links;
       }
     }
-
+  
     &.align-right {
       flex-direction: row-reverse;
 

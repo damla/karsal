@@ -2,11 +2,12 @@
     background-color: #2c2e2f;
     display: flex;
     align-items: center;
-    padding: 5px 25px;
+    justify-content: space-between;
+    padding: 0.2rem 1.5rem;
 
-    .left-announcement {
-        line-height:30px;
+    a {
         color: white;
         text-decoration: none;
+        line-height: 30px;
     }
 }
