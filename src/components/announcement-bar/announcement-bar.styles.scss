@@ -1,0 +1,12 @@
+.announcement-container {
+    background-color: #2c2e2f;
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+
+    .left-announcement {
+        line-height:30px;
+        color: white;
+        text-decoration: none;
+    }
+}
