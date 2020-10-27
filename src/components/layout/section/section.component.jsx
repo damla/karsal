@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './section.styles.scss';
+import "./section.styles.scss";
 
-export default function Section({ children }) {
-    return (
-        <section className="section-container">
-            { children }
-        </section>
-    )
+export default function Section({ BgColor, children }) {
+  return (
+    <section
+      className="section-container"
+      style={{
+        backgroundColor: `${BgColor}`,
+      }}
+    >
+      {children}
+    </section>
+  );
 }

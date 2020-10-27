@@ -1,14 +1,16 @@
-import React from 'react';
-import Layout from '../../components/layout/layout.component';
+import React from "react";
+import Layout from "../../components/layout/layout.component";
+import Section from "../../components/layout/section/section.component";
 
-import './homepage.styles.scss';
+import "./homepage.styles.scss";
 
 export default function HomePage() {
-    return (
-        <div className="homepage-container">
-            <Layout>
-                <p>test</p>
-            </Layout>
-        </div>
-    )
+  return (
+    <>
+      <Layout>
+        <Section>test</Section>
+        <Section BgColor="white">test2</Section>
+      </Layout>
+    </>
+  );
 }
