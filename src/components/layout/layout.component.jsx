@@ -1,6 +1,6 @@
 import React from "react";
 
-import AnnouncementBar from "../announcement-bar/announcement-bar.component";
+import AnnouncementBar from "./announcement-bar/announcement-bar.component";
 import Header from "./header/header.component";
 
 import Footer from "./footer/footer.component";
