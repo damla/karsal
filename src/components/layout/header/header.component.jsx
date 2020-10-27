@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
+import BlockQuote from "../../block-quote/block-quote.component";
 
 import "./header.styles.scss";
 
@@ -27,6 +28,10 @@ function Header() {
           </Link>
         </Menu>
       </nav>
+      <div className="block-quote-container">
+        <BlockQuote>test deneme test</BlockQuote>
+        <button>&#8642;</button>
+      </div>
     </div>
   );
 }
