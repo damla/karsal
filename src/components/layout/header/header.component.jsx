@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import BlockQuote from "../../block-quote/block-quote.component";
+import CustomButton from "../../custom-button/custom-button.component";
 
 import "./header.styles.scss";
 
@@ -30,7 +31,7 @@ function Header() {
       </nav>
       <div className="block-quote-container">
         <BlockQuote>test deneme test</BlockQuote>
-        <button>&#8642;</button>
+        <CustomButton>&#8642;</CustomButton>
       </div>
     </div>
   );
