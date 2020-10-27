@@ -30,7 +30,11 @@ function Header() {
         </Menu>
       </nav>
       <div className="block-quote-container">
-        <BlockQuote>test deneme test</BlockQuote>
+        <BlockQuote>
+          Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
+          kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
+          müşteriye ulaştırmaktadır.
+        </BlockQuote>
         <CustomButton>&#8642;</CustomButton>
       </div>
     </div>

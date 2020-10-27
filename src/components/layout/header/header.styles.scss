@@ -21,6 +21,11 @@
   }
 
   .block-quote-container {
-    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 70vh;
+    text-align: center;
   }
 }

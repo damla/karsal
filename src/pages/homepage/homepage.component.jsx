@@ -8,7 +8,9 @@ export default function HomePage() {
   return (
     <>
       <Layout>
-        <Section BgColor="pink">test</Section>
+        <Section id="section1" BgColor="pink">
+          test
+        </Section>
         <Section BgColor="white">test2</Section>
         <Section BgColor="#ebebeb">test3</Section>
       </Layout>
