@@ -35,7 +35,7 @@ function Header() {
           kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
           müşteriye ulaştırmaktadır.
         </BlockQuote>
-        <CustomButton>&#8642;</CustomButton>
+        <CustomButton>^</CustomButton>
       </div>
     </div>
   );
