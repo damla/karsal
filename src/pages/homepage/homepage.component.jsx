@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout/layout.component";
 import Section from "../../components/section/section.component";
-import CustomButton from "../../components/custom-button/custom-button.component";
+import { Button } from "semantic-ui-react";
 
 import "./homepage.styles.scss";
 
@@ -14,7 +14,7 @@ export default function HomePage() {
         </Section>
         <Section BgColor="white">test2</Section>
         <Section BgColor="#ebebeb">test3</Section>
-        <CustomButton>test123tes</CustomButton>
+        <Button content="Like" icon={{ name: "like" }} />
       </Layout>
     </>
   );
