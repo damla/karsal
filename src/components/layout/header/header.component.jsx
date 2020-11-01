@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import BlockQuote from "../../block-quote/block-quote.component";
-import { Grid } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 
 import "./header.styles.scss";
 
@@ -31,15 +31,20 @@ function Header() {
       </nav>
 
       <Grid centered columns={2}>
-        <Grid.Row>
-          <Grid.Column>
+        <Grid.Column>
+          <Grid.Row>
             <BlockQuote>
               Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
               kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
               müşteriye ulaştırmaktadır.
             </BlockQuote>
-          </Grid.Column>
-        </Grid.Row>
+          </Grid.Row>
+          <Grid.Row>
+            <Button inverted size="large">
+              Keşfet -
+            </Button>
+          </Grid.Row>
+        </Grid.Column>
       </Grid>
     </div>
   );
