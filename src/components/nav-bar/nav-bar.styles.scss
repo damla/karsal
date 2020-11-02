@@ -1,0 +1,20 @@
+.navbar-container {
+  display: grid;
+  grid-template-columns: 2fr auto 2fr;
+  column-gap: 2rem;
+  padding: 20px 25px 10px 25px;
+  align-items: center;
+
+  &:hover {
+    background-color: white;
+    border-bottom: solid 1px #efefee;
+    -webkit-box-shadow: 0 4px 8px -8px black;
+    -moz-box-shadow: 0 4px 8px -8px black;
+    box-shadow: 0 4px 8px -8px black;
+    z-index: 99;
+
+    a {
+      color: #45464c;
+    }
+  }
+}

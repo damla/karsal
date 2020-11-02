@@ -10,8 +10,8 @@ export default function Logo() {
         className="logo"
         src="/karsal/karsal-logo.png"
         alt="karsal-logo"
-        width={250}
-        height={70}
+        width={200}
+        height={60}
       />
     </Link>
   );
