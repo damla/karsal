@@ -18,7 +18,15 @@
     grid-template-columns: 2fr auto 2fr;
     column-gap: 2rem;
     padding: 25px;
-    align-items: start;
+    align-items: center;
+
+    &:hover {
+      background-color: white;
+
+      a {
+        color: #45464c;
+      }
+    }
   }
 
   .blockquote-container {

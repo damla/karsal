@@ -36,9 +36,8 @@ function Header() {
           müşteriye ulaştırmaktadır.
         </BlockQuote>
       </div>
-
       <div className="button-container">
-        <CustomButton className="custom-button" scroll>
+        <CustomButton className="custom-button" scroll inverted>
           <i class="fa fa-chevron-down"></i>
         </CustomButton>
       </div>

@@ -10,4 +10,14 @@
     background-color: black;
     color: white;
   }
+
+  &.inverted {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+  }
 }
