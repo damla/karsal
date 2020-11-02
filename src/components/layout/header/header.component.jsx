@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import BlockQuote from "../../block-quote/block-quote.component";
-import CustomButton from "../../custom-button/custom-button.component";
 
 import "./header.styles.scss";
 
@@ -29,14 +28,14 @@ function Header() {
           </Link>
         </Menu>
       </nav>
-      <div className="block-quote-container">
-        <BlockQuote>
-          Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
-          kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
-          müşteriye ulaştırmaktadır.
-        </BlockQuote>
-        <CustomButton>&#8642;</CustomButton>
-      </div>
+
+      <BlockQuote>
+        Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
+        kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
+        müşteriye ulaştırmaktadır.
+      </BlockQuote>
+
+      <button class="button" inverted size="large" icon="angle down"></button>
     </div>
   );
 }
