@@ -1,3 +1,9 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header-container {
   background-image: url(../../../assets/images/banner-1.jpg);
   background-position: center;
@@ -13,5 +19,13 @@
     column-gap: 2rem;
     padding: 25px;
     align-items: start;
+  }
+
+  .blockquote-container {
+    @include flex;
+  }
+  .button-container {
+    @include flex;
+    margin-top: 1.5rem;
   }
 }
