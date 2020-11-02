@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import "./index.scss";
-import "semantic-ui-css/semantic.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
