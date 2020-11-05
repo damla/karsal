@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Menu from "../menu/menu.component";
-import Logo from "../logo/logo.component";
+import Menu from "../../menu/menu.component";
+import Logo from "../../logo/logo.component";
 
 import "./nav-bar.styles.scss";
 
