@@ -8,22 +8,23 @@ import "./header.styles.scss";
 
 function Header() {
   return (
-    <div className="header-container">
-      <NavBar />
-
-      <div className="blockquote-container">
-        <BlockQuote>
-          Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
-          kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
-          müşteriye ulaştırmaktadır.
-        </BlockQuote>
+    <>
+      <div className="header-container">
+        <NavBar />
+        <div className="blockquote-container">
+          <BlockQuote>
+            Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
+            kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
+            müşteriye ulaştırmaktadır.
+          </BlockQuote>
+        </div>
+        <div className="button-container">
+          <CustomButton className="custom-button" scroll inverted>
+            <i class="fa fa-chevron-down"></i>
+          </CustomButton>
+        </div>
       </div>
-      <div className="button-container">
-        <CustomButton className="custom-button" scroll inverted>
-          <i class="fa fa-chevron-down"></i>
-        </CustomButton>
-      </div>
-    </div>
+    </>
   );
 }
 

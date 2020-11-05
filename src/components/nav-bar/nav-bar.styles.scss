@@ -4,6 +4,7 @@
   column-gap: 2rem;
   padding: 20px 25px 10px 25px;
   align-items: center;
+  z-index: 99;
 
   &:hover {
     background-color: white;
@@ -11,7 +12,6 @@
     -webkit-box-shadow: 0 4px 8px -8px black;
     -moz-box-shadow: 0 4px 8px -8px black;
     box-shadow: 0 4px 8px -8px black;
-    z-index: 99;
 
     a {
       color: #45464c;
