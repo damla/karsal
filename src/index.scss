@@ -6,7 +6,11 @@
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
+ KENDIME NOT: box sizing border-box width degerine padding+margini de dahil ediyor.
  */
+* {
+  box-sizing: border-box;
+}
 
 html {
   line-height: 1.15; /* 1 */

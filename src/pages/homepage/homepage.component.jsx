@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <Layout>
-        <Section>
+        <Section Position="relative">
           <div className="blockquote-container">
             <BlockQuote>
               Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı

@@ -8,7 +8,7 @@ import "./nav-bar.styles.scss";
 
 export default function NavBar() {
   return (
-    <nav className="navbar-container">
+    <nav className="navbar-container scrolled">
       <Menu align="left">
         <Link to="/karsal/hakkımızda" className="menu-item">
           HAKKIMIZDA
