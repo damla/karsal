@@ -18,12 +18,12 @@
   position: fixed;
   top: calc(0.4rem + 30px);
   width: 100%;
-  // transition: all 0.7s ease-in;
+  transition: all 0.1s ease-in;
 
   &.scrolled {
     @include white-bg;
     padding: 15px 25px 10px 25px;
-
+    top: 0;
     a {
       color: $primary-color;
     }
