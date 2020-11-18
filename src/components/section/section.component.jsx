@@ -7,8 +7,11 @@ export default function Section({ BgColor, Background, children }) {
     <section
       className="section-container"
       style={{
-        backgroundColor: `${BgColor}`,
+        // backgroundColor: `${BgColor}`,
         backgroundImage: `url(${Background})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       {children}

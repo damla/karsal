@@ -5,13 +5,15 @@ import Section from "../../components/section/section.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 
+import banner from "../../assets/images/section-1.png";
 import "./homepage.styles.scss";
 
 export default function HomePage() {
   return (
     <>
+      {/* TODO: Background image url will be passed from here */}
       <Layout>
-        <Section Background="../../assets/images/section-1.png">
+        <Section Background={banner}>
           <div className="blockquote-container">
             <BlockQuote>
               Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
