@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/karsal/static/css/main.f67d9d0f.chunk.css",
-    "main.js": "/karsal/static/js/main.353e5bb0.chunk.js",
-    "main.js.map": "/karsal/static/js/main.353e5bb0.chunk.js.map",
+    "main.css": "/karsal/static/css/main.5506401d.chunk.css",
+    "main.js": "/karsal/static/js/main.661dcd41.chunk.js",
+    "main.js.map": "/karsal/static/js/main.661dcd41.chunk.js.map",
     "runtime-main.js": "/karsal/static/js/runtime-main.fc3dd6bb.js",
     "runtime-main.js.map": "/karsal/static/js/runtime-main.fc3dd6bb.js.map",
     "static/js/2.2e76c260.chunk.js": "/karsal/static/js/2.2e76c260.chunk.js",
@@ -10,13 +10,14 @@
     "static/js/3.a9d422a9.chunk.js": "/karsal/static/js/3.a9d422a9.chunk.js",
     "static/js/3.a9d422a9.chunk.js.map": "/karsal/static/js/3.a9d422a9.chunk.js.map",
     "index.html": "/karsal/index.html",
-    "static/css/main.f67d9d0f.chunk.css.map": "/karsal/static/css/main.f67d9d0f.chunk.css.map",
-    "static/js/2.2e76c260.chunk.js.LICENSE.txt": "/karsal/static/js/2.2e76c260.chunk.js.LICENSE.txt"
+    "static/css/main.5506401d.chunk.css.map": "/karsal/static/css/main.5506401d.chunk.css.map",
+    "static/js/2.2e76c260.chunk.js.LICENSE.txt": "/karsal/static/js/2.2e76c260.chunk.js.LICENSE.txt",
+    "static/media/section-1.35a7622f.png": "/karsal/static/media/section-1.35a7622f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fc3dd6bb.js",
     "static/js/2.2e76c260.chunk.js",
-    "static/css/main.f67d9d0f.chunk.css",
-    "static/js/main.353e5bb0.chunk.js"
+    "static/css/main.5506401d.chunk.css",
+    "static/js/main.661dcd41.chunk.js"
   ]
 }
