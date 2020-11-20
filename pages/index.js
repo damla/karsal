@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CustomButton from "../components/custom-button/custom-button.component";
 
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
@@ -13,7 +14,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Section />
+        <Section>
+          <CustomButton scrollDown inverted>
+            <i>{`>`}</i>
+          </CustomButton>
+        </Section>
       </Layout>
     </>
   );
