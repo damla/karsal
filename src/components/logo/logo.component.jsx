@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/karsal-logo.png";
-
 import "./logo.styles.scss";
 
 export default function Logo() {
