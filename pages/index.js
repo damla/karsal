@@ -14,17 +14,23 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Layout>
-        <Section>
-          <CustomButton scrollDown inverted>
-            <i>{`>`}</i>
-          </CustomButton>
-          <BlockQuote>
-            Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
-            kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
-            müşteriye ulaştırmaktadır.
-          </BlockQuote>
+        <Section Background="/assets/images/section-1.png">
+          <div className="blockquote-container">
+            <BlockQuote>
+              Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
+              kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
+              müşteriye ulaştırmaktadır.
+            </BlockQuote>
+          </div>
+          <div className="button-container">
+            <CustomButton scrollDown inverted>
+              <i>{`>`}</i>
+            </CustomButton>
+          </div>
         </Section>
+        <Section BgColor="pink" />
       </Layout>
     </>
   );
