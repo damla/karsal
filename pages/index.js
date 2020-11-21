@@ -11,22 +11,18 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Karsal Örme</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Layout>
         <Section Background="/assets/images/section-1.png">
           <div className="blockquote-container">
-            <BlockQuote>
-              Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı
-              kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla
-              müşteriye ulaştırmaktadır.
-            </BlockQuote>
+            <BlockQuote>KUMAŞIN MİMARI</BlockQuote>
           </div>
           <div className="button-container">
             <CustomButton scrollDown inverted>
-              <i>{`>`}</i>
+              <i>v</i>
             </CustomButton>
           </div>
         </Section>
