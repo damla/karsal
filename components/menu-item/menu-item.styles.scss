@@ -1,0 +1,10 @@
+.menu-item {
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: black;
+    text-decoration: underline;
+  }
+}

@@ -3,17 +3,6 @@ $margin-between-links: 1.7rem;
 .menu-container {
   display: flex;
 
-  .menu-item {
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-
-    &:hover {
-      color: black;
-      text-decoration: underline;
-    }
-  }
-
   &__left {
     flex-direction: row;
 

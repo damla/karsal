@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import Menu from "../../menu/menu.component";
 import Logo from "../../logo/logo.component";
+import MenuItem from "../../menu-item/menu-item.component";
 
 import "./nav-bar.styles.scss";
 
@@ -9,21 +8,14 @@ export default function NavBar() {
   return (
     <nav className="navbar-container">
       <Menu align="left">
-        <Link href="/hakkımızda" className="menu-item">
-          HAKKIMIZDA
-        </Link>
-        <Link href="/iletişim" className="menu-item">
-          İLETİŞİM
-        </Link>
+        <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
+
+        <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
       </Menu>
-      <Logo />
+      <Logo width="150" height="50" />
       <Menu align="right">
-        <Link href="/fabrika" className="menu-item">
-          FABRİKA
-        </Link>
-        <Link href="/katalog" className="menu-item">
-          KATALOG
-        </Link>
+        <MenuItem href="/fabrika">FABRİKA</MenuItem>
+        <MenuItem href="/katalog">KATALOG</MenuItem>
       </Menu>
     </nav>
   );
