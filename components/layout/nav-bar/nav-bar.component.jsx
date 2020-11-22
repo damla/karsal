@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 
 import Menu from "../../menu/menu.component";
 import Logo from "../../logo/logo.component";
@@ -7,11 +7,13 @@ import MenuItem from "../../menu-item/menu-item.component";
 import "./nav-bar.styles.scss";
 
 import classNames from "classnames";
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function NavBar() {
   const [scrolled, setScrolled] = React.useState(false);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const handleScroll = () =>
       window.scrollY > 0 ? setScrolled(true) : setScrolled(false);
 

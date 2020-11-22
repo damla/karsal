@@ -1,17 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Amiri&family=Mulish:ital,wght@1,300&display=swap");
-
 .block-quote {
-  font-family: "Amiri", serif;
+  font-family: "SuisseBPInt'l";
   font-size: 2rem;
   line-height: 3rem;
   margin-top: 30vh;
   text-align: center;
   background-color: white;
-  opacity: 0.7;
   width: 40rem;
   border: 1px solid black;
-  z-index: 9;
-  // -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
-  // -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
-  // box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
 }
