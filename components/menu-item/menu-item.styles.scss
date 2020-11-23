@@ -1,5 +1,7 @@
+@import "../../global/variables.scss";
+
 .menu-item {
-  color: white;
+  color: $primary-color;
   font-weight: 600;
   font-size: 1rem;
   font-family: "SuisseBPInt'l";

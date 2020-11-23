@@ -1,3 +1,4 @@
+@import "../../global/variables.scss";
 $margin-between-links: 1.7rem;
 
 .menu-container {
@@ -14,7 +15,7 @@ $margin-between-links: 1.7rem;
 
     .lang-container {
       .seperator {
-        color: white;
+        color: $primary-color;
         margin: 0 2px;
       }
     }

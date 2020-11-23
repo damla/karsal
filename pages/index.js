@@ -6,6 +6,7 @@ import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
 import Content from "../components/content/content.component";
+import ImageBox from "../components/image-box/image-box.component";
 
 import "./home.styles.scss";
 
@@ -20,7 +21,7 @@ export default function Home() {
       <Layout>
         <Section>
           <Content BgColor={"#e1ece1"}></Content>
-          <Content BgColor={"#00000"}></Content>
+          <ImageBox />
         </Section>
         <Divider />
         <Section BgColor="pink" />
