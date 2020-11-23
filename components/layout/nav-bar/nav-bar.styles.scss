@@ -5,6 +5,15 @@
   box-shadow: 0 4px 8px -8px black;
 }
 
+@mixin change-color {
+  a {
+    color: $primary-color;
+  }
+  .seperator {
+    color: $primary-color;
+  }
+}
+
 @import "../../../global/variables.scss";
 
 .navbar-container {
@@ -22,19 +31,11 @@
     @include white-bg;
     padding: 25px;
     top: 0;
-    a {
-      color: $primary-color;
-    }
-    .seperator {
-      color: $primary-color;
-    }
+    @include change-color;
   }
 
   &:hover {
     @include white-bg;
-
-    a {
-      color: $primary-color;
-    }
+    @include change-color;
   }
 }

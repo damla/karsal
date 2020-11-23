@@ -1,4 +1,7 @@
 .section-container {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  width: 100%;
   background-color: burlywood;
 }

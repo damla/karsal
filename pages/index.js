@@ -5,6 +5,7 @@ import CustomButton from "../components/custom-button/custom-button.component";
 import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
+import Content from "../components/content/content.component";
 
 import "./home.styles.scss";
 
@@ -17,15 +18,9 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Section Background="/assets/images/section-1.png">
-          <div className="blockquote-container">
-            <BlockQuote>KUMAŞIN MİMARI</BlockQuote>
-          </div>
-          <div className="button-container">
-            <CustomButton scrollDown inverted>
-              <i>&#8594;</i>
-            </CustomButton>
-          </div>
+        <Section>
+          <Content BgColor={"#e1ece1"}></Content>
+          <Content BgColor={"#00000"}></Content>
         </Section>
         <Divider />
         <Section BgColor="pink" />
