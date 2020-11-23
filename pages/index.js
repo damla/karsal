@@ -2,6 +2,7 @@ import Head from "next/head";
 import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 
+import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
 
@@ -26,6 +27,7 @@ export default function Home() {
             </CustomButton>
           </div>
         </Section>
+        <Divider />
         <Section BgColor="pink" />
       </Layout>
     </>
