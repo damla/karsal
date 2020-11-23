@@ -9,9 +9,8 @@
 
 .navbar-container {
   display: grid;
-  grid-template-columns: 2fr auto 2fr;
-  column-gap: 2rem;
-  padding: 20px 25px 10px 25px;
+  grid-template-columns: 1fr 1fr;
+  padding: 25px;
   align-items: center;
   z-index: 9;
   position: fixed;
@@ -21,9 +20,12 @@
 
   &.scrolled {
     @include white-bg;
-    padding: 15px 25px 10px 25px;
+    padding: 25px;
     top: 0;
     a {
+      color: $primary-color;
+    }
+    .seperator {
       color: $primary-color;
     }
   }

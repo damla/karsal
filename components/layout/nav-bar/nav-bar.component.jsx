@@ -27,11 +27,15 @@ export default function NavBar() {
       <Menu align="left">
         <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
         <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
-      </Menu>
-      <Logo width="150" height="50" />
-      <Menu align="right">
         <MenuItem href="/fabrika">FABRİKA</MenuItem>
         <MenuItem href="/katalog">KATALOG</MenuItem>
+      </Menu>
+      <Menu align="right">
+        <div className="lang-container">
+          <MenuItem href="/katalog">EN</MenuItem>
+          <span className="seperator">|</span>
+          <MenuItem href="/katalog">TR</MenuItem>
+        </div>
       </Menu>
     </nav>
   );

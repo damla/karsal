@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <div className="button-container">
             <CustomButton scrollDown inverted>
-              <i>v</i>
+              <i>&#8594;</i>
             </CustomButton>
           </div>
         </Section>
