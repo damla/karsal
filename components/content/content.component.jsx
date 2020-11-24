@@ -20,10 +20,10 @@ export default function Content({ children, ...props }) {
       <div className="content-body">
         <h2>test</h2>
         <BlockQuote>test</BlockQuote>
+        <CustomButton scrollDown inverted>
+          <i>&#8594;</i>
+        </CustomButton>
       </div>
-      <CustomButton scrollDown inverted>
-        <i>&#8594;</i>
-      </CustomButton>
     </div>
   );
 }
