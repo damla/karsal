@@ -1,10 +1,10 @@
 .block-quote {
-  font-family: "SuisseBPInt'l";
+  font-family: "SuisseBPInt'l", sans-serif;
   font-size: 2rem;
   line-height: 3rem;
   height: 200px;
   text-align: center;
   background-color: white;
-  width: 300px;
+  max-width: 300px;
   border: 1px solid black;
 }

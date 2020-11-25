@@ -20,7 +20,7 @@ export default function Home() {
 
       <Layout>
         <Section>
-          <Content BgColor={"#e1ece1"}></Content>
+          <Content BgColor={"#f0f9f0"}></Content>
           <ImageBox />
         </Section>
         <Divider />
