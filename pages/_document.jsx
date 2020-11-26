@@ -6,12 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="preload"
-            href="/fonts/SuisseInt'l/SuisseIntl-Medium.ttf"
-            as="font"
-            crossOrigin=""
-          />
+            <link rel="stylesheet" href="/assets/fonts/fonts.css" />
         </Head>
         <body>
           <Main />

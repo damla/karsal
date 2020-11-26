@@ -1,33 +1,33 @@
 @import "../../../global/variables.scss";
 
 @mixin green-bg {
-  background-color: #f0f9f0;
+  background-color: $background-color;
   border-bottom: 1px solid #495049;
 }
 
 @mixin change-color {
   a {
-    color: $primary-color;
+    color: $primary-font-color;
   }
   .seperator {
-    color: $primary-color;
+    color: $primary-font-color;
   }
 }
 
 .navbar-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 25px;
+  padding: 1.5rem;
   align-items: center;
-  z-index: 9;
+  z-index: 3;
   position: fixed;
-  top: calc(2.4rem);
+  top: 2.4rem;
   width: 100%;
   transition: all 0.1s ease-in;
 
   &.scrolled {
     @include green-bg;
-    padding: 25px;
+    padding: 1.5rem;
     top: 0;
     @include change-color;
   }

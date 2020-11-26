@@ -17,12 +17,14 @@ export default function Content({ children, ...props }) {
             }
         >
             <div className="content">
+                <div className="content__left">
                 <Logo width={120} height={40} />
-                <div className="content-body">
+                </div>
+                <div className="content__right">
                     <h1>Kumaşın Mimarı...</h1>
-                    <BlockQuote>test</BlockQuote>
-                    <CustomButton scrollDown inverted>
-                        <i>&#8594;</i>
+                    <BlockQuote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</BlockQuote>
+                    <CustomButton scrollDown>
+                        <div className="button-content"><span>Daha Fazlası</span><span>&#8594;</span></div>
                     </CustomButton>
                 </div>
             </div>

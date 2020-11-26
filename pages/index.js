@@ -1,6 +1,4 @@
 import Head from "next/head";
-import BlockQuote from "../components/block-quote/block-quote.component";
-import CustomButton from "../components/custom-button/custom-button.component";
 
 import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
@@ -20,11 +18,11 @@ export default function Home() {
 
       <Layout>
         <Section>
-          <Content BgColor={"#f0f9f0"}></Content>
+          <Content BgColor={"#f0f9f0"}/>
           <ImageBox />
         </Section>
         <Divider />
-        <Section BgColor="pink" />
+        <Section/>
       </Layout>
     </>
   );

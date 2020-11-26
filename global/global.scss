@@ -1,5 +1,6 @@
 html,
 body {
+
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -18,28 +19,10 @@ a:hover {
 
 * {
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
-@font-face {
-  font-family: "SuisseBPInt'l";
-  src: url("/fonts/SuisseBPInt'l/SuisseBPIntl-Light.otf");
-  font-style: light;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SuisseInt'l";
-  src: url("/fonts/SuisseInt'l/SuisseIntl-Medium.otf");
-  font-style: medium;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ZapfHumanist601";
-  src: url("/fonts/ZapfHumanist601/ZapfHumanist601BT-Roman.otf");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
+h1, blockquote{
+margin: 0;
+padding:0;
 }
