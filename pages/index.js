@@ -31,8 +31,8 @@ export default function Home() {
                                <span>Daha Fazlası</span><span>&#8594;</span>
                            </div>
                        </CustomButton>
-                   }/>
-        <ImageBox/>
+          }/>
+        <ImageBox src="/assets/images/section-1.jpg" alt="Picture of the fabric"/>
         </Section>
         <Divider/>
         <Section/>
