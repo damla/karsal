@@ -1,0 +1,42 @@
+@import "../../../global/variables.scss";
+
+@mixin green-bg {
+  background-color: $background-color;
+
+  border-bottom: 1px solid #495049;
+}
+
+@mixin change-color {
+  a {
+    color: $primary-font-color;
+  }
+  .seperator {
+    color: $primary-font-color;
+  }
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5rem;
+  align-items: center;
+  z-index: 3;
+  position: fixed;
+  top: 2.4rem;
+  width: 100%;
+  transition: all 0.1s ease-in;
+
+  &.scrolled {
+    @include green-bg;
+
+    padding: 1.5rem;
+
+    top: 0;
+    @include change-color;
+  }
+
+  &:hover {
+    @include green-bg;
+    @include change-color;
+  }
+}
