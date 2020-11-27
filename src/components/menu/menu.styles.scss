@@ -1,0 +1,32 @@
+$margin-between-links: 1.7rem;
+
+.menu-container {
+  display: flex;
+
+  .menu-item {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+
+  &.align-left {
+    flex-direction: row;
+
+    :first-child {
+      margin-right: $margin-between-links;
+    }
+  }
+
+  &.align-right {
+    flex-direction: row-reverse;
+
+    :first-child {
+      margin-left: $margin-between-links;
+    }
+  }
+}
