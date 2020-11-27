@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Zaph Humanist';
+  font-weight: 200;
+  src: url('zaphHumanist.woff2') format('woff2'),
+  url('zaphHumanist.woff') format('woff'),
+  url('zaphHumanist.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SuisseInt-Medium';
+  src: url('SuisseIntl-Medium-WebS.woff2') format('woff2'),
+  url('SuisseIntl-Medium-WebS.woff') format('woff'),
+  url('SuisseIntl-Medium-WebS.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SuisseInt-Regular';
+  src: url('SuisseIntl-Regular-WebS.woff2') format('woff2'),
+  url('SuisseIntl-Regular-WebS.woff') format('woff'),
+  url('SuisseIntl-Regular-WebS.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SuisseInt-SemiBold';
+  src: url('SuisseIntl-SemiBold-WebS.woff2') format('woff2'),
+  url('SuisseIntl-SemiBold-WebS.woff') format('woff'),
+  url('SuisseIntl-SemiBold-WebS.ttf') format('truetype');
+}
