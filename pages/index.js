@@ -11,6 +11,10 @@ import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
 export default function Home() {
+  const scroll = () => {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Head>
@@ -34,7 +38,7 @@ export default function Home() {
               </BlockQuote>
             }
             button={
-              <CustomButton scrollDown>
+              <CustomButton scrollDown href="/#test">
                 <div className="button-content">
                   <span>Daha Fazlası</span>
                   <span>&#8594;</span>
@@ -49,7 +53,7 @@ export default function Home() {
           />
         </Section>
         <Divider />
-        <Section>
+        <Section id="test">
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of the fabric"

@@ -1,12 +1,11 @@
 import React, { useEffect, useLayoutEffect } from "react";
 
 import Menu from "../../menu/menu.component";
-import Logo from "../../logo/logo.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
 import "./nav-bar.styles.scss";
-
 import classNames from "classnames";
+
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
