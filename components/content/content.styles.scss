@@ -1,5 +1,6 @@
 .content-container {
   min-width: 50%;
+<<<<<<< HEAD
   height: 100%;
 
   .content {
@@ -17,5 +18,31 @@
     font-family: "Zapf Humanist", serif;
     font-size: xx-large;
     font-weight: 200;
+=======
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+
+  .content {
+    margin: 68px 25px;
+    // TODO: Convert px to rem
+    display: flex;
+    max-height: 50%;
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      margin-left: 2vw;
+
+      h1 {
+        font-family: "Zaph Humanist", sans-serif;
+        font-weight: 200;
+        font-size: 2rem;
+      }
+    }
+>>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4
   }
 }
+
+
+

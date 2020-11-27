@@ -1,4 +1,5 @@
 .block-quote {
+<<<<<<< HEAD
   font-family: "SuisseBPInt'l";
   font-size: 2rem;
   line-height: 3rem;
@@ -8,3 +9,15 @@
   max-width: 300px;
   border: 1px solid black;
 }
+=======
+  max-height: 60%;
+  max-width: 30rem;
+  margin: 2rem 0;
+  blockquote {
+    font-family: 'SuisseInt-Regular', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4rem;
+  }
+}
+>>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4

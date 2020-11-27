@@ -1,5 +1,7 @@
+@import "../../global/variables.scss";
 .divider-container {
   width: 100%;
-  height: 150px;
-  background-color: #f1f5f1;
+  height: 15vh;
+  background-color: $background-color;
+
 }
