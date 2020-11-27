@@ -6,7 +6,7 @@ $margin-between-links: 1.7rem;
 
   &__left {
     flex-direction: row;
-    max-width: 60%;
+    width: 350px;
     justify-content: space-between;
   }
 
@@ -15,8 +15,8 @@ $margin-between-links: 1.7rem;
 
     .lang-container {
       .seperator {
-        color: $primary-font-color;
-        margin: 0 0.2rem;
+        color: $primary-color;
+        margin: 0 2px;
       }
     }
   }

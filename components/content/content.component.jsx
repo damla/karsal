@@ -1,17 +1,18 @@
 import "./content.styles.scss";
 
-export default function Content({ BgColor, left, title, blockquote, button }) {
-    return (
-        <div
-            className="content-container"
-            style={
-                BgColor
-                    ? {
-                        backgroundColor: `${BgColor}`,
-                    }
-                    : {}
+import BlockQuote from "../block-quote/block-quote.component";
+import CustomButton from "../custom-button/custom-button.component";
+import Logo from "../logo/logo.component";
+
+export default function Content({ children, ...props }) {
+  return (
+    <div
+      className="content-container"
+      style={
+        props.BgColor
+          ? {
+              backgroundColor: `${props.BgColor}`,
             }
-<<<<<<< HEAD
           : {}
       }
     >
@@ -27,21 +28,4 @@ export default function Content({ BgColor, left, title, blockquote, button }) {
       </div>
     </div>
   );
-=======
-        >
-            <div className="content">
-                {left ? (
-                    <div className="content__left">
-                {left}
-            </div>
-                ):null}
-                <div className="content__right">
-                    <h1>{title}</h1>
-                    {blockquote}
-                    {button}
-                </div>
-            </div>
-        </div>
-    );
->>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4
 }

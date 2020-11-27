@@ -18,7 +18,28 @@ a:hover {
 
 * {
   box-sizing: border-box;
-  font-size: 1rem;
-  margin: 0;
-  padding:0;
+}
+
+@font-face {
+  font-family: "SuisseBPInt'l";
+  src: url("/fonts/SuisseBPInt'l/SuisseBPIntl-Light.otf");
+  font-style: light;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseInt'l";
+  src: url("/fonts/SuisseInt'l/SuisseIntl-Medium.otf");
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZapfHumanist601";
+  src: url("/fonts/ZapfHumanist601/ZapfHumanist601BT-Roman.otf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
 }

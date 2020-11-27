@@ -1,10 +1,10 @@
 @import "../../global/variables.scss";
 
 .menu-item {
-  color: $primary-font-color;
-  font-weight: 200;
-  font-size: 0.9rem;
-  font-family: "SuisseInt-Medium", sans-serif;
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "SuisseBPInt'l";
   &:hover {
     color: black;
     text-decoration: underline;

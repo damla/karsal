@@ -1,14 +1,14 @@
 .scroll-button {
   background-color: transparent;
   color: black;
-  max-width: 30rem;
-  min-height: 50px;
-  //border-radius: 3px;
-  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  border: 2px solid black;
 
   &:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
   }
 
   &.inverted {
@@ -19,11 +19,5 @@
       background-color: white;
       color: black;
     }
-  }
-
-  .button-content{
-    padding: 0 25px;
-    display: flex;
-    justify-content: space-between;
   }
 }
