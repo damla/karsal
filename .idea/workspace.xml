@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="80458af4-c730-493e-b4da-ac26df872795" name="Default Changelist" comment="[#4] feat(imageBox): Added parameters to ImageBox content" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="nextjs" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/damla/karsal" />
+      </set>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectId" id="1kn57BgV1EcMKv4mDkgOpxNcmYc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/fonts" />
+      <recent name="$PROJECT_DIR$/public/assets" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="yarn dev" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80458af4-c730-493e-b4da-ac26df872795" name="Default Changelist" comment="" />
+      <created>1606323346251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606323346251</updated>
+      <workItem from="1606323348528" duration="1466000" />
+      <workItem from="1606325124029" duration="1809000" />
+      <workItem from="1606329658571" duration="2191000" />
+      <workItem from="1606342246061" duration="140000" />
+      <workItem from="1606389074914" duration="21104000" />
+      <workItem from="1606417926188" duration="4266000" />
+      <workItem from="1606422684924" duration="3551000" />
+      <workItem from="1606434185673" duration="109000" />
+      <workItem from="1606474000499" duration="526000" />
+    </task>
+    <task id="LOCAL-00001" summary="style: turkish char problem solved">
+      <created>1606324580860</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606324580860</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[#4] style: scss refactor done.">
+      <created>1606420484794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606420484794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[#4] feat(content): Added content as parameter">
+      <created>1606425714257</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606425714257</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[#4] feat(imageBox): Added parameters to ImageBox content">
+      <created>1606427041460</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606427041461</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="style: turkish char problem solved" />
+    <MESSAGE value="[#4] style: scss refactor done." />
+    <MESSAGE value="[#4] feat(content): Added content as parameter" />
+    <MESSAGE value="[#4] feat(imageBox): Added parameters to ImageBox content" />
+    <option name="LAST_COMMIT_MESSAGE" value="[#4] feat(imageBox): Added parameters to ImageBox content" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="183" y="131" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606406466668">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="183" y="111" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1606324419023" />
+    <state x="183" y="131" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1606406466668" />
+    <state x="284" y="253" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606401921875">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="284" y="253" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1606401921875" />
+    <state x="284" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1606395879437" />
+    <state x="371" y="241" key="EditFileWatcherDialog" timestamp="1606329717375">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="371" y="241" key="EditFileWatcherDialog/0.23.1440.877@0.23.1440.877" timestamp="1606329717375" />
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom" timestamp="1606434620562">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606426599791" />
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1606434620562" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center" timestamp="1606434620559">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606426599790" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1606434620559" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left" timestamp="1606434620557">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606426599790" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1606434620557" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right" timestamp="1606434620561">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606426599791" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1606434620561" />
+    <state x="144" y="79" key="MergeDialog" timestamp="1606420687494">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1606420687494" />
+    <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1606420700771">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1606420700771" />
+    <state x="326" y="86" width="900" height="722" key="SettingsEditor" timestamp="1606474050364">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="326" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606474050364" />
+    <state x="145" y="83" width="900" height="722" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1606417905171" />
+    <state x="319" y="187" key="Vcs.Push.Dialog.v2" timestamp="1606427047555">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="319" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606427047555" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606420965509">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1606420965508" />
+    <state x="144" y="192" width="670" height="693" key="run.anything.popup" timestamp="1606434199643">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="192" width="670" height="693" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1606434199643" />
+    <state x="144" y="210" width="670" height="675" key="run.anything.popup/0.23.1440.877@0.23.1440.877" timestamp="1606406953066" />
+    <state x="668" y="80" width="672" height="678" key="search.everywhere.popup" timestamp="1606403926998">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="668" y="80" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606403926998" />
+    <state x="668" y="101" width="672" height="661" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1606390442655" />
+  </component>
+</project>
