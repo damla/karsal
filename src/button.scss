@@ -1,0 +1,23 @@
+.custom-button {
+  background-color: transparent;
+  color: black;
+  width: 70px;
+  height: 50px;
+  border-radius: 3px;
+  border: 2px solid black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+
+  &.inverted {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+  }
+}
