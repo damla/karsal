@@ -1,1 +1,0 @@
-import "./about-us.styles.scss";
