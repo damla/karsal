@@ -1,12 +1,11 @@
 import Head from "next/head";
+import "./home.styles.scss";
 
 import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
 import Content from "../components/content/content.component";
 import ImageBox from "../components/image-box/image-box.component";
-
-import "./home.styles.scss";
 import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";

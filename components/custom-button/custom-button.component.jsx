@@ -1,13 +1,16 @@
 import "./custom-button.styles.scss";
+import Link from "next/link";
 
-export default function CustomButton({ children, scrollDown, inverted }) {
+export default function CustomButton({ href, children, scrollDown, inverted }) {
   return (
-    <button
-      className={`${scrollDown ? "scroll-button" : ""}${
-        inverted ? " inverted" : ""
-      }`}
-    >
-      {children}
-    </button>
+    <Link href={href ? href : "#"}>
+      <a
+        className={`${scrollDown ? "scroll-button" : ""}${
+          inverted ? " inverted" : ""
+        }`}
+      >
+        {children}
+      </a>
+    </Link>
   );
 }

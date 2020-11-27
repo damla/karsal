@@ -1,6 +1,8 @@
 .scroll-button {
+  display: flex;
   background-color: transparent;
   color: black;
+  align-items: center;
   max-width: 30rem;
   min-height: 50px;
   //border-radius: 3px;
@@ -9,6 +11,7 @@
   &:hover {
     background-color: black;
     color: white;
+    opacity: 1;
   }
 
   &.inverted {
@@ -21,7 +24,8 @@
     }
   }
 
-  .button-content{
+  .button-content {
+    width: 100%;
     padding: 0 25px;
     display: flex;
     justify-content: space-between;
