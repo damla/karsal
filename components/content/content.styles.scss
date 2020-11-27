@@ -1,8 +1,21 @@
 .content-container {
   min-width: 50%;
   height: 100%;
-  padding-top: 100px;
-  padding-left: 25px;
-  display: flex;
-  flex-direction: row;
+
+  .content {
+    display: flex;
+    padding-top: 150px;
+    padding-left: 25px;
+    max-width: 500px;
+    justify-content: space-between;
+  }
+  .content-body {
+    width: 80vw;
+  }
+
+  h1 {
+    font-family: "Zapf Humanist", serif;
+    font-size: xx-large;
+    font-weight: 200;
+  }
 }

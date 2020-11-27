@@ -16,13 +16,15 @@ export default function Content({ children, ...props }) {
           : {}
       }
     >
-      <Logo width={150} height={50} />
-      <div className="content-body">
-        <h2>test</h2>
-        <BlockQuote>test</BlockQuote>
-        <CustomButton scrollDown inverted>
-          <i>&#8594;</i>
-        </CustomButton>
+      <div className="content">
+        <Logo width={120} height={40} />
+        <div className="content-body">
+          <h1>Kumaşın Mimarı...</h1>
+          <BlockQuote>test</BlockQuote>
+          <CustomButton scrollDown inverted>
+            <i>&#8594;</i>
+          </CustomButton>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-@mixin white-bg {
-  background-color: white;
-  -webkit-box-shadow: 0 4px 8px -8px black;
-  -moz-box-shadow: 0 4px 8px -8px black;
-  box-shadow: 0 4px 8px -8px black;
+@import "../../../global/variables.scss";
+
+@mixin green-bg {
+  background-color: #f0f9f0;
+  border-bottom: 1px solid #495049;
 }
 
 @mixin change-color {
@@ -13,8 +13,6 @@
     color: $primary-color;
   }
 }
-
-@import "../../../global/variables.scss";
 
 .navbar-container {
   display: grid;
@@ -28,14 +26,14 @@
   transition: all 0.1s ease-in;
 
   &.scrolled {
-    @include white-bg;
+    @include green-bg;
     padding: 25px;
     top: 0;
     @include change-color;
   }
 
   &:hover {
-    @include white-bg;
+    @include green-bg;
     @include change-color;
   }
 }
