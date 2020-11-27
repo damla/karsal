@@ -19,9 +19,8 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/nextjs" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -42,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="nextjs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,7 +102,7 @@
       <workItem from="1606417926188" duration="4266000" />
       <workItem from="1606422684924" duration="3551000" />
       <workItem from="1606434185673" duration="109000" />
-      <workItem from="1606474000499" duration="258000" />
+      <workItem from="1606474000499" duration="526000" />
     </task>
     <task id="LOCAL-00001" summary="style: turkish char problem solved">
       <created>1606324580860</created>
@@ -150,7 +149,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/nextjs" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
