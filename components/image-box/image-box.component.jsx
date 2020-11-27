@@ -1,7 +1,7 @@
 import "./image-box.styles.scss";
 import Image from "next/image";
 
-export default function ImageBox({src, alt}) {
+export default function ImageBox({ src, alt, objectFit }) {
   return (
     <div className="image-container">
       <Image
@@ -9,7 +9,7 @@ export default function ImageBox({src, alt}) {
         src={src}
         alt={alt}
         layout="fill"
-        objectFit="cover"
+        objectFit={objectFit}
         priority="true"
       />
     </div>
