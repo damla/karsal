@@ -20,29 +20,38 @@ export default function Home() {
       </Head>
       <Layout>
         <Section>
-<<<<<<< HEAD
-          <Content BgColor={"#f0f9f0"}></Content>
-          <ImageBox />
-=======
-          <Content BgColor={"#f0f9f0"}
-                   left={<Logo width={120} height={40} />}
-                   title={"Kumaşın Mimarı..."}
-                   blockquote={
-                       <BlockQuote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</BlockQuote>}
-                   button={
-                       <CustomButton scrollDown>
-                           <div className="button-content">
-                               <span>Daha Fazlası</span><span>&#8594;</span>
-                           </div>
-                       </CustomButton>
-          }/>
-        <ImageBox src="/assets/images/section-1.jpg" alt="Picture of the fabric"/>
->>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4
+          <Content
+            BgColor={"#f0f9f0"}
+            left={<Logo width={120} height={40} />}
+            title={"Kumaşın Mimarı..."}
+            blockquote={
+              <BlockQuote>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting.
+              </BlockQuote>
+            }
+            button={
+              <CustomButton scrollDown>
+                <div className="button-content">
+                  <span>Daha Fazlası</span>
+                  <span>&#8594;</span>
+                </div>
+              </CustomButton>
+            }
+          />
+          <ImageBox
+            src="/assets/images/section-1.jpg"
+            alt="Picture of the fabric"
+          />
         </Section>
-        <Divider/>
-        <Section/>
-        <Divider/>
-        <Section/>
+        <Divider />
+        <Section />
+        <Divider />
+        <Section />
       </Layout>
     </>
   );

@@ -1,11 +1,8 @@
 @import "../../../global/variables.scss";
 
 @mixin green-bg {
-<<<<<<< HEAD
-  background-color: #f0f9f0;
-=======
   background-color: $background-color;
->>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4
+
   border-bottom: 1px solid #495049;
 }
 
@@ -31,11 +28,9 @@
 
   &.scrolled {
     @include green-bg;
-<<<<<<< HEAD
-    padding: 25px;
-=======
+
     padding: 1.5rem;
->>>>>>> 8521c68c81d5cf4ff85bab7474935cf64724c4f4
+
     top: 0;
     @include change-color;
   }
