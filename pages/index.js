@@ -10,9 +10,11 @@ import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
-export default function Home() {
+export default function Anasayfa() {
   const scroll = () => {
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -113,6 +115,7 @@ export default function Home() {
           />
         </Section>
         <Divider />
+        <button onClick={scroll}>test</button>
       </Layout>
     </>
   );
