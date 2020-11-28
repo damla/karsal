@@ -1,6 +1,5 @@
 import Head from "next/head";
 import "./home.styles.scss";
-import React, { useRef } from "react";
 
 import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
@@ -12,11 +11,13 @@ import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
 export default function Anasayfa() {
-  const scroll = () => {
+  function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
-      document.querySelector("#test").scrollIntoView({ behavior: "smooth" });
+      document
+        .querySelector(`#${sectionId}`)
+        .scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }
 
   return (
     <>
@@ -25,7 +26,7 @@ export default function Anasayfa() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Section>
+        <Section id="section-1">
           <Content
             BgColor={"#bed0bd97"}
             left={<Logo width={120} height={40} />}
@@ -41,14 +42,15 @@ export default function Anasayfa() {
               </BlockQuote>
             }
             button={
-              <div onClick={scroll}>
-                <CustomButton scrollDown>
-                  <div className="button-content">
-                    <span>Daha Fazlası</span>
-                    <span>&#8594;</span>
-                  </div>
-                </CustomButton>
-              </div>
+              <CustomButton
+                landingPage
+                onClick={() => scrollToSection("section-2")}
+              >
+                <div className="button-content">
+                  <span>Daha Fazlası</span>
+                  <span>&#8594;</span>
+                </div>
+              </CustomButton>
             }
           />
           <ImageBox
@@ -58,7 +60,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section id="test">
+        <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of the fabric"
@@ -78,7 +80,7 @@ export default function Anasayfa() {
               </BlockQuote>
             }
             button={
-              <CustomButton scrollDown>
+              <CustomButton landingPage>
                 <div className="button-content">
                   <span>Daha Fazlası</span>
                   <span>&#8594;</span>
@@ -88,7 +90,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section>
+        <Section id="section-3">
           <Content
             BgColor={"#50bdde35"}
             title={"Kumaşın Mimarı..."}
@@ -103,7 +105,7 @@ export default function Anasayfa() {
               </BlockQuote>
             }
             button={
-              <CustomButton scrollDown>
+              <CustomButton landingPage>
                 <div className="button-content">
                   <span>Daha Fazlası</span>
                   <span>&#8594;</span>
@@ -118,7 +120,6 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <button onClick={scroll}>test</button>
       </Layout>
     </>
   );
