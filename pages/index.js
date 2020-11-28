@@ -1,5 +1,6 @@
 import Head from "next/head";
 import "./home.styles.scss";
+import React, { useRef } from "react";
 
 import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
@@ -13,7 +14,7 @@ import Logo from "../components/logo/logo.component";
 export default function Anasayfa() {
   const scroll = () => {
     if (typeof window !== "undefined") {
-      window.scroll({ top: 0, left: 0, behavior: "smooth" });
+      document.querySelector("#test").scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -40,12 +41,14 @@ export default function Anasayfa() {
               </BlockQuote>
             }
             button={
-              <CustomButton scrollDown href="/#test">
-                <div className="button-content">
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
-                </div>
-              </CustomButton>
+              <div onClick={scroll}>
+                <CustomButton scrollDown>
+                  <div className="button-content">
+                    <span>Daha Fazlası</span>
+                    <span>&#8594;</span>
+                  </div>
+                </CustomButton>
+              </div>
             }
           />
           <ImageBox
