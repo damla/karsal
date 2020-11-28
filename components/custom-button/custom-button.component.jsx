@@ -11,7 +11,7 @@ export default function CustomButton({
 }) {
   return (
     <div onClick={onClick ? onClick : null}>
-      <Link href={href ? href : "#"} scroll={false}>
+      <Link href={href ? href : "/"} scroll={false}>
         <a
           className={`${landingPage ? "landing-page-button" : ""}${
             inverted ? " inverted" : ""
