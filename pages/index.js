@@ -26,7 +26,7 @@ export default function Anasayfa() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Section id="section-1">
+        <Section id="section-1" banner>
           <Content
             BgColor={"#bed0bd97"}
             left={<Logo width={120} height={40} />}

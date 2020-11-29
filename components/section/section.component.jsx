@@ -1,8 +1,15 @@
 import "./section.styles.scss";
+import classNames from "classnames";
 
-export default function Section({ id, children }) {
+export default function Section({ id, children, banner }) {
+  // banner height yuksek olsun gerisine yazilmasin
   return (
-    <section className="section-container" id={id ? id : null}>
+    <section
+      className={classNames("section-container", {
+        "section-container__banner": banner,
+      })}
+      id={id ? id : null}
+    >
       {children}
     </section>
   );
