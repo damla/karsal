@@ -1,9 +1,19 @@
 import "./content.styles.scss";
+import classNames from "classnames";
 
-export default function Content({ BgColor, left, title, blockquote, button }) {
+export default function Content({
+  BgColor,
+  left,
+  title,
+  blockquote,
+  button,
+  narrower,
+}) {
   return (
     <div
-      className="content-container"
+      className={classNames("content-container", {
+        "content-container__narrower": narrower,
+      })}
       style={
         BgColor
           ? {
