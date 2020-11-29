@@ -23,7 +23,6 @@ export default function ImageBox({
         layout="fill"
         objectFit={objectFit}
         priority={priority ? true : false}
-        loading={eager ? "eager" : "lazy"}
       />
     </div>
   );

@@ -55,7 +55,6 @@ export default function Anasayfa() {
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
             objectFit={"cover"}
-            eager
             priority
           />
         </Section>
@@ -66,7 +65,6 @@ export default function Anasayfa() {
             alt="Picture of yarns"
             objectFit={"fill"}
             wider
-            eager
             priority
           />
           <Content
@@ -123,6 +121,7 @@ export default function Anasayfa() {
             alt="Picture of yarns"
             objectFit={"cover"}
             wider
+            priority
           />
         </Section>
         <Divider />
