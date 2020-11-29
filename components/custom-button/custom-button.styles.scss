@@ -1,4 +1,4 @@
-.landing-page-button {
+.button {
   display: flex;
   background-color: transparent;
   color: black;
@@ -14,7 +14,7 @@
     opacity: 1;
   }
 
-  &.inverted {
+  &__inverted {
     background-color: black;
     color: white;
 

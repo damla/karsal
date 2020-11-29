@@ -1,21 +1,22 @@
 import "./custom-button.styles.scss";
 import Link from "next/link";
-// TODO: implement classNames
+import classNames from "classnames";
 
 export default function CustomButton({
   onClick,
   href,
   children,
-  landingPage,
+  button,
   inverted,
 }) {
   return (
     <div onClick={onClick ? onClick : null}>
       <Link href={href ? href : "/"} scroll={false}>
         <a
-          className={`${landingPage ? "landing-page-button" : ""}${
-            inverted ? " inverted" : ""
-          }`}
+          className={classNames({
+            button: button,
+            button__inverted: inverted,
+          })}
         >
           {children}
         </a>
