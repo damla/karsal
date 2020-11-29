@@ -57,7 +57,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section id="section-2">
+        <Section id="section-2" banner>
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of the fabric"
@@ -87,7 +87,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section id="section-3">
+        <Section id="section-3" banner>
           <Content
             BgColor={"#50bdde35"}
             title={"Kumaşın Mimarı..."}
