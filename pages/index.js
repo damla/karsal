@@ -31,7 +31,6 @@ export default function Anasayfa() {
             BgColor={"#bed0bd97"}
             left={<Logo width={120} height={40} />}
             title={"Kumaşın Mimarı..."}
-            wide
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -55,6 +54,8 @@ export default function Anasayfa() {
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
             objectFit={"cover"}
+            eager
+            priority
           />
         </Section>
         <Divider />
@@ -64,6 +65,8 @@ export default function Anasayfa() {
             alt="Picture of the fabric"
             objectFit={"fill"}
             wider
+            eager
+            priority
           />
           <Content
             narrower

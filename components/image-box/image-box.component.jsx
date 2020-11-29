@@ -2,7 +2,14 @@ import "./image-box.styles.scss";
 import Image from "next/image";
 import classNames from "classnames";
 
-export default function ImageBox({ src, alt, objectFit, wider }) {
+export default function ImageBox({
+  src,
+  alt,
+  objectFit,
+  wider,
+  eager,
+  priority,
+}) {
   return (
     <div
       className={classNames("image-container", {
@@ -15,7 +22,8 @@ export default function ImageBox({ src, alt, objectFit, wider }) {
         alt={alt}
         layout="fill"
         objectFit={objectFit}
-        priority="true"
+        priority={priority ? true : false}
+        loading={eager ? "eager" : "lazy"}
       />
     </div>
   );
