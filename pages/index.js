@@ -94,7 +94,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section id="section-3" banner>
+        <Section id="section-3">
           <Content
             narrower
             BgColor={"#f1f5f1"}
