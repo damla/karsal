@@ -59,7 +59,7 @@ export default function Anasayfa() {
           />
         </Section>
         <Divider />
-        <Section id="section-2" banner>
+        <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"
