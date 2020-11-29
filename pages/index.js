@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import "./home.styles.scss";
 
 import Divider from "../components/divider/divider.component";
@@ -54,17 +55,23 @@ export default function Anasayfa() {
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
             objectFit={"cover"}
+            eager
+            priority
           />
         </Section>
         <Divider />
         <Section id="section-2" banner>
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt="Picture of the fabric"
+            alt="Picture of yarns"
             objectFit={"fill"}
+            wider
+            eager
+            priority
           />
           <Content
-            BgColor={"#dce6e4"}
+            narrower
+            BgColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
@@ -89,7 +96,8 @@ export default function Anasayfa() {
         <Divider />
         <Section id="section-3" banner>
           <Content
-            BgColor={"#50bdde35"}
+            narrower
+            BgColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
@@ -112,8 +120,9 @@ export default function Anasayfa() {
           />
           <ImageBox
             src="/assets/images/section-3.jpg"
-            alt="Picture of the fabric"
+            alt="Picture of yarns"
             objectFit={"cover"}
+            wider
           />
         </Section>
         <Divider />

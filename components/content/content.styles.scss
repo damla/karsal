@@ -22,4 +22,13 @@
       }
     }
   }
+
+  &__narrower {
+    min-width: 45%;
+    align-items: start;
+
+    .content {
+      margin-top: 0;
+    }
+  }
 }
