@@ -29,7 +29,7 @@ export default function Anasayfa() {
       <Layout>
         <Section id="section-1" banner>
           <Content
-            BgColor={"#bed0bd97"}
+            BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
             title={"Kumaşın Mimarı..."}
             blockquote={
