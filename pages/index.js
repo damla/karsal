@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import "./home.styles.scss";
 
 import Divider from "../components/divider/divider.component";
@@ -62,7 +63,7 @@ export default function Anasayfa() {
         <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt="Picture of the fabric"
+            alt="Picture of yarns"
             objectFit={"fill"}
             wider
             eager
@@ -70,7 +71,7 @@ export default function Anasayfa() {
           />
           <Content
             narrower
-            BgColor={"#dce6e4"}
+            BgColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
@@ -96,7 +97,7 @@ export default function Anasayfa() {
         <Section id="section-3">
           <Content
             narrower
-            BgColor={"#50bdde35"}
+            BgColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
@@ -119,7 +120,7 @@ export default function Anasayfa() {
           />
           <ImageBox
             src="/assets/images/section-3.jpg"
-            alt="Picture of the fabric"
+            alt="Picture of yarns"
             objectFit={"cover"}
             wider
           />
