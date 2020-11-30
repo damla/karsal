@@ -1,9 +1,9 @@
 .image-container {
   position: relative;
-  width: 100%;
+  min-width: 50%;
   height: 100%;
 
   &__wider {
-    width: 55%;
+    min-width: 55%;
   }
 }
