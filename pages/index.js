@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import "./home.styles.scss";
 
-import Divider from "../components/divider/divider.component";
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
 import Content from "../components/content/content.component";
@@ -58,7 +57,6 @@ export default function Anasayfa() {
             priority
           />
         </Section>
-        <Divider />
         <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
@@ -91,7 +89,6 @@ export default function Anasayfa() {
             }
           />
         </Section>
-        <Divider />
         <Section id="section-3">
           <Content
             narrower
@@ -124,7 +121,6 @@ export default function Anasayfa() {
             priority
           />
         </Section>
-        <Divider />
       </Layout>
     </>
   );
