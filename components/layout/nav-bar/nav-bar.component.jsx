@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import classNames from "classnames";
 
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
 import "./nav-bar.styles.scss";
-import classNames from "classnames";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -23,7 +24,7 @@ export default function NavBar() {
 
   return (
     <nav className={classNames("navbar-container", { scrolled: scrolled })}>
-      <Menu align="left">
+      {/* <Menu align="left">
         <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
         <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
         <MenuItem href="/fabrika">FABRİKA</MenuItem>
@@ -35,6 +36,12 @@ export default function NavBar() {
           <span className="seperator">|</span>
           <MenuItem href="/katalog">TR</MenuItem>
         </div>
+      </Menu> */}
+
+      <Menu>
+        <MenuItem menu burger href="#">
+          <span className="burger-icon"></span>
+        </MenuItem>
       </Menu>
     </nav>
   );

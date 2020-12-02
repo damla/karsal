@@ -1,5 +1,5 @@
 @import "../../global/variables.scss";
-
+@import "~sass-burger/burger";
 .menu-item {
   color: $primary-font-color;
   font-weight: 200;
@@ -8,5 +8,15 @@
   &:hover {
     color: black;
     text-decoration: underline;
+  }
+
+  .burger-icon {
+    @include burger(25px, 3px, 5px, #444);
+  }
+
+  &.is-active {
+    .burger-icon {
+      @include burger-to-cross;
+    }
   }
 }
