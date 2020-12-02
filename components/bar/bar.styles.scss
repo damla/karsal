@@ -1,3 +1,5 @@
+@import "../../global/variables.scss";
+
 .bar-container {
   background-color: #2c2e2f;
   display: flex;
@@ -14,5 +16,15 @@
     letter-spacing: 0.1rem;
     font-size: 0.9rem;
     line-height: 1.5rem;
+  }
+
+  @media only screen and (max-width: $max-width-mobile) {
+    flex-direction: column-reverse;
+
+    a,
+    span {
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+    }
   }
 }
