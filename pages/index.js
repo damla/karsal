@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import "./home.styles.scss";
+import "./anasayfa.styles.scss";
 
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
@@ -57,7 +57,38 @@ export default function Anasayfa() {
             priority
           />
         </Section>
-        <Section id="section-2">
+        <Section id="section-1" banner>
+          <Content
+            BgColor={"#bed0bd20"}
+            left={<Logo width={120} height={40} />}
+            title={"Kumaşın Mimarı..."}
+            blockquote={
+              <BlockQuote>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting.
+              </BlockQuote>
+            }
+            button={
+              <CustomButton button onClick={() => scrollToSection("section-2")}>
+                <div className="button-content">
+                  <span>Daha Fazlası</span>
+                  <span>&#8594;</span>
+                </div>
+              </CustomButton>
+            }
+          />
+          <ImageBox
+            src="/assets/images/section-1.jpg"
+            alt="Picture of the fabric"
+            objectFit={"cover"}
+            priority
+          />
+        </Section>
+        {/* <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"
@@ -88,8 +119,8 @@ export default function Anasayfa() {
               </CustomButton>
             }
           />
-        </Section>
-        <Section id="section-3">
+        </Section> */}
+        {/* <Section id="section-3">
           <Content
             narrower
             BgColor={"#f1f5f1"}
@@ -120,7 +151,7 @@ export default function Anasayfa() {
             wider
             priority
           />
-        </Section>
+        </Section> */}
       </Layout>
     </>
   );
