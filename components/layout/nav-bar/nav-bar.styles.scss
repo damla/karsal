@@ -2,14 +2,11 @@
 
 @mixin green-bg {
   background-color: $background-color;
-
   border-bottom: 1px solid #495049;
 }
 
 @mixin change-color {
-  a {
-    color: $primary-font-color;
-  }
+  a,
   .seperator {
     color: $primary-font-color;
   }
@@ -22,15 +19,13 @@
   align-items: center;
   z-index: 3;
   position: fixed;
-  top: 2.4rem;
+  top: 2.4rem; // TODO: Burayi kontrol et!
   width: 100%;
   transition: all 0.1s ease-in;
 
   &.scrolled {
     @include green-bg;
-
     padding: 1.5rem;
-
     top: 0;
     @include change-color;
   }
@@ -38,5 +33,33 @@
   &:hover {
     @include green-bg;
     @include change-color;
+  }
+
+  @media only screen and (max-width: $max-width-mobile) {
+    top: 3.3rem;
+  }
+
+  @media only screen and (min-width: $max-width-mobile) and (max-width: $max-width-laptop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem;
+    align-items: center;
+    z-index: 3;
+    position: fixed;
+    top: 2.4rem; // TODO: Burayi kontrol et!
+    width: 100%;
+    transition: all 0.1s ease-in;
+
+    &.scrolled {
+      @include green-bg;
+      padding: 1.5rem;
+      top: 0;
+      @include change-color;
+    }
+
+    &:hover {
+      @include green-bg;
+      @include change-color;
+    }
   }
 }
