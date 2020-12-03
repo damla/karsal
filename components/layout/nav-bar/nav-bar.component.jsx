@@ -13,6 +13,11 @@ const useIsomorphicLayoutEffect =
 export default function NavBar() {
   const [scrolled, setScrolled] = React.useState(false);
 
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1131px)",
+  });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1130px)" });
+
   useIsomorphicLayoutEffect(() => {
     const handleScroll = () =>
       window.scrollY > 0 ? setScrolled(true) : setScrolled(false);
@@ -24,25 +29,31 @@ export default function NavBar() {
 
   return (
     <nav className={classNames("navbar-container", { scrolled: scrolled })}>
-      {/* <Menu align="left">
-        <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
-        <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
-        <MenuItem href="/fabrika">FABRİKA</MenuItem>
-        <MenuItem href="/katalog">KATALOG</MenuItem>
-      </Menu>
-      <Menu align="right">
-        <div className="lang-container">
-          <MenuItem href="/katalog">EN</MenuItem>
-          <span className="seperator">|</span>
-          <MenuItem href="/katalog">TR</MenuItem>
-        </div>
-      </Menu> */}
+      {isDesktopOrLaptop && (
+        <>
+          <Menu align="left">
+            <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
+            <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
+            <MenuItem href="/fabrika">FABRİKA</MenuItem>
+            <MenuItem href="/katalog">KATALOG</MenuItem>
+          </Menu>
+          <Menu align="right">
+            <div className="lang-container">
+              <MenuItem href="/katalog">EN</MenuItem>
+              <span className="seperator">|</span>
+              <MenuItem href="/katalog">TR</MenuItem>
+            </div>
+          </Menu>
+        </>
+      )}
 
-      <Menu>
-        <MenuItem menu burger href="#">
-          <span className="burger-icon"></span>
-        </MenuItem>
-      </Menu>
+      {isTabletOrMobile && (
+        <Menu>
+          <MenuItem menu burger href="#">
+            <span className="burger-icon"></span>
+          </MenuItem>
+        </Menu>
+      )}
     </nav>
   );
 }
