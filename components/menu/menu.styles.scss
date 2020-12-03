@@ -3,15 +3,15 @@ $margin-between-links: 1.7rem;
 
 .menu-container {
   display: flex;
-  flex: 1;
   &__left {
+    flex-basis: 30%;
     flex-direction: row;
     justify-content: space-between;
   }
 
   &__right {
     flex-direction: row-reverse;
-    flex: 3;
+    flex-basis: 70%;
     .lang-container {
       display: flex;
       .seperator {
