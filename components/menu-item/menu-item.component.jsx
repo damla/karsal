@@ -11,7 +11,7 @@ export default function MenuItem({ burger, href, children }) {
   };
 
   return (
-    <div onClick={burger ? onClickHandler : null}>
+    <li onClick={burger ? onClickHandler : null}>
       <Link href={href}>
         <>
           <a
@@ -25,6 +25,6 @@ export default function MenuItem({ burger, href, children }) {
           </a>
         </>
       </Link>
-    </div>
+    </li>
   );
 }
