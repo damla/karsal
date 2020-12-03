@@ -13,8 +13,7 @@
 }
 
 .navbar-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   padding: 1.5rem;
   align-items: center;
   z-index: 3;
