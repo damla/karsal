@@ -49,7 +49,7 @@ export default function NavBar() {
 
       {isTabletOrMobile && (
         <Menu>
-          <MenuItem menu burger href="#">
+          <MenuItem burger href="#">
             <span className="burger-icon"></span>
           </MenuItem>
         </Menu>

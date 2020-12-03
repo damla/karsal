@@ -3,7 +3,7 @@ import "./menu-item.styles.scss";
 import classNames from "classnames";
 import React, { useState } from "react";
 
-export default function MenuItem({ menu, burger, href, children }) {
+export default function MenuItem({ burger, href, children }) {
   const [menuActive, setMenuState] = useState(false);
 
   const onClickHandler = () => {
@@ -16,7 +16,7 @@ export default function MenuItem({ menu, burger, href, children }) {
         <>
           <a
             className={classNames(
-              { "menu-item": menu },
+              "menu-item",
               { "hamburger-button": burger },
               { "is-active": menuActive }
             )}
