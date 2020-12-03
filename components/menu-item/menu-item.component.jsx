@@ -11,7 +11,7 @@ export default function MenuItem({ burger, href, children }) {
   };
 
   return (
-    <div onClick={onClickHandler}>
+    <div onClick={burger ? onClickHandler : null}>
       <Link href={href}>
         <>
           <a

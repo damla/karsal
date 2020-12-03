@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import classNames from "classnames";
 
+import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
@@ -49,7 +50,12 @@ export default function NavBar() {
 
       {isTabletOrMobile && (
         <>
-          <Menu>
+          <Menu align="left">
+            <MenuItem href="/">
+              <Logo width={120} height={40} />
+            </MenuItem>
+          </Menu>
+          <Menu align="right">
             <MenuItem burger href="#">
               <span className="burger-icon"></span>
             </MenuItem>
