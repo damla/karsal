@@ -11,11 +11,12 @@
     color: black;
     text-decoration: underline;
   }
+}
 
+.hamburger-button {
   .burger-icon {
     @include burger(25px, 3px, 5px, #444);
   }
-
   &.is-active {
     .burger-icon {
       @include burger-to-cross;

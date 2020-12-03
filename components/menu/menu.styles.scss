@@ -6,13 +6,11 @@ $margin-between-links: 1.7rem;
 
   &__left {
     flex-direction: row;
-    max-width: 60%;
     justify-content: space-between;
   }
 
   &__right {
     flex-direction: row-reverse;
-
     .lang-container {
       display: flex;
       .seperator {

@@ -48,11 +48,13 @@ export default function NavBar() {
       )}
 
       {isTabletOrMobile && (
-        <Menu>
-          <MenuItem burger href="#">
-            <span className="burger-icon"></span>
-          </MenuItem>
-        </Menu>
+        <>
+          <Menu>
+            <MenuItem burger href="#">
+              <span className="burger-icon"></span>
+            </MenuItem>
+          </Menu>
+        </>
       )}
     </nav>
   );
