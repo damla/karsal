@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import "./logo.styles.scss";
 
 export default function Logo({ width, height }) {
