@@ -12,16 +12,14 @@ export default function CustomButton({
   return (
     <div onClick={onClick ? onClick : null}>
       <Link href={href ? href : "/"} scroll={false}>
-        <>
-          <a
-            className={classNames({
-              button: button,
-              button__inverted: inverted,
-            })}
-          >
-            {children}
-          </a>
-        </>
+        <a
+          className={classNames({
+            button: button,
+            button__inverted: inverted,
+          })}
+        >
+          {children}
+        </a>
       </Link>
     </div>
   );
