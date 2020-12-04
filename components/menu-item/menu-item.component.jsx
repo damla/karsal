@@ -4,26 +4,24 @@ import classNames from "classnames";
 import React, { useState } from "react";
 
 export default function MenuItem({ burger, href, children }) {
-  const [menuActive, setMenuState] = useState(false);
+  const [menuActive, setMenuState] = useState(false); // navbar button
 
   const onClickHandler = () => {
     setMenuState(!menuActive);
   };
-
+  // TODO: Ignore error from here
   return (
     <li onClick={burger ? onClickHandler : null}>
       <Link href={href}>
-        <>
-          <a
-            className={classNames(
-              "menu-item",
-              { "hamburger-button": burger },
-              { "is-active": menuActive }
-            )}
-          >
-            {children}
-          </a>
-        </>
+        <a
+          className={classNames(
+            "menu-item",
+            { "hamburger-button": burger },
+            { "is-active": menuActive }
+          )}
+        >
+          {children}
+        </a>
       </Link>
     </li>
   );
