@@ -9,8 +9,9 @@ import ImageBox from "../components/image-box/image-box.component";
 import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
+import { connectToDatabase } from "../util/mongodb";
 
-export default function Anasayfa() {
+export default function Anasayfa({ isConnected }) {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
@@ -155,4 +156,13 @@ export default function Anasayfa() {
       </Layout>
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const { client } = await connectToDatabase();
+
+  const isConnected = await client.isConnected(); // Returns true or false
+
+  return {
+    props: { isConnected },
+  };
 }
