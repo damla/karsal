@@ -19,7 +19,7 @@ export default function Anasayfa({ isConnected }) {
         .scrollIntoView({ behavior: "smooth" });
     }
   }
-  isConnected ? console.log("connected") : console.log("not connected");
+
   return (
     <>
       <Head>
@@ -157,12 +157,15 @@ export default function Anasayfa({ isConnected }) {
     </>
   );
 }
-export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase();
 
-  const isConnected = await client.isConnected(); // Returns true or false
+export async function getStaticProps() {
+  const { db } = await connectToDatabase();
 
+  const content = await db.collection("Content").find({}).toArray();
+  console.log(content);
   return {
-    props: { isConnected },
+    props: {
+      content: JSON.stringify(content),
+    },
   };
 }
