@@ -19,7 +19,7 @@ export default function Anasayfa({ isConnected }) {
         .scrollIntoView({ behavior: "smooth" });
     }
   }
-
+  isConnected ? console.log("connected") : console.log("not connected");
   return (
     <>
       <Head>
