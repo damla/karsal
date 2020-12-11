@@ -11,7 +11,7 @@ import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 import { connectToDatabase } from "../util/mongodb";
 
-export default function Anasayfa({ isConnected }) {
+export default function Anasayfa() {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
