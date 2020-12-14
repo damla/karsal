@@ -1,7 +1,5 @@
 import Head from "next/head";
 
-import "./anasayfa.styles.scss";
-
 import Layout from "../components/layout/layout.component";
 import Section from "../components/section/section.component";
 import Content from "../components/content/content.component";
