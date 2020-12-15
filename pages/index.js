@@ -156,11 +156,12 @@ export default function Anasayfa() {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const { db } = await connectToDatabase();
 
   const content = await db.collection("Content").find({}).toArray();
-  console.log(content);
+  console.log(locale);
+
   return {
     props: {
       content: JSON.stringify(content),
