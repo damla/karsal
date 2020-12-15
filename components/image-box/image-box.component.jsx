@@ -2,14 +2,7 @@ import "./image-box.styles.scss";
 import Image from "next/image";
 import classNames from "classnames";
 
-export default function ImageBox({
-  src,
-  alt,
-  objectFit,
-  wider,
-  eager,
-  priority,
-}) {
+export default function ImageBox({ src, alt, objectFit, wider, priority }) {
   return (
     <div
       className={classNames("image-container", {

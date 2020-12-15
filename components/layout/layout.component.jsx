@@ -4,8 +4,6 @@ import Bar from "../bar/bar.component";
 import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
-import Menu from "../menu/menu.component";
-import MenuItem from "../menu-item/menu-item.component";
 
 import { useMediaQuery } from "react-responsive";
 

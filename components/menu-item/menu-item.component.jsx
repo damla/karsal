@@ -9,7 +9,7 @@ export default function MenuItem({ burger, href, children }) {
   const onClickHandler = () => {
     setMenuState(!menuActive);
   };
-  // TODO: Ignore error from here
+  // TODO: Ignore warning from here
   return (
     <li onClick={burger ? onClickHandler : null}>
       <Link href={href}>
