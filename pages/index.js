@@ -160,7 +160,7 @@ export async function getStaticProps({ locale }) {
   const { db } = await connectToDatabase();
 
   const content = await db.collection("Content").find({}).toArray();
-  console.log(locale);
+  console.log(content);
 
   return {
     props: {
