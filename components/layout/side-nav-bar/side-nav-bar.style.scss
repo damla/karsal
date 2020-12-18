@@ -1,0 +1,19 @@
+@import "../../../global/variables.scss";
+
+.sidenavbar__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  background-color: $background-color;
+  border-left: 1px solid black;
+  -webkit-box-shadow: -8px 0px 12px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -8px 0px 12px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: -8px 0px 12px -7px rgba(0, 0, 0, 0.75);
+  z-index: 99;
+
+  @media only screen and (max-width: $max-width-tabletOrMobile) {
+    width: 50%;
+  }
+}
