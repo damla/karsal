@@ -1,3 +1,5 @@
+@import "../../global/variables.scss";
+
 .content-container {
   min-width: 50%;
   min-height: 100%;
@@ -19,6 +21,11 @@
         font-family: "Zaph Humanist", sans-serif;
         font-weight: 200;
         font-size: 2rem;
+      }
+    }
+    @media only screen and (max-width: $max-width-tabletOrMobile) {
+      &__left {
+        display: none;
       }
     }
   }
