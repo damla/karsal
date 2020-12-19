@@ -3,10 +3,10 @@ import MenuItem from "../../menu-item/menu-item.component";
 
 import "./side-nav-bar.style.scss";
 
-export default function SideNavBar() {
+export default function SideNavBar({ hamburgerButton }) {
   return (
     <div className="sidenavbar__container">
-      <HamburgerButton menuActive />
+      {hamburgerButton}
       <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
       <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
       <MenuItem href="/fabrika">FABRİKA</MenuItem>

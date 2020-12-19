@@ -1,5 +1,4 @@
 import "./hamburger-button.style.scss";
-import { useState } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 

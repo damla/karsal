@@ -5,14 +5,13 @@ import classNames from "classnames";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
-import HamburgerButton from "../../hamburger-button/hamburger-button.component";
 
 import "./nav-bar.styles.scss";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export default function NavBar() {
+export default function NavBar({ hamburgerButton }) {
   const [scrolled, setScrolled] = React.useState(false);
 
   const isDesktopOrLaptop = useMediaQuery({
@@ -57,9 +56,7 @@ export default function NavBar() {
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="/">
-              <HamburgerButton />
-            </MenuItem>
+            <MenuItem href="/">{hamburgerButton}</MenuItem>
           </Menu>
         </>
       )}

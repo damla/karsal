@@ -11,7 +11,7 @@ import { useMediaQuery } from "react-responsive";
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
-  /* TODO: homepage navbar won't be active, sidebar will be active. */
+
   return (
     <div className="layout-container">
       <Announcement>
@@ -45,8 +45,8 @@ export default function Layout({ children }) {
           )}
         </Bar>
       </Announcement>
-      <SideNavBar />
-      <NavBar />
+      <SideNavBar hamburgerButton={<HamburgerButton menuActive />} />
+      <NavBar hamburgerButton={<HamburgerButton />} />
       {children}
       <Footer />
     </div>
