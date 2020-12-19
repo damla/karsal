@@ -1,27 +1,13 @@
 import Link from "next/link";
+
 import "./menu-item.styles.scss";
-import classNames from "classnames";
-import React, { useState } from "react";
 
-export default function MenuItem({ burger, href, children }) {
-  const [menuActive, setMenuState] = useState(false); // navbar button
-
-  const onClickHandler = () => {
-    setMenuState(!menuActive);
-  };
+export default function MenuItem({ href, children }) {
   // TODO: Ignore warning from here
   return (
-    <li onClick={burger ? onClickHandler : null}>
+    <li>
       <Link href={href}>
-        <a
-          className={classNames(
-            "menu-item",
-            { "hamburger-button": burger },
-            { "is-active": menuActive }
-          )}
-        >
-          {children}
-        </a>
+        <a className={"menu-item"}>{children}</a>
       </Link>
     </li>
   );

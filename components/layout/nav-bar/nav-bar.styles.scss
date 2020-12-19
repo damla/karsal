@@ -2,7 +2,7 @@
 
 @mixin green-bg {
   background-color: $background-color;
-  border-bottom: 1px solid #495049;
+  border-bottom: 1px solid $border-color;
 }
 
 @mixin change-color {

@@ -5,12 +5,13 @@ import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
 import SideNavBar from "./side-nav-bar/side-nav-bar.component";
+import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
-
+  /* TODO: homepage navbar won't be active, sidebar will be active. */
   return (
     <div className="layout-container">
       <Announcement>

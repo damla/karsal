@@ -5,6 +5,7 @@ import classNames from "classnames";
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
+import HamburgerButton from "../../hamburger-button/hamburger-button.component";
 
 import "./nav-bar.styles.scss";
 
@@ -56,8 +57,8 @@ export default function NavBar() {
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem burger href="#">
-              <span className="burger-icon"></span>
+            <MenuItem href="/">
+              <HamburgerButton />
             </MenuItem>
           </Menu>
         </>
