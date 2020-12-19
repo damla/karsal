@@ -8,11 +8,12 @@
   width: 50%;
   height: 100%;
   transition: all 0.5s ease 0s;
-  z-index: 90;
+  z-index: 999;
 
   @media only screen and (max-width: $max-width-tabletOrMobile) {
     right: 0;
   }
+
   @media only screen and (max-width: $max-width-mobile) {
     width: 100%;
     border-left: unset;
