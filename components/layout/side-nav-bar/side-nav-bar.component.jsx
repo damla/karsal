@@ -18,7 +18,7 @@ export default function SideNavBar({ hamburgerButton, isOpen }) {
         <MenuItem href="/katalog">KATALOG</MenuItem>
       </div>
       <div className="sidebar__footer">
-        <small>Tüm hakları saklıdır 2020 © Karsal Örme A. Ş.</small>
+        <small>Tüm hakları saklıdır. 2020 © Karsal Örme A. Ş.</small>
       </div>
     </div>
   );
