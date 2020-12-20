@@ -16,6 +16,10 @@ export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const [isOpen, setIsOpen] = useState(false);
 
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1131px)",
+  });
+
   const onClickHandler = () => {
     setIsOpen(!isOpen);
   };
@@ -67,7 +71,7 @@ export default function Layout({ children }) {
           }
         />
       ) : null}
-      {isOpen ? null : (
+      {(isDesktopOrLaptop ? false : isOpen) ? null : (
         <NavBar
           hamburgerButton={
             <HamburgerButton
