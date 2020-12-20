@@ -1,0 +1,17 @@
+@import "~sass-burger/burger";
+
+.hamburger-button__container {
+  display: flex;
+  max-width: 25px;
+
+  .hamburger-button {
+    .burger-icon {
+      @include burger(25px, 3px, 5px, #444);
+    }
+    &.is-active {
+      .burger-icon {
+        @include burger-to-cross;
+      }
+    }
+  }
+}

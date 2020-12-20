@@ -5,14 +5,27 @@ import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
 import SideNavBar from "./side-nav-bar/side-nav-bar.component";
+import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
+
+import classNames from "classnames";
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClickHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className="layout-container">
+    <div
+      className={classNames("layout-container", {
+        "layout-container__sidebarOpen": isOpen,
+      })}
+    >
       <Announcement>
         <Bar>
           {isMobile ? (
@@ -44,8 +57,26 @@ export default function Layout({ children }) {
           )}
         </Bar>
       </Announcement>
-      <SideNavBar />
-      <NavBar />
+      {isOpen ? (
+        <SideNavBar
+          hamburgerButton={
+            <HamburgerButton
+              onClickHandler={onClickHandler}
+              menuActive={true}
+            />
+          }
+        />
+      ) : null}
+      {isOpen ? null : (
+        <NavBar
+          hamburgerButton={
+            <HamburgerButton
+              onClickHandler={onClickHandler}
+              menuActive={false}
+            />
+          }
+        />
+      )}
       {children}
       <Footer />
     </div>

@@ -11,7 +11,7 @@ import "./nav-bar.styles.scss";
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export default function NavBar() {
+export default function NavBar({ hamburgerButton }) {
   const [scrolled, setScrolled] = React.useState(false);
 
   const isDesktopOrLaptop = useMediaQuery({
@@ -56,9 +56,7 @@ export default function NavBar() {
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem burger href="#">
-              <span className="burger-icon"></span>
-            </MenuItem>
+            <MenuItem href="/">{hamburgerButton}</MenuItem>
           </Menu>
         </>
       )}
