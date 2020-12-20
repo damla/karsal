@@ -2,15 +2,9 @@ import "./hamburger-button.style.scss";
 import Link from "next/link";
 import classNames from "classnames";
 
-export default function HamburgerButton({ menuActive }) {
-  // const [menuActive, setMenuState] = useState(false);
-
-  // const onClickHandler = () => {
-  //   setMenuState(!menuActive);
-  // };
-
+export default function HamburgerButton({ menuActive, onClickHandler }) {
   return (
-    <li className="hamburger-button__container">
+    <li className="hamburger-button__container" onClick={onClickHandler}>
       <Link href="#">
         <a
           className={classNames("menu-item hamburger-button", {
