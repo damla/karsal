@@ -67,7 +67,7 @@ export default function Layout({ children }) {
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
         }
       />
-      {(isDesktopOrLaptop ? false : isOpen) ? null : (
+      {(isDesktopOrLaptop ? false : isOpen) || (
         <NavBar
           hamburgerButton={
             <HamburgerButton
