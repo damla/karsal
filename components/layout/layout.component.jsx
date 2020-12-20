@@ -61,16 +61,12 @@ export default function Layout({ children }) {
           )}
         </Bar>
       </Announcement>
-      {isOpen ? (
-        <SideNavBar
-          hamburgerButton={
-            <HamburgerButton
-              onClickHandler={onClickHandler}
-              menuActive={true}
-            />
-          }
-        />
-      ) : null}
+      <SideNavBar
+        isOpen={isOpen}
+        hamburgerButton={
+          <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
+        }
+      />
       {(isDesktopOrLaptop ? false : isOpen) ? null : (
         <NavBar
           hamburgerButton={
@@ -86,3 +82,5 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+// class olarak transition ekle, sidebar-active gibi

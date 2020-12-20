@@ -10,8 +10,11 @@
   transition: all 0.5s ease 0s;
   z-index: 999;
 
-  @media only screen and (max-width: $max-width-tabletOrMobile) {
+  &--active {
     right: 0;
+  }
+  @media only screen and (min-width: $max-width-tabletOrMobile) {
+    right: -100%;
   }
 
   @media only screen and (max-width: $max-width-mobile) {
