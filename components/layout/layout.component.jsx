@@ -8,7 +8,7 @@ import SideNavBar from "./side-nav-bar/side-nav-bar.component";
 import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import classNames from "classnames";
 
@@ -20,8 +20,18 @@ export default function Layout({ children }) {
     query: "(min-width: 1131px)",
   });
 
+  useEffect(() => {
+    if (typeof window !== "undefined") disableScrollBody(isOpen);
+  }, [isOpen]);
+
   const onClickHandler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const disableScrollBody = (isOpen) => {
+    isOpen
+      ? document.querySelector("body").classList.add("disableScroll")
+      : document.querySelector("body").classList.remove("disableScroll");
   };
 
   return (
@@ -82,5 +92,3 @@ export default function Layout({ children }) {
     </div>
   );
 }
-
-// class olarak transition ekle, sidebar-active gibi
