@@ -9,6 +9,7 @@
   width: 50%;
   height: 100vh;
   transition: all 0.5s ease 0s;
+  overflow-y: auto;
   z-index: 999;
 
   &--active {
