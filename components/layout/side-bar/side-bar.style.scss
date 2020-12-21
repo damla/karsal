@@ -1,6 +1,6 @@
 @import "../../../global/variables.scss";
 
-.sidenavbar__container {
+.sidebar__container {
   padding: 2rem 1.5rem 0.5rem 1.5rem;
   background-color: $background-color;
   border-left: 1px solid $border-color;
@@ -11,6 +11,7 @@
   transition: all 0.5s ease 0s;
   overflow-y: auto;
   z-index: 999;
+  top: 0;
 
   &--active {
     right: 0;
@@ -66,6 +67,7 @@
   }
 
   @media only screen and (max-width: $max-width-mobile) {
+    top: 2.4rem;
     width: 100%;
     border-left: unset;
   }

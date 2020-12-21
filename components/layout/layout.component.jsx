@@ -4,7 +4,7 @@ import Bar from "../bar/bar.component";
 import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
-import SideNavBar from "./side-nav-bar/side-nav-bar.component";
+import SideBar from "./side-bar/side-bar.component";
 import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
@@ -71,7 +71,7 @@ export default function Layout({ children }) {
           )}
         </Bar>
       </Announcement>
-      <SideNavBar
+      <SideBar
         isOpen={isOpen}
         hamburgerButton={
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
