@@ -1,13 +1,12 @@
 import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
-import Logo from "../../logo/logo.component";
-import "./side-nav-bar.style.scss";
+import "./side-bar.style.scss";
 
-export default function SideNavBar({ hamburgerButton, isOpen }) {
+export default function SideBar({ hamburgerButton, isOpen }) {
   return (
     <div
-      className={classNames("sidenavbar__container", {
-        "sidenavbar__container--active": isOpen,
+      className={classNames("sidebar__container", {
+        "sidebar__container--active": isOpen,
       })}
     >
       <div className="sidebar__top">{hamburgerButton}</div>
