@@ -77,6 +77,7 @@
       align-items: flex-end;
       padding-right: 3rem;
       height: 35vh;
+      padding-bottom: 2rem;
 
       @media only screen and (max-width: $max-width-tablet) {
         flex-direction: column;
