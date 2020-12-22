@@ -3,4 +3,8 @@ $primary-font-color: #45464c;
 $border-color: #495049;
 
 $max-width-mobile: 475px;
+$max-width-tablet: 768px;
 $max-width-tabletOrMobile: 1130px;
+
+$min-width-middleStart: $max-width-mobile;
+$max-width-middleEnd: 610px;
