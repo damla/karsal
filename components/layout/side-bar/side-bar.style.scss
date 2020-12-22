@@ -1,17 +1,20 @@
 @import "../../../global/variables.scss";
 
 .sidebar__container {
-  padding: 2rem 1.5rem 0.5rem 1.5rem;
+  position: fixed;
+  padding: 4rem 2rem 0.5rem 1.5rem;
   background-color: $background-color;
   border-left: 1px solid $border-color;
-  position: fixed;
   right: -100%;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   transition: all 0.5s ease 0s;
   overflow-y: auto;
   z-index: 999;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &--active {
     right: 0;
@@ -29,7 +32,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    height: 70vh;
+    height: 50vh;
 
     li {
       padding-top: 1rem;
@@ -59,8 +62,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 10%;
-    height: 15vh;
+    padding-right: 2rem;
+    height: 35vh;
   }
   @media only screen and (min-width: $max-width-tabletOrMobile) {
     right: -100%;
@@ -68,6 +71,7 @@
 
   @media only screen and (max-width: $max-width-mobile) {
     top: 2.4rem;
+    padding: 2rem 2rem 0.5rem 1.5rem;
     width: 100%;
     border-left: unset;
   }
