@@ -12,7 +12,9 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function NavBar({ hamburgerButton }) {
-  const [scrolled, setScrolled] = React.useState(false);
+  const [isScrolled, setScrolled] = React.useState(
+    typeof window !== "undefined" && window.scrollY > 0
+  );
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
@@ -29,7 +31,7 @@ export default function NavBar({ hamburgerButton }) {
   }, []);
 
   return (
-    <nav className={classNames("navbar-container", { scrolled: scrolled })}>
+    <nav className={classNames("navbar-container", { scrolled: isScrolled })}>
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
