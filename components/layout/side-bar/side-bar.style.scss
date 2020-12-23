@@ -40,7 +40,7 @@
       align-items: center;
       flex-direction: column;
       justify-content: space-around;
-      height: 50vh;
+      height: 70vh;
 
       li {
         padding-top: 1rem;
@@ -50,13 +50,14 @@
         padding-bottom: 5px;
         border-bottom: 2px solid $border-color;
         transition: all 0.5s ease 0s;
+        margin-bottom: 0.5rem;
 
         &:hover {
           transform: translateX(1rem);
         }
 
         a {
-          font-size: 2rem;
+          font-size: 1.7rem;
           font-family: "SuisseInt-Regular";
           font-weight: 200;
 
@@ -83,6 +84,10 @@
         flex-direction: column;
         align-items: center;
         padding-right: 0;
+      }
+
+      @media only screen and (max-width: $max-width-mobile) {
+        padding-bottom: 1rem;
       }
     }
   }
