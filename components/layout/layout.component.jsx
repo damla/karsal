@@ -8,21 +8,41 @@ import SideBar from "./side-bar/side-bar.component";
 import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 import classNames from "classnames";
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
   });
 
+  useIsomorphicLayoutEffect(() => {
+    const handleScroll = () =>
+      window.scrollY > 0 ? setScrolled(true) : setScrolled(false);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     if (typeof window !== "undefined") disableScrollBody(isOpen);
   }, [isOpen]);
+
+  useIsomorphicLayoutEffect(() => {
+    if (isOpen) {
+      if (isScrolled) {
+      }
+    }
+  }, [isOpen, isScrolled]);
 
   const onClickHandler = () => {
     setIsOpen(!isOpen);
@@ -72,6 +92,7 @@ export default function Layout({ children }) {
         </Bar>
       </Announcement>
       <SideBar
+        stickToTop={isOpen && isScrolled}
         isOpen={isOpen}
         hamburgerButton={
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />

@@ -95,5 +95,8 @@
     top: 2.4rem;
     width: 100%;
     border-left: unset;
+    &.sidebar__mobile--active {
+      top: 0;
+    }
   }
 }
