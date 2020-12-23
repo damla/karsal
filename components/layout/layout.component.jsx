@@ -92,7 +92,6 @@ export default function Layout({ children }) {
         </Bar>
       </Announcement>
       <SideBar
-        stickToTop={isOpen && isScrolled}
         isOpen={isOpen}
         hamburgerButton={
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />

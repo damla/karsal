@@ -2,12 +2,11 @@ import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
 import "./side-bar.style.scss";
 
-export default function SideBar({ hamburgerButton, isOpen, stickToTop }) {
+export default function SideBar({ hamburgerButton, isOpen }) {
   return (
     <div
       className={classNames("sidebar", {
         "sidebar--active": isOpen,
-        "sidebar__mobile--active": stickToTop,
       })}
     >
       <div className="sidebar__container">
