@@ -57,7 +57,7 @@ export default function Anasayfa() {
             priority
           />
         </Section>
-        <Section id="section-1" banner>
+        {/* <Section id="section-1" banner>
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
@@ -87,7 +87,7 @@ export default function Anasayfa() {
             objectFit={"cover"}
             priority
           />
-        </Section>
+        </Section> */}
         {/* <Section id="section-2">
           <ImageBox
             src="/assets/images/section-2.jpg"
