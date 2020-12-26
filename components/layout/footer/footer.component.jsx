@@ -5,7 +5,10 @@ export default function Footer() {
   return (
     <div className="footer-container">
       <Bar height={"7vh"}>
-        <span>Tüm hakları saklıdır. 2020 © Karsal Örme A. Ş.</span>
+        <div className="footer-container__copyright">
+          <span>Tüm hakları saklıdır.&nbsp;</span>
+          <span>2020 © Karsal Örme A. Ş.</span>
+        </div>
         <span>
           <a href="mailto:info@karsalorme.com.tr">info@karsalorme.com.tr</a>
           &nbsp;|&nbsp;
