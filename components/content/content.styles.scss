@@ -6,7 +6,7 @@
   flex-grow: 1;
   flex-basis: 50vw;
 
-  @media only screen and (max-width: $max-width-mobile) {
+  @media only screen and (max-width: $max-width-tablet) {
     min-height: 100vh;
     justify-content: center;
     flex-basis: unset;
@@ -44,7 +44,7 @@
       margin-top: 0;
     }
 
-    @media only screen and (max-width: $max-width-mobile) {
+    @media only screen and (max-width: $max-width-tablet) {
       flex-basis: 100vw;
       align-items: center;
       justify-content: center;
