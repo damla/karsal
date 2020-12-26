@@ -10,8 +10,6 @@ import HamburgerButton from "../hamburger-button/hamburger-button.component";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 
-import classNames from "classnames";
-
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const [isOpen, setIsOpen] = useState(false);
@@ -35,11 +33,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div
-      className={classNames("layout-container", {
-        "layout-container__sidebarOpen": isOpen,
-      })}
-    >
+    <div className="layout-container">
       <Announcement>
         <Bar>
           {isMobile ? (
@@ -87,7 +81,8 @@ export default function Layout({ children }) {
           }
         />
       )}
-      {children}
+      <div className="layout-container__body">{children}</div>
+
       <Footer />
     </div>
   );

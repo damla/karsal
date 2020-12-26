@@ -1,10 +1,9 @@
 @import "../../global/variables.scss";
 
 .content-container {
-  min-width: 50%;
-  min-height: 100%;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 
   .content {
     margin: 68px 25px;
