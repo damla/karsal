@@ -1,9 +1,22 @@
 @import "../../../global/variables.scss";
 
 .footer-container {
+  $self: &;
+
   @media only screen and (max-width: $max-width-footer) {
     :first-child {
       justify-content: center;
+      align-items: center;
+
+      #{ $self }__copyright {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        :last-child {
+          display: block;
+        }
+      }
 
       :last-child {
         display: none;
