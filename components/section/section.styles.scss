@@ -20,7 +20,7 @@
       max-height: 50%;
     }
 
-    @media only screen and (min-width: $min-width-middleStart) and (max-width: $max-width-middleEnd) {
+    @media only screen and (max-width: $max-width-mobile) {
       margin-bottom: 0;
     }
   }

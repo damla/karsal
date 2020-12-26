@@ -6,7 +6,7 @@
   flex-grow: 1;
   flex-basis: 50vw;
 
-  @media only screen and (min-width: $min-width-middleStart) and (max-width: $max-width-middleEnd) {
+  @media only screen and (max-width: $max-width-mobile) {
     min-height: 100vh;
     justify-content: center;
     flex-basis: unset;
@@ -16,7 +16,8 @@
     margin: 68px 25px;
     // TODO: Convert px to rem
     display: flex;
-
+    // max-height: 50%;
+    // min-height: 100%;
     &__right {
       display: flex;
       flex-direction: column;
@@ -43,7 +44,7 @@
       margin-top: 0;
     }
 
-    @media only screen and (min-width: $min-width-middleStart) and (max-width: $max-width-middleEnd) {
+    @media only screen and (max-width: $max-width-mobile) {
       flex-basis: 100vw;
       align-items: center;
       justify-content: center;
