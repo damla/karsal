@@ -3,15 +3,25 @@
 .section-container {
   display: flex;
   flex-wrap: wrap;
-  min-height: 50vh;
-  width: 100%;
+  align-items: stretch;
+  min-height: 60vh;
+  width: 100vw;
   background-color: #f0f9f0;
+  margin-bottom: 5vh;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__banner {
     min-height: 70vh;
 
-    // @media only screen and (max-width: $max-width-tabletOrMobile) {
-    //   min-height: 100vh;
-    // }
+    &:first-child {
+      max-height: 50%;
+    }
+
+    @media only screen and (max-width: $max-width-mobile) {
+      margin-bottom: 0;
+    }
   }
 }
