@@ -1,0 +1,9 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__body {
+    min-width: 100vw;
+  }
+}

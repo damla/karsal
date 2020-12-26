@@ -81,7 +81,8 @@ export default function Layout({ children }) {
           }
         />
       )}
-      {children}
+      <div className="layout-container__body">{children}</div>
+
       <Footer />
     </div>
   );

@@ -1,11 +1,17 @@
+@import "../../global/variables.scss";
+
 .section-container {
   display: flex;
-  flex-direction: row;
-  height: 60vh;
+  flex-wrap: wrap;
+  min-height: 50vh;
   width: 100%;
   background-color: #f0f9f0;
 
   &__banner {
-    height: 70vh;
+    min-height: 70vh;
+
+    // @media only screen and (max-width: $max-width-tabletOrMobile) {
+    //   min-height: 100vh;
+    // }
   }
 }
