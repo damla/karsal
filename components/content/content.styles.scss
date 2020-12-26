@@ -5,9 +5,10 @@
   align-items: center;
   flex-grow: 1;
   flex-basis: 50vw;
+  min-height: 80vh;
 
   @media only screen and (max-width: $max-width-tablet) {
-    min-height: 100vh;
+    min-height: 70vh;
     justify-content: center;
     flex-basis: unset;
   }
@@ -16,8 +17,7 @@
     margin: 68px 25px;
     // TODO: Convert px to rem
     display: flex;
-    // max-height: 50%;
-    // min-height: 100%;
+
     &__right {
       display: flex;
       flex-direction: column;
