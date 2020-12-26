@@ -1,4 +1,5 @@
 import Bar from "../../bar/bar.component";
+import "./footer.styles.scss";
 
 export default function Footer() {
   return (
