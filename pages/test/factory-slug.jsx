@@ -6,22 +6,50 @@ import Content from "../../components/content/content.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
-import "./hakkimizda.styles.scss";
+import "./factory.styles.scss";
 
-export default function Hakkimizda() {
+import { connectToDatabase } from "../../util/mongodb";
+
+export async function getStaticProps({ locale }) {
+  const { db } = await connectToDatabase();
+
+  const content = await db.collection("Content").find({}).toArray();
+
+  const t = locale === "tr" ? "fabrika" : "factory";
+  console.log(locale);
+
+  return {
+    props: {
+      //content: JSON.stringify(content),
+      content: JSON.stringify(t),
+    },
+  };
+}
+
+export const getStaticPaths = ({ locales }) => {
+  return {
+    paths: [
+      { params: { "factory-slug": "fabrika" }, locale: locales[0] }, // tr
+      { params: { "factory-slug": "factory" }, locale: locales[1] }, // en
+    ],
+    fallback: true,
+  };
+};
+
+export default function Factory({ content }) {
   //   const a = 5;
   //   debugger;
   return (
     <>
       <Head>
-        <title>Hakkımızda</title>
+        <title>Fabrika</title>
       </Head>
       <Layout>
         <Section>
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={"Kumaşın Mimarı..."}
+            title={content}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
