@@ -36,9 +36,9 @@ export default function NavBar({ hamburgerButton }) {
         <>
           <Menu align="left">
             <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
-            <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
             <MenuItem href="/fabrika">FABRİKA</MenuItem>
             <MenuItem href="/katalog">KATALOG</MenuItem>
+            <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
           </Menu>
           <Menu align="right">
             <div className="lang-container">
