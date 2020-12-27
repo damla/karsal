@@ -35,10 +35,10 @@ export default function NavBar({ hamburgerButton }) {
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
-            <MenuItem href="/hakkımızda">HAKKIMIZDA</MenuItem>
+            <MenuItem href="/hakkimizda">HAKKIMIZDA</MenuItem>
             <MenuItem href="/fabrika">FABRİKA</MenuItem>
             <MenuItem href="/katalog">KATALOG</MenuItem>
-            <MenuItem href="/iletişim">İLETİŞİM</MenuItem>
+            <MenuItem href="/iletisim">İLETİŞİM</MenuItem>
           </Menu>
           <Menu align="right">
             <div className="lang-container">
