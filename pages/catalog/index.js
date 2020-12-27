@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import "./katalog.styles.scss";
+import "./catalog.styles.scss";
 
 export default function Katalog() {
   return (

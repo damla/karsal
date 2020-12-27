@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Layout from "../../components/layout/layout.component";
 import Section from "../../components/section/section.component";
-import ImageBox from "../../components/image-box/image-box.component";
 import Content from "../../components/content/content.component";
+import ImageBox from "../../components/image-box/image-box.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
@@ -16,7 +16,7 @@ export async function getStaticProps({ locale }) {
   const content = await db.collection("Content").find({}).toArray();
 
   const t = locale === "tr" ? "fabrika" : "factory";
-  console.log(locale);
+  // console.log(locale);
 
   return {
     props: {
@@ -29,8 +29,8 @@ export async function getStaticProps({ locale }) {
 export const getStaticPaths = ({ locales }) => {
   return {
     paths: [
-      { params: { "factory-slug": "fabrika" }, locale: locales[0] }, // tr
-      { params: { "factory-slug": "factory" }, locale: locales[1] }, // en
+      { params: { factory: "fabrika" }, locale: locales[0] }, // tr
+      { params: { factory: "factory" }, locale: locales[1] }, // en
     ],
     fallback: true,
   };

@@ -35,16 +35,20 @@ export default function NavBar({ hamburgerButton }) {
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
-            <MenuItem href="/hakkimizda">HAKKIMIZDA</MenuItem>
-            <MenuItem href="/fabrika">FABRİKA</MenuItem>
-            <MenuItem href="/katalog">KATALOG</MenuItem>
-            <MenuItem href="/iletisim">İLETİŞİM</MenuItem>
+            <MenuItem href="/about-us">HAKKIMIZDA</MenuItem>
+            <MenuItem href="/factory">FABRİKA</MenuItem>
+            <MenuItem href="/catalog">KATALOG</MenuItem>
+            <MenuItem href="/contact">İLETİŞİM</MenuItem>
           </Menu>
           <Menu align="right">
             <div className="lang-container">
-              <MenuItem href="/katalog">EN</MenuItem>
+              <MenuItem href="/en" locale="en">
+                EN
+              </MenuItem>
               <span className="seperator">|</span>
-              <MenuItem href="/katalog">TR</MenuItem>
+              <MenuItem href="/" locale="tr">
+                TR
+              </MenuItem>
             </div>
           </Menu>
         </>
@@ -58,7 +62,8 @@ export default function NavBar({ hamburgerButton }) {
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="/">{hamburgerButton}</MenuItem>
+            <MenuItem href="#">{hamburgerButton}</MenuItem>
+            {/* TODO: LINK ICINDE LINK VAR! */}
           </Menu>
         </>
       )}
