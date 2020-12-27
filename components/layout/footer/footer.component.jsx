@@ -2,6 +2,7 @@ import Bar from "../../bar/bar.component";
 import "./footer.styles.scss";
 
 export default function Footer() {
+  // min-height: 10vh;
   return (
     <div className="footer-container">
       <Bar height={"7vh"}>
@@ -9,7 +10,7 @@ export default function Footer() {
           <span>Tüm hakları saklıdır.&nbsp;</span>
           <span>2020 © Karsal Örme A. Ş.</span>
         </div>
-        <span>
+        <span className="footer-container__contact">
           <a href="mailto:info@karsalorme.com.tr">info@karsalorme.com.tr</a>
           &nbsp;|&nbsp;
           <a href="tel:+902123456789">+90 (212) 345 67 89</a>

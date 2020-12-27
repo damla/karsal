@@ -28,11 +28,18 @@
         font-weight: 200;
         font-size: 2rem;
       }
+      @media only screen and (max-width: $max-width-tablet) {
+        margin-left: 0;
+      }
     }
     @media only screen and (max-width: $max-width-tabletOrMobile) {
       &__left {
         display: none;
       }
+    }
+
+    @media only screen and (max-width: $max-width-mobile) {
+      margin: 90px 25px;
     }
   }
 

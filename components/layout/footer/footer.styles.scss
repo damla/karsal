@@ -4,21 +4,19 @@
   $self: &;
 
   @media only screen and (max-width: $max-width-footer) {
-    :first-child {
+    .bar-container {
       justify-content: center;
-      align-items: center;
+
+      min-height: 10vh;
 
       #{ $self }__copyright {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        :last-child {
-          display: block;
-        }
+        align-items: center;
       }
 
-      :last-child {
+      #{ $self }__contact {
         display: none;
       }
     }
