@@ -7,8 +7,6 @@
     .bar-container {
       justify-content: center;
 
-      min-height: 10vh;
-
       #{ $self }__copyright {
         display: flex;
         flex-direction: column;

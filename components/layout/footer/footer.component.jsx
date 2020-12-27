@@ -2,10 +2,9 @@ import Bar from "../../bar/bar.component";
 import "./footer.styles.scss";
 
 export default function Footer() {
-  // min-height: 10vh;
   return (
     <div className="footer-container">
-      <Bar height={"7vh"}>
+      <Bar height={"9vh"}>
         <div className="footer-container__copyright">
           <span>Tüm hakları saklıdır.&nbsp;</span>
           <span>2020 © Karsal Örme A. Ş.</span>
