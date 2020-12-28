@@ -1,8 +1,8 @@
-import "./bar.module.scss";
+import styles from "./bar.module.scss";
 
 export default function Bar({ height, children }) {
   return (
-    <div className="bar-container" style={height ? { height: height } : null}>
+    <div className={styles.bar_container} style={height ? { height: height } : null}>
       {children}
     </div>
   );
