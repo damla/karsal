@@ -13,11 +13,11 @@
   z-index: 999;
   top: 0;
 
-  &--active {
+  &__active {
     right: 0;
   }
 
-  &__container {
+  &_container {
     height: 90vh;
     margin: 4rem 2rem 0.5rem 1.5rem;
     display: flex;
@@ -28,14 +28,14 @@
       margin: 2rem 2rem 0.5rem 1.5rem;
     }
 
-    #{ $self }__top {
+    #{ $self }_top {
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
       height: 5vh;
     }
 
-    #{ $self }__body {
+    #{ $self }_body {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -72,7 +72,7 @@
       }
     }
 
-    #{ $self }__footer {
+    #{ $self }_footer {
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
