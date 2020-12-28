@@ -10,7 +10,21 @@ import Logo from "../components/logo/logo.component";
 
 import { connectToDatabase } from "../util/mongodb";
 
-export default function Anasayfa() {
+export async function getStaticProps({ locale }) {
+  const { db } = await connectToDatabase();
+
+  const content = await db.collection("Content").find({}).toArray();
+  // console.log(locale);
+  const t = locale === "tr" ? "Kumaşın Mimarı..." : "Architect of fabric...";
+  return {
+    props: {
+      // content: JSON.stringify(content),
+      content: t
+    },
+  };
+}
+
+export default function Anasayfa({content}) {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
@@ -30,7 +44,7 @@ export default function Anasayfa() {
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={"Kumaşın Mimarı..."}
+            title={content}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -128,15 +142,3 @@ export default function Anasayfa() {
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
-
-  const content = await db.collection("Content").find({}).toArray();
-  // console.log(locale);
-
-  return {
-    props: {
-      content: JSON.stringify(content),
-    },
-  };
-}
