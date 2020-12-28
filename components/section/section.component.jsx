@@ -4,9 +4,9 @@ import classNames from "classnames";
 export default function Section({ id, children, banner }) {
   return (
     <section
-      className={classNames("section-container", {
-        "section-container__banner": banner,
-      })}
+      className={classNames(styles.section_container, 
+      banner && styles.section_container__banner
+      )}
       id={id ? id : null}
     >
       {children}
