@@ -33,7 +33,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="layout-container">
+    <div className={styles.layout_container}>
       <Announcement>
         <Bar>
           {isMobile ? (
@@ -81,8 +81,7 @@ export default function Layout({ children }) {
           }
         />
       )}
-      <div className="layout-container__body">{children}</div>
-
+      <div className={styles.layout_container__body}>{children}</div>
       <Footer />
     </div>
   );
