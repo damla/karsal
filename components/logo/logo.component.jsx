@@ -6,7 +6,7 @@ export default function Logo({ width, height }) {
   return (
     <Link href="/">
       <Image
-        className="logo"
+        className={styles.logo}
         src="/assets/images/karsal-logo.png"
         alt="karsal-logo"
         width={width}
