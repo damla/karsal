@@ -1,16 +1,16 @@
 @import "~sass-burger/burger";
 @import "../menu-item/menu-item.module.scss";
 
-.hamburger-button_container {
+.hamburgerButton_container {
   display: flex;
   max-width: 25px;
 
-  .hamburger-button {
-    .burger-icon {
+  .hamburgerButton {
+    .burgerIcon {
       @include burger(25px, 3px, 5px, #444);
     }
     &__active {
-      .burger-icon {
+      .burgerIcon {
         @include burger-to-cross;
       }
     }

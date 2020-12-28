@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
-import styles from "./side-bar.style.scss";
+import styles from "./side-bar.module.scss";
 
 export default function SideBar({ hamburgerButton, isOpen }) {
   return (

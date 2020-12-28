@@ -4,14 +4,14 @@ import classNames from "classnames";
 
 export default function HamburgerButton({ menuActive, onClickHandler }) {
   return (
-    <li className={styles.hamburger-button_container} onClick={onClickHandler}>
+    <li className={styles.hamburgerButton_container} onClick={onClickHandler}>
       <Link href="#">
         <a
-          className={classNames(styles.menu-item, styles.hamburger-button, 
-            menuActive && styles.hamburger-button__active
+          className={classNames(styles.menuItem, styles.hamburgerButton, 
+            menuActive && styles.hamburgerButton__active
           )}
         >
-          <span className="burger-icon"></span>
+          <span className={styles.burgerIcon}></span>
         </a>
       </Link>
     </li>
