@@ -1,4 +1,4 @@
-import "./custom-button.styles.scss";
+import "./custom-button.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 

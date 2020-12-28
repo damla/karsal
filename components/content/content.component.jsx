@@ -1,4 +1,4 @@
-import "./content.styles.scss";
+import "./content.module.scss";
 import classNames from "classnames";
 
 export default function Content({

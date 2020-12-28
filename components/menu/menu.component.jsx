@@ -1,4 +1,4 @@
-import "./menu.styles.scss";
+import "./menu.module.scss";
 import classNames from "classnames";
 
 export default function Menu({ children, align }) {

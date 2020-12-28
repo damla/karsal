@@ -1,4 +1,4 @@
-import "./bar.styles.scss";
+import "./bar.module.scss";
 
 export default function Bar({ height, children }) {
   return (

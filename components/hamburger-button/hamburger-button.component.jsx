@@ -1,4 +1,4 @@
-import "./hamburger-button.style.scss";
+import "./hamburger-button.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 
