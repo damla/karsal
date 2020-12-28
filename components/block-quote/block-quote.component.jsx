@@ -1,8 +1,8 @@
-import "./block-quote.module.scss";
+import styles from  "./block-quote.module.scss";
 
 export default function BlockQuote({ children }) {
   return (
-    <div className="block-quote">
+    <div className={styles.blockquote-container}>
       <blockquote>{children}</blockquote>
     </div>
   );
