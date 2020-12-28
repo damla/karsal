@@ -5,12 +5,12 @@ import classNames from "classnames";
 export default function ImageBox({ src, alt, objectFit, wider, priority }) {
   return (
     <div
-      className={classNames("image-container", {
-        "image-container__wider": wider,
-      })}
+      className={classNames(styles.image_container,  wider &&
+        styles.image_container__wider
+      )}
     >
       <Image
-        className="image"
+        className={styles.image}
         src={src}
         alt={alt}
         layout="fill"
