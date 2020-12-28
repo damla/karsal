@@ -6,7 +6,7 @@ import ImageBox from "../../components/image-box/image-box.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
-import "./factory.styles.scss";
+import "./factory.module.scss";
 
 import { connectToDatabase } from "../../util/mongodb";
 

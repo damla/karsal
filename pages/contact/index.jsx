@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import "./contact.styles.scss";
+import "./contact.module.scss";
 
 import { connectToDatabase } from "../../util/mongodb";
 
