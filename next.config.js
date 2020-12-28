@@ -1,5 +1,5 @@
-const withSass = require("@zeit/next-sass");
-module.exports = withSass({
+
+module.exports = ({
   i18n: {
     // These are all the locales you want to support in
     // your application
