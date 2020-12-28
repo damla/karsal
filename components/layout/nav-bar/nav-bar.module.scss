@@ -1,5 +1,4 @@
 @import "../../../global/variables.scss";
-@import "../../menu/menu.module.scss";
 
 @mixin green-bg {
   background-color: $background-color;
@@ -33,6 +32,14 @@
   &:hover {
     @include green-bg;
     @include change-color;
+  }
+
+  .lang_container {
+    display: flex;
+    .seperator {
+      color: $primary-font-color;
+      margin: 0 0.2rem;
+    }
   }
 
   @media only screen and (max-width: $max-width-tabletOrMobile) {

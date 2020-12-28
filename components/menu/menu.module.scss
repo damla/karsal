@@ -12,12 +12,5 @@ $margin-between-links: 1.7rem;
   &__right {
     flex-direction: row-reverse;
     flex-basis: 70%;
-    .lang_container {
-      display: flex;
-      .seperator {
-        color: $primary-font-color;
-        margin: 0 0.2rem;
-      }
-    }
   }
 }
