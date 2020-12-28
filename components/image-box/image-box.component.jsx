@@ -1,4 +1,4 @@
-import "./image-box.module.scss";
+import styles from "./image-box.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
 

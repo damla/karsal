@@ -6,7 +6,7 @@ import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
-import "./nav-bar.module.scss";
+import styles from "./nav-bar.module.scss";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;

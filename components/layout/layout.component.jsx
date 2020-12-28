@@ -1,4 +1,4 @@
-import "./layout.module.scss";
+import styles from "./layout.module.scss";
 
 import Bar from "../bar/bar.component";
 import Announcement from "./announcement/announcement.component";

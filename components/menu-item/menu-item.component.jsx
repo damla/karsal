@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import "./menu-item.module.scss";
+import styles from "./menu-item.module.scss";
 
 export default function MenuItem({ href, children, locale }) {
   // TODO: Ignore warning from here
