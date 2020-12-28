@@ -1,4 +1,5 @@
 @import "../../../global/variables.scss";
+@import "../../menu/menu.module.scss";
 
 @mixin green-bg {
   background-color: $background-color;
@@ -12,7 +13,7 @@
   }
 }
 
-.navbar-container {
+.navbar_container {
   display: flex;
   padding: 1.5rem;
   align-items: center;
@@ -22,7 +23,7 @@
   width: 100%;
   transition: all 0.1s ease-in;
 
-  &.scrolled {
+  &__scrolled {
     @include green-bg;
     padding: 1.5rem;
     top: 0;
@@ -37,7 +38,7 @@
   @media only screen and (max-width: $max-width-tabletOrMobile) {
     padding: 1rem 1.5rem;
 
-    &.scrolled {
+    &__scrolled {
       padding: 1rem 1.5rem;
     }
   }
