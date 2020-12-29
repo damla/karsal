@@ -1,0 +1,53 @@
+@use "../../../global/variables.scss" as variables;
+
+@mixin green-bg {
+  background-color: variables.$background-color;
+  border-bottom: 1px solid variables.$border-color;
+}
+
+@mixin change-color {
+  a,
+  .seperator {
+    color: variables.$primary-font-color;
+  }
+}
+
+.container {
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  z-index: 3;
+  position: fixed;
+  top: 2.4rem;
+  width: 100%;
+  transition: all 0.1s ease-in;
+
+  &__scrolled {
+    @include green-bg;
+    padding: 1.5rem;
+    top: 0;
+    @include change-color;
+  }
+
+  &:hover {
+    @include green-bg;
+    @include change-color;
+  }
+
+  .lang_container {
+    display: flex;
+
+    .seperator {
+      color: variables.$primary-font-color;
+      margin: 0 0.2rem;
+    }
+  }
+
+  @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+    padding: 1rem 1.5rem;
+
+    &__scrolled {
+      padding: 1rem 1.5rem;
+    }
+  }
+}

@@ -1,6 +1,7 @@
-@import "../../global/variables.scss";
-.menu-item {
-  color: $primary-font-color;
+@use "../../global/variables.scss" as variables;
+
+.container {
+  color: variables.$primary-font-color;
   font-weight: 200;
   font-size: 0.9rem;
   font-family: "SuisseInt-Medium", sans-serif;

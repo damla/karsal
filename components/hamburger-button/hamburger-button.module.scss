@@ -1,17 +1,18 @@
 @import "~sass-burger/burger";
 
-.hamburger-button__container {
+.container {
   display: flex;
   max-width: 25px;
 
-  .hamburger-button {
-    .burger-icon {
+  .body {
+    .burgerIcon {
       @include burger(25px, 3px, 5px, #444);
     }
-    &.is-active {
-      .burger-icon {
+    &__active {
+      .burgerIcon {
         @include burger-to-cross;
       }
     }
   }
 }
+/* TODO: burasi duzgun calisiyor mu kontrol et */

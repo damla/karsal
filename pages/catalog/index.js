@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import "./catalog.styles.scss";
+import "./catalog.module.scss";
 
 import { connectToDatabase } from "../../util/mongodb";
 

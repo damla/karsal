@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
-import "./side-bar.style.scss";
+import styles from "./side-bar.module.scss";
 
 export default function SideBar({ hamburgerButton, isOpen }) {
   return (
     <div
-      className={classNames("sidebar", {
-        "sidebar--active": isOpen,
-      })}
+      className={classNames(
+        styles.container,
+        isOpen && styles.container__active
+      )}
     >
-      <div className="sidebar__container">
-        <div className="sidebar__top">{hamburgerButton}</div>
-        <div className="sidebar__body">
+      <div className={styles.container_content}>
+        <div className={styles.container_header}>{hamburgerButton}</div>
+        <div className={styles.container_body}>
           <MenuItem href="/hakkimizda">HAKKIMIZDA</MenuItem>
           <MenuItem href="/fabrika">FABRİKA</MenuItem>
           <MenuItem href="/katalog">KATALOG</MenuItem>
@@ -19,7 +20,7 @@ export default function SideBar({ hamburgerButton, isOpen }) {
           <MenuItem href="/">TÜRKÇE</MenuItem>
           <MenuItem href="/">ENGLISH</MenuItem>
         </div>
-        <div className="sidebar__footer">
+        <div className={styles.container_footer}>
           <span>
             <small>Tüm hakları saklıdır.&nbsp;</small>
           </span>

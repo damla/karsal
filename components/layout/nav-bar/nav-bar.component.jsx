@@ -6,7 +6,7 @@ import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
-import "./nav-bar.styles.scss";
+import styles from "./nav-bar.module.scss";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -31,7 +31,12 @@ export default function NavBar({ hamburgerButton }) {
   }, []);
 
   return (
-    <nav className={classNames("navbar-container", { scrolled: isScrolled })}>
+    <nav
+      className={classNames(
+        styles.container,
+        isScrolled && styles.container__scrolled
+      )}
+    >
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
@@ -41,11 +46,11 @@ export default function NavBar({ hamburgerButton }) {
             <MenuItem href="/contact">İLETİŞİM</MenuItem>
           </Menu>
           <Menu align="right">
-            <div className="lang-container">
+            <div className={styles.lang_container}>
               <MenuItem href="/en" locale="en">
                 EN
               </MenuItem>
-              <span className="seperator">|</span>
+              <span className={styles.seperator}>|</span>
               <MenuItem href="/" locale="tr">
                 TR
               </MenuItem>

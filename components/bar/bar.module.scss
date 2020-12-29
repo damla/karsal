@@ -1,0 +1,43 @@
+@use "../../global/variables.scss" as variables;
+
+.container {
+  background-color: #2c2e2f;
+  padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+  min-width: 100%;
+
+  a,
+  span {
+    font-family: "SuisseInt-Regular", sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  @media only screen and (max-width: variables.$max-width-mobile) {
+    a {
+      line-height: 1rem;
+    }
+  }
+
+  &__announcement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: variables.$max-width-footer) {
+      justify-content: center;
+    }
+    @media only screen and (max-width: variables.$max-width-tablet) {
+      min-height: 10vh;
+    }
+  }
+}

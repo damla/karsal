@@ -1,0 +1,14 @@
+@use "../../../global/variables.scss" as variables;
+
+@media only screen and (max-width: variables.$max-width-footer) {
+  .container__copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container__contact {
+    display: none;
+  }
+}

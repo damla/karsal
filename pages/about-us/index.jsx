@@ -6,7 +6,7 @@ import ImageBox from "../../components/image-box/image-box.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
-import "./about-us.styles.scss";
+import "./about-us.module.scss";
 
 import { connectToDatabase } from "../../util/mongodb";
 
@@ -26,19 +26,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-// export const getStaticPaths = ({ locales }) => {
-//   return {
-//     paths: [
-//       { params: { "about-us": "hakkımızda" }, locale: locales[0] }, // tr
-//       { params: { "about-us": "about-us" }, locale: locales[1] }, // en
-//     ],
-//     fallback: true,
-//   };
-// };
-
 export default function AboutUs({ content }) {
-  //   const a = 5;
-  //   debugger;
   return (
     <>
       <Head>
@@ -61,11 +49,9 @@ export default function AboutUs({ content }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button onClick={() => scrollToSection("section-2")}>
-                <div className="button-content">
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
-                </div>
+              <CustomButton button>
+                <span>Daha Fazlası</span>
+                <span>&#8594;</span>
               </CustomButton>
             }
           />
