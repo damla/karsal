@@ -26,16 +26,6 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-// export const getStaticPaths = ({ locales }) => {
-//   return {
-//     paths: [
-//       { params: { "about-us": "hakkımızda" }, locale: locales[0] }, // tr
-//       { params: { "about-us": "about-us" }, locale: locales[1] }, // en
-//     ],
-//     fallback: true,
-//   };
-// };
-
 export default function AboutUs({ content }) {
   //   const a = 5;
   //   debugger;

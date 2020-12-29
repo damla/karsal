@@ -1,5 +1,4 @@
 import styles from "./announcement.module.scss";
-
 import Bar from "../../bar/bar.component";
 
 export default function Announcement({ children }) {

@@ -1,4 +1,4 @@
-@import "../../global/variables.scss";
+@use "../../global/variables.scss" as variables;
 
 .content_container {
   display: flex;
@@ -7,7 +7,7 @@
   flex-basis: 50vw;
   min-height: 80vh;
 
-  @media only screen and (max-width: $max-width-tablet) {
+  @media only screen and (max-width: variables.$max-width-tablet) {
     min-height: 70vh;
     justify-content: center;
     flex-basis: unset;
@@ -28,17 +28,17 @@
         font-weight: 200;
         font-size: 2rem;
       }
-      @media only screen and (max-width: $max-width-tablet) {
+      @media only screen and (max-width: variables.$max-width-tablet) {
         margin-left: 0;
       }
     }
-    @media only screen and (max-width: $max-width-tabletOrMobile) {
+    @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
       &__left {
         display: none;
       }
     }
 
-    @media only screen and (max-width: $max-width-mobile) {
+    @media only screen and (max-width: variables.$max-width-mobile) {
       margin: 90px 25px;
     }
   }
@@ -51,7 +51,7 @@
       margin-top: 90px;
     }
 
-    @media only screen and (max-width: $max-width-tablet) {
+    @media only screen and (max-width: variables.$max-width-tablet) {
       flex-basis: 100vw;
       align-items: center;
       justify-content: center;

@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import styles from "./menu-item.module.scss";
 
 export default function MenuItem({ href, children, locale }) {

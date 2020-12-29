@@ -26,16 +26,6 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-// export const getStaticPaths = ({ locales }) => {
-//   return {
-//     paths: [
-//       { params: { factory: "fabrika" }, locale: locales[0] }, // tr
-//       { params: { factory: "factory" }, locale: locales[1] }, // en
-//     ],
-//     fallback: true,
-//   };
-// };
-
 export default function Factory({ content }) {
   //   const a = 5;
   //   debugger;

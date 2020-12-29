@@ -1,4 +1,4 @@
-import styles from  "./hamburger-button.module.scss";
+import styles from "./hamburger-button.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -7,7 +7,8 @@ export default function HamburgerButton({ menuActive, onClickHandler }) {
     <li className={styles.hamburgerButton_container} onClick={onClickHandler}>
       <Link href="#">
         <a
-          className={classNames(styles.menuItem, styles.hamburgerButton, 
+          className={classNames(
+            styles.hamburgerButton,
             menuActive && styles.hamburgerButton__active
           )}
         >
@@ -17,3 +18,5 @@ export default function HamburgerButton({ menuActive, onClickHandler }) {
     </li>
   );
 }
+
+// refactor this component
