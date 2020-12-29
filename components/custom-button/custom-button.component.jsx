@@ -10,21 +10,17 @@ export default function CustomButton({
   inverted,
 }) {
   return (
-    
     <div onClick={onClick ? onClick : null}>
-      <Link href={href ? href : "/"} scroll={false}>
+      <Link href={href ? href : "/en/about-us"} scroll={false}>
         <a
           className={classNames(
-            button && styles.button,
-            inverted && styles.button__inverted,
+            button && styles.container,
+            inverted && styles.container__inverted
           )}
         >
-        <div className={styles.button_content}>
-          {children}
-          </div>
+          <div className={styles.body}>{children}</div>
         </a>
       </Link>
     </div>
-
   );
 }

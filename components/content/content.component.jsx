@@ -12,8 +12,8 @@ export default function Content({
   return (
     <div
       className={classNames(
-        styles.content_container,
-        narrower && styles.content_container__narrower
+        styles.container,
+        narrower && styles.container__narrower
       )}
       style={
         BgColor
@@ -23,9 +23,9 @@ export default function Content({
           : {}
       }
     >
-      <div className={styles.content}>
-        {left ? <div className={styles.content__left}>{left}</div> : null}
-        <div className={styles.content__right}>
+      <div className={styles.body}>
+        {left ? <div className={styles.body__left}>{left}</div> : null}
+        <div className={styles.body__right}>
           <h1>{title}</h1>
           {blockquote}
           {button}

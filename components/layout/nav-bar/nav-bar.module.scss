@@ -1,18 +1,18 @@
-@import "../../../global/variables.scss";
+@use "../../../global/variables.scss" as variables;
 
 @mixin green-bg {
-  background-color: $background-color;
-  border-bottom: 1px solid $border-color;
+  background-color: variables.$background-color;
+  border-bottom: 1px solid variables.$border-color;
 }
 
 @mixin change-color {
   a,
   .seperator {
-    color: $primary-font-color;
+    color: variables.$primary-font-color;
   }
 }
 
-.navbar_container {
+.container {
   display: flex;
   padding: 1.5rem;
   align-items: center;
@@ -36,13 +36,14 @@
 
   .lang_container {
     display: flex;
+
     .seperator {
-      color: $primary-font-color;
+      color: variables.$primary-font-color;
       margin: 0 0.2rem;
     }
   }
 
-  @media only screen and (max-width: $max-width-tabletOrMobile) {
+  @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
     padding: 1rem 1.5rem;
 
     &__scrolled {

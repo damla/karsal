@@ -1,4 +1,4 @@
-.button {
+.container {
   display: flex;
   background-color: transparent;
   color: black;
@@ -23,7 +23,7 @@
     }
   }
 
-  .button_content {
+  .body {
     width: 100%;
     padding: 0 25px;
     display: flex;

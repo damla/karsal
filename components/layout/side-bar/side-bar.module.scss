@@ -1,10 +1,10 @@
-@import "../../../global/variables.scss";
+@use "../../../global/variables.scss" as variables;
 
-.sidebar {
+.container {
   $self: &;
   position: fixed;
-  background-color: $background-color;
-  border-left: 1px solid $border-color;
+  background-color: variables.$background-color;
+  border-left: 1px solid variables.$border-color;
   right: -100%;
   width: 50%;
   height: 100%;
@@ -17,18 +17,18 @@
     right: 0;
   }
 
-  &_container {
+  &_content {
     height: 90vh;
     margin: 4rem 2rem 0.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @media only screen and (max-width: $max-width-mobile) {
+    @media only screen and (max-width: variables.$max-width-mobile) {
       margin: 2rem 2rem 0.5rem 1.5rem;
     }
 
-    #{ $self }_top {
+    #{ $self }_header {
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
@@ -48,7 +48,7 @@
         text-align: right;
         width: 80%;
         padding-bottom: 5px;
-        border-bottom: 2px solid $border-color;
+        border-bottom: 2px solid variables.$border-color;
         transition: all 0.5s ease 0s;
         margin-bottom: 0.5rem;
 
@@ -65,7 +65,7 @@
             text-decoration: unset;
           }
 
-          @media only screen and (min-width: $min-width-middleStart) and (max-width: $max-width-middleEnd) {
+          @media only screen and (min-width: variables.$min-width-middleStart) and (max-width: variables.$max-width-middleEnd) {
             font-size: 1.5rem;
           }
         }
@@ -80,23 +80,27 @@
       height: 35vh;
       padding-bottom: 2rem;
 
-      @media only screen and (max-width: $max-width-tablet) {
+      small {
+        font-family: "SuisseInt-Regular", sans-serif;
+      }
+
+      @media only screen and (max-width: variables.$max-width-tablet) {
         flex-direction: column;
         align-items: center;
         padding-right: 0;
       }
 
-      @media only screen and (max-width: $max-width-mobile) {
+      @media only screen and (max-width: variables.$max-width-mobile) {
         padding-bottom: 1rem;
       }
     }
   }
 
-  @media only screen and (min-width: $max-width-tabletOrMobile) {
+  @media only screen and (min-width: variables.$max-width-tabletOrMobile) {
     right: -100%;
   }
 
-  @media only screen and (max-width: $max-width-mobile) {
+  @media only screen and (max-width: variables.$max-width-mobile) {
     width: 100%;
     border-left: unset;
   }

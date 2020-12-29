@@ -1,6 +1,5 @@
 import Bar from "../../bar/bar.component";
 import styles from "./footer.module.scss";
-console.log(styles);
 
 export default function Footer() {
   return (

@@ -31,7 +31,12 @@ export default function NavBar({ hamburgerButton }) {
   }, []);
 
   return (
-    <nav className={classNames(styles.navbar_container, isScrolled && styles.navbar_container__scrolled)}>
+    <nav
+      className={classNames(
+        styles.container,
+        isScrolled && styles.container__scrolled
+      )}
+    >
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">

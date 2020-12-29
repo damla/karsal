@@ -1,8 +1,6 @@
-@import "../../global/variables.scss";
-$margin-between-links: 1.7rem;
-
-.menu_container {
+.container {
   display: flex;
+
   &__left {
     flex-basis: 30%;
     flex-direction: row;

@@ -19,12 +19,12 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       // content: JSON.stringify(content),
-      content: t
+      content: t,
     },
   };
 }
 
-export default function Anasayfa({content}) {
+export default function Anasayfa({ content }) {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
@@ -57,8 +57,8 @@ export default function Anasayfa({content}) {
             }
             button={
               <CustomButton button onClick={() => scrollToSection("section-2")}>
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
+                <span>Daha Fazlası</span>
+                <span>&#8594;</span>
               </CustomButton>
             }
           />
@@ -95,8 +95,8 @@ export default function Anasayfa({content}) {
             }
             button={
               <CustomButton button>
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
+                <span>Daha Fazlası</span>
+                <span>&#8594;</span>
               </CustomButton>
             }
           />
@@ -118,8 +118,8 @@ export default function Anasayfa({content}) {
             }
             button={
               <CustomButton button>
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
+                <span>Daha Fazlası</span>
+                <span>&#8594;</span>
               </CustomButton>
             }
           />
@@ -135,4 +135,3 @@ export default function Anasayfa({content}) {
     </>
   );
 }
-

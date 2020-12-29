@@ -4,9 +4,10 @@ import classNames from "classnames";
 export default function Menu({ children, align }) {
   return (
     <ul
-      className={classNames(styles.menu_container, 
-       (align === "right") && styles.menu_container__right,
-       (align === "left") && styles.menu_container__left,
+      className={classNames(
+        styles.container,
+        align === "right" && styles.container__right,
+        align === "left" && styles.container__left
       )}
     >
       {children}

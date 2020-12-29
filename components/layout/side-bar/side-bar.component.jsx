@@ -5,13 +5,14 @@ import styles from "./side-bar.module.scss";
 export default function SideBar({ hamburgerButton, isOpen }) {
   return (
     <div
-      className={classNames(styles.sidebar,
-        isOpen && styles.sidebar__active
+      className={classNames(
+        styles.container,
+        isOpen && styles.container__active
       )}
     >
-      <div className={styles.sidebar_container}>
-        <div className={styles.sidebar_top}>{hamburgerButton}</div>
-        <div className={styles.sidebar_body}>
+      <div className={styles.container_content}>
+        <div className={styles.container_header}>{hamburgerButton}</div>
+        <div className={styles.container_body}>
           <MenuItem href="/hakkimizda">HAKKIMIZDA</MenuItem>
           <MenuItem href="/fabrika">FABRİKA</MenuItem>
           <MenuItem href="/katalog">KATALOG</MenuItem>
@@ -19,7 +20,7 @@ export default function SideBar({ hamburgerButton, isOpen }) {
           <MenuItem href="/">TÜRKÇE</MenuItem>
           <MenuItem href="/">ENGLISH</MenuItem>
         </div>
-        <div className={styles.sidebar_footer}>
+        <div className={styles.container_footer}>
           <span>
             <small>Tüm hakları saklıdır.&nbsp;</small>
           </span>
