@@ -1,25 +1,14 @@
 @use "../../../global/variables.scss" as variables;
 
-.footer-container {
-  $self: &;
+@media only screen and (max-width: variables.$max-width-footer) {
+  .container__copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-  @media only screen and (max-width: variables.$max-width-footer) {
-    .bar-container {
-      justify-content: center;
-
-      #{ $self }__copyright {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      #{ $self }__contact {
-        display: none;
-      }
-      @media only screen and (max-width: variables.$max-width-tablet) {
-        min-height: 10vh;
-      }
-    }
+  .container__contact {
+    display: none;
   }
 }

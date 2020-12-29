@@ -11,11 +11,10 @@ import { useState, useEffect } from "react";
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
-  const [isOpen, setIsOpen] = useState(false);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
   });
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") disableScrollBody(isOpen);
