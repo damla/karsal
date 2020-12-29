@@ -1,10 +1,10 @@
 @import "~sass-burger/burger";
 
-.hamburgerButton_container {
+.container {
   display: flex;
   max-width: 25px;
 
-  .hamburgerButton {
+  .body {
     .burgerIcon {
       @include burger(25px, 3px, 5px, #444);
     }

@@ -1,6 +1,6 @@
 @use "../../global/variables.scss" as variables;
 
-.content_container {
+.container {
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -13,7 +13,7 @@
     flex-basis: unset;
   }
 
-  .content {
+  .body {
     margin: 68px 25px;
     // TODO: Convert px to rem
     display: flex;

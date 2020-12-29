@@ -1,5 +1,4 @@
-
-module.exports = ({
+module.exports = {
   i18n: {
     // These are all the locales you want to support in
     // your application
@@ -8,4 +7,4 @@ module.exports = ({
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: "tr",
   },
-});
+};

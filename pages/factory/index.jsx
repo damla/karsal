@@ -27,8 +27,6 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Factory({ content }) {
-  //   const a = 5;
-  //   debugger;
   return (
     <>
       <Head>
@@ -51,11 +49,9 @@ export default function Factory({ content }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button onClick={() => scrollToSection("section-2")}>
-                <div className="button-content">
-                  <span>Daha Fazlası</span>
-                  <span>&#8594;</span>
-                </div>
+              <CustomButton button>
+                <span>Daha Fazlası</span>
+                <span>&#8594;</span>
               </CustomButton>
             }
           />

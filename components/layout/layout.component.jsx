@@ -31,7 +31,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className={styles.layout_container}>
+    <div className={styles.container}>
       <Announcement>
         {isMobile ? (
           <>
@@ -77,7 +77,7 @@ export default function Layout({ children }) {
           }
         />
       )}
-      <div className={styles.layout_container__body}>{children}</div>
+      <div className={styles.container__body}>{children}</div>
       <Footer />
     </div>
   );

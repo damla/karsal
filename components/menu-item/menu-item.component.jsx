@@ -6,7 +6,7 @@ export default function MenuItem({ href, children, locale }) {
   return (
     <li>
       <Link href={href} locale={locale}>
-        <a className={styles.menuItem}>{children}</a>
+        <a className={styles.container}>{children}</a>
       </Link>
     </li>
   );
