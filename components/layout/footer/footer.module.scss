@@ -1,10 +1,10 @@
-@import "../../../global/variables.scss";
+@use "../../../global/variables.scss" as variables;
 
-.footer_container {
+.footer-container {
   $self: &;
 
-  @media only screen and (max-width: $max-width-footer) {
-    .bar_container {
+  @media only screen and (max-width: variables.$max-width-footer) {
+    .bar-container {
       justify-content: center;
 
       #{ $self }__copyright {
@@ -17,7 +17,7 @@
       #{ $self }__contact {
         display: none;
       }
-      @media only screen and (max-width: $max-width-tablet) {
+      @media only screen and (max-width: variables.$max-width-tablet) {
         min-height: 10vh;
       }
     }

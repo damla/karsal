@@ -2,9 +2,6 @@
 
 .bar_container {
   background-color: #2c2e2f;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0.5rem 1.5rem 0.4rem 1.5rem;
   min-width: 100vw;
 
@@ -23,5 +20,11 @@
     a {
       line-height: 1rem;
     }
+  }
+
+  &__announcement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
