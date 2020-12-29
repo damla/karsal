@@ -11,7 +11,7 @@ export default function CustomButton({
 }) {
   return (
     <div onClick={onClick ? onClick : null}>
-      <Link href={href ? href : "/en/about-us"} scroll={false}>
+      <Link href={href ? href : "/"} scroll={false}>
         <a
           className={classNames(
             button && styles.container,
