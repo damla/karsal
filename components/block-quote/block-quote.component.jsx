@@ -1,4 +1,4 @@
-import styles from  "./block-quote.module.scss";
+import styles from "./block-quote.module.scss";
 
 export default function BlockQuote({ children }) {
   return (

@@ -11,7 +11,8 @@ export default function Content({
 }) {
   return (
     <div
-      className={classNames(styles.content_container, 
+      className={classNames(
+        styles.content_container,
         narrower && styles.content_container__narrower
       )}
       style={

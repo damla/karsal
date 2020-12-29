@@ -5,9 +5,9 @@ export default function Bar({ height, children, announcement, footer }) {
   return (
     <div
       className={classNames(
-        styles.container,
-        announcement && styles.container__announcement,
-        footer && styles.container__footer
+        styles.bar_container,
+        announcement && styles.bar_container__announcement,
+        footer && styles.bar_container__footer
       )}
       style={height ? { height } : null}
     >
