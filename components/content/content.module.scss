@@ -1,6 +1,6 @@
 @import "../../global/variables.scss";
 
-.content-container {
+.content_container {
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -28,11 +28,18 @@
         font-weight: 200;
         font-size: 2rem;
       }
+      @media only screen and (max-width: $max-width-tablet) {
+        margin-left: 0;
+      }
     }
     @media only screen and (max-width: $max-width-tabletOrMobile) {
       &__left {
         display: none;
       }
+    }
+
+    @media only screen and (max-width: $max-width-mobile) {
+      margin: 90px 25px;
     }
   }
 
@@ -41,7 +48,7 @@
     align-items: start;
 
     .content {
-      margin-top: 0;
+      margin-top: 90px;
     }
 
     @media only screen and (max-width: $max-width-tablet) {

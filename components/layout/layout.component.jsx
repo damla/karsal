@@ -1,6 +1,5 @@
-import "./layout.styles.scss";
+import styles from "./layout.module.scss";
 
-import Bar from "../bar/bar.component";
 import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
@@ -12,11 +11,10 @@ import { useState, useEffect } from "react";
 
 export default function Layout({ children }) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
-  const [isOpen, setIsOpen] = useState(false);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
   });
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") disableScrollBody(isOpen);
@@ -33,37 +31,35 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="layout-container">
+    <div className={styles.layout_container}>
       <Announcement>
-        <Bar>
-          {isMobile ? (
-            <>
-              <a href="mailto:info@karsalorme.com.tr">
-                <img
-                  src="/assets/svgs/envelope-solid.svg"
-                  width={20}
-                  layout="fill"
-                  alt="Email Logo"
-                />
-              </a>
-              <span>Bize Ulaşın</span>
-              <a href="tel:+902123456789">
-                <img
-                  src="/assets/svgs/phone-solid.svg"
-                  width={15}
-                  height={15}
-                  layout="fill"
-                  alt="Phone Logo"
-                />
-              </a>
-            </>
-          ) : (
-            <>
-              <a href="mailto:info@karsalorme.com.tr">info@karsalorme.com.tr</a>
-              <a href="tel:+902123456789">+90 (212) 345 67 89</a>
-            </>
-          )}
-        </Bar>
+        {isMobile ? (
+          <>
+            <a href="mailto:info@karsalorme.com.tr">
+              <img
+                src="/assets/svgs/envelope-solid.svg"
+                width={20}
+                layout="fill"
+                alt="Email Logo"
+              />
+            </a>
+            <span>Bize Ulaşın</span>
+            <a href="tel:+902123456789">
+              <img
+                src="/assets/svgs/phone-solid.svg"
+                width={15}
+                height={15}
+                layout="fill"
+                alt="Phone Logo"
+              />
+            </a>
+          </>
+        ) : (
+          <>
+            <a href="mailto:info@karsalorme.com.tr">info@karsalorme.com.tr</a>
+            <a href="tel:+902123456789">+90 (212) 345 67 89</a>
+          </>
+        )}
       </Announcement>
       <SideBar
         isOpen={isOpen}
@@ -81,8 +77,7 @@ export default function Layout({ children }) {
           }
         />
       )}
-      <div className="layout-container__body">{children}</div>
-
+      <div className={styles.layout_container__body}>{children}</div>
       <Footer />
     </div>
   );

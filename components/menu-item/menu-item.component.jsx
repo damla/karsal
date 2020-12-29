@@ -1,14 +1,15 @@
 import Link from "next/link";
 
-import "./menu-item.styles.scss";
+import styles from "./menu-item.module.scss";
 
-export default function MenuItem({ href, children }) {
+export default function MenuItem({ href, children, locale }) {
   // TODO: Ignore warning from here
   return (
     <li>
-      <Link href={href}>
-        <a className={"menu-item"}>{children}</a>
+      <Link href={href} locale={locale}>
+        <a className={styles.menuItem}>{children}</a>
       </Link>
     </li>
   );
 }
+/* TODO: Burayi test et, oncesinde {"classname"} seklinde yazilmis, problem cikarabilirdi */

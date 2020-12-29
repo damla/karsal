@@ -1,4 +1,4 @@
-import "./content.styles.scss";
+import styles from "./content.module.scss";
 import classNames from "classnames";
 
 export default function Content({
@@ -11,9 +11,10 @@ export default function Content({
 }) {
   return (
     <div
-      className={classNames("content-container", {
-        "content-container__narrower": narrower,
-      })}
+      className={classNames(
+        styles.content_container,
+        narrower && styles.content_container__narrower
+      )}
       style={
         BgColor
           ? {
@@ -22,9 +23,9 @@ export default function Content({
           : {}
       }
     >
-      <div className="content">
-        {left ? <div className="content__left">{left}</div> : null}
-        <div className="content__right">
+      <div className={styles.content}>
+        {left ? <div className={styles.content__left}>{left}</div> : null}
+        <div className={styles.content__right}>
           <h1>{title}</h1>
           {blockquote}
           {button}

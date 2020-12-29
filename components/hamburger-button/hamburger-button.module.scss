@@ -1,0 +1,19 @@
+@import "~sass-burger/burger";
+@import "../menu-item/menu-item.module.scss";
+
+.hamburgerButton_container {
+  display: flex;
+  max-width: 25px;
+
+  .hamburgerButton {
+    .burgerIcon {
+      @include burger(25px, 3px, 5px, #444);
+    }
+    &__active {
+      .burgerIcon {
+        @include burger-to-cross;
+      }
+    }
+  }
+}
+/* TODO: burasi duzgun calisiyor mu kontrol et */

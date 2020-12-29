@@ -12,7 +12,7 @@
   }
 }
 
-.navbar-container {
+.navbar_container {
   display: flex;
   padding: 1.5rem;
   align-items: center;
@@ -22,7 +22,7 @@
   width: 100%;
   transition: all 0.1s ease-in;
 
-  &.scrolled {
+  &__scrolled {
     @include green-bg;
     padding: 1.5rem;
     top: 0;
@@ -34,10 +34,18 @@
     @include change-color;
   }
 
+  .lang_container {
+    display: flex;
+    .seperator {
+      color: $primary-font-color;
+      margin: 0 0.2rem;
+    }
+  }
+
   @media only screen and (max-width: $max-width-tabletOrMobile) {
     padding: 1rem 1.5rem;
 
-    &.scrolled {
+    &__scrolled {
       padding: 1rem 1.5rem;
     }
   }

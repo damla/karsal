@@ -1,17 +1,17 @@
-import "./hamburger-button.style.scss";
+import styles from  "./hamburger-button.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 
 export default function HamburgerButton({ menuActive, onClickHandler }) {
   return (
-    <li className="hamburger-button__container" onClick={onClickHandler}>
+    <li className={styles.hamburgerButton_container} onClick={onClickHandler}>
       <Link href="#">
         <a
-          className={classNames("menu-item hamburger-button", {
-            "is-active": menuActive,
-          })}
+          className={classNames(styles.menuItem, styles.hamburgerButton, 
+            menuActive && styles.hamburgerButton__active
+          )}
         >
-          <span className="burger-icon"></span>
+          <span className={styles.burgerIcon}></span>
         </a>
       </Link>
     </li>

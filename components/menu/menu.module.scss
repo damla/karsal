@@ -1,7 +1,7 @@
 @import "../../global/variables.scss";
 $margin-between-links: 1.7rem;
 
-.menu-container {
+.menu_container {
   display: flex;
   &__left {
     flex-basis: 30%;
@@ -12,12 +12,5 @@ $margin-between-links: 1.7rem;
   &__right {
     flex-direction: row-reverse;
     flex-basis: 70%;
-    .lang-container {
-      display: flex;
-      .seperator {
-        color: $primary-font-color;
-        margin: 0 0.2rem;
-      }
-    }
   }
 }
