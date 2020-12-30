@@ -100,7 +100,7 @@ export default function Layout({
         />
       )}
       <div className={styles.container__body}>{children}</div>
-      <Footer />
+      <Footer data={{ footer: { text, copyright, email, phone } }} />
     </div>
   );
 }
