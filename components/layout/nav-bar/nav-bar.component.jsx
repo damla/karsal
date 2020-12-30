@@ -50,7 +50,7 @@ export default function NavBar({
               {factory.text}
             </MenuItem>
             <MenuItem href={catalog.link} locale={catalog.locale}>
-              {factory.text}
+              {catalog.text}
             </MenuItem>
             <MenuItem href={contact.link} locale={contact.locale}>
               {contact.text}
