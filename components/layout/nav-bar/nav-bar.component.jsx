@@ -12,13 +12,15 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function NavBar({
-  hamburgerButton,
-  about_us,
-  factory,
-  catalog,
-  contact,
-  english,
-  turkish,
+  data: {
+    hamburgerButton,
+    about_us,
+    factory,
+    catalog,
+    contact,
+    english,
+    turkish,
+  },
 }) {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== "undefined" && window.scrollY > 0

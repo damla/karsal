@@ -3,15 +3,17 @@ import MenuItem from "../../menu-item/menu-item.component";
 import styles from "./side-bar.module.scss";
 
 export default function SideBar({
-  hamburgerButton,
-  isOpen,
-  about_us,
-  factory,
-  catalog,
-  contact,
-  turkish,
-  english,
-  footer,
+  data: {
+    hamburgerButton,
+    isOpen,
+    about_us,
+    factory,
+    catalog,
+    contact,
+    turkish,
+    english,
+    footer,
+  },
 }) {
   return (
     <div
@@ -44,7 +46,7 @@ export default function SideBar({
         </div>
         <div className={styles.container_footer}>
           <span>
-            <small>{footer.text}</small>
+            <small>{footer.text}&nbsp;</small>
           </span>
           <span>
             <small>{footer.copyright}</small>
