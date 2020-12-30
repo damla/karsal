@@ -19,16 +19,18 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function AboutUs({ common: { announcement, sidebar } }) {
-  console.log(announcement);
-  console.log(sidebar);
+export default function AboutUs({ common }) {
+  // console.log("announcement", announcement);
+  // console.log("sidebar", sidebar);
+  // console.log("navbar", navbar);
+  // console.log("footer", footer);
 
   return (
     <>
       <Head>
         <title>Hakkımızda</title>
       </Head>
-      <Layout>
+      <Layout data={common}>
         <Section>
           <Content
             BgColor={"#bed0bd20"}

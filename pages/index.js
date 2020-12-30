@@ -39,7 +39,7 @@ export default function Anasayfa({ content }) {
         <title>Karsal Örme</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <Layout data={common}>
         <Section id="section-1" banner>
           <Content
             BgColor={"#bed0bd20"}

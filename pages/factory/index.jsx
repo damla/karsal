@@ -32,7 +32,7 @@ export default function Factory({ content }) {
       <Head>
         <title>Fabrika</title>
       </Head>
-      <Layout>
+      <Layout data={common}>
         <Section>
           <Content
             BgColor={"#bed0bd20"}
