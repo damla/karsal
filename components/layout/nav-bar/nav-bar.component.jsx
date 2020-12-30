@@ -12,15 +12,8 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function NavBar({
-  data: {
-    hamburgerButton,
-    about_us,
-    factory,
-    catalog,
-    contact,
-    english,
-    turkish,
-  },
+  hamburgerButton,
+  data: { about_us, factory, catalog, contact, english, turkish },
 }) {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== "undefined" && window.scrollY > 0
@@ -96,7 +89,9 @@ export default function NavBar({
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="#">{hamburgerButton}</MenuItem>
+            <MenuItem href="#" locale={english.locale}>
+              {hamburgerButton}
+            </MenuItem>
             {/* TODO: LINK ICINDE LINK VAR! */}
           </Menu>
         </>

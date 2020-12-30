@@ -3,17 +3,9 @@ import MenuItem from "../../menu-item/menu-item.component";
 import styles from "./side-bar.module.scss";
 
 export default function SideBar({
-  data: {
-    hamburgerButton,
-    isOpen,
-    about_us,
-    factory,
-    catalog,
-    contact,
-    turkish,
-    english,
-    footer,
-  },
+  hamburgerButton,
+  isOpen,
+  data: { about_us, factory, catalog, contact, turkish, english, footer },
 }) {
   return (
     <div
