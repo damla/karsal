@@ -8,25 +8,19 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import Logo from "../../components/logo/logo.component";
 import "./factory.module.scss";
 
-import { connectToDatabase } from "../../util/mongodb";
+import { getCommonData } from "../../lib/common";
 
 export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
-
-  const content = await db.collection("Content").find({}).toArray();
-
-  const t = locale === "tr" ? "fabrika" : "factory";
-  // console.log(locale);
+  const commonData = await getCommonData(locale);
 
   return {
     props: {
-      //content: JSON.stringify(content),
-      content: JSON.stringify(t),
+      common: commonData,
     },
   };
 }
 
-export default function Factory({ content }) {
+export default function Factory({ common }) {
   return (
     <>
       <Head>

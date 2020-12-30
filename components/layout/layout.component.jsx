@@ -74,23 +74,11 @@ export default function Layout({
         hamburgerButton={
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
         }
-        data={{
-          sidebar: {
-            about_us,
-            factory,
-            catalog,
-            contact,
-            turkish,
-            english,
-            footer,
-          },
-        }}
+        data={sidebar}
       />
       {(isDesktopOrLaptop ? false : isOpen) || (
         <NavBar
-          data={{
-            navbar: { about_us, factory, catalog, contact, turkish, english },
-          }}
+          data={navbar}
           hamburgerButton={
             <HamburgerButton
               onClickHandler={onClickHandler}
@@ -100,7 +88,7 @@ export default function Layout({
         />
       )}
       <div className={styles.container__body}>{children}</div>
-      <Footer data={{ footer: { text, copyright, email, phone } }} />
+      <Footer data={footer} />
     </div>
   );
 }
