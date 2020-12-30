@@ -7,26 +7,22 @@ import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
 import "./about-us.module.scss";
-
-import { connectToDatabase } from "../../util/mongodb";
+import { getCommonData } from "../../lib/common";
 
 export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
-
-  const content = await db.collection("Content").find({}).toArray();
-
-  const t = locale === "tr" ? "hakkimizda" : "about us";
-  // console.log(locale);
+  const commonData = await getCommonData(locale);
 
   return {
     props: {
-      // content: JSON.stringify(content),
-      content: JSON.stringify(t),
+      common: commonData,
     },
   };
 }
 
-export default function AboutUs({ content }) {
+export default function AboutUs({ common: { announcement, sidebar } }) {
+  console.log(announcement);
+  console.log(sidebar);
+
   return (
     <>
       <Head>
@@ -37,7 +33,7 @@ export default function AboutUs({ content }) {
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={content}
+            title={""}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

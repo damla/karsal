@@ -13,12 +13,24 @@ export default function SideBar({ hamburgerButton, isOpen }) {
       <div className={styles.container_content}>
         <div className={styles.container_header}>{hamburgerButton}</div>
         <div className={styles.container_body}>
-          <MenuItem href="/hakkimizda">HAKKIMIZDA</MenuItem>
-          <MenuItem href="/fabrika">FABRİKA</MenuItem>
-          <MenuItem href="/katalog">KATALOG</MenuItem>
-          <MenuItem href="/iletisim">İLETİŞİM</MenuItem>
-          <MenuItem href="/">TÜRKÇE</MenuItem>
-          <MenuItem href="/">ENGLISH</MenuItem>
+          <MenuItem href="/hakkimizda" locale={"tr"}>
+            HAKKIMIZDA
+          </MenuItem>
+          <MenuItem href="/fabrika" locale={"tr"}>
+            FABRİKA
+          </MenuItem>
+          <MenuItem href="/katalog" locale={"tr"}>
+            KATALOG
+          </MenuItem>
+          <MenuItem href="/iletisim" locale={"tr"}>
+            İLETİŞİM
+          </MenuItem>
+          <MenuItem href="/" locale={"tr"}>
+            TÜRKÇE
+          </MenuItem>
+          <MenuItem href="/" locale={"tr"}>
+            ENGLISH
+          </MenuItem>
         </div>
         <div className={styles.container_footer}>
           <span>
