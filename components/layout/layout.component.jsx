@@ -9,7 +9,10 @@ import HamburgerButton from "../hamburger-button/hamburger-button.component";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 
-export default function Layout({ children }) {
+export default function Layout({
+  children,
+  data: { announcement, sidebar, navbar, footer },
+}) {
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
@@ -30,34 +33,39 @@ export default function Layout({ children }) {
       : document.querySelector("body").classList.remove("disableScroll");
   };
 
+  // console.log("announcement", announcement);
+  // console.log("sidebar", sidebar);
+  // console.log("navbar", navbar);
+  // console.log("footer", footer);
+
   return (
     <div className={styles.container}>
       <Announcement>
         {isMobile ? (
           <>
-            <a href="mailto:info@karsalorme.com.tr">
+            <a href={announcement.email.link}>
               <img
                 src="/assets/svgs/envelope-solid.svg"
                 width={20}
                 layout="fill"
-                alt="Email Logo"
+                alt={announcement.email.image_alt}
               />
             </a>
-            <span>Bize Ulaşın</span>
-            <a href="tel:+902123456789">
+            <span>{announcement.text}</span>
+            <a href={announcement.phone.link}>
               <img
                 src="/assets/svgs/phone-solid.svg"
                 width={15}
                 height={15}
                 layout="fill"
-                alt="Phone Logo"
+                alt={announcement.phone.image_alt}
               />
             </a>
           </>
         ) : (
           <>
-            <a href="mailto:info@karsalorme.com.tr">info@karsalorme.com.tr</a>
-            <a href="tel:+902123456789">+90 (212) 345 67 89</a>
+            <a href={announcement.email.link}>{announcement.email.text}</a>
+            <a href={announcement.phone.link}>{announcement.phone.text}</a>
           </>
         )}
       </Announcement>
@@ -66,9 +74,11 @@ export default function Layout({ children }) {
         hamburgerButton={
           <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
         }
+        data={sidebar}
       />
       {(isDesktopOrLaptop ? false : isOpen) || (
         <NavBar
+          data={navbar}
           hamburgerButton={
             <HamburgerButton
               onClickHandler={onClickHandler}
@@ -78,7 +88,7 @@ export default function Layout({ children }) {
         />
       )}
       <div className={styles.container__body}>{children}</div>
-      <Footer />
+      <Footer data={footer} />
     </div>
   );
 }

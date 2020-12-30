@@ -8,23 +8,19 @@ import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
-import { connectToDatabase } from "../util/mongodb";
+import { getCommonData } from "../lib/common";
 
 export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
+  const commonData = await getCommonData(locale);
 
-  const content = await db.collection("Content").find({}).toArray();
-  // console.log(locale);
-  const t = locale === "tr" ? "Kumaşın Mimarı..." : "Architect of fabric...";
   return {
     props: {
-      // content: JSON.stringify(content),
-      content: t,
+      common: commonData,
     },
   };
 }
 
-export default function Anasayfa({ content }) {
+export default function Anasayfa({ common }) {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
@@ -39,12 +35,12 @@ export default function Anasayfa({ content }) {
         <title>Karsal Örme</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <Layout data={common}>
         <Section id="section-1" banner>
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={content}
+            title={"test"}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

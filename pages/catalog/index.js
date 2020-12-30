@@ -20,7 +20,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Katalog({content}) {
+export default function Katalog({ content }) {
   return (
     <>
       <Head>

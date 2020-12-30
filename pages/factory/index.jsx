@@ -8,36 +8,30 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import Logo from "../../components/logo/logo.component";
 import "./factory.module.scss";
 
-import { connectToDatabase } from "../../util/mongodb";
+import { getCommonData } from "../../lib/common";
 
 export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
-
-  const content = await db.collection("Content").find({}).toArray();
-
-  const t = locale === "tr" ? "fabrika" : "factory";
-  // console.log(locale);
+  const commonData = await getCommonData(locale);
 
   return {
     props: {
-      //content: JSON.stringify(content),
-      content: JSON.stringify(t),
+      common: commonData,
     },
   };
 }
 
-export default function Factory({ content }) {
+export default function Factory({ common }) {
   return (
     <>
       <Head>
         <title>Fabrika</title>
       </Head>
-      <Layout>
+      <Layout data={common}>
         <Section>
           <Content
             BgColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={content}
+            title={"Test"}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

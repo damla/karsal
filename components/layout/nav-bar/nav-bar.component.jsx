@@ -11,7 +11,10 @@ import styles from "./nav-bar.module.scss";
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export default function NavBar({ hamburgerButton }) {
+export default function NavBar({
+  hamburgerButton,
+  data: { about_us, factory, catalog, contact, english, turkish },
+}) {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== "undefined" && window.scrollY > 0
   );
@@ -40,19 +43,27 @@ export default function NavBar({ hamburgerButton }) {
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
-            <MenuItem href="/about-us">HAKKIMIZDA</MenuItem>
-            <MenuItem href="/factory">FABRİKA</MenuItem>
-            <MenuItem href="/catalog">KATALOG</MenuItem>
-            <MenuItem href="/contact">İLETİŞİM</MenuItem>
+            <MenuItem href={about_us.link} locale={about_us.locale}>
+              {about_us.text}
+            </MenuItem>
+            <MenuItem href={factory.link} locale={factory.locale}>
+              {factory.text}
+            </MenuItem>
+            <MenuItem href={catalog.link} locale={catalog.locale}>
+              {catalog.text}
+            </MenuItem>
+            <MenuItem href={contact.link} locale={contact.locale}>
+              {contact.text}
+            </MenuItem>
           </Menu>
           <Menu align="right">
             <div className={styles.lang_container}>
-              <MenuItem href="/en" locale="en">
-                EN
+              <MenuItem href={english.link} locale={english.locale}>
+                {english.text}
               </MenuItem>
               <span className={styles.seperator}>|</span>
-              <MenuItem href="/" locale="tr">
-                TR
+              <MenuItem href={turkish.link} locale={turkish.locale}>
+                {turkish.text}
               </MenuItem>
             </div>
           </Menu>
@@ -62,12 +73,25 @@ export default function NavBar({ hamburgerButton }) {
       {isTabletOrMobile && (
         <>
           <Menu align="left">
-            <MenuItem href="/">
+            <MenuItem
+              href={
+                localStorage.getItem("lang") === "tr"
+                  ? turkish.link
+                  : english.link
+              }
+              locale={
+                localStorage.getItem("lang") === "tr"
+                  ? turkish.locale
+                  : english.locale
+              }
+            >
               <Logo width={120} height={40} />
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="#">{hamburgerButton}</MenuItem>
+            <MenuItem href="#" locale={english.locale}>
+              {hamburgerButton}
+            </MenuItem>
             {/* TODO: LINK ICINDE LINK VAR! */}
           </Menu>
         </>
