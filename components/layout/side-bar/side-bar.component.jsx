@@ -2,7 +2,17 @@ import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
 import styles from "./side-bar.module.scss";
 
-export default function SideBar({ hamburgerButton, isOpen, sidebar }) {
+export default function SideBar({
+  hamburgerButton,
+  isOpen,
+  about_us,
+  factory,
+  catalog,
+  contact,
+  turkish,
+  english,
+  footer,
+}) {
   return (
     <div
       className={classNames(
@@ -13,34 +23,31 @@ export default function SideBar({ hamburgerButton, isOpen, sidebar }) {
       <div className={styles.container_content}>
         <div className={styles.container_header}>{hamburgerButton}</div>
         <div className={styles.container_body}>
-          <MenuItem
-            href={sidebar.about_us.link}
-            locale={sidebar.about_us.locale}
-          >
-            {sidebar.about_us.text}
+          <MenuItem href={about_us.link} locale={about_us.locale}>
+            {about_us.text}
           </MenuItem>
-          <MenuItem href={sidebar.factory.link} locale={sidebar.factory.locale}>
-            {sidebar.factory.text}
+          <MenuItem href={factory.link} locale={factory.locale}>
+            {factory.text}
           </MenuItem>
-          <MenuItem href={sidebar.catalog.link} locale={sidebar.catalog.locale}>
-            {sidebar.catalog.text}
+          <MenuItem href={catalog.link} locale={catalog.locale}>
+            {catalog.text}
           </MenuItem>
-          <MenuItem href={sidebar.contact.link} locale={sidebar.contact.locale}>
-            {sidebar.contact.text}
+          <MenuItem href={contact.link} locale={contact.locale}>
+            {contact.text}
           </MenuItem>
-          <MenuItem href={sidebar.turkish.link} locale={sidebar.turkish.locale}>
-            {sidebar.turkish.text}
+          <MenuItem href={turkish.link} locale={turkish.locale}>
+            {turkish.text}
           </MenuItem>
-          <MenuItem href={sidebar.english.link} locale={sidebar.english.locale}>
-            {sidebar.english.text}
+          <MenuItem href={english.link} locale={english.locale}>
+            {english.text}
           </MenuItem>
         </div>
         <div className={styles.container_footer}>
           <span>
-            <small>{sidebar.footer.text}</small>
+            <small>{footer.text}</small>
           </span>
           <span>
-            <small>{sidebar.footer.copyright}</small>
+            <small>{footer.copyright}</small>
           </span>
         </div>
       </div>
