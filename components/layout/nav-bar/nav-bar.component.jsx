@@ -70,7 +70,7 @@ export default function NavBar({
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="#">{hamburgerButton}</MenuItem>
+            <MenuItem>{hamburgerButton}</MenuItem>
           </Menu>
         </>
       )}
