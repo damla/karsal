@@ -7,23 +7,27 @@ import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
 import "./about-us.module.scss";
+
 import { getCommonData } from "../../lib/common";
+import { getAboutUsData } from "../../lib/page-data/about-us";
 
 export async function getStaticProps({ locale }) {
   const commonData = await getCommonData(locale);
+  const pageData = await getAboutUsData(locale);
 
   return {
     props: {
       common: commonData,
+      page: pageData,
     },
   };
 }
 
-export default function AboutUs({ common }) {
+export default function AboutUs({ common, page: { title } }) {
   return (
     <>
       <Head>
-        <title>Hakkımızda</title>
+        <title>{title}</title>
       </Head>
       <Layout data={common}>
         <Section>

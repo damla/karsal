@@ -9,22 +9,25 @@ import Logo from "../../components/logo/logo.component";
 import "./factory.module.scss";
 
 import { getCommonData } from "../../lib/common";
+import { getFactoryData } from "../../lib/page-data/factory";
 
 export async function getStaticProps({ locale }) {
   const commonData = await getCommonData(locale);
+  const pageData = await getFactoryData(locale);
 
   return {
     props: {
       common: commonData,
+      page: pageData,
     },
   };
 }
 
-export default function Factory({ common }) {
+export default function Factory({ common, page: { title } }) {
   return (
     <>
       <Head>
-        <title>Fabrika</title>
+        <title>{title}</title>
       </Head>
       <Layout data={common}>
         <Section>
