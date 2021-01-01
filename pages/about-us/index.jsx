@@ -20,11 +20,6 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function AboutUs({ common }) {
-  // console.log("announcement", announcement);
-  // console.log("sidebar", sidebar);
-  // console.log("navbar", navbar);
-  // console.log("footer", footer);
-
   return (
     <>
       <Head>
