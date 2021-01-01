@@ -2,17 +2,11 @@ import styles from "./custom-button.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 
-export default function CustomButton({
-  onClick,
-  href,
-  children,
-  inverted,
-  linked,
-}) {
+export default function CustomButton({ onClick, href, children, inverted }) {
   return (
     <>
-      {linked ? (
-        <Link href={href ? href : "/"} scroll={false}>
+      {href ? (
+        <Link href={href} scroll={false}>
           <a
             className={classNames(
               styles.container,
