@@ -1,11 +1,11 @@
 import Link from "next/link";
 import styles from "./menu-item.module.scss";
 
-export default function MenuItem({ href, children, locale }) {
+export default function MenuItem({ href, children, lang }) {
   // TODO: Ignore warning from here
   return (
     <li>
-      <Link href={href} locale={locale}>
+      <Link href={href} locale={lang}>
         <a className={styles.container}>{children}</a>
       </Link>
     </li>
