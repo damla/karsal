@@ -1,34 +1,35 @@
 import Head from "next/head";
 
+import Layout from "../../components/layout/layout.component";
+
 import "./catalog.module.scss";
 
-import { connectToDatabase } from "../../util/mongodb";
+import { getCommonData } from "../../lib/common";
 
 export async function getStaticProps({ locale }) {
-  const { db } = await connectToDatabase();
-
-  const content = await db.collection("Content").find({}).toArray();
-
-  const t = locale === "tr" ? "Katalog" : "Catalog";
-  // console.log(locale);
+  const commonData = await getCommonData(locale);
 
   return {
     props: {
-      // content: JSON.stringify(content),
-      content: JSON.stringify(t),
+      common: commonData,
     },
   };
 }
 
-export default function Katalog({ content }) {
+export default function Catalog({ common }) {
   return (
     <>
       <Head>
         <title>Katalog</title>
       </Head>
-      <div>
-        <h1>{content}</h1>
-      </div>
+      <Layout data={common}>
+        <div
+          style={{
+            height: "100vh",
+            backgroundColor: "#bad1f7",
+          }}
+        ></div>
+      </Layout>
     </>
   );
 }
