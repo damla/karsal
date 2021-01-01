@@ -33,11 +33,6 @@ export default function Layout({
       : document.querySelector("body").classList.remove("disableScroll");
   };
 
-  // console.log("announcement", announcement);
-  // console.log("sidebar", sidebar);
-  // console.log("navbar", navbar);
-  // console.log("footer", footer);
-
   return (
     <div className={styles.container}>
       <Announcement>

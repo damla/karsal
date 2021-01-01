@@ -11,4 +11,4 @@ export default function MenuItem({ href, children, locale }) {
     </li>
   );
 }
-/* TODO: Burayi test et, oncesinde {"classname"} seklinde yazilmis, problem cikarabilirdi */
+/* TODO: fix the bug about links */

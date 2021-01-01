@@ -55,7 +55,7 @@ export default function Anasayfa({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button onClick={() => scrollToSection("section-2")}>
+              <CustomButton onClick={() => scrollToSection("section-2")}>
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
@@ -93,7 +93,7 @@ export default function Anasayfa({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button>
+              <CustomButton linked>
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
@@ -116,7 +116,7 @@ export default function Anasayfa({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button>
+              <CustomButton linked>
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
