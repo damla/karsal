@@ -21,10 +21,10 @@ export default function SideBar({
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
-          <MenuItem href={turkish.link} lang={turkish.locale}>
+          <MenuItem href={turkish.link} lang={turkish.locale} refresh>
             {turkish.text}
           </MenuItem>
-          <MenuItem href={english.link} lang={english.locale}>
+          <MenuItem href={english.link} lang={english.locale} refresh>
             {english.text}
           </MenuItem>
         </div>

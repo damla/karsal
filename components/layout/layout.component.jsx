@@ -13,11 +13,12 @@ export default function Layout({
   children,
   data: { announcement, sidebar, navbar, footer },
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
   });
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") disableScrollBody(isOpen);
