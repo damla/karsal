@@ -16,13 +16,20 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Katalog({ common }) {
+export default function Catalog({ common }) {
   return (
     <>
       <Head>
         <title>Katalog</title>
       </Head>
-      <Layout data={common}></Layout>
+      <Layout data={common}>
+        <div
+          style={{
+            height: "100vh",
+            backgroundColor: "#bad1f7",
+          }}
+        ></div>
+      </Layout>
     </>
   );
 }
