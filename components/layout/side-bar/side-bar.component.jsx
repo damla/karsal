@@ -41,7 +41,9 @@ export default function SideBar({
             <small>{footer.text}&nbsp;</small>
           </span>
           <span>
-            <small>{footer.copyright}</small>
+            <small>
+              {new Date().getFullYear()}&nbsp;{footer.copyright}
+            </small>
           </span>
         </div>
       </div>
