@@ -6,7 +6,9 @@ export default function Footer({ data: { text, copyright, email, phone } }) {
     <Bar height={"7vh"} footer>
       <div className={styles.container__copyright}>
         <span>{text}&nbsp;</span>
-        <span>{copyright}</span>
+        <span>
+          {new Date().getFullYear()}&nbsp;{copyright}
+        </span>
       </div>
       <span className={styles.container__contact}>
         <a href={email.link}>{email.text}</a>
