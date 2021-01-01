@@ -9,18 +9,21 @@ import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
 import { getCommonData } from "../lib/common";
+import { getHomePageData } from "../lib/page-data/home-page";
 
 export async function getStaticProps({ locale }) {
   const commonData = await getCommonData(locale);
+  const pageData = await getHomePageData(locale);
 
   return {
     props: {
       common: commonData,
+      page: pageData,
     },
   };
 }
 
-export default function Anasayfa({ common }) {
+export default function Anasayfa({ common, page: { title } }) {
   function scrollToSection(sectionId) {
     if (typeof window !== "undefined") {
       document
@@ -32,7 +35,7 @@ export default function Anasayfa({ common }) {
   return (
     <>
       <Head>
-        <title>Karsal Örme</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
