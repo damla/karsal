@@ -46,7 +46,7 @@ export default function Factory({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button href="/en/factory">
+              <CustomButton href="/en/factory">
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>

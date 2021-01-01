@@ -46,7 +46,7 @@ export default function AboutUs({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton button href="/en/about-us">
+              <CustomButton href="/en/about-us">
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>

@@ -43,26 +43,18 @@ export default function NavBar({
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
-            <MenuItem href={about_us.link} locale={about_us.locale}>
-              {about_us.text}
-            </MenuItem>
-            <MenuItem href={factory.link} locale={factory.locale}>
-              {factory.text}
-            </MenuItem>
-            <MenuItem href={catalog.link} locale={catalog.locale}>
-              {catalog.text}
-            </MenuItem>
-            <MenuItem href={contact.link} locale={contact.locale}>
-              {contact.text}
-            </MenuItem>
+            <MenuItem href={about_us.link}>{about_us.text}</MenuItem>
+            <MenuItem href={factory.link}>{factory.text}</MenuItem>
+            <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+            <MenuItem href={contact.link}>{contact.text}</MenuItem>
           </Menu>
           <Menu align="right">
             <div className={styles.lang_container}>
-              <MenuItem href={english.link} locale={english.locale}>
+              <MenuItem href={english.link} lang={english.locale}>
                 {english.text}
               </MenuItem>
               <span className={styles.seperator}>|</span>
-              <MenuItem href={turkish.link} locale={turkish.locale}>
+              <MenuItem href={turkish.link} lang={turkish.locale}>
                 {turkish.text}
               </MenuItem>
             </div>
@@ -73,26 +65,12 @@ export default function NavBar({
       {isTabletOrMobile && (
         <>
           <Menu align="left">
-            <MenuItem
-              href={
-                localStorage.getItem("lang") === "tr"
-                  ? turkish.link
-                  : english.link
-              }
-              locale={
-                localStorage.getItem("lang") === "tr"
-                  ? turkish.locale
-                  : english.locale
-              }
-            >
+            <MenuItem href="/">
               <Logo width={120} height={40} />
             </MenuItem>
           </Menu>
           <Menu align="right">
-            <MenuItem href="#" locale={english.locale}>
-              {hamburgerButton}
-            </MenuItem>
-            {/* TODO: LINK ICINDE LINK VAR! */}
+            <MenuItem href="#">{hamburgerButton}</MenuItem>
           </Menu>
         </>
       )}

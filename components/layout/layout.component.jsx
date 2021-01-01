@@ -13,11 +13,12 @@ export default function Layout({
   children,
   data: { announcement, sidebar, navbar, footer },
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1131px)",
   });
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") disableScrollBody(isOpen);
@@ -32,11 +33,6 @@ export default function Layout({
       ? document.querySelector("body").classList.add("disableScroll")
       : document.querySelector("body").classList.remove("disableScroll");
   };
-
-  // console.log("announcement", announcement);
-  // console.log("sidebar", sidebar);
-  // console.log("navbar", navbar);
-  // console.log("footer", footer);
 
   return (
     <div className={styles.container}>

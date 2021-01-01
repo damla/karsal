@@ -17,22 +17,14 @@ export default function SideBar({
       <div className={styles.container_content}>
         <div className={styles.container_header}>{hamburgerButton}</div>
         <div className={styles.container_body}>
-          <MenuItem href={about_us.link} locale={about_us.locale}>
-            {about_us.text}
-          </MenuItem>
-          <MenuItem href={factory.link} locale={factory.locale}>
-            {factory.text}
-          </MenuItem>
-          <MenuItem href={catalog.link} locale={catalog.locale}>
-            {catalog.text}
-          </MenuItem>
-          <MenuItem href={contact.link} locale={contact.locale}>
-            {contact.text}
-          </MenuItem>
-          <MenuItem href={turkish.link} locale={turkish.locale}>
+          <MenuItem href={about_us.link}>{about_us.text}</MenuItem>
+          <MenuItem href={factory.link}>{factory.text}</MenuItem>
+          <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+          <MenuItem href={contact.link}>{contact.text}</MenuItem>
+          <MenuItem href={turkish.link} lang={turkish.locale} refresh>
             {turkish.text}
           </MenuItem>
-          <MenuItem href={english.link} locale={english.locale}>
+          <MenuItem href={english.link} lang={english.locale} refresh>
             {english.text}
           </MenuItem>
         </div>
