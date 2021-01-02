@@ -1,7 +1,13 @@
+import React, { ReactNode } from 'react';
 import styles from "./menu.module.scss";
 import classNames from "classnames";
 
-export default function Menu({ children, align }) {
+interface Props {
+  children: ReactNode,
+  align: string
+}
+
+export default function Menu({ children, align }: Props) {
   return (
     <ul
       className={classNames(
