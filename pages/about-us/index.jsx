@@ -32,7 +32,7 @@ export default function AboutUs({ common, page: { title } }) {
       <Layout data={common}>
         <Section>
           <Content
-            BgColor={"#bed0bd20"}
+            backgroundColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
             title={""}
             blockquote={

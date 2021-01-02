@@ -41,7 +41,7 @@ export default function Anasayfa({ common, page: { title } }) {
       <Layout data={common}>
         <Section id="section-1" banner>
           <Content
-            BgColor={"#bed0bd20"}
+            backgroundColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
             title={"test"}
             blockquote={
@@ -80,7 +80,7 @@ export default function Anasayfa({ common, page: { title } }) {
           />
           <Content
             narrower
-            BgColor={"#f1f5f1"}
+            backgroundColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
@@ -103,7 +103,7 @@ export default function Anasayfa({ common, page: { title } }) {
         <Section id="section-3">
           <Content
             narrower
-            BgColor={"#f1f5f1"}
+            backgroundColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>
