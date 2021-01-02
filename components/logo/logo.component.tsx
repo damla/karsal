@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-export default function Logo({ width, height }) {
+export default function Logo({ width, height }: Props) {
   return (
     <Link href="/">
       <Image
