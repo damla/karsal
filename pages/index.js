@@ -74,14 +74,14 @@ export default function Anasayfa({ common, page: { title } }) {
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"
-            objectFit={"fill"}
+            objectFit="fill"
             wider
             priority
           />
           <Content
             narrower
-            backgroundColor={"#f1f5f1"}
-            title={"Kumaşın Mimarı..."}
+            backgroundColor="#f1f5f1"
+            title="Kumaşın Mimarı..."
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

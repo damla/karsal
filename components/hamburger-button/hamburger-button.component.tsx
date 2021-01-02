@@ -1,5 +1,4 @@
 import styles from "./hamburger-button.module.scss";
-import React, { ReactNode } from "react";
 import classNames from "classnames";
 
 interface Props {
