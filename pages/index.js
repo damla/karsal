@@ -93,7 +93,7 @@ export default function Anasayfa({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton linked>
+              <CustomButton href="/about-us">
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
