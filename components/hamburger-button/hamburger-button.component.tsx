@@ -1,8 +1,13 @@
 import styles from "./hamburger-button.module.scss";
-import Link from "next/link";
+import React, { ReactNode } from "react";
 import classNames from "classnames";
 
-export default function HamburgerButton({ menuActive, onClickHandler }) {
+interface Props {
+  menuActive?: boolean,
+  onClickHandler: () => void;
+}
+
+export default function HamburgerButton({ menuActive, onClickHandler }: Props) {
   return (
     <li className={styles.container} onClick={onClickHandler}>
       <a className={classNames(styles.body, menuActive && styles.body__active)}>

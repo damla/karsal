@@ -24,7 +24,7 @@ export default function Layout({
     if (typeof window !== "undefined") disableScrollBody(isOpen);
   }, [isOpen]);
 
-  const onClickHandler = () => {
+  const onClick = () => {
     setIsOpen(!isOpen);
   };
 
@@ -68,19 +68,14 @@ export default function Layout({
       <SideBar
         isOpen={isOpen}
         hamburgerButton={
-          <HamburgerButton onClickHandler={onClickHandler} menuActive={true} />
+          <HamburgerButton onClickHandler={onClick} menuActive />
         }
         data={sidebar}
       />
       {(isDesktopOrLaptop ? false : isOpen) || (
         <NavBar
           data={navbar}
-          hamburgerButton={
-            <HamburgerButton
-              onClickHandler={onClickHandler}
-              menuActive={false}
-            />
-          }
+          hamburgerButton={<HamburgerButton onClickHandler={onClick} />}
         />
       )}
       <div className={styles.container__body}>{children}</div>
