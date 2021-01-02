@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 import Link from "next/link";
 import styles from "./menu-item.module.scss";
 
-type Props={
-  children?: ReactNode,
+interface Props {
+  children: ReactNode,
   href: string,
   lang: string
 }
