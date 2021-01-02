@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./logo.module.scss";
 
+interface Props {
+  width: number,
+  height: number
+}
+
+
 export default function Logo({ width, height }) {
   return (
     <Link href="/">
