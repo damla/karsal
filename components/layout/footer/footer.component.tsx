@@ -1,7 +1,12 @@
 import Bar from "../../bar/bar.component";
 import styles from "./footer.module.scss";
+import { Common } from "../../../interfaces/index";
 
-export default function Footer({ data: { text, copyright, email, phone } }) {
+interface Props {
+  data: Common["footer"],
+}
+
+export default function Footer({ data: { text, copyright, email, phone } }: Props) {
   return (
     <Bar height={"7vh"} footer>
       <div className={styles.container__copyright}>
