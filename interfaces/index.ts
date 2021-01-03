@@ -89,3 +89,33 @@ export type Common = {
         }
     }
 }
+
+export type HomePage = {
+    _id: ObjectID,
+    lang: string,
+    title: string
+}
+
+export type AboutUs = {
+    _id: ObjectID,
+    lang: string,
+    title: string
+}
+
+export type Catalog = {
+    _id: ObjectID,
+    lang: string,
+    title: string
+}
+
+export type Contact = {
+    _id: ObjectID,
+    lang: string,
+    title: string
+}
+
+export type Factory = {
+    _id: ObjectID,
+    lang: string,
+    title: string
+}

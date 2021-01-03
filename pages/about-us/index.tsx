@@ -7,13 +7,22 @@ import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
 import "./about-us.module.scss";
+import { GetStaticProps } from 'next';
 
 import { getCommonData } from "../../lib/common";
 import { getAboutUsData } from "../../lib/page-data/about-us";
+import { Common, AboutUs } from "../../interfaces/index";
 
-export async function getStaticProps({ locale }) {
-  const commonData = await getCommonData(locale);
-  const pageData = await getAboutUsData(locale);
+interface Props {
+  common: Common,
+  page: AboutUs,
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+  // TODO: Check local value in here
+
+  const commonData: Common = await getCommonData(locale);
+  const pageData: AboutUs = await getAboutUsData(locale);
 
   return {
     props: {
@@ -23,7 +32,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function AboutUs({ common, page: { title } }) {
+export default function AboutUs({ common, page: { title } }: Props) {
   return (
     <>
       <Head>

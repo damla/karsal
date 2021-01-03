@@ -12,7 +12,6 @@ import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 import { Common } from "../../interfaces/index";
 
-
 interface Props {
   children: ReactNode,
   data: Common,

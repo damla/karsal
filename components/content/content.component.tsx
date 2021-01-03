@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 interface Props {
   backgroundColor?: string,
-  left?: boolean,
+  left?: ReactNode,
   title: string,
   blockquote: ReactNode,
   button: ReactNode,
