@@ -1,4 +1,5 @@
 import styles from "./layout.module.scss";
+import React, { ReactNode } from "react";
 
 import Announcement from "./announcement/announcement.component";
 import Footer from "./footer/footer.component";
@@ -8,11 +9,24 @@ import HamburgerButton from "../hamburger-button/hamburger-button.component";
 
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
+import { Common } from "../../interfaces/index";
+import Image from "next/image";
+
+interface Props {
+  children: ReactNode,
+  data: Common,
+
+}
 
 export default function Layout({
   children,
-  data: { announcement, sidebar, navbar, footer },
-}) {
+  data: {
+    announcement,
+    sidebar,
+    navbar,
+    footer
+  },
+}: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
@@ -28,10 +42,10 @@ export default function Layout({
     setIsOpen(!isOpen);
   };
 
-  const disableScrollBody = (isOpen) => {
+  const disableScrollBody = (isOpen: boolean) => {
     isOpen
-      ? document.querySelector("body").classList.add("disableScroll")
-      : document.querySelector("body").classList.remove("disableScroll");
+      ? document?.querySelector("body")?.classList.add("disableScroll")
+      : document?.querySelector("body")?.classList.remove("disableScroll");
   };
 
   return (
@@ -40,30 +54,30 @@ export default function Layout({
         {isMobile ? (
           <>
             <a href={announcement.email.link}>
-              <img
+              <Image
                 src="/assets/svgs/envelope-solid.svg"
                 width={20}
-                layout="fill"
+                height={20}
                 alt={announcement.email.image_alt}
               />
             </a>
             <span>{announcement.text}</span>
             <a href={announcement.phone.link}>
-              <img
+              <Image
                 src="/assets/svgs/phone-solid.svg"
                 width={15}
                 height={15}
-                layout="fill"
+
                 alt={announcement.phone.image_alt}
               />
             </a>
           </>
         ) : (
-          <>
-            <a href={announcement.email.link}>{announcement.email.text}</a>
-            <a href={announcement.phone.link}>{announcement.phone.text}</a>
-          </>
-        )}
+            <>
+              <a href={announcement.email.link}>{announcement.email.text}</a>
+              <a href={announcement.phone.link}>{announcement.phone.text}</a>
+            </>
+          )}
       </Announcement>
       <SideBar
         isOpen={isOpen}
