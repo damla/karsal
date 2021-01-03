@@ -1,26 +1,24 @@
-import React, { CSSProperties, ReactNode } from "react";
-import styles from "./content.module.scss";
-import classNames from "classnames";
+import React, { CSSProperties, ReactNode, ReactElement } from 'react'
+import styles from './content.module.scss'
+import classNames from 'classnames'
 
 interface Props {
-  backgroundColor?: string,
-  left?: ReactNode,
-  title: string,
-  blockquote: ReactNode,
-  button: ReactNode,
-  narrower?: boolean,
+  backgroundColor?: string
+  left?: ReactNode
+  title: string
+  blockquote: ReactNode
+  button: ReactNode
+  narrower?: boolean
 }
 
-
-export default function Content({
+export default function Content ({
   backgroundColor,
   left,
   title,
   blockquote,
   button,
-  narrower,
-}: Props) {
-
+  narrower = false
+}: Props): ReactElement {
   const bgColor: CSSProperties = {
     backgroundColor // backgroundColor: backgroundColor
   }
@@ -36,7 +34,7 @@ export default function Content({
       }
     >
       <div className={styles.body}>
-        {left && <div className={styles.body__left}>{left}</div>}
+        {left !== undefined && <div className={styles.body__left}>{left}</div>}
         <div className={styles.body__right}>
           <h1>{title}</h1>
           {blockquote}
@@ -44,5 +42,5 @@ export default function Content({
         </div>
       </div>
     </div>
-  );
+  )
 }
