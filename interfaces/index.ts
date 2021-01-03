@@ -1,4 +1,4 @@
-import {ObjectID} from 'mongodb';
+import { ObjectID } from 'mongodb';
 
 export type Common = {
     _id: ObjectID,
@@ -18,62 +18,62 @@ export type Common = {
     },
     sidebar: {
         about_us: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         factory: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         catalog: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         contact: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         turkish: {
-            link:string,
-            locale: string, 
-            text:string
+            link: string,
+            locale: string,
+            text: string
         },
         english: {
-            link:string,
-            locale: string, 
-            text:string
+            link: string,
+            locale: string,
+            text: string
         },
         footer: {
             text: string,
-            copytright: string
+            copyright: string
         }
     },
     navbar: {
         about_us: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         factory: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         catalog: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         contact: {
-            link:string, 
-            text:string
+            link: string,
+            text: string
         },
         turkish: {
-            link:string,
-            locale: string, 
-            text:string
+            link: string,
+            locale: string,
+            text: string
         },
         english: {
-            link:string,
-            locale: string, 
-            text:string
+            link: string,
+            locale: string,
+            text: string
         }
     },
     footer: {
@@ -83,9 +83,9 @@ export type Common = {
             link: string,
             text: string
         },
-        phone: { 
+        phone: {
             link: string,
             text: string
         }
     }
-  }
+}

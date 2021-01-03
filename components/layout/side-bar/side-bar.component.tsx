@@ -1,12 +1,20 @@
 import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
 import styles from "./side-bar.module.scss";
+import React, { ReactNode } from "react";
+import { Common } from "../../../interfaces/index";
+
+interface Props {
+  hamburgerButton: ReactNode,
+  isOpen?: boolean,
+  data: Common["sidebar"],
+}
 
 export default function SideBar({
   hamburgerButton,
   isOpen,
   data: { about_us, factory, catalog, contact, turkish, english, footer },
-}) {
+}: Props) {
   return (
     <div
       className={classNames(
