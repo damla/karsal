@@ -8,6 +8,7 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import Logo from "../../components/logo/logo.component";
 import "./factory.module.scss";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../../lib/common";
 import { getFactoryData } from "../../lib/page-data/factory";
 import { CommonModel, FactoryModel } from "../../interfaces/index";
@@ -17,7 +18,7 @@ interface Props {
   page: FactoryModel
 }
 
-export async function getStaticProps({ locale = "tr" }) {
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
   const commonData: Props["common"] = await getCommonData(locale);
   const pageData: Props["page"] = await getFactoryData(locale);
 

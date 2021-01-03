@@ -8,10 +8,18 @@ import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../lib/common";
 import { getHomePageData } from "../lib/page-data/home-page";
+import { CommonModel, HomePageModel } from "../interfaces/index";
 
-export async function getStaticProps({ locale }) {
+interface Props {
+  common: CommonModel,
+  page: HomePageModel
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+
   const commonData = await getCommonData(locale);
   const pageData = await getHomePageData(locale);
 
@@ -23,12 +31,10 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Anasayfa({ common, page: { title } }) {
-  function scrollToSection(sectionId) {
+export default function Anasayfa({ common, page: { title } }: Props) {
+  function scrollToSection(sectionId: string) {
     if (typeof window !== "undefined") {
-      document
-        .querySelector(`#${sectionId}`)
-        .scrollIntoView({ behavior: "smooth" });
+      document?.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: "smooth" });
     }
   }
 
