@@ -1,7 +1,14 @@
+import React, { ReactNode } from 'react';
 import Link from "next/link";
 import styles from "./menu-item.module.scss";
 
-export default function MenuItem({ href = "", children, lang }) {
+interface Props {
+  children: ReactNode,
+  href?: string,
+  lang?: string
+}
+
+export default function MenuItem({ href = "", children, lang }: Props) {
   // TODO: Ignore warning from here
   return (
     <li>

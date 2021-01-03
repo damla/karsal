@@ -8,10 +8,18 @@ import BlockQuote from "../components/block-quote/block-quote.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 import Logo from "../components/logo/logo.component";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../lib/common";
 import { getHomePageData } from "../lib/page-data/home-page";
+import { CommonModel, HomePageModel } from "../interfaces/index";
 
-export async function getStaticProps({ locale }) {
+interface Props {
+  common: CommonModel,
+  page: HomePageModel
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+
   const commonData = await getCommonData(locale);
   const pageData = await getHomePageData(locale);
 
@@ -23,12 +31,10 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Anasayfa({ common, page: { title } }) {
-  function scrollToSection(sectionId) {
+export default function Anasayfa({ common, page: { title } }: Props) {
+  function scrollToSection(sectionId: string) {
     if (typeof window !== "undefined") {
-      document
-        .querySelector(`#${sectionId}`)
-        .scrollIntoView({ behavior: "smooth" });
+      document?.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -41,7 +47,7 @@ export default function Anasayfa({ common, page: { title } }) {
       <Layout data={common}>
         <Section id="section-1" banner>
           <Content
-            BgColor={"#bed0bd20"}
+            backgroundColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
             title={"test"}
             blockquote={
@@ -74,14 +80,14 @@ export default function Anasayfa({ common, page: { title } }) {
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"
-            objectFit={"fill"}
+            objectFit="fill"
             wider
             priority
           />
           <Content
             narrower
-            BgColor={"#f1f5f1"}
-            title={"Kumaşın Mimarı..."}
+            backgroundColor="#f1f5f1"
+            title="Kumaşın Mimarı..."
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -93,7 +99,7 @@ export default function Anasayfa({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton linked>
+              <CustomButton href="/about-us">
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
@@ -103,7 +109,7 @@ export default function Anasayfa({ common, page: { title } }) {
         <Section id="section-3">
           <Content
             narrower
-            BgColor={"#f1f5f1"}
+            backgroundColor={"#f1f5f1"}
             title={"Kumaşın Mimarı..."}
             blockquote={
               <BlockQuote>

@@ -6,14 +6,22 @@ import ImageBox from "../../components/image-box/image-box.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
-import "./factory.module.scss";
+import styles from "./about-us.module.scss";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../../lib/common";
-import { getFactoryData } from "../../lib/page-data/factory";
+import { getAboutUsData } from "../../lib/page-data/about-us";
+import { CommonModel, AboutUsModel } from "../../interfaces/index";
 
-export async function getStaticProps({ locale }) {
-  const commonData = await getCommonData(locale);
-  const pageData = await getFactoryData(locale);
+interface Props {
+  common: CommonModel,
+  page: AboutUsModel
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+
+  const commonData: Props["common"] = await getCommonData(locale);
+  const pageData: Props["page"] = await getAboutUsData(locale);
 
   return {
     props: {
@@ -23,7 +31,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Factory({ common, page: { title } }) {
+export default function AboutUs({ common, page: { title } }: Props) {
   return (
     <>
       <Head>
@@ -32,9 +40,9 @@ export default function Factory({ common, page: { title } }) {
       <Layout data={common}>
         <Section>
           <Content
-            BgColor={"#bed0bd20"}
+            backgroundColor={"#bed0bd20"}
             left={<Logo width={120} height={40} />}
-            title={"Test"}
+            title={""}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -46,7 +54,7 @@ export default function Factory({ common, page: { title } }) {
               </BlockQuote>
             }
             button={
-              <CustomButton href="/en/factory">
+              <CustomButton href="/en/about-us">
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>

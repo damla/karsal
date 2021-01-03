@@ -1,7 +1,14 @@
+import React, { ReactNode } from "react";
 import styles from "./section.module.scss";
 import classNames from "classnames";
 
-export default function Section({ id = null, children, banner }) {
+interface Props {
+  children: ReactNode,
+  id?: string,
+  banner?: boolean
+}
+
+export default function Section({ children, id = undefined, banner }: Props) {
   return (
     <section
       className={classNames(

@@ -1,15 +1,20 @@
 import Head from "next/head";
-
-import "./contact.module.scss";
-
+import styles from "./contact.module.scss";
 import Layout from "../../components/layout/layout.component";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../../lib/common";
 import { getContactData } from "../../lib/page-data/contact";
+import { CommonModel, ContactModel } from "../../interfaces/index";
 
-export async function getStaticProps({ locale }) {
-  const commonData = await getCommonData(locale);
-  const pageData = await getContactData(locale);
+interface Props {
+  common: CommonModel,
+  page: ContactModel
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+  const commonData: Props["common"] = await getCommonData(locale);
+  const pageData: Props["page"] = await getContactData(locale);
 
   return {
     props: {
@@ -18,7 +23,7 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-export default function Contact({ common, page: { title } }) {
+export default function Contact({ common, page: { title } }: Props) {
   return (
     <>
       <Head>
