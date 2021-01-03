@@ -6,9 +6,9 @@ import ImageBox from "../../components/image-box/image-box.component";
 import BlockQuote from "../../components/block-quote/block-quote.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import Logo from "../../components/logo/logo.component";
-import "./about-us.module.scss";
-import { GetStaticProps } from 'next';
+import styles from "./about-us.module.scss";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../../lib/common";
 import { getAboutUsData } from "../../lib/page-data/about-us";
 import { CommonModel, AboutUsModel } from "../../interfaces/index";

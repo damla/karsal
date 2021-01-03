@@ -4,6 +4,7 @@ import Layout from "../../components/layout/layout.component";
 
 import "./catalog.module.scss";
 
+import { GetStaticProps } from 'next';
 import { getCommonData } from "../../lib/common";
 import { getCatalogData } from "../../lib/page-data/catalog";
 import { CommonModel, CatalogModel } from "../../interfaces/index";
@@ -13,7 +14,8 @@ interface Props {
   page: CatalogModel
 }
 
-export async function getStaticProps({ locale = "tr" }) {
+export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
+
   const commonData: Props["common"] = await getCommonData(locale);
   const pageData: Props["page"] = await getCatalogData(locale);
 
