@@ -1,6 +1,6 @@
 import { ObjectID } from 'mongodb';
 
-export type Common = {
+export type CommonModel = {
     _id: ObjectID,
     lang: string,
     announcement: {
@@ -90,31 +90,31 @@ export type Common = {
     }
 }
 
-export type HomePage = {
+export type HomePageModel = {
     _id: ObjectID,
     lang: string,
     title: string
 }
 
-export type AboutUs = {
+export type AboutUsModel = {
     _id: ObjectID,
     lang: string,
     title: string
 }
 
-export type Catalog = {
+export type CatalogModel = {
     _id: ObjectID,
     lang: string,
     title: string
 }
 
-export type Contact = {
+export type ContactModel = {
     _id: ObjectID,
     lang: string,
     title: string
 }
 
-export type Factory = {
+export type FactoryModel = {
     _id: ObjectID,
     lang: string,
     title: string

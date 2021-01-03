@@ -2,12 +2,12 @@ import classNames from "classnames";
 import MenuItem from "../../menu-item/menu-item.component";
 import styles from "./side-bar.module.scss";
 import React, { ReactNode } from "react";
-import { Common } from "../../../interfaces/index";
+import { CommonModel } from "../../../interfaces/index";
 
 interface Props {
   hamburgerButton: ReactNode,
   isOpen?: boolean,
-  data: Common["sidebar"],
+  data: CommonModel["sidebar"],
 }
 
 export default function SideBar({

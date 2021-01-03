@@ -8,7 +8,7 @@ interface Props {
   banner?: boolean
 }
 
-export default function Section({ children, id = null, banner }: Props) {
+export default function Section({ children, id = undefined, banner }: Props) {
   return (
     <section
       className={classNames(

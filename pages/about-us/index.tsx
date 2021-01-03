@@ -11,18 +11,18 @@ import { GetStaticProps } from 'next';
 
 import { getCommonData } from "../../lib/common";
 import { getAboutUsData } from "../../lib/page-data/about-us";
-import { Common, AboutUs } from "../../interfaces/index";
+import { CommonModel, AboutUsModel } from "../../interfaces/index";
 
 interface Props {
-  common: Common,
-  page: AboutUs,
+  common: CommonModel,
+  page: AboutUsModel
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
   // TODO: Check local value in here
 
-  const commonData: Common = await getCommonData(locale);
-  const pageData: AboutUs = await getAboutUsData(locale);
+  const commonData: Props["common"] = await getCommonData(locale);
+  const pageData: Props["page"] = await getAboutUsData(locale);
 
   return {
     props: {
@@ -30,6 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
       page: pageData,
     },
   };
+
 }
 
 export default function AboutUs({ common, page: { title } }: Props) {

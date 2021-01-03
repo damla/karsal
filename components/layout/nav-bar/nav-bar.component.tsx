@@ -6,14 +6,14 @@ import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
 import styles from "./nav-bar.module.scss";
-import { Common } from "../../../interfaces/index";
+import { CommonModel } from "../../../interfaces/index";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 interface Props {
   hamburgerButton: ReactNode,
-  data: Common["navbar"]
+  data: CommonModel["navbar"]
 }
 
 export default function NavBar({

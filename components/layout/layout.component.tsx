@@ -10,11 +10,11 @@ import Image from "next/image";
 
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
-import { Common } from "../../interfaces/index";
+import { CommonModel } from "../../interfaces/index";
 
 interface Props {
   children: ReactNode,
-  data: Common,
+  data: CommonModel,
 }
 
 export default function Layout({

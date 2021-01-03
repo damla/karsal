@@ -1,9 +1,9 @@
 import Bar from "../../bar/bar.component";
 import styles from "./footer.module.scss";
-import { Common } from "../../../interfaces/index";
+import { CommonModel } from "../../../interfaces/index";
 
 interface Props {
-  data: Common["footer"],
+  data: CommonModel["footer"],
 }
 
 export default function Footer({ data: { text, copyright, email, phone } }: Props) {
