@@ -1,20 +1,25 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, ReactNode } from "react";
 import { useMediaQuery } from "react-responsive";
 import classNames from "classnames";
-
 import Logo from "../../logo/logo.component";
 import Menu from "../../menu/menu.component";
 import MenuItem from "../../menu-item/menu-item.component";
 
 import styles from "./nav-bar.module.scss";
+import { Common } from "../../../interfaces/index";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+interface Props {
+  hamburgerButton: ReactNode,
+  data: Common["navbar"]
+}
+
 export default function NavBar({
   hamburgerButton,
-  data: { about_us, factory, catalog, contact, english, turkish },
-}) {
+  data: { about_us, factory, catalog, contact, english, turkish }
+}: Props) {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== "undefined" && window.scrollY > 0
   );

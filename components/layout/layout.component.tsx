@@ -6,16 +6,16 @@ import Footer from "./footer/footer.component";
 import NavBar from "./nav-bar/nav-bar.component";
 import SideBar from "./side-bar/side-bar.component";
 import HamburgerButton from "../hamburger-button/hamburger-button.component";
+import Image from "next/image";
 
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 import { Common } from "../../interfaces/index";
-import Image from "next/image";
+
 
 interface Props {
   children: ReactNode,
   data: Common,
-
 }
 
 export default function Layout({

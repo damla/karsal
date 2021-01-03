@@ -4,8 +4,8 @@ import styles from "./menu-item.module.scss";
 
 interface Props {
   children: ReactNode,
-  href: string,
-  lang: string
+  href?: string,
+  lang?: string
 }
 
 export default function MenuItem({ href = "", children, lang }: Props) {
