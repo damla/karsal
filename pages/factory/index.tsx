@@ -10,10 +10,16 @@ import "./factory.module.scss";
 
 import { getCommonData } from "../../lib/common";
 import { getFactoryData } from "../../lib/page-data/factory";
+import { CommonModel, FactoryModel } from "../../interfaces/index";
 
-export async function getStaticProps({ locale }) {
-  const commonData = await getCommonData(locale);
-  const pageData = await getFactoryData(locale);
+interface Props {
+  common: CommonModel,
+  page: FactoryModel
+}
+
+export async function getStaticProps({ locale = "tr" }) {
+  const commonData: Props["common"] = await getCommonData(locale);
+  const pageData: Props["page"] = await getFactoryData(locale);
 
   return {
     props: {
@@ -23,7 +29,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Factory({ common, page: { title } }) {
+export default function Factory({ common, page: { title } }: Props) {
   return (
     <>
       <Head>
