@@ -1,29 +1,35 @@
-import Head from "next/head";
-import styles from "./contact.module.scss";
-import Layout from "../../components/layout/layout.component";
+import Head from 'next/head'
+import Layout from '../../components/layout/layout.component'
 
-import { GetStaticProps } from 'next';
-import { getCommonData } from "../../lib/common";
-import { getContactData } from "../../lib/page-data/contact";
-import { CommonModel, ContactModel } from "../../interfaces/index";
+import { GetStaticProps } from 'next'
+import { getCommonData } from '../../lib/common'
+import { getContactData } from '../../lib/page-data/contact'
+import { CommonModel, ContactModel } from '../../interfaces/index'
+import React, { ReactElement } from 'react'
 
 interface Props {
-  common: CommonModel,
+  common: CommonModel
   page: ContactModel
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
-  const commonData: Props["common"] = await getCommonData(locale);
-  const pageData: Props["page"] = await getContactData(locale);
+export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
+  const commonData: Props['common'] = await getCommonData(locale)
+  const pageData: Props['page'] = await getContactData(locale)
 
   return {
     props: {
       common: commonData,
-      page: pageData,
-    },
-  };
+      page: pageData
+    }
+  }
 }
-export default function Contact({ common, page: { title } }: Props) {
+export default function Contact ({
+  common,
+  page: {
+    title
+  }
+}: Props
+): ReactElement {
   return (
     <>
       <Head>
@@ -32,11 +38,11 @@ export default function Contact({ common, page: { title } }: Props) {
       <Layout data={common}>
         <div
           style={{
-            height: "100vh",
-            backgroundColor: "#bad1f7",
+            height: '100vh',
+            backgroundColor: '#bad1f7'
           }}
         ></div>
       </Layout>
     </>
-  );
+  )
 }

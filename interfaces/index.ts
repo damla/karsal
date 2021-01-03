@@ -17,7 +17,7 @@ export interface CommonModel {
     }
   }
   sidebar: {
-    about_us: {
+    aboutUs: {
       link: string
       text: string
     }
@@ -49,7 +49,7 @@ export interface CommonModel {
     }
   }
   navbar: {
-    about_us: {
+    aboutUs: {
       link: string
       text: string
     }

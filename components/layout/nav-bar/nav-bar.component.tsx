@@ -1,54 +1,55 @@
-import React, { useEffect, useLayoutEffect, ReactNode } from "react";
-import { useMediaQuery } from "react-responsive";
-import classNames from "classnames";
-import Logo from "../../logo/logo.component";
-import Menu from "../../menu/menu.component";
-import MenuItem from "../../menu-item/menu-item.component";
+import React, { useEffect, useLayoutEffect, ReactNode, ReactElement } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import classNames from 'classnames'
+import Logo from '../../logo/logo.component'
+import Menu from '../../menu/menu.component'
+import MenuItem from '../../menu-item/menu-item.component'
 
-import styles from "./nav-bar.module.scss";
-import { CommonModel } from "../../../interfaces/index";
+import styles from './nav-bar.module.scss'
+import { CommonModel } from '../../../interfaces/index'
 
 const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 interface Props {
-  hamburgerButton: ReactNode,
-  data: CommonModel["navbar"]
+  hamburgerButton: ReactNode
+  data: CommonModel['navbar']
 }
 
-export default function NavBar({
+export default function NavBar ({
   hamburgerButton,
-  data: { about_us, factory, catalog, contact, english, turkish }
-}: Props) {
+  data: { aboutUs, factory, catalog, contact, english, turkish }
+}: Props): ReactElement {
   const [isScrolled, setScrolled] = React.useState(
-    typeof window !== "undefined" && window.scrollY > 0
-  );
+    typeof window !== 'undefined' && window.scrollY > 0
+  )
 
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1131px)",
-  });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1130px)" });
+    query: '(min-width: 1131px)'
+  })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1130px)' })
 
   useIsomorphicLayoutEffect(() => {
-    const handleScroll = () =>
-      window.scrollY > 0 ? setScrolled(true) : setScrolled(false);
+    const handleScroll: () => void = () =>
+      window.scrollY > 0 ? setScrolled(true) : setScrolled(false)
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <nav
-      className={classNames(
-        styles.container,
-        isScrolled && styles.container__scrolled
-      )}
+      className={
+        classNames(
+          styles.container,
+          isScrolled && styles.container__scrolled
+        )}
     >
       {isDesktopOrLaptop && (
         <>
           <Menu align="left">
-            <MenuItem href={about_us.link}>{about_us.text}</MenuItem>
+            <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
             <MenuItem href={factory.link}>{factory.text}</MenuItem>
             <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
             <MenuItem href={contact.link}>{contact.text}</MenuItem>
@@ -80,5 +81,5 @@ export default function NavBar({
         </>
       )}
     </nav>
-  );
+  )
 }

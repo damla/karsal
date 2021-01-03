@@ -1,14 +1,23 @@
-import Bar from "../../bar/bar.component";
-import styles from "./footer.module.scss";
-import { CommonModel } from "../../../interfaces/index";
+import Bar from '../../bar/bar.component'
+import styles from './footer.module.scss'
+import { CommonModel } from '../../../interfaces/index'
+import React, { ReactElement } from 'react'
 
 interface Props {
-  data: CommonModel["footer"],
+  data: CommonModel['footer']
 }
 
-export default function Footer({ data: { text, copyright, email, phone } }: Props) {
+export default function Footer ({
+  data: {
+    text,
+    copyright,
+    email,
+    phone
+  }
+}: Props
+): ReactElement {
   return (
-    <Bar height={"7vh"} footer>
+    <Bar height={'7vh'} footer>
       <div className={styles.container__copyright}>
         <span>{text}&nbsp;</span>
         <span>
@@ -21,5 +30,5 @@ export default function Footer({ data: { text, copyright, email, phone } }: Prop
         <a href={phone.link}>{phone.text}</a>
       </span>
     </Bar>
-  );
+  )
 }

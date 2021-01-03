@@ -1,15 +1,18 @@
-import React, { ReactNode } from "react";
-import styles from "./announcement.module.scss";
-import Bar from "../../bar/bar.component";
+import React, { ReactElement, ReactNode } from 'react'
+import styles from './announcement.module.scss'
+import Bar from '../../bar/bar.component'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
-export default function Announcement({ children }: Props) {
+export default function Announcement ({
+  children
+}: Props
+): ReactElement {
   return (
     <div className={styles.container}>
       <Bar announcement>{children}</Bar>
     </div>
-  );
+  )
 }

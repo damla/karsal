@@ -1,31 +1,42 @@
-import classNames from "classnames";
-import MenuItem from "../../menu-item/menu-item.component";
-import styles from "./side-bar.module.scss";
-import React, { ReactNode } from "react";
-import { CommonModel } from "../../../interfaces/index";
+import classNames from 'classnames'
+import MenuItem from '../../menu-item/menu-item.component'
+import styles from './side-bar.module.scss'
+import React, { ReactNode, ReactElement } from 'react'
+import { CommonModel } from '../../../interfaces/index'
 
 interface Props {
-  hamburgerButton: ReactNode,
-  isOpen?: boolean,
-  data: CommonModel["sidebar"],
+  hamburgerButton: ReactNode
+  isOpen?: boolean
+  data: CommonModel['sidebar']
 }
 
-export default function SideBar({
+export default function SideBar ({
   hamburgerButton,
-  isOpen,
-  data: { about_us, factory, catalog, contact, turkish, english, footer },
-}: Props) {
+  isOpen = true,
+  data:
+  {
+    aboutUs,
+    factory,
+    catalog,
+    contact,
+    turkish,
+    english,
+    footer
+  }
+}: Props
+): ReactElement {
   return (
     <div
-      className={classNames(
-        styles.container,
-        isOpen && styles.container__active
-      )}
+      className={
+        classNames(
+          styles.container,
+          isOpen && styles.container__active
+        )}
     >
       <div className={styles.container_content}>
         <div className={styles.container_header}>{hamburgerButton}</div>
         <div className={styles.container_body}>
-          <MenuItem href={about_us.link}>{about_us.text}</MenuItem>
+          <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
@@ -48,5 +59,5 @@ export default function SideBar({
         </div>
       </div>
     </div>
-  );
+  )
 }

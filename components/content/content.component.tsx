@@ -18,7 +18,8 @@ export default function Content ({
   blockquote,
   button,
   narrower = false
-}: Props): ReactElement {
+}: Props
+): ReactElement {
   const bgColor: CSSProperties = {
     backgroundColor // backgroundColor: backgroundColor
   }

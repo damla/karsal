@@ -5,7 +5,10 @@ interface Props {
   children: ReactNode
 }
 
-export default function BlockQuote({ children }: Props): ReactElement {
+export default function BlockQuote ({
+  children
+}: Props
+): ReactElement {
   return (
     <div className={styles.container}>
       <blockquote>{children}</blockquote>
