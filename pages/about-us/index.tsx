@@ -19,7 +19,6 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
-  // TODO: Check local value in here
 
   const commonData: Props["common"] = await getCommonData(locale);
   const pageData: Props["page"] = await getAboutUsData(locale);
@@ -30,7 +29,6 @@ export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
       page: pageData,
     },
   };
-
 }
 
 export default function AboutUs({ common, page: { title } }: Props) {
