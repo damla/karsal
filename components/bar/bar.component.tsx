@@ -1,16 +1,21 @@
-import React, { CSSProperties, ReactNode } from "react";
-import styles from "./bar.module.scss";
-import classNames from "classnames";
+import React, { CSSProperties, ReactNode, ReactElement } from 'react'
+import styles from './bar.module.scss'
+import classNames from 'classnames'
 
 interface Props {
-  children: ReactNode,
-  height?: string,
-  announcement?: boolean,
-  footer?: boolean,
+  children: ReactNode
+  height?: string
+  announcement?: boolean
+  footer?: boolean
 }
 
-export default function Bar({ children, height, announcement, footer }: Props) {
-
+export default function Bar ({
+  children,
+  height,
+  announcement = false,
+  footer = false
+}: Props
+): ReactElement {
   const heightValue: CSSProperties = {
     height // height: height
   }
@@ -26,5 +31,5 @@ export default function Bar({ children, height, announcement, footer }: Props) {
     >
       {children}
     </div>
-  );
+  )
 }

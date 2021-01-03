@@ -1,14 +1,18 @@
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./logo.module.scss";
+import Link from 'next/link'
+import Image from 'next/image'
+import styles from './logo.module.scss'
+import React, { ReactElement } from 'react'
 
 interface Props {
-  width: number,
+  width: number
   height: number
 }
 
-
-export default function Logo({ width, height }: Props) {
+export default function Logo ({
+  width,
+  height
+}: Props
+): ReactElement {
   return (
     <Link href="/">
       <Image
@@ -20,5 +24,5 @@ export default function Logo({ width, height }: Props) {
         layout="fixed"
       />
     </Link>
-  );
+  )
 }

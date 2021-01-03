@@ -1,40 +1,46 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import Layout from "../components/layout/layout.component";
-import Section from "../components/section/section.component";
-import Content from "../components/content/content.component";
-import ImageBox from "../components/image-box/image-box.component";
-import BlockQuote from "../components/block-quote/block-quote.component";
-import CustomButton from "../components/custom-button/custom-button.component";
-import Logo from "../components/logo/logo.component";
+import Layout from '../components/layout/layout.component'
+import Section from '../components/section/section.component'
+import Content from '../components/content/content.component'
+import ImageBox from '../components/image-box/image-box.component'
+import BlockQuote from '../components/block-quote/block-quote.component'
+import CustomButton from '../components/custom-button/custom-button.component'
+import Logo from '../components/logo/logo.component'
 
-import { GetStaticProps } from 'next';
-import { getCommonData } from "../lib/common";
-import { getHomePageData } from "../lib/page-data/home-page";
-import { CommonModel, HomePageModel } from "../interfaces/index";
+import { GetStaticProps } from 'next'
+import { getCommonData } from '../lib/common'
+import { getHomePageData } from '../lib/page-data/home-page'
+import { CommonModel, HomePageModel } from '../interfaces/index'
+import React, { ReactElement } from 'react'
 
 interface Props {
-  common: CommonModel,
+  common: CommonModel
   page: HomePageModel
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale = "tr" }) => {
-
-  const commonData = await getCommonData(locale);
-  const pageData = await getHomePageData(locale);
+export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
+  const commonData = await getCommonData(locale)
+  const pageData = await getHomePageData(locale)
 
   return {
     props: {
       common: commonData,
-      page: pageData,
-    },
-  };
+      page: pageData
+    }
+  }
 }
 
-export default function Anasayfa({ common, page: { title } }: Props) {
-  function scrollToSection(sectionId: string) {
-    if (typeof window !== "undefined") {
-      document?.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: "smooth" });
+export default function Anasayfa ({
+  common,
+  page: {
+    title
+  }
+}: Props
+): ReactElement {
+  function scrollToSection (sectionId: string): void {
+    if (typeof window !== 'undefined') {
+      document?.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -47,13 +53,13 @@ export default function Anasayfa({ common, page: { title } }: Props) {
       <Layout data={common}>
         <Section id="section-1" banner>
           <Content
-            backgroundColor={"#bed0bd20"}
+            backgroundColor={'#bed0bd20'}
             left={<Logo width={120} height={40} />}
-            title={"test"}
+            title={'test'}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
@@ -61,7 +67,7 @@ export default function Anasayfa({ common, page: { title } }: Props) {
               </BlockQuote>
             }
             button={
-              <CustomButton onClick={() => scrollToSection("section-2")}>
+              <CustomButton onClick={() => scrollToSection('section-2')}>
                 <span>Daha Fazlası</span>
                 <span>&#8594;</span>
               </CustomButton>
@@ -71,7 +77,7 @@ export default function Anasayfa({ common, page: { title } }: Props) {
           <ImageBox
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
-            objectFit={"fill"}
+            objectFit={'fill'}
             priority
           />
         </Section>
@@ -91,7 +97,7 @@ export default function Anasayfa({ common, page: { title } }: Props) {
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
@@ -109,12 +115,12 @@ export default function Anasayfa({ common, page: { title } }: Props) {
         <Section id="section-3">
           <Content
             narrower
-            backgroundColor={"#f1f5f1"}
-            title={"Kumaşın Mimarı..."}
+            backgroundColor={'#f1f5f1'}
+            title={'Kumaşın Mimarı...'}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
@@ -131,12 +137,12 @@ export default function Anasayfa({ common, page: { title } }: Props) {
           <ImageBox
             src="/assets/images/section-3.jpg"
             alt="Picture of yarns"
-            objectFit={"cover"}
+            objectFit={'cover'}
             wider
             priority
           />
         </Section>
       </Layout>
     </>
-  );
+  )
 }

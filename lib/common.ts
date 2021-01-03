@@ -1,12 +1,12 @@
-import { connectToDatabase } from "../util/mongodb";
-import { CommonModel } from "../interfaces/index";
+import { connectToDatabase } from '../util/mongodb'
+import { CommonModel } from '../interfaces/index'
 
-export async function getCommonData(lang: string) {
+export async function getCommonData (lang: string): Promise<CommonModel> {
   // data found in all pages (layout data)
 
-  const { db } = await connectToDatabase();
-  const [common]: Array<CommonModel> = await db.collection("common").find({ lang }).toArray();
-  const data: CommonModel = await JSON.parse(JSON.stringify(common));
+  const { db } = await connectToDatabase()
+  const [common]: CommonModel[] = await db.collection('common').find({ lang }).toArray()
+  const data: CommonModel = await JSON.parse(JSON.stringify(common))
 
-  return data;
+  return data
 }

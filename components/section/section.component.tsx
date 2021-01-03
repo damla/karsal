@@ -1,14 +1,19 @@
-import React, { ReactNode } from "react";
-import styles from "./section.module.scss";
-import classNames from "classnames";
+import React, { ReactElement, ReactNode } from 'react'
+import styles from './section.module.scss'
+import classNames from 'classnames'
 
 interface Props {
-  children: ReactNode,
-  id?: string,
+  children: ReactNode
+  id?: string
   banner?: boolean
 }
 
-export default function Section({ children, id = undefined, banner }: Props) {
+export default function Section ({
+  children,
+  id = undefined,
+  banner = false
+}: Props
+): ReactElement {
   return (
     <section
       className={classNames(
@@ -19,5 +24,5 @@ export default function Section({ children, id = undefined, banner }: Props) {
     >
       {children}
     </section>
-  );
+  )
 }

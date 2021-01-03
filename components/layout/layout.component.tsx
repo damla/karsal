@@ -1,51 +1,52 @@
-import styles from "./layout.module.scss";
-import React, { ReactNode } from "react";
+import styles from './layout.module.scss'
+import React, { ReactNode, useState, useEffect, ReactElement } from 'react'
 
-import Announcement from "./announcement/announcement.component";
-import Footer from "./footer/footer.component";
-import NavBar from "./nav-bar/nav-bar.component";
-import SideBar from "./side-bar/side-bar.component";
-import HamburgerButton from "../hamburger-button/hamburger-button.component";
-import Image from "next/image";
+import Announcement from './announcement/announcement.component'
+import Footer from './footer/footer.component'
+import NavBar from './nav-bar/nav-bar.component'
+import SideBar from './side-bar/side-bar.component'
+import HamburgerButton from '../hamburger-button/hamburger-button.component'
+import Image from 'next/image'
 
-import { useMediaQuery } from "react-responsive";
-import { useState, useEffect } from "react";
-import { CommonModel } from "../../interfaces/index";
+import { useMediaQuery } from 'react-responsive'
+
+import { CommonModel } from '../../interfaces/index'
 
 interface Props {
-  children: ReactNode,
-  data: CommonModel,
+  children: ReactNode
+  data: CommonModel
 }
 
-export default function Layout({
+export default function Layout ({
   children,
   data: {
     announcement,
     sidebar,
     navbar,
     footer
-  },
-}: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  }
+}: Props
+): ReactElement {
+  const [isOpen, setIsOpen] = useState(false)
 
-  const isMobile = useMediaQuery({ query: "(max-width: 475px)" });
+  const isMobile = useMediaQuery({ query: '(max-width: 475px)' })
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1131px)",
-  });
+    query: '(min-width: 1131px)'
+  })
 
   useEffect(() => {
-    if (typeof window !== "undefined") disableScrollBody(isOpen);
-  }, [isOpen]);
+    if (typeof window !== 'undefined') disableScrollBody(isOpen)
+  }, [isOpen])
 
-  const onClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const onClick: () => void = () => {
+    setIsOpen(!isOpen)
+  }
 
-  const disableScrollBody = (isOpen: boolean) => {
+  const disableScrollBody: (isOpen: boolean) => void = (isOpen) => {
     isOpen
-      ? document?.querySelector("body")?.classList.add("disableScroll")
-      : document?.querySelector("body")?.classList.remove("disableScroll");
-  };
+      ? document?.querySelector('body')?.classList.add('disableScroll')
+      : document?.querySelector('body')?.classList.remove('disableScroll')
+  }
 
   return (
     <div className={styles.container}>
@@ -72,11 +73,11 @@ export default function Layout({
             </a>
           </>
         ) : (
-            <>
-              <a href={announcement.email.link}>{announcement.email.text}</a>
-              <a href={announcement.phone.link}>{announcement.phone.text}</a>
-            </>
-          )}
+          <>
+            <a href={announcement.email.link}>{announcement.email.text}</a>
+            <a href={announcement.phone.link}>{announcement.phone.text}</a>
+          </>
+        )}
       </Announcement>
       <SideBar
         isOpen={isOpen}
@@ -94,5 +95,5 @@ export default function Layout({
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />
     </div>
-  );
+  )
 }
