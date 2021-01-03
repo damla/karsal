@@ -1,7 +1,7 @@
 🚧 Still on progress 🚧
 
 Technologies:
-- TypeScript(soon)
+- TypeScript
 - MongoDB
 - i18n localization router
 - React Responsive
