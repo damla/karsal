@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react'
-import styles from './announcement.module.scss'
 import Bar from '../../bar/bar.component'
+import styles from './announcement.module.scss'
 
 interface Props {
   children: ReactNode

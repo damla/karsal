@@ -1,7 +1,8 @@
-import styles from './image-box.module.scss'
-import Image, { ImageProps } from 'next/image'
-import classNames from 'classnames'
 import React, { ReactElement } from 'react'
+import Image, { ImageProps } from 'next/image'
+
+import styles from './image-box.module.scss'
+import classNames from 'classnames'
 
 interface Props {
   src: string

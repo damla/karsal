@@ -1,4 +1,3 @@
-import styles from './layout.module.scss'
 import React, { ReactNode, useState, useEffect, ReactElement } from 'react'
 
 import Announcement from './announcement/announcement.component'
@@ -8,8 +7,9 @@ import SideBar from './side-bar/side-bar.component'
 import HamburgerButton from '../hamburger-button/hamburger-button.component'
 import Image from 'next/image'
 
-import { useMediaQuery } from 'react-responsive'
+import styles from './layout.module.scss'
 
+import { useMediaQuery } from 'react-responsive'
 import { CommonModel } from '../../interfaces/index'
 
 interface Props {
