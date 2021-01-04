@@ -6,7 +6,7 @@ import '../global/global.scss'
 
 import smoothscroll from 'smoothscroll-polyfill'
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import '../global/nprogress.css'
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', (url: string) => {
