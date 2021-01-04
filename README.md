@@ -14,6 +14,7 @@
 - [SASS Modules](https://sass-lang.com/blog/the-module-system-is-launched)
 - [ClassNames](https://www.npmjs.com/package/classnames)
 - [Smoothscroll Polyfill](http://iamdustan.com/smoothscroll/)
+- [NProgress](https://github.com/rstacruz/nprogress)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
