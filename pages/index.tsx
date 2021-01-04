@@ -55,7 +55,7 @@ export default function Anasayfa ({
           <Content
             backgroundColor={'#bed0bd20'}
             left={<Logo width={120} height={40} />}
-            title={'test'}
+            title={title}
             blockquote={
               <BlockQuote>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
