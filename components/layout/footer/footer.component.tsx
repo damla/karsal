@@ -1,7 +1,8 @@
+import React, { ReactElement } from 'react'
 import Bar from '../../bar/bar.component'
+
 import styles from './footer.module.scss'
 import { CommonModel } from '../../../interfaces/index'
-import React, { ReactElement } from 'react'
 
 interface Props {
   data: CommonModel['footer']

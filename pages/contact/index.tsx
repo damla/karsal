@@ -1,10 +1,11 @@
+import React, { ReactElement } from 'react'
+import { GetStaticProps } from 'next'
+
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 
-import { GetStaticProps } from 'next'
 import { getData } from '../../lib'
 import { CommonModel, ContactModel } from '../../interfaces/index'
-import React, { ReactElement } from 'react'
 
 interface Props {
   common: CommonModel

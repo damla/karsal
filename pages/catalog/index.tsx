@@ -1,13 +1,13 @@
-import Head from 'next/head'
+import React, { ReactElement } from 'react'
+import { GetStaticProps } from 'next'
 
+import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 
 import './catalog.module.scss'
 
-import { GetStaticProps } from 'next'
 import { getData } from '../../lib'
 import { CommonModel, CatalogModel } from '../../interfaces/index'
-import React, { ReactElement } from 'react'
 
 interface Props {
   common: CommonModel

@@ -1,7 +1,9 @@
+import React, { ReactElement } from 'react'
+
 import Link from 'next/link'
 import Image from 'next/image'
+
 import styles from './logo.module.scss'
-import React, { ReactElement } from 'react'
 
 interface Props {
   width: number

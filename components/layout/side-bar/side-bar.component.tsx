@@ -1,7 +1,10 @@
-import classNames from 'classnames'
-import MenuItem from '../../menu-item/menu-item.component'
-import styles from './side-bar.module.scss'
 import React, { ReactNode, ReactElement } from 'react'
+
+import MenuItem from '../../menu-item/menu-item.component'
+
+import styles from './side-bar.module.scss'
+import classNames from 'classnames'
+
 import { CommonModel } from '../../../interfaces/index'
 
 interface Props {

@@ -1,7 +1,7 @@
+import React from 'react'
+import type { AppProps } from 'next/app'
 import '../global/global.scss'
 import smoothscroll from 'smoothscroll-polyfill'
-import type { AppProps } from 'next/app'
-import React from 'react'
 
 // This default export is required in a new `pages/_app.js` file.
 export function reportWebVitals (metric: { label: string }): void {

@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react'
-import styles from './custom-button.module.scss'
 import Link from 'next/link'
+
+import styles from './custom-button.module.scss'
 import classNames from 'classnames'
 
 interface Props {

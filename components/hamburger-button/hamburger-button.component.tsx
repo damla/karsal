@@ -1,6 +1,6 @@
+import React, { ReactElement } from 'react'
 import styles from './hamburger-button.module.scss'
 import classNames from 'classnames'
-import React, { ReactElement } from 'react'
 
 interface Props {
   menuActive?: boolean

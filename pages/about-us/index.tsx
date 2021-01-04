@@ -1,3 +1,6 @@
+import React, { ReactElement } from 'react'
+import { GetStaticProps } from 'next'
+
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
@@ -7,10 +10,8 @@ import BlockQuote from '../../components/block-quote/block-quote.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Logo from '../../components/logo/logo.component'
 
-import { GetStaticProps } from 'next'
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
-import React, { ReactElement } from 'react'
 
 interface Props {
   common: CommonModel
