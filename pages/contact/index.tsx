@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 
 import { GetStaticProps } from 'next'
-import { getCommonData } from '../../lib/common'
-import { getContactData } from '../../lib/page-data/contact'
+import { getData } from '../../lib'
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import React, { ReactElement } from 'react'
 
@@ -13,8 +12,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getCommonData(locale)
-  const pageData: Props['page'] = await getContactData(locale)
+  const commonData: Props['common'] = await getData('common', locale)
+  const pageData: Props['page'] = await getData('contact', locale)
 
   return {
     props: {
