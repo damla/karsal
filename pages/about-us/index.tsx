@@ -8,8 +8,7 @@ import CustomButton from '../../components/custom-button/custom-button.component
 import Logo from '../../components/logo/logo.component'
 
 import { GetStaticProps } from 'next'
-import { getCommonData } from '../../lib/common'
-import { getAboutUsData } from '../../lib/page-data/about-us'
+import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
 import React, { ReactElement } from 'react'
 
@@ -19,8 +18,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getCommonData(locale)
-  const pageData: Props['page'] = await getAboutUsData(locale)
+  const commonData: Props['common'] = await getData('common', locale)
+  const pageData: Props['page'] = await getData('about-us', locale)
 
   return {
     props: {

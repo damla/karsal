@@ -9,8 +9,7 @@ import Logo from '../../components/logo/logo.component'
 import './factory.module.scss'
 
 import { GetStaticProps } from 'next'
-import { getCommonData } from '../../lib/common'
-import { getFactoryData } from '../../lib/page-data/factory'
+import { getData } from '../../lib'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
 import React, { ReactElement } from 'react'
 
@@ -20,8 +19,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getCommonData(locale)
-  const pageData: Props['page'] = await getFactoryData(locale)
+  const commonData: Props['common'] = await getData('common', locale)
+  const pageData: Props['page'] = await getData('factory', locale)
 
   return {
     props: {
