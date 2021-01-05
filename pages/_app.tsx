@@ -8,6 +8,13 @@ import smoothscroll from 'smoothscroll-polyfill'
 import NProgress from 'nprogress'
 import '../global/nprogress.css'
 
+// This default export is required in a new `pages/_app.js` file.
+export function reportWebVitals (metric: { label: string }): void {
+  if (metric.label === 'custom') {
+    console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
+  }
+}
+
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', (url: string) => {
   console.log(`Loading: ${url}`)
@@ -15,13 +22,6 @@ Router.events.on('routeChangeStart', (url: string) => {
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
-
-// This default export is required in a new `pages/_app.js` file.
-export function reportWebVitals (metric: { label: string }): void {
-  if (metric.label === 'custom') {
-    console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
-  }
-}
 
 function App ({ Component, pageProps, router: { locale = 'tr' } }: AppProps): JSX.Element {
   if (typeof window !== 'undefined') {

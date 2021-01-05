@@ -26,10 +26,11 @@ export default function Content ({
 
   return (
     <div
-      className={classNames(
-        styles.container,
-        narrower && styles.container__narrower
-      )}
+      className={
+        classNames(
+          styles.container,
+          narrower && styles.container__narrower
+        )}
       style={
         bgColor
       }
