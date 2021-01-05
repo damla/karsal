@@ -21,8 +21,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getData('common', locale)
-  const pageData: Props['page'] = await getData('factory', locale)
+  const commonData = await getData<CommonModel>('common', locale)
+  const pageData = await getData<FactoryModel>('factory', locale)
 
   return {
     props: {
