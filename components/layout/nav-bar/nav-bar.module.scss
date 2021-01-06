@@ -22,6 +22,12 @@
   width: 100%;
   transition: all 0.1s ease-in;
 
+  &__pageView {
+    @include green-bg;
+    padding: 1.5rem;
+    @include change-color;
+  }
+
   &__scrolled {
     @include green-bg;
     padding: 1.5rem;

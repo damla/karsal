@@ -36,7 +36,7 @@ export default function AboutUs ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={true}>
         <Section>
           <div style={{
             position: 'relative',
@@ -44,7 +44,7 @@ export default function AboutUs ({
             flexBasis: '100vw',
             minHeight: '80vh'
           }}>
-            <Image src="/assets/images/section-3.jpg" alt="banner-image" objectFit="fill" layout="fill"/>
+            <Image src="/assets/images/section-3.jpg" alt="banner-image" objectFit="cover" layout="fill"/>
           </div>
         </Section>
         <Section>

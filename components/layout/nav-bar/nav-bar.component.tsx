@@ -16,11 +16,20 @@ const useIsomorphicLayoutEffect =
 interface Props {
   hamburgerButton: ReactNode
   data: CommonModel['navbar']
+  navbarBg: boolean
 }
 
 export default function NavBar ({
   hamburgerButton,
-  data: { aboutUs, factory, catalog, contact, english, turkish }
+  data: {
+    aboutUs,
+    factory,
+    catalog,
+    contact,
+    english,
+    turkish
+  },
+  navbarBg
 }: Props): ReactElement {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== 'undefined' && window.scrollY > 0
@@ -45,7 +54,8 @@ export default function NavBar ({
       className={
         classNames(
           styles.container,
-          isScrolled && styles.container__scrolled
+          isScrolled && styles.container__scrolled,
+          navbarBg && styles.container__pageView
         )}
     >
       {isDesktopOrLaptop && (
