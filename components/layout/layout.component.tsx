@@ -15,6 +15,7 @@ import { CommonModel } from '../../interfaces/index'
 interface Props {
   children: ReactNode
   data: CommonModel
+  navbarBg: boolean
 }
 
 export default function Layout ({
@@ -24,7 +25,8 @@ export default function Layout ({
     sidebar,
     navbar,
     footer
-  }
+  },
+  navbarBg
 }: Props
 ): ReactElement {
   const [isOpen, setIsOpen] = useState(false)
@@ -90,7 +92,7 @@ export default function Layout ({
         <NavBar
           data={navbar}
           hamburgerButton={<HamburgerButton onClickHandler={onClick} />}
-        />
+          navbarBg={navbarBg} />
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />

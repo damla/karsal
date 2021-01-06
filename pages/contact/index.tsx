@@ -13,8 +13,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getData('common', locale)
-  const pageData: Props['page'] = await getData('contact', locale)
+  const commonData = await getData<CommonModel>('common', locale)
+  const pageData = await getData<ContactModel>('contact', locale)
 
   return {
     props: {
@@ -35,7 +35,7 @@ export default function Contact ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={true}>
         <div
           style={{
             height: '100vh',

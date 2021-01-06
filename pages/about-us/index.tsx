@@ -1,14 +1,10 @@
 import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 
+import Image from 'next/image'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
-import Content from '../../components/content/content.component'
-import ImageBox from '../../components/image-box/image-box.component'
-import BlockQuote from '../../components/block-quote/block-quote.component'
-import CustomButton from '../../components/custom-button/custom-button.component'
-import Logo from '../../components/logo/logo.component'
 
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
@@ -19,8 +15,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getData('common', locale)
-  const pageData: Props['page'] = await getData('about-us', locale)
+  const commonData = await getData<CommonModel>('common', locale)
+  const pageData = await getData<AboutUsModel>('about-us', locale)
 
   return {
     props: {
@@ -40,35 +36,22 @@ export default function AboutUs ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={true}>
         <Section>
-          <Content
-            backgroundColor={'#bed0bd20'}
-            left={<Logo width={120} height={40} />}
-            title={''}
-            blockquote={
-              <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
-              </BlockQuote>
-            }
-            button={
-              <CustomButton href="/en/about-us">
-                <span>Daha Fazlası</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
-          />
-          <ImageBox
-            src="/assets/images/section-1.jpg"
-            alt="Picture of the fabric"
-            objectFit={'fill'}
-            priority
-          />
+          <div style={{
+            position: 'relative',
+            flexGrow: 1,
+            flexBasis: '100vw',
+            minHeight: '80vh'
+          }}>
+            <Image src="/assets/images/section-3.jpg" alt="banner-image" objectFit="cover" layout="fill"/>
+          </div>
+        </Section>
+        <Section>
+          <div style={{
+            minHeight: '100vh'
+          }}>
+            <p>test</p></div>
         </Section>
       </Layout>
     </>

@@ -15,8 +15,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getData('common', locale)
-  const pageData: Props['page'] = await getData('catalog', locale)
+  const commonData = await getData<CommonModel>('common', locale)
+  const pageData = await getData<CatalogModel>('catalog', locale)
 
   return {
     props: {
@@ -38,7 +38,7 @@ export default function Catalog ({
       <Head>
         <title>{title} </title>
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={true}>
         <div
           style={
             {

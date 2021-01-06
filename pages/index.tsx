@@ -19,8 +19,8 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
-  const commonData: Props['common'] = await getData('common', locale)
-  const pageData: Props['page'] = await getData('home-page', locale)
+  const commonData = await getData<CommonModel>('common', locale)
+  const pageData = await getData<HomePageModel>('home-page', locale)
 
   return {
     props: {
@@ -49,7 +49,7 @@ export default function Anasayfa ({
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={false}>
         <Section id="section-1" banner>
           <Content
             backgroundColor={'#bed0bd20'}
@@ -76,7 +76,7 @@ export default function Anasayfa ({
           <ImageBox
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
-            objectFit={'fill'}
+            objectFit='fill'
             priority
           />
         </Section>
