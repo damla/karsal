@@ -60,23 +60,56 @@ export default function NavBar ({
     >
       {isDesktopOrLaptop && (
         <>
-          <Menu align="left">
-            <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
-            <MenuItem href={factory.link}>{factory.text}</MenuItem>
-            <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
-            <MenuItem href={contact.link}>{contact.text}</MenuItem>
-          </Menu>
-          <Menu align="right">
-            <div className={styles.lang_container}>
-              <MenuItem href={english.link} lang={english.locale}>
-                {english.text}
-              </MenuItem>
-              <span className={styles.seperator}>|</span>
-              <MenuItem href={turkish.link} lang={turkish.locale}>
-                {turkish.text}
-              </MenuItem>
-            </div>
-          </Menu>
+          {
+            navbarBg
+              ? (
+                <>
+                  <Menu align="left" equal>
+                    <MenuItem href="/">
+                      <Logo width={120} height={40} />
+                    </MenuItem>
+                  </Menu>
+                  <Menu align="center" equal>
+                    <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
+                    <MenuItem href={factory.link}>{factory.text}</MenuItem>
+                    <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+                    <MenuItem href={contact.link}>{contact.text}</MenuItem>
+                  </Menu>
+                  <Menu align="right" equal>
+                    <div className={styles.lang_container}>
+                      <MenuItem href={english.link} lang={english.locale}>
+                        {english.text}
+                      </MenuItem>
+                      <span className={styles.seperator}>|</span>
+                      <MenuItem href={turkish.link} lang={turkish.locale}>
+                        {turkish.text}
+                      </MenuItem>
+                    </div>
+                  </Menu>
+                </>
+              )
+              : (
+                <>
+                  <Menu align="left">
+                    <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
+                    <MenuItem href={factory.link}>{factory.text}</MenuItem>
+                    <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+                    <MenuItem href={contact.link}>{contact.text}</MenuItem>
+                  </Menu>
+                  <Menu align="right">
+                    <div className={styles.lang_container}>
+                      <MenuItem href={english.link} lang={english.locale}>
+                        {english.text}
+                      </MenuItem>
+                      <span className={styles.seperator}>|</span>
+                      <MenuItem href={turkish.link} lang={turkish.locale}>
+                        {turkish.text}
+                      </MenuItem>
+                    </div>
+                  </Menu>
+                </>
+              )
+          }
         </>
       )}
 

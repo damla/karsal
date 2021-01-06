@@ -35,7 +35,7 @@ export default function Contact ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={true}>
         <div
           style={{
             height: '100vh',

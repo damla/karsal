@@ -49,7 +49,7 @@ export default function Anasayfa ({
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout data={common}>
+      <Layout data={common} navbarBg={false}>
         <Section id="section-1" banner>
           <Content
             backgroundColor={'#bed0bd20'}

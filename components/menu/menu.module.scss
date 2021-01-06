@@ -12,3 +12,24 @@
     flex-basis: 70%;
   }
 }
+
+.containerEqual {
+  display: flex;
+
+  &__left {
+    flex-basis: 33.3%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__center {
+    flex-basis: 33.3%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__right {
+    flex-direction: row-reverse;
+    flex-basis: 33.3%;
+  }
+}
