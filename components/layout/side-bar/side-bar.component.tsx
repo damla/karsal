@@ -11,6 +11,7 @@ interface Props {
   hamburgerButton: ReactNode
   isOpen?: boolean
   data: CommonModel['sidebar']
+  route: string
 }
 
 export default function SideBar ({
@@ -25,7 +26,8 @@ export default function SideBar ({
     turkish,
     english,
     footer
-  }
+  },
+  route
 }: Props
 ): ReactElement {
   return (
@@ -43,10 +45,11 @@ export default function SideBar ({
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
-          <MenuItem href={turkish.link} lang={turkish.locale}>
+
+          <MenuItem href={route} lang={turkish.locale}>
             {turkish.text}
           </MenuItem>
-          <MenuItem href={english.link} lang={english.locale}>
+          <MenuItem href={route} lang={english.locale}>
             {english.text}
           </MenuItem>
         </div>
