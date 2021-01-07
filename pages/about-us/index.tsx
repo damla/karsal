@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 
 import Image from 'next/image'
 import Head from 'next/head'
@@ -32,14 +31,12 @@ export default function AboutUs ({
   page: { title }
 }: Props
 ): ReactElement {
-  const router = useRouter()
-
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common} route={router.pathname} navbarBg={true}>
+      <Layout data={common} navbarBg={true}>
         <Section>
           <div style={{
             position: 'relative',

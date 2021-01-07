@@ -1,4 +1,5 @@
 import React, { ReactNode, ReactElement } from 'react'
+import { useRouter } from 'next/router'
 
 import MenuItem from '../../menu-item/menu-item.component'
 
@@ -11,7 +12,6 @@ interface Props {
   hamburgerButton: ReactNode
   isOpen?: boolean
   data: CommonModel['sidebar']
-  route: string
 }
 
 export default function SideBar ({
@@ -26,10 +26,11 @@ export default function SideBar ({
     turkish,
     english,
     footer
-  },
-  route
+  }
 }: Props
 ): ReactElement {
+  const route = useRouter()
+
   return (
     <div
       className={
@@ -46,10 +47,10 @@ export default function SideBar ({
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
 
-          <MenuItem href={route} lang={turkish.locale}>
+          <MenuItem href={route.pathname} lang={turkish.locale}>
             {turkish.text}
           </MenuItem>
-          <MenuItem href={route} lang={english.locale}>
+          <MenuItem href={route.pathname} lang={english.locale}>
             {english.text}
           </MenuItem>
         </div>

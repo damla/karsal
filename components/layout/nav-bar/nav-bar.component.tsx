@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, ReactNode, ReactElement } from 'react'
+import { useRouter } from 'next/router'
 
 import Logo from '../../logo/logo.component'
 import Menu from '../../menu/menu.component'
@@ -17,7 +18,6 @@ interface Props {
   hamburgerButton: ReactNode
   data: CommonModel['navbar']
   navbarBg: boolean
-  route: string
 }
 
 export default function NavBar ({
@@ -30,9 +30,10 @@ export default function NavBar ({
     english,
     turkish
   },
-  navbarBg,
-  route
+  navbarBg
 }: Props): ReactElement {
+  const route = useRouter()
+
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== 'undefined' && window.scrollY > 0
   )
@@ -79,11 +80,11 @@ export default function NavBar ({
                   </Menu>
                   <Menu align="right" equal>
                     <div className={styles.lang_container}>
-                      <MenuItem href={route} lang={english.locale}>
+                      <MenuItem href={route.pathname} lang={english.locale}>
                         {english.text}
                       </MenuItem>
                       <span className={styles.seperator}>|</span>
-                      <MenuItem href={route} lang={turkish.locale}>
+                      <MenuItem href={route.pathname} lang={turkish.locale}>
                         {turkish.text}
                       </MenuItem>
                     </div>
@@ -100,11 +101,11 @@ export default function NavBar ({
                   </Menu>
                   <Menu align="right">
                     <div className={styles.lang_container}>
-                      <MenuItem href={route} lang={english.locale}>
+                      <MenuItem href={route.pathname} lang={english.locale}>
                         {english.text}
                       </MenuItem>
                       <span className={styles.seperator}>|</span>
-                      <MenuItem href={route} lang={turkish.locale}>
+                      <MenuItem href={route.pathname} lang={turkish.locale}>
                         {turkish.text}
                       </MenuItem>
                     </div>

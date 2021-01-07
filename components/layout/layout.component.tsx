@@ -16,7 +16,6 @@ interface Props {
   children: ReactNode
   data: CommonModel
   navbarBg: boolean
-  route: string
 }
 
 export default function Layout ({
@@ -27,8 +26,7 @@ export default function Layout ({
     navbar,
     footer
   },
-  navbarBg,
-  route
+  navbarBg
 }: Props
 ): ReactElement {
   const [isOpen, setIsOpen] = useState(false)
@@ -89,13 +87,12 @@ export default function Layout ({
           <HamburgerButton onClickHandler={onClick} menuActive />
         }
         data={sidebar}
-        route = {route}
       />
       {(isDesktopOrLaptop ? false : isOpen) || (
         <NavBar
           data={navbar}
           hamburgerButton={<HamburgerButton onClickHandler={onClick} />}
-          navbarBg={navbarBg} route = {route} />
+          navbarBg={navbarBg}/>
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />
