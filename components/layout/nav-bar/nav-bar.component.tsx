@@ -17,6 +17,7 @@ interface Props {
   hamburgerButton: ReactNode
   data: CommonModel['navbar']
   navbarBg: boolean
+  route: string
 }
 
 export default function NavBar ({
@@ -29,7 +30,8 @@ export default function NavBar ({
     english,
     turkish
   },
-  navbarBg
+  navbarBg,
+  route
 }: Props): ReactElement {
   const [isScrolled, setScrolled] = React.useState(
     typeof window !== 'undefined' && window.scrollY > 0
@@ -77,11 +79,11 @@ export default function NavBar ({
                   </Menu>
                   <Menu align="right" equal>
                     <div className={styles.lang_container}>
-                      <MenuItem href={english.link} lang={english.locale}>
+                      <MenuItem href={route} lang={english.locale}>
                         {english.text}
                       </MenuItem>
                       <span className={styles.seperator}>|</span>
-                      <MenuItem href={turkish.link} lang={turkish.locale}>
+                      <MenuItem href={route} lang={turkish.locale}>
                         {turkish.text}
                       </MenuItem>
                     </div>
@@ -98,11 +100,11 @@ export default function NavBar ({
                   </Menu>
                   <Menu align="right">
                     <div className={styles.lang_container}>
-                      <MenuItem href={english.link} lang={english.locale}>
+                      <MenuItem href={route} lang={english.locale}>
                         {english.text}
                       </MenuItem>
                       <span className={styles.seperator}>|</span>
-                      <MenuItem href={turkish.link} lang={turkish.locale}>
+                      <MenuItem href={route} lang={turkish.locale}>
                         {turkish.text}
                       </MenuItem>
                     </div>
