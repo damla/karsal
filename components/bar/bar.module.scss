@@ -38,6 +38,7 @@
     }
     @media only screen and (max-width: variables.$max-width-tablet) {
       min-height: 10vh;
+      border-top: 0.2rem solid variables.$background-color;
     }
   }
 }

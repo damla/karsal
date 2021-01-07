@@ -92,7 +92,7 @@ export default function Layout ({
         <NavBar
           data={navbar}
           hamburgerButton={<HamburgerButton onClickHandler={onClick} />}
-          navbarBg={navbarBg} />
+          navbarBg={navbarBg}/>
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />

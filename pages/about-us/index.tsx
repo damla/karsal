@@ -46,6 +46,13 @@ export default function AboutUs ({
           }}>
             <Image src="/assets/images/section-3.jpg" alt="banner-image" objectFit="cover" layout="fill"/>
           </div>
+          <div style={{
+            position: 'absolute',
+
+            color: 'white'
+          }}>
+            test
+          </div>
         </Section>
         <Section>
           <div style={{

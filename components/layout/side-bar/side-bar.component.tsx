@@ -1,4 +1,5 @@
 import React, { ReactNode, ReactElement } from 'react'
+import { useRouter } from 'next/router'
 
 import MenuItem from '../../menu-item/menu-item.component'
 
@@ -28,6 +29,8 @@ export default function SideBar ({
   }
 }: Props
 ): ReactElement {
+  const route = useRouter()
+
   return (
     <div
       className={
@@ -43,10 +46,11 @@ export default function SideBar ({
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
-          <MenuItem href={turkish.link} lang={turkish.locale}>
+
+          <MenuItem href={route.pathname} lang={turkish.locale}>
             {turkish.text}
           </MenuItem>
-          <MenuItem href={english.link} lang={english.locale}>
+          <MenuItem href={route.pathname} lang={english.locale}>
             {english.text}
           </MenuItem>
         </div>
