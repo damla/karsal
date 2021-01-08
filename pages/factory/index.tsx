@@ -68,10 +68,13 @@ export default function Factory ({
             }
           />
           <ImageBox
-            src="/assets/images/section-1.jpg"
-            alt="Picture of the fabric"
-            objectFit={'fill'}
+            src="/assets/images/about_us_hero.jpg"
+            alt="banner-image"
             priority
+            quality={100}
+            objectFit="cover"
+            hero
+            placeholderColor="#404040"
           />
         </Section>
       </Layout>
