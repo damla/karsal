@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 
-import Image from 'next/image'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
+import ImageBox from '../../components/image-box/image-box.component'
 
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
@@ -38,21 +38,15 @@ export default function AboutUs ({
       </Head>
       <Layout data={common} navbarBg={true}>
         <Section>
-          <div style={{
-            position: 'relative',
-            flexGrow: 1,
-            flexBasis: '100vw',
-            minHeight: '80vh'
-          }}>
-            <Image src="/assets/images/section-3.jpg" alt="banner-image" objectFit="cover" layout="fill"/>
-          </div>
-          <div style={{
-            position: 'absolute',
-
-            color: 'white'
-          }}>
-            test
-          </div>
+          <ImageBox
+            src="/assets/images/about_us_hero.jpg"
+            alt="banner-image"
+            priority
+            quality={100}
+            objectFit="cover"
+            hero
+            placeholderColor="#404040"
+          />
         </Section>
         <Section>
           <div style={{
