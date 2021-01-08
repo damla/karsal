@@ -31,6 +31,7 @@ export default function ImageBox ({
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     const timer = setTimeout(() => {
       setLoading(false)
     }, 3000)
@@ -83,13 +84,3 @@ export const ThreeDots = (): ReactElement => {
     </ContentLoader>
   )
 }
-
-/* <Image
-        className={classNames(!isLoading && styles.hide)}
-        src={src}
-        alt={alt}
-        layout="fill"
-        objectFit={objectFit}
-        priority={priority}
-        quality={20}
-      />  content-loader */

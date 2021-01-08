@@ -39,10 +39,9 @@ export default function AboutUs ({
       <Layout data={common} navbarBg={true}>
         <Section>
           <ImageBox
-            src="/assets/images/about_us_hero.jpg"
+            src="/assets/images/about_us_hero.png"
             alt="banner-image"
-            priority
-            quality={100}
+            quality={75}
             objectFit="cover"
             hero
             placeholderColor="#404040"

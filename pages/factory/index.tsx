@@ -68,11 +68,10 @@ export default function Factory ({
             }
           />
           <ImageBox
-            src="/assets/images/about_us_hero.jpg"
+            src="/assets/images/about_us_hero.png"
             alt="banner-image"
-            priority
-            quality={100}
             objectFit="cover"
+            quality={75}
             hero
             placeholderColor="#404040"
           />
