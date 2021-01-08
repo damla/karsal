@@ -72,12 +72,13 @@ export default function Anasayfa ({
               </CustomButton>
             }
           />
-
           <ImageBox
             src="/assets/images/section-1.jpg"
             alt="Picture of the fabric"
             objectFit='fill'
             priority
+            quality={100}
+            placeholderColor = "#bed0bd20"
           />
         </Section>
 
@@ -85,9 +86,11 @@ export default function Anasayfa ({
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"
-            objectFit="fill"
+            objectFit='cover'
             wider
             priority
+            quality={75}
+            placeholderColor = "#bed0bd20"
           />
           <Content
             narrower
@@ -136,9 +139,10 @@ export default function Anasayfa ({
           <ImageBox
             src="/assets/images/section-3.jpg"
             alt="Picture of yarns"
-            objectFit={'cover'}
+            objectFit='cover'
             wider
-            priority
+            quality={75}
+            placeholderColor = "#bed0bd20"
           />
         </Section>
       </Layout>

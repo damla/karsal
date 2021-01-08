@@ -5,6 +5,12 @@
   flex-grow: 1;
   flex-basis: 50vw;
 
+  &_hero {
+    position: relative;
+    flex-basis: 100vw;
+    min-height: 70vh;
+  }
+
   &__wider {
     flex-basis: 55vw;
   }
@@ -15,3 +21,7 @@
     order: 2;
   }
 }
+
+.hide {
+  display: none
+ }
