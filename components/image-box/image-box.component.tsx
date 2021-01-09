@@ -30,13 +30,12 @@ export default function ImageBox ({
 ): ReactElement {
   const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 3000)
+  const handleLoad = (): void => {
+    setLoading(false)
+  }
 
-    return () => clearTimeout(timer)
+  useEffect(() => {
+    handleLoad()
   }, [])
 
   return (
@@ -59,6 +58,7 @@ export default function ImageBox ({
       </div>
 
       <Image
+        onLoad={ handleLoad }
         className={classNames(styles.image, isLoading ? styles.hide : null)}
         src={src}
         alt={alt}
