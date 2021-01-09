@@ -35,8 +35,9 @@ export default function ImageBox ({
     const timer = setTimeout(() => {
       setLoading(false)
     }, 3000)
+
     return () => clearTimeout(timer)
-  }, [isLoading])
+  }, [])
 
   return (
     <div
@@ -44,6 +45,7 @@ export default function ImageBox ({
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
       <div
+        className={classNames(isLoading ? null : styles.hide)}
         style={{
           position: 'absolute',
           backgroundColor: placeholderColor,
@@ -57,7 +59,7 @@ export default function ImageBox ({
       </div>
 
       <Image
-        className={classNames(isLoading && styles.hide)}
+        className={classNames(styles.image, isLoading ? styles.hide : null)}
         src={src}
         alt={alt}
         layout="fill"
@@ -65,6 +67,8 @@ export default function ImageBox ({
         priority={priority}
         quality={quality}
       />
+
+      <div className={classNames(styles.blackOverlay, isLoading ? styles.hide : null)}></div>
     </div>
   )
 }

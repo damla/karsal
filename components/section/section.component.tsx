@@ -6,19 +6,22 @@ interface Props {
   children: ReactNode
   id?: string
   banner?: boolean
+  relative?: boolean
 }
 
 export default function Section ({
   children,
   id = undefined,
-  banner = false
+  banner = false,
+  relative = false
 }: Props
 ): ReactElement {
   return (
     <section
       className={classNames(
         styles.container,
-        banner && styles.container__banner
+        banner && styles.container__banner,
+        relative && styles.relative
       )}
       id={id}
     >
