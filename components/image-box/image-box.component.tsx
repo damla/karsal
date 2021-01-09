@@ -68,7 +68,7 @@ export default function ImageBox ({
         quality={quality}
       />
 
-      <div className={classNames(styles.blackOverlay, isLoading ? styles.hide : null)}></div>
+      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : null)}></div>
     </div>
   )
 }
