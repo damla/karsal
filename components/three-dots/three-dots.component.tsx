@@ -5,6 +5,7 @@ export default function ThreeDots (): ReactElement {
   return (
     <ContentLoader
       viewBox="0 0 400 160"
+      speed={1}
       height={160}
       width={400}
       backgroundColor="transparent"
