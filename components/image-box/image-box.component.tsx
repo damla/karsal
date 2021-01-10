@@ -1,25 +1,10 @@
 import React, { ReactElement, useState, useEffect } from 'react'
-
 import Image, { ImageProps } from 'next/image'
+
+import ThreeDots from '../three-dots/three-dots.component'
 
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
-import ContentLoader from 'react-content-loader'
-
-export const ThreeDots = (): ReactElement => {
-  return (
-    <ContentLoader
-      viewBox="0 0 400 160"
-      height={160}
-      width={400}
-      backgroundColor="transparent"
-    >
-      <circle cx="150" cy="86" r="8" />
-      <circle cx="194" cy="86" r="8" />
-      <circle cx="238" cy="86" r="8" />
-    </ContentLoader>
-  )
-}
 
 interface Props {
   src: string
@@ -66,7 +51,7 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
-      { isLoading ? (<div
+      {/* { isLoading ? (<div
         style={{
           position: 'absolute',
           backgroundColor: placeholderColor,
@@ -77,9 +62,9 @@ export default function ImageBox ({
           justifyContent: 'center'
         }}>
         <ThreeDots/>
-      </div>) : null }
+      </div>) : null } */}
 
-      {/* <div
+      <div
         className={classNames(isLoading ? null : styles.hide)}
         style={{
           position: 'absolute',
@@ -91,7 +76,7 @@ export default function ImageBox ({
           justifyContent: 'center'
         }}>
         <ThreeDots/>
-      </div> */}
+      </div>
 
       <Image
         onLoad={ handleLoad }
