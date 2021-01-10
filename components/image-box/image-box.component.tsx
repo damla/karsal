@@ -5,6 +5,21 @@ import Image, { ImageProps } from 'next/image'
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
 
+export const ThreeDots = (): ReactElement => {
+  return (
+    <ContentLoader
+      viewBox="0 0 400 160"
+      height={160}
+      width={400}
+      backgroundColor="transparent"
+    >
+      <circle cx="150" cy="86" r="8" />
+      <circle cx="194" cy="86" r="8" />
+      <circle cx="238" cy="86" r="8" />
+    </ContentLoader>
+  )
+}
+
 interface Props {
   src: string
   alt: string
@@ -80,18 +95,4 @@ export default function ImageBox ({
   )
 }
 
-export const ThreeDots = (): ReactElement => {
-  return (
-    <ContentLoader
-      viewBox="0 0 400 160"
-      height={160}
-      width={400}
-      backgroundColor="transparent"
-    >
-      <circle cx="150" cy="86" r="8" />
-      <circle cx="194" cy="86" r="8" />
-      <circle cx="238" cy="86" r="8" />
-    </ContentLoader>
-  )
-}
 // foregroundColor="#ecebeb"
