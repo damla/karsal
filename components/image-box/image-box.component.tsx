@@ -1,7 +1,6 @@
 import React, { ReactElement, useState, useEffect } from 'react'
-import Image, { ImageProps } from 'next/image'
-
 import ContentLoader from 'react-content-loader'
+import Image, { ImageProps } from 'next/image'
 
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
@@ -28,15 +27,15 @@ export default function ImageBox ({
   placeholderColor
 }: Props
 ): ReactElement {
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(true)
-    }, 200)
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(true)
+  //   }, 200)
 
-    return () => clearTimeout(timer)
-  }, [])
+  //   return () => clearTimeout(timer)
+  // }, [])
 
   const handleLoad = (): void => {
     setLoading(false)
