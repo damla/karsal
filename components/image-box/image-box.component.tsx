@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect } from 'react'
 import Image, { ImageProps } from 'next/image'
 
-import ContentLoader from 'react-content-loader'
+import ThreeDots from '../three-dots/three-dots.component'
 
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
@@ -43,8 +43,9 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
+
       <div
-        className={classNames(isLoading ? null : styles.hide)}
+        className={classNames(isLoading ? undefined : styles.hide)}
         style={{
           position: 'absolute',
           backgroundColor: placeholderColor,
@@ -59,7 +60,7 @@ export default function ImageBox ({
 
       <Image
         onLoad={ handleLoad }
-        className={classNames(styles.image, isLoading ? styles.hide : null)}
+        className={classNames(styles.image, isLoading ? styles.hide : undefined)}
         src={src}
         alt={alt}
         layout="fill"
@@ -68,23 +69,7 @@ export default function ImageBox ({
         quality={quality}
       />
 
-      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : null)}></div>
+      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : undefined)}></div>
     </div>
-  )
-}
-
-export const ThreeDots = (): ReactElement => {
-  return (
-    <ContentLoader
-      viewBox="0 0 400 160"
-      height={160}
-      width={400}
-      backgroundColor="transparent"
-      foregroundColor="#ecebeb"
-    >
-      <circle cx="150" cy="86" r="8" />
-      <circle cx="194" cy="86" r="8" />
-      <circle cx="238" cy="86" r="8" />
-    </ContentLoader>
   )
 }
