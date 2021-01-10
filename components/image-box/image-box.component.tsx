@@ -1,9 +1,10 @@
 import React, { ReactElement, useState, useEffect } from 'react'
-import ContentLoader from 'react-content-loader'
+
 import Image, { ImageProps } from 'next/image'
 
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
+import ContentLoader from 'react-content-loader'
 
 export const ThreeDots = (): ReactElement => {
   return (
@@ -65,7 +66,7 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
-      <div
+      {/* <div
         className={classNames(isLoading ? null : styles.hide)}
         style={{
           position: 'absolute',
@@ -75,9 +76,9 @@ export default function ImageBox ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
-        }}>
-        <ThreeDots/>
-      </div>
+        }}> */}
+      <ThreeDots/>
+      {/* </div> */}
 
       <Image
         onLoad={ handleLoad }
