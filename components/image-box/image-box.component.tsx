@@ -66,6 +66,19 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
+      { isLoading ? (<div
+        style={{
+          position: 'absolute',
+          backgroundColor: placeholderColor,
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+        <ThreeDots/>
+      </div>) : null }
+
       {/* <div
         className={classNames(isLoading ? null : styles.hide)}
         style={{
@@ -76,9 +89,9 @@ export default function ImageBox ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
-        }}> */}
-      <ThreeDots/>
-      {/* </div> */}
+        }}>
+        <ThreeDots/>
+      </div> */}
 
       <Image
         onLoad={ handleLoad }
