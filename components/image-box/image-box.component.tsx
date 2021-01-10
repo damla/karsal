@@ -30,13 +30,13 @@ export default function ImageBox ({
 ): ReactElement {
   const [isLoading, setLoading] = useState(true)
 
+  const handleLoad = (): void => {
+    setLoading(false)
+  }
+
   useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [isLoading])
+    handleLoad()
+  }, [])
 
   return (
     <div
@@ -44,6 +44,7 @@ export default function ImageBox ({
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
       <div
+        className={classNames(isLoading ? null : styles.hide)}
         style={{
           position: 'absolute',
           backgroundColor: placeholderColor,
@@ -57,7 +58,8 @@ export default function ImageBox ({
       </div>
 
       <Image
-        className={classNames(isLoading && styles.hide)}
+        onLoad={ handleLoad }
+        className={classNames(styles.image, isLoading ? styles.hide : null)}
         src={src}
         alt={alt}
         layout="fill"
@@ -65,6 +67,8 @@ export default function ImageBox ({
         priority={priority}
         quality={quality}
       />
+
+      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : null)}></div>
     </div>
   )
 }

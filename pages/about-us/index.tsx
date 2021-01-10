@@ -37,7 +37,7 @@ export default function AboutUs ({
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg={true}>
-        <Section>
+        <Section banner>
           <ImageBox
             src="/assets/images/about_us_hero.png"
             alt="banner-image"
@@ -47,11 +47,12 @@ export default function AboutUs ({
             placeholderColor="#404040"
           />
         </Section>
-        <Section>
+        <Section relative>
           <div style={{
             minHeight: '100vh'
           }}>
-            <p>test</p></div>
+            <p>test</p>
+          </div>
         </Section>
       </Layout>
     </>
