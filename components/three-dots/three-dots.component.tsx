@@ -16,3 +16,4 @@ export default function ThreeDots (): ReactElement {
     </ContentLoader>
   )
 }
+// foregroundColor="#ecebeb"

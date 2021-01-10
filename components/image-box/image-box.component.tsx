@@ -30,14 +30,6 @@ export default function ImageBox ({
 ): ReactElement {
   const [isLoading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(true)
-  //   }, 200)
-
-  //   return () => clearTimeout(timer)
-  // }, [])
-
   const handleLoad = (): void => {
     setLoading(false)
   }
@@ -51,21 +43,9 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
     >
-      {/* { isLoading ? (<div
-        style={{
-          position: 'absolute',
-          backgroundColor: placeholderColor,
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-        <ThreeDots/>
-      </div>) : null } */}
 
       <div
-        className={classNames(isLoading ? null : styles.hide)}
+        className={classNames(isLoading ? undefined : styles.hide)}
         style={{
           position: 'absolute',
           backgroundColor: placeholderColor,
@@ -80,7 +60,7 @@ export default function ImageBox ({
 
       <Image
         onLoad={ handleLoad }
-        className={classNames(styles.image, isLoading ? styles.hide : null)}
+        className={classNames(styles.image, isLoading ? styles.hide : undefined)}
         src={src}
         alt={alt}
         layout="fill"
@@ -89,9 +69,7 @@ export default function ImageBox ({
         quality={quality}
       />
 
-      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : null)}></div>
+      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : undefined)}></div>
     </div>
   )
 }
-
-// foregroundColor="#ecebeb"
