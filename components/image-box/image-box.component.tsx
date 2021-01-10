@@ -28,7 +28,15 @@ export default function ImageBox ({
   placeholderColor
 }: Props
 ): ReactElement {
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(true)
+    }, 200)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleLoad = (): void => {
     setLoading(false)
@@ -80,7 +88,6 @@ export const ThreeDots = (): ReactElement => {
       height={160}
       width={400}
       backgroundColor="transparent"
-      foregroundColor="#ecebeb"
     >
       <circle cx="150" cy="86" r="8" />
       <circle cx="194" cy="86" r="8" />
@@ -88,3 +95,4 @@ export const ThreeDots = (): ReactElement => {
     </ContentLoader>
   )
 }
+// foregroundColor="#ecebeb"
