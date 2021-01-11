@@ -10,13 +10,13 @@ import { CommonModel } from '../../../interfaces/index'
 
 interface Props {
   hamburgerButton: ReactNode
-  isOpen?: boolean
+  isOpen: boolean
   data: CommonModel['sidebar']
 }
 
 export default function SideBar ({
   hamburgerButton,
-  isOpen = true,
+  isOpen,
   data:
   {
     aboutUs,
