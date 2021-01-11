@@ -17,7 +17,7 @@ const useIsomorphicLayoutEffect =
 interface Props {
   hamburgerButton: ReactNode
   data: CommonModel['navbar']
-  navbarBg: boolean
+  navbarBg?: boolean
 }
 
 export default function NavBar ({
@@ -58,13 +58,13 @@ export default function NavBar ({
         classNames(
           styles.container,
           isScrolled && styles.container__scrolled,
-          navbarBg && styles.container__pageView
+          navbarBg !== undefined && styles.container__pageView
         )}
     >
       {isDesktopOrLaptop && (
         <>
           {
-            navbarBg
+            navbarBg !== undefined
               ? (
                 <>
                   <Menu align="left" equal>

@@ -15,7 +15,7 @@ import { CommonModel } from '../../interfaces/index'
 interface Props {
   children: ReactNode
   data: CommonModel
-  navbarBg: boolean
+  navbarBg?: boolean
 }
 
 export default function Layout ({

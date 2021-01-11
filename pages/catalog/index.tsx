@@ -38,7 +38,7 @@ export default function Catalog ({
       <Head>
         <title>{title} </title>
       </Head>
-      <Layout data={common} navbarBg={true}>
+      <Layout data={common} navbarBg>
         <div
           style={
             {

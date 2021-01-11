@@ -44,7 +44,7 @@ export default function Factory ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common} navbarBg={true}>
+      <Layout data={common} navbarBg>
         <Section>
           <Content
             backgroundColor={'#bed0bd20'}
