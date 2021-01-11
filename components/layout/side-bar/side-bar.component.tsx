@@ -46,7 +46,6 @@ export default function SideBar ({
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
-
           <MenuItem href={route.pathname} lang={turkish.locale}>
             {turkish.text}
           </MenuItem>
