@@ -33,16 +33,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: scale(1);
   overflow-x: hidden;
 }
 
-.blackOverlay{
+.blackOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.45);
+  background-color: rgba(0, 0, 0, 0.45);
   pointer-events: none;
 }
