@@ -21,7 +21,7 @@ export default function CustomButton ({
   return (
     <>
       {href !== undefined ? (
-        <Link href={href} scroll={false}>
+        <Link href={href}>
           <a
             className={classNames(
               styles.container,
