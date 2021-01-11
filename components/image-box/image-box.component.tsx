@@ -43,21 +43,7 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider !== undefined && styles.container__wider)}
     >
-
-      <div
-        className={classNames(isLoading ? undefined : styles.hide)}
-        style={{
-          position: 'absolute',
-          backgroundColor: placeholderColor,
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-        <ThreeDots/>
-      </div>
-
+      <ThreeDots isLoading={isLoading} placeholderColor={placeholderColor}/>
       <Image
         onLoad={ handleLoad }
         className={classNames(styles.image, isLoading ? styles.hide : undefined)}
@@ -68,7 +54,6 @@ export default function ImageBox ({
         priority={priority}
         quality={quality}
       />
-
       <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : undefined)}></div>
     </div>
   )
