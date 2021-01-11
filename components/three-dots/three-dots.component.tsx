@@ -8,10 +8,18 @@ interface Props {
   placeholderColor: string
 }
 
-export default function ThreeDots ({ isLoading, placeholderColor }: Props): ReactElement {
+export default function ThreeDots ({
+  isLoading,
+  placeholderColor
+}: Props): ReactElement {
   return (
     <div
-      className={classNames(styles.container, isLoading ? undefined : styles.container_hide)} style={{ backgroundColor: placeholderColor }}>
+      className={classNames(
+        styles.container,
+        isLoading ? undefined : styles.container_hide
+      )}
+      style={{ backgroundColor: placeholderColor }}
+    >
       <ContentLoader
         viewBox="0 0 400 160"
         speed={1}
