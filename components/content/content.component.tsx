@@ -17,7 +17,7 @@ export default function Content ({
   title,
   blockquote,
   button,
-  narrower = false
+  narrower
 }: Props
 ): ReactElement {
   const bgColor: CSSProperties = {
@@ -29,7 +29,7 @@ export default function Content ({
       className={
         classNames(
           styles.container,
-          narrower && styles.container__narrower
+          narrower !== undefined && styles.container__narrower
         )}
       style={
         bgColor

@@ -21,7 +21,7 @@ export default function ImageBox ({
   src,
   alt,
   objectFit,
-  wider = false,
+  wider,
   priority,
   quality,
   hero,
@@ -41,7 +41,7 @@ export default function ImageBox ({
   return (
     <div
       className={
-        classNames(hero !== undefined ? styles.container_hero : styles.container, wider && styles.container__wider)}
+        classNames(hero !== undefined ? styles.container_hero : styles.container, wider !== undefined && styles.container__wider)}
     >
 
       <div

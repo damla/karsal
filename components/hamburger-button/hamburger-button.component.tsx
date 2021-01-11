@@ -8,17 +8,17 @@ interface Props {
 }
 
 export default function HamburgerButton ({
-  menuActive = false,
+  menuActive,
   onClickHandler
 }: Props
 ): ReactElement {
   return (
     <li className={styles.container} onClick={onClickHandler}>
-      <a className={classNames(styles.body, menuActive && styles.body__active)}>
+      <a className={classNames(styles.body, menuActive !== undefined && styles.body__active)}>
         <span className={styles.burgerIcon}></span>
       </a>
     </li>
   )
 }
 
-// refactor this component
+// TODO: refactor this component

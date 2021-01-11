@@ -15,7 +15,7 @@ import { CommonModel } from '../../interfaces/index'
 interface Props {
   children: ReactNode
   data: CommonModel
-  navbarBg: boolean
+  navbarBg?: boolean
 }
 
 export default function Layout ({
@@ -69,7 +69,6 @@ export default function Layout ({
                 src="/assets/svgs/phone-solid.svg"
                 width={15}
                 height={15}
-
                 alt={announcement.phone.image_alt}
               />
             </a>

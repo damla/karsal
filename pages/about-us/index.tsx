@@ -36,7 +36,7 @@ export default function AboutUs ({
       <Head>
         <title>{title}</title>
       </Head>
-      <Layout data={common} navbarBg={true}>
+      <Layout data={common} navbarBg>
         <Section banner>
           <ImageBox
             src="/assets/images/about_us_hero.png"

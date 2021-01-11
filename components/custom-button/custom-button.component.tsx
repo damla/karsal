@@ -15,17 +15,17 @@ export default function CustomButton ({
   children,
   onClick,
   href,
-  inverted = false
+  inverted
 }: Props
 ): ReactElement {
   return (
     <>
       {href !== undefined ? (
-        <Link href={href} scroll={false}>
+        <Link href={href}>
           <a
             className={classNames(
               styles.container,
-              inverted && styles.container__inverted
+              inverted !== undefined && styles.container__inverted
             )}
           >
             <div className={styles.body}>{children}</div>
@@ -36,7 +36,7 @@ export default function CustomButton ({
           onClick={onClick}
           className={classNames(
             styles.container,
-            inverted && styles.container__inverted
+            inverted !== undefined && styles.container__inverted
           )}
         >
           <div className={styles.body}>{children}</div>

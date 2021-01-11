@@ -12,8 +12,8 @@ interface Props {
 export default function Bar ({
   children,
   height,
-  announcement = false,
-  footer = false
+  announcement,
+  footer
 }: Props
 ): ReactElement {
   const heightValue: CSSProperties = {
@@ -24,8 +24,8 @@ export default function Bar ({
     <div
       className={classNames(
         styles.container,
-        announcement && styles.container__announcement,
-        footer && styles.container__footer
+        announcement !== undefined && styles.container__announcement,
+        footer !== undefined && styles.container__footer
       )}
       style={heightValue}
     >

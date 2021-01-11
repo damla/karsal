@@ -11,17 +11,17 @@ interface Props {
 
 export default function Section ({
   children,
-  id = undefined,
-  banner = false,
-  relative = false
+  id,
+  banner,
+  relative
 }: Props
 ): ReactElement {
   return (
     <section
       className={classNames(
         styles.container,
-        banner && styles.container__banner,
-        relative && styles.relative
+        banner !== undefined && styles.container__banner,
+        relative !== undefined && styles.relative
       )}
       id={id}
     >

@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   }
 }
 
-export default function Anasayfa ({
+export default function HomePage ({
   common,
   page: {
     title
@@ -49,11 +49,11 @@ export default function Anasayfa ({
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout data={common} navbarBg={false}>
+      <Layout data={common}>
         <Section id="section-1" banner>
           <Content
             backgroundColor={'#bed0bd20'}
-            left={<Logo width={120} height={40} />}
+            left={<Logo width={120} height={40}/>}
             title={title}
             blockquote={
               <BlockQuote>
@@ -78,7 +78,7 @@ export default function Anasayfa ({
             objectFit='fill'
             priority
             quality={100}
-            placeholderColor = "#bed0bd20"
+            placeholderColor="#bed0bd20"
           />
         </Section>
 
@@ -90,7 +90,7 @@ export default function Anasayfa ({
             wider
             priority
             quality={75}
-            placeholderColor = "#bed0bd20"
+            placeholderColor="#bed0bd20"
           />
           <Content
             narrower
