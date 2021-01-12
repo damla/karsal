@@ -18,11 +18,12 @@ export default function Section ({
 ): ReactElement {
   return (
     <section
-      className={classNames(
-        styles.container,
-        banner !== undefined && styles.container__banner,
-        relative !== undefined && styles.relative
-      )}
+      className={
+        classNames(
+          styles.container,
+          banner !== undefined && styles.container__banner,
+          relative !== undefined && styles.relative
+        )}
       id={id}
     >
       {children}
