@@ -8,6 +8,7 @@ import ImageBox from '../../components/image-box/image-box.component'
 
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
+import styles from './about-us.module.scss'
 
 interface Props {
   common: CommonModel
@@ -37,7 +38,7 @@ export default function AboutUs ({
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
-        <Section banner>
+        <Section banner relative>
           <ImageBox
             src="/assets/images/about_us_hero.png"
             alt="banner-image"
@@ -46,12 +47,12 @@ export default function AboutUs ({
             hero
             placeholderColor="#404040"
           />
+          <h1 className={styles.h1}>{title}</h1>
         </Section>
         <Section relative>
           <div style={{
             minHeight: '100vh'
           }}>
-            <p>test</p>
           </div>
         </Section>
       </Layout>
