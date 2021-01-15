@@ -6,10 +6,9 @@
   align-items: stretch;
   width: 100vw;
   background-color: #f0f9f0;
-  margin-bottom: 5vh;
 
-  &:last-child {
-    margin-bottom: 0;
+  &.relative {
+    position: relative;
   }
 
   &__banner {
