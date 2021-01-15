@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React, { CSSProperties, ReactElement, ReactNode } from 'react'
 import styles from './section.module.scss'
 import classNames from 'classnames'
 
@@ -7,15 +7,25 @@ interface Props {
   id?: string
   banner?: boolean
   relative?: boolean
+  minHeight?: string
+  marginBottom?: string
 }
 
 export default function Section ({
   children,
   id,
   banner,
-  relative
+  relative,
+  minHeight,
+  marginBottom
 }: Props
 ): ReactElement {
+  const style: CSSProperties = {
+    minHeight: minHeight,
+    marginBottom: marginBottom
+
+  }
+
   return (
     <section
       className={
@@ -24,6 +34,7 @@ export default function Section ({
           banner !== undefined && styles.container__banner,
           relative !== undefined && styles.relative
         )}
+      style={ style }
       id={id}
     >
       {children}

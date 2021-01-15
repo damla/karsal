@@ -38,7 +38,7 @@ export default function AboutUs ({
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
-        <Section banner relative>
+        <Section relative minHeight={'60vh'}>
           <ImageBox
             src="/assets/images/about_us_hero.png"
             alt="banner-image"
