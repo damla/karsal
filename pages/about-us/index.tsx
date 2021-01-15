@@ -40,7 +40,7 @@ export default function AboutUs ({
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
           <ImageBox
-            src="/assets/images/about_us_hero.png"
+            src="/assets/images/about_us_hero.jpg"
             alt="banner-image"
             quality={75}
             objectFit="cover"

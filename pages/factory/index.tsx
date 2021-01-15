@@ -68,7 +68,7 @@ export default function Factory ({
             }
           />
           <ImageBox
-            src="/assets/images/about_us_hero.png"
+            src="/assets/images/about_us_hero.jpg"
             alt="banner-image"
             objectFit="cover"
             quality={75}
