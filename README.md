@@ -1,8 +1,7 @@
-# 🚧 Still on progress 🚧
 
+## 🚧 Still on progress 🚧
 
 ⚠️ This project is covered by [GitHub’s Terms of Service](https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-terms-of-service#3-ownership-of-content-right-to-post-and-license-grants), which allows you to view and fork this project, otherwise comes with no permissions.
-
 
 ## Branches
 - **reactjs:** First implementation of project, written with ReactJS and old UI. [Latest Deployment](https://damla.github.io/karsal)
