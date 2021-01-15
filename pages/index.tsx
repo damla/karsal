@@ -50,7 +50,7 @@ export default function HomePage ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
-        <Section id="section-1" banner>
+        <Section id="section-1" banner marginBottom="5vh">
           <Content
             backgroundColor={'#bed0bd20'}
             left={<Logo width={120} height={40}/>}
@@ -82,7 +82,7 @@ export default function HomePage ({
           />
         </Section>
 
-        <Section id="section-2">
+        <Section id="section-2" marginBottom="5vh">
           <ImageBox
             src="/assets/images/section-2.jpg"
             alt="Picture of yarns"

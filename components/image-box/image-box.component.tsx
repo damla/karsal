@@ -15,6 +15,7 @@ interface Props {
   quality?: number
   hero?: boolean
   placeholderColor: string
+  objectPosition?: string
 }
 
 export default function ImageBox ({
@@ -25,7 +26,8 @@ export default function ImageBox ({
   priority,
   quality,
   hero,
-  placeholderColor
+  placeholderColor,
+  objectPosition
 }: Props
 ): ReactElement {
   const [isLoading, setLoading] = useState(true)
@@ -53,6 +55,7 @@ export default function ImageBox ({
         objectFit={objectFit}
         priority={priority}
         quality={quality}
+        objectPosition={objectPosition}
       />
       <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : undefined)}></div>
     </div>
