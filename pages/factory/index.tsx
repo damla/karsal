@@ -48,7 +48,7 @@ export default function Factory ({
         <Section>
           <Content
             backgroundColor={'#bed0bd20'}
-            left={<Logo width={120} height={40} />}
+            left={<Logo width={90} height={60} />}
             title={'Test'}
             blockquote={
               <BlockQuote>
