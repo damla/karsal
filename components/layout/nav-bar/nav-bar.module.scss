@@ -30,7 +30,7 @@
 
   &__scrolled {
     @include green-bg;
-    padding: 1.5rem;
+    padding: 0.5rem 1.5rem;
     top: 0;
     @include change-color;
   }
