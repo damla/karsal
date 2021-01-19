@@ -69,7 +69,7 @@ export default function NavBar ({
                 <>
                   <Menu align="left" equal>
                     <MenuItem href="/">
-                      <Logo width={120} height={40} />
+                      <Logo width={90} height={60} />
                     </MenuItem>
                   </Menu>
                   <Menu align="center" equal>
@@ -120,7 +120,7 @@ export default function NavBar ({
         <>
           <Menu align="left">
             <MenuItem href="/">
-              <Logo width={120} height={40} />
+              <Logo width={90} height={60} />
             </MenuItem>
           </Menu>
           <Menu align="right">

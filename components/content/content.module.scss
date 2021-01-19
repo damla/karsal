@@ -21,14 +21,14 @@
     &__right {
       display: flex;
       flex-direction: column;
-      margin-left: 2vw;
+      margin-left: 5vw;
 
       h1 {
         font-family: "Zaph Humanist", sans-serif;
         font-weight: 200;
         font-size: 2rem;
       }
-      @media only screen and (max-width: variables.$max-width-tablet) {
+      @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
         margin-left: 0;
       }
     }
