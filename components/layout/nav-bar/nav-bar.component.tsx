@@ -57,6 +57,7 @@ export default function NavBar ({
       className={
         classNames(
           styles.container,
+          navbarBg === undefined && styles.landing,
           isScrolled && styles.container__scrolled,
           navbarBg !== undefined && styles.container__pageView
         )}
