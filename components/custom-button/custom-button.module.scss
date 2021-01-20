@@ -3,26 +3,26 @@
 .container {
   display: flex;
   background-color: transparent;
-  color: black;
+  color: variables.$secondary-color;
   align-items: center;
   max-width: 30rem;
   min-height: 50px;
   border: 1px solid black;
 
   &:hover {
-    background-color: variables.$secondary-background-color;
-    border: 1px solid variables.$secondary-background-color;
+    background-color: variables.$secondary-color;
+    border: 1px solid variables.$secondary-color;
     color: white;
     opacity: 1;
   }
 
   &__inverted {
-    background-color: black;
+    background-color: variables.$secondary-color;
     color: white;
 
     &:hover {
       background-color: white;
-      color: black;
+      color: variables.$secondary-color;
     }
   }
 

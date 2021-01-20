@@ -1,8 +1,7 @@
 @use "../../global/variables.scss" as variables;
 
-// TODO: add as variable
 .container {
-  background-color: variables.$secondary-background-color;
+  background-color: variables.$secondary-color;
   padding: 0.5rem 1.5rem 0.4rem 1.5rem;
   min-width: 100%;
 
@@ -39,7 +38,7 @@
     }
     @media only screen and (max-width: variables.$max-width-tablet) {
       min-height: 10vh;
-      border-top: 0.2rem solid variables.$background-color;
+      border-top: 0.2rem solid variables.$primary-color;
     }
   }
 }

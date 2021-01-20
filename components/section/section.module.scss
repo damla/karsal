@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   align-items: stretch;
   width: 100vw;
-  background-color: #f0f9f0;
+  background-color: variables.$primary-color;
 
   &.relative {
     position: relative;
@@ -22,3 +22,4 @@
     margin-bottom: 0;
   }
 }
+// TODO: fix responsive view margin bottom problem

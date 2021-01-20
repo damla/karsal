@@ -1,3 +1,4 @@
+@use "../../global/variables.scss" as variables;
 @import "~sass-burger/burger";
 
 .container {
@@ -6,7 +7,7 @@
 
   .body {
     .burgerIcon {
-      @include burger(25px, 3px, 5px, #444);
+      @include burger(25px, 3px, 5px, variables.$quaternary-color);
     }
     &__active {
       .burgerIcon {

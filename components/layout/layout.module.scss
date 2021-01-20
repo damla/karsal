@@ -1,3 +1,5 @@
+@use "../../global/variables.scss" as variables;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,5 +7,6 @@
 
   &__body {
     min-width: 100vw;
+    background-color: variables.$primary-color;
   }
 }
