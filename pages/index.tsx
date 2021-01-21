@@ -52,7 +52,7 @@ export default function HomePage ({
       <Layout data={common}>
         <Section id="section-1" banner marginBottom="5vh">
           <Content
-            backgroundColor={'#e1dddc'}
+            backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}
             title={title}
             blockquote={
@@ -95,7 +95,7 @@ export default function HomePage ({
 
           <Content
             narrower
-            backgroundColor="#e1dddc"
+            backgroundColor="#F9F8F4"
             title="Kumaşın Mimarı..."
             blockquote={
               <BlockQuote>
@@ -118,7 +118,7 @@ export default function HomePage ({
         <Section id="section-3">
           <Content
             narrower
-            backgroundColor={'#e1dddc'}
+            backgroundColor={'#F9F8F4'}
             title={'Kumaşın Mimarı...'}
             blockquote={
               <BlockQuote>
