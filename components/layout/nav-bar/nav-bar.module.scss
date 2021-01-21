@@ -1,14 +1,14 @@
 @use "../../../global/variables.scss" as variables;
 
 @mixin green-bg {
-  background-color: variables.$background-color;
-  border-bottom: 1px solid variables.$border-color;
+  background-color: variables.$primary-color;
+  border-bottom: 1px solid variables.$quaternary-color;
 }
 
 @mixin change-color {
   a,
   .seperator {
-    color: variables.$primary-font-color;
+    color: variables.$quaternary-color;
   }
 }
 
@@ -33,6 +33,10 @@
     padding: 0.5rem 1.5rem;
     top: 0;
     @include change-color;
+
+    &.landing {
+      padding: 1.5rem;
+    }
   }
 
   &:hover {
@@ -44,7 +48,7 @@
     display: flex;
 
     .seperator {
-      color: variables.$primary-font-color;
+      color: variables.$quaternary-color;
       margin: 0 0.2rem;
     }
   }

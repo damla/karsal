@@ -27,6 +27,7 @@
         font-family: "Zaph Humanist", sans-serif;
         font-weight: 200;
         font-size: 2rem;
+        color: variables.$quaternary-color;
       }
       @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
         margin-left: 0;

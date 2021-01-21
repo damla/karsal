@@ -3,8 +3,8 @@
 .container {
   $self: &;
   position: fixed;
-  background-color: variables.$background-color;
-  border-left: 1px solid variables.$border-color;
+  background-color: variables.$primary-color;
+  border-left: 1px solid variables.$quaternary-color;
   right: -100%;
   width: 50%;
   height: 100%;
@@ -48,7 +48,7 @@
         text-align: right;
         width: 80%;
         padding-bottom: 5px;
-        border-bottom: 2px solid variables.$border-color;
+        border-bottom: 2px solid variables.$quaternary-color;
         transition: all 0.5s ease 0s;
         margin-bottom: 0.5rem;
 
@@ -60,7 +60,7 @@
           font-size: 1.7rem;
           font-family: "SuisseInt-Regular";
           font-weight: 200;
-
+          color: variables.$quaternary-color;
           &:hover {
             text-decoration: unset;
           }

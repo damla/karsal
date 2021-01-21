@@ -52,7 +52,7 @@ export default function HomePage ({
       <Layout data={common}>
         <Section id="section-1" banner marginBottom="5vh">
           <Content
-            backgroundColor={'#bed0bd20'}
+            backgroundColor={'#e1dddc'}
             left={<Logo width={90} height={60} />}
             title={title}
             blockquote={
@@ -74,10 +74,10 @@ export default function HomePage ({
           />
           <ImageBox
             src="/assets/images/section-1.jpg"
-            alt="Picture of the fabric"
-            objectFit='fill'
+            alt="Picture of yarns"
+            objectFit='cover'
             priority
-            quality={100}
+            quality={75}
             placeholderColor="#bed0bd20"
           />
         </Section>
@@ -85,16 +85,17 @@ export default function HomePage ({
         <Section id="section-2" marginBottom="5vh">
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt="Picture of yarns"
-            objectFit='cover'
-            wider
+            alt="Picture of the fabric"
+            objectFit='fill'
             priority
-            quality={75}
+            wider
+            quality={100}
             placeholderColor="#bed0bd20"
           />
+
           <Content
             narrower
-            backgroundColor="#f1f5f1"
+            backgroundColor="#e1dddc"
             title="Kumaşın Mimarı..."
             blockquote={
               <BlockQuote>
@@ -117,7 +118,7 @@ export default function HomePage ({
         <Section id="section-3">
           <Content
             narrower
-            backgroundColor={'#f1f5f1'}
+            backgroundColor={'#e1dddc'}
             title={'Kumaşın Mimarı...'}
             blockquote={
               <BlockQuote>

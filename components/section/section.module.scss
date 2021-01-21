@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   align-items: stretch;
   width: 100vw;
-  background-color: #f0f9f0;
+  background-color: variables.$primary-color;
 
   &.relative {
     position: relative;
@@ -19,6 +19,6 @@
     }
   }
   @media only screen and (max-width: variables.$max-width-tablet) {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
