@@ -8,6 +8,7 @@
   max-width: 30rem;
   min-height: 50px;
   border: 1px solid black;
+  cursor: pointer;
 
   &:hover {
     background-color: variables.$secondary-color;
