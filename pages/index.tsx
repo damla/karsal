@@ -74,10 +74,10 @@ export default function HomePage ({
           />
           <ImageBox
             src="/assets/images/section-1.jpg"
-            alt="Picture of the fabric"
-            objectFit='fill'
+            alt="Picture of yarns"
+            objectFit='cover'
             priority
-            quality={100}
+            quality={75}
             placeholderColor="#bed0bd20"
           />
         </Section>
@@ -85,13 +85,14 @@ export default function HomePage ({
         <Section id="section-2" marginBottom="5vh">
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt="Picture of yarns"
-            objectFit='cover'
-            wider
+            alt="Picture of the fabric"
+            objectFit='fill'
             priority
-            quality={75}
+            wider
+            quality={100}
             placeholderColor="#bed0bd20"
           />
+
           <Content
             narrower
             backgroundColor="#e1dddc"
