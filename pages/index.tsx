@@ -50,7 +50,7 @@ export default function HomePage ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
-        <Section id="section-1" banner marginBottom="5vh">
+        <Section id="section-1" banner marginBottom="10vh">
           <Content
             backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}
@@ -74,22 +74,22 @@ export default function HomePage ({
           />
           <ImageBox
             src="/assets/images/section-1.jpg"
-            alt="Picture of yarns"
-            objectFit='cover'
+            alt="Picture of the fabric"
+            objectFit='fill'
             priority
-            quality={75}
+            quality={100}
             placeholderColor="#bed0bd20"
           />
         </Section>
 
-        <Section id="section-2" marginBottom="5vh">
+        <Section id="section-2" marginBottom="10vh">
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt="Picture of the fabric"
-            objectFit='fill'
+            alt="Picture of yarns"
+            objectFit='cover'
             priority
             wider
-            quality={100}
+            quality={75}
             placeholderColor="#bed0bd20"
           />
 
@@ -115,7 +115,7 @@ export default function HomePage ({
             }
           />
         </Section>
-        <Section id="section-3">
+        <Section id="section-3" marginBottom="10vh">
           <Content
             narrower
             backgroundColor={'#F9F8F4'}

@@ -7,7 +7,7 @@
 
   .body {
     .burgerIcon {
-      @include burger(25px, 3px, 5px, variables.$quaternary-color);
+      @include burger(25px, 3px, 5px, variables.$secondary-color);
     }
     &__active {
       .burgerIcon {
