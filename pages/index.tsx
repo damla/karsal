@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function HomePage ({
   common,
   page: {
-    title
+    section1
   }
 }: Props
 ): ReactElement {
@@ -46,7 +46,7 @@ export default function HomePage ({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>Karsal Örme</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
@@ -54,28 +54,23 @@ export default function HomePage ({
           <Content
             backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}
-            title={title}
+            title={section1.content.title}
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                {section1.content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton onClick={() => scrollToSection('section-2')}>
-                <span>Daha Fazlası</span>
+                <span>{section1.content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
-            src="/assets/images/section-1.jpg"
-            alt="Picture of the fabric"
-            objectFit='fill'
+            src="/assets/images/section-2.jpg"
+            alt={section1.image.alt}
+            objectFit='cover'
             priority
             quality={100}
             placeholderColor="#bed0bd20"
@@ -84,9 +79,10 @@ export default function HomePage ({
 
         <Section id="section-2" marginBottom="10vh">
           <ImageBox
-            src="/assets/images/section-2.jpg"
+            src="/assets/images/global.jpg"
             alt="Picture of yarns"
             objectFit='cover'
+            objectPosition="right"
             priority
             wider
             quality={75}
@@ -96,20 +92,15 @@ export default function HomePage ({
           <Content
             narrower
             backgroundColor="#F9F8F4"
-            title="Kumaşın Mimarı..."
+            title="Küresel Çalışmalar"
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                Karsal Örme; Rusya, Hırvatistan, Bulgaristan, İtalya, Almanya, Portekiz ve İspanya başta olmak üzere, birçok Avrupa ve Doğu Bloku ülkesine doğrudan ihracat yapmaktadır. Kataloğumuzu inceleyip, iletişime geçebilirsiniz.
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>Daha Fazlası</span>
+                <span>Göz At</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
@@ -119,28 +110,24 @@ export default function HomePage ({
           <Content
             narrower
             backgroundColor={'#F9F8F4'}
-            title={'Kumaşın Mimarı...'}
+            title={'Bize Ulaşın'}
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                Bir Karsal Örme müşterisi, kumaş numunesi seçimi yaptıktan sonra hiçbir işlemin sorumluluğu ve terminini takip etmek zorunda kalmadan faaliyet konusuna yoğunlaşabilmektedir. Daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>Daha Fazlası</span>
+                <span>İletişim</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
-            src="/assets/images/section-3.jpg"
+            src="/assets/images/contact-us.jpg"
             alt="Picture of yarns"
             objectFit='cover'
+            objectPosition="right bottom"
             wider
             quality={75}
             placeholderColor = "#bed0bd20"

@@ -93,7 +93,16 @@ export interface CommonModel {
 export interface HomePageModel {
   _id: ObjectID
   lang: string
-  title: string
+  section1: {
+    content: {
+      title: string
+      blockquote: string
+      button: string
+    }
+    image: {
+      alt: string
+    }
+  }
 }
 
 export interface AboutUsModel {
