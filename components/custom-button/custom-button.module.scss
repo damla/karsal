@@ -18,13 +18,22 @@
   }
 
   &__inverted {
-    background-color: variables.$secondary-color;
+    background-color: variables.$quaternary-color;
     color: white;
-
+    border: 0;
     &:hover {
       background-color: white;
       color: variables.$secondary-color;
     }
+  }
+
+  &_scrollUp {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    min-height: 3rem;
   }
 
   .body {

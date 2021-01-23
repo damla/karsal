@@ -1,4 +1,5 @@
 import React, { ReactNode, useState, useEffect, ReactElement } from 'react'
+import { useRouter } from 'next/router'
 
 import Announcement from './announcement/announcement.component'
 import Footer from './footer/footer.component'
@@ -6,6 +7,7 @@ import NavBar from './nav-bar/nav-bar.component'
 import SideBar from './side-bar/side-bar.component'
 import HamburgerButton from '../hamburger-button/hamburger-button.component'
 import Image from 'next/image'
+import CustomButton from '../custom-button/custom-button.component'
 
 import styles from './layout.module.scss'
 
@@ -30,6 +32,8 @@ export default function Layout ({
 }: Props
 ): ReactElement {
   const [isOpen, setIsOpen] = useState(false)
+
+  const route = useRouter()
 
   const isMobile = useMediaQuery({ query: '(max-width: 475px)' })
   const isDesktopOrLaptop = useMediaQuery({
@@ -95,6 +99,9 @@ export default function Layout ({
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />
+      <CustomButton href={route.pathname} inverted scrollUp>
+        <span>&#8593;</span>
+      </CustomButton>
     </div>
   )
 }

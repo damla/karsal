@@ -9,13 +9,15 @@ interface Props {
   onClick?: () => void
   href?: string
   inverted?: boolean
+  scrollUp?: boolean
 }
 
 export default function CustomButton ({
   children,
   onClick,
   href,
-  inverted
+  inverted,
+  scrollUp
 }: Props
 ): ReactElement {
   return (
@@ -25,7 +27,8 @@ export default function CustomButton ({
           <a
             className={classNames(
               styles.container,
-              inverted !== undefined && styles.container__inverted
+              inverted !== undefined && styles.container__inverted,
+              scrollUp !== undefined && styles.container_scrollUp
             )}
           >
             <div className={styles.body}>{children}</div>
