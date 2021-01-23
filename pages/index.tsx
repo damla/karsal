@@ -33,7 +33,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function HomePage ({
   common,
   page: {
-    section1
+    title,
+    sections
   }
 }: Props
 ): ReactElement {
@@ -46,30 +47,30 @@ export default function HomePage ({
   return (
     <>
       <Head>
-        <title>Karsal Örme</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
-        <Section id="section-1" banner marginBottom="10vh">
+        <Section id="section-1" banner marginBottom="10vh" marginTop="4.1rem">
           <Content
             backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}
-            title={section1.content.title}
+            title={sections[0].content.title}
             blockquote={
               <BlockQuote>
-                {section1.content.blockquote}
+                {sections[0].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton onClick={() => scrollToSection('section-2')}>
-                <span>{section1.content.button}</span>
+                <span>{sections[0].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
             src="/assets/images/section-2.jpg"
-            alt={section1.image.alt}
+            alt={sections[0].image.alt}
             objectFit='cover'
             priority
             quality={100}
@@ -80,7 +81,7 @@ export default function HomePage ({
         <Section id="section-2" marginBottom="10vh">
           <ImageBox
             src="/assets/images/global.jpg"
-            alt="Picture of yarns"
+            alt={sections[1].image.alt}
             objectFit='cover'
             objectPosition="right"
             priority
@@ -92,15 +93,15 @@ export default function HomePage ({
           <Content
             narrower
             backgroundColor="#F9F8F4"
-            title="Küresel Çalışmalar"
+            title={sections[1].content.title}
             blockquote={
               <BlockQuote>
-                Karsal Örme; Rusya, Hırvatistan, Bulgaristan, İtalya, Almanya, Portekiz ve İspanya başta olmak üzere, birçok Avrupa ve Doğu Bloku ülkesine doğrudan ihracat yapmaktadır. Kataloğumuzu inceleyip, iletişime geçebilirsiniz.
+                {sections[1].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>Göz At</span>
+                <span>{sections[1].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
@@ -110,24 +111,24 @@ export default function HomePage ({
           <Content
             narrower
             backgroundColor={'#F9F8F4'}
-            title={'Bize Ulaşın'}
+            title={sections[2].content.title}
             blockquote={
               <BlockQuote>
-                Bir Karsal Örme müşterisi, kumaş numunesi seçimi yaptıktan sonra hiçbir işlemin sorumluluğu ve terminini takip etmek zorunda kalmadan faaliyet konusuna yoğunlaşabilmektedir. Daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.
+                {sections[2].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>İletişim</span>
+                <span>{sections[2].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
-            src="/assets/images/contact-us.jpg"
-            alt="Picture of yarns"
+            src="/assets/images/swatch.jpg"
+            alt={sections[2].image.alt}
             objectFit='cover'
-            objectPosition="right bottom"
+
             wider
             quality={75}
             placeholderColor = "#bed0bd20"
