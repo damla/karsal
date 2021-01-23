@@ -33,7 +33,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function HomePage ({
   common,
   page: {
-    title
+    title,
+    sections
   }
 }: Props
 ): ReactElement {
@@ -50,97 +51,84 @@ export default function HomePage ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
-        <Section id="section-1" banner marginBottom="5vh">
+        <Section id="section-1" banner marginBottom="10vh" marginTop="4.1rem">
           <Content
-            backgroundColor={'#e1dddc'}
+            backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}
-            title={title}
+            title={sections[0].content.title}
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                {sections[0].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton onClick={() => scrollToSection('section-2')}>
-                <span>Daha Fazlası</span>
+                <span>{sections[0].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
-            src="/assets/images/section-1.jpg"
-            alt="Picture of yarns"
+            src="/assets/images/section-2.jpg"
+            alt={sections[0].image.alt}
             objectFit='cover'
             priority
-            quality={75}
-            placeholderColor="#bed0bd20"
-          />
-        </Section>
-
-        <Section id="section-2" marginBottom="5vh">
-          <ImageBox
-            src="/assets/images/section-2.jpg"
-            alt="Picture of the fabric"
-            objectFit='fill'
-            priority
-            wider
             quality={100}
             placeholderColor="#bed0bd20"
           />
+        </Section>
+
+        <Section id="section-2" marginBottom="10vh">
+          <ImageBox
+            src="/assets/images/global.jpg"
+            alt={sections[1].image.alt}
+            objectFit='cover'
+            objectPosition="right"
+            priority
+            wider
+            quality={75}
+            placeholderColor="#bed0bd20"
+          />
 
           <Content
             narrower
-            backgroundColor="#e1dddc"
-            title="Kumaşın Mimarı..."
+            backgroundColor="#F9F8F4"
+            title={sections[1].content.title}
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                {sections[1].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>Daha Fazlası</span>
+                <span>{sections[1].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
         </Section>
-        <Section id="section-3">
+        <Section id="section-3" marginBottom="10vh">
           <Content
             narrower
-            backgroundColor={'#e1dddc'}
-            title={'Kumaşın Mimarı...'}
+            backgroundColor={'#F9F8F4'}
+            title={sections[2].content.title}
             blockquote={
               <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
+                {sections[2].content.blockquote}
               </BlockQuote>
             }
             button={
               <CustomButton href="/about-us">
-                <span>Daha Fazlası</span>
+                <span>{sections[2].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
             }
           />
           <ImageBox
-            src="/assets/images/section-3.jpg"
-            alt="Picture of yarns"
+            src="/assets/images/swatch.jpg"
+            alt={sections[2].image.alt}
             objectFit='cover'
+
             wider
             quality={75}
             placeholderColor = "#bed0bd20"

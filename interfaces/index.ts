@@ -90,10 +90,22 @@ export interface CommonModel {
   }
 }
 
+export interface SectionModel{
+  content: {
+    title: string
+    blockquote: string
+    button: string
+  }
+  image: {
+    alt: string
+  }
+}
+
 export interface HomePageModel {
   _id: ObjectID
-  lang: string
   title: string
+  lang: string
+  sections: SectionModel[]
 }
 
 export interface AboutUsModel {

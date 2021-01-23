@@ -2,13 +2,13 @@
 
 @mixin green-bg {
   background-color: variables.$primary-color;
-  border-bottom: 1px solid variables.$quaternary-color;
+  border-bottom: 1px solid variables.$secondary-color;
 }
 
 @mixin change-color {
   a,
   .seperator {
-    color: variables.$quaternary-color;
+    color: variables.$secondary-color;
   }
 }
 
@@ -48,7 +48,7 @@
     display: flex;
 
     .seperator {
-      color: variables.$quaternary-color;
+      color: variables.$secondary-color;
       margin: 0 0.2rem;
     }
   }
