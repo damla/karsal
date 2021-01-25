@@ -31,7 +31,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: calc(7vh - 0.7rem);
     margin-right: 1rem;
     min-height: 3rem;
   }
