@@ -1,5 +1,4 @@
 import React, { ReactNode, useState, useEffect, ReactElement } from 'react'
-import { useRouter } from 'next/router'
 
 import Announcement from './announcement/announcement.component'
 import Footer from './footer/footer.component'
@@ -33,8 +32,6 @@ export default function Layout ({
 ): ReactElement {
   const [isOpen, setIsOpen] = useState(false)
 
-  const route = useRouter()
-
   const isMobile = useMediaQuery({ query: '(max-width: 475px)' })
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1131px)'
@@ -52,6 +49,12 @@ export default function Layout ({
     isOpen
       ? document?.querySelector('body')?.classList.add('disableScroll')
       : document?.querySelector('body')?.classList.remove('disableScroll')
+  }
+
+  function scrollToTop (): void {
+    if (typeof window !== 'undefined') {
+      document?.querySelector('#announcement')?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -99,7 +102,7 @@ export default function Layout ({
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />
-      <CustomButton href={route.pathname} inverted scrollUp>
+      <CustomButton onClick={() => scrollToTop()} inverted scrollUp>
         <span>&#8593;</span>
       </CustomButton>
     </div>

@@ -27,8 +27,7 @@ export default function CustomButton ({
           <a
             className={classNames(
               styles.container,
-              inverted !== undefined && styles.container__inverted,
-              scrollUp !== undefined && styles.container_scrollUp
+              inverted !== undefined && styles.container__inverted
             )}
           >
             <div className={styles.body}>{children}</div>
@@ -39,7 +38,8 @@ export default function CustomButton ({
           onClick={onClick}
           className={classNames(
             styles.container,
-            inverted !== undefined && styles.container__inverted
+            inverted !== undefined && styles.container__inverted,
+            scrollUp !== undefined && styles.container_scrollUp
           )}
         >
           <div className={styles.body}>{children}</div>
