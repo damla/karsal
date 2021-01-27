@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect, ReactElement } from 'react'
+import React, { ReactNode, useState, useEffect, useLayoutEffect, ReactElement } from 'react'
 
 import Announcement from './announcement/announcement.component'
 import Footer from './footer/footer.component'
@@ -9,6 +9,7 @@ import Image from 'next/image'
 import CustomButton from '../custom-button/custom-button.component'
 
 import styles from './layout.module.scss'
+import classNames from 'classnames'
 
 import { useMediaQuery } from 'react-responsive'
 import { CommonModel } from '../../interfaces/index'
@@ -18,6 +19,9 @@ interface Props {
   data: CommonModel
   navbarBg?: boolean
 }
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export default function Layout ({
   children,
@@ -31,6 +35,8 @@ export default function Layout ({
 }: Props
 ): ReactElement {
   const [isOpen, setIsOpen] = useState(false)
+  const [showScroll, setShowScroll] = useState(false)
+  const [atBottom, setAtBottom] = useState(false)
 
   const isMobile = useMediaQuery({ query: '(max-width: 475px)' })
   const isDesktopOrLaptop = useMediaQuery({
@@ -53,9 +59,32 @@ export default function Layout ({
 
   function scrollToTop (): void {
     if (typeof window !== 'undefined') {
-      document?.querySelector('#announcement')?.scrollIntoView({ behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
+
+  useIsomorphicLayoutEffect(() => {
+    const checkScrollTop = (): void => {
+      (window.pageYOffset > 300) ? setShowScroll(true) : setShowScroll(false)
+    }
+
+    window.addEventListener('scroll', checkScrollTop)
+
+    return () => window.removeEventListener('scroll', checkScrollTop)
+  }, [])
+
+  useIsomorphicLayoutEffect(() => {
+    const checkAtBottom = (): void => {
+      const totalPageHeight = document.body.scrollHeight
+
+      const scrollPoint = window.scrollY + window.innerHeight;
+      ((scrollPoint) >= totalPageHeight - 2) ? setAtBottom(true) : setAtBottom(false)
+    }
+
+    window.addEventListener('scroll', checkAtBottom)
+
+    return () => window.removeEventListener('scroll', checkAtBottom)
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -102,9 +131,13 @@ export default function Layout ({
       )}
       <div className={styles.container__body}>{children}</div>
       <Footer data={footer} />
-      <CustomButton onClick={() => scrollToTop()} inverted scrollUp>
-        <span>&#8593;</span>
-      </CustomButton>
+      <div className={classNames(
+        showScroll ? styles.fadeIn : styles.fadeOut
+      )}>
+        <CustomButton onClick={() => scrollToTop()} inverted scrollUp atBottom={atBottom}>
+          <span>&#8593;</span>
+        </CustomButton>
+      </div>
     </div>
   )
 }

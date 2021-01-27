@@ -10,6 +10,7 @@ interface Props {
   href?: string
   inverted?: boolean
   scrollUp?: boolean
+  atBottom?: boolean
 }
 
 export default function CustomButton ({
@@ -17,7 +18,8 @@ export default function CustomButton ({
   onClick,
   href,
   inverted,
-  scrollUp
+  scrollUp,
+  atBottom
 }: Props
 ): ReactElement {
   return (
@@ -41,7 +43,7 @@ export default function CustomButton ({
             inverted !== undefined && styles.container__inverted,
             scrollUp !== undefined && styles.container_scrollUp
           )}
-        >
+          style={atBottom !== undefined && atBottom ? { marginBottom: 'calc(7vh - 0.7rem)' } : {}}>
           <div className={styles.body}>{children}</div>
         </button>
       )}
