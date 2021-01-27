@@ -11,7 +11,7 @@ export default function Announcement ({
 }: Props
 ): ReactElement {
   return (
-    <div className={styles.container}>
+    <div id="announcement" className={styles.container}>
       <Bar announcement>{children}</Bar>
     </div>
   )

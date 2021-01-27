@@ -10,3 +10,15 @@
     background-color: variables.$primary-color;
   }
 }
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 200ms, opacity 200ms;
+}
+
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 200ms;
+}

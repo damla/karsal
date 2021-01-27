@@ -12,8 +12,8 @@ html,
 body {
   background-color: #f1f5f1;
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
   height: 100%;
 
@@ -39,6 +39,5 @@ a {
 a:hover {
   opacity: 0.7;
 }
-
 
 // write a tag's attributes as a mixin
