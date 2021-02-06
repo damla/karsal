@@ -6,6 +6,8 @@ import Layout from '../../components/layout/layout.component'
 
 import { getData } from '../../lib'
 import { CommonModel, ContactModel } from '../../interfaces/index'
+import Section from '../../components/section/section.component'
+import ImageBox from '../../components/image-box/image-box.component'
 
 interface Props {
   common: CommonModel
@@ -36,12 +38,22 @@ export default function Contact ({
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
-        <div
-          style={{
-            height: '100vh',
-            backgroundColor: '#bad1f7'
-          }}
-        ></div>
+        <Section relative minHeight={'60vh'}>
+          <ImageBox
+            src="/assets/images/contact-us.jpg"
+            alt="banner-image"
+            quality={75}
+            objectFit="cover"
+            hero
+            placeholderColor="#404040"
+            objectPosition="bottom"
+          />
+        </Section>
+        <Section relative>
+          <div style={{ minHeight: '100vh' }}>
+
+          </div>
+        </Section>
       </Layout>
     </>
   )
