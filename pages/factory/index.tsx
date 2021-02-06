@@ -45,36 +45,20 @@ export default function Factory ({
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
-        <Section>
-          <Content
-            backgroundColor={'#bed0bd20'}
-            left={<Logo width={90} height={60} />}
-            title={'Test'}
-            blockquote={
-              <BlockQuote>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting.
-              </BlockQuote>
-            }
-            button={
-              <CustomButton href="/en/factory">
-                <span>Daha Fazlası</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
-          />
+        <Section relative minHeight={'60vh'}>
           <ImageBox
             src="/assets/images/factory_hero.jpg"
             alt="banner-image"
-            objectFit="cover"
             quality={75}
+            objectFit="cover"
             hero
             placeholderColor="#404040"
           />
+        </Section>
+        <Section relative>
+          <div style={{ minHeight: '100vh' }}>
+
+          </div>
         </Section>
       </Layout>
     </>
