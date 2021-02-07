@@ -7,9 +7,10 @@
     color: variables.$secondary-color;
     margin-bottom: 2.4rem;
 }
+
 // TODO: media query for mobile
 
-.h2 {
+.h3 {
     font-family: "SuisseInt-Regular", sans-serif;
     font-size: 2rem;
     color: variables.$secondary-color;
@@ -29,5 +30,31 @@
         display: flex;
         justify-content: space-between;
         width: 70vw;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+    .h1 {
+        font-size: 5rem;
+    }
+
+    .h3 {
+        font-size: 1.6rem;
+    }
+
+    .section {
+        &_body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-paragraph) {
+    .section {
+        &_body {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

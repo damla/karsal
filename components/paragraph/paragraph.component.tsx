@@ -11,7 +11,7 @@ export default function Paragraph ({
 ): ReactElement {
   return (
     <div className={styles.container}>
-      <p>{children}</p>
+      <p className={styles.p}>{children}</p>
     </div>
   )
 }

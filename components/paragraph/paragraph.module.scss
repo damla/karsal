@@ -9,12 +9,24 @@
         margin: 1rem 0;
     }
 
-    p {
+    .p {
         color: variables.$secondary-color;
         text-align: justify;
         font-family: "SuisseInt-Regular", sans-serif;
         font-size: 1.2rem;
         font-weight: normal;
         line-height: 2rem;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+    .p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-paragraph) {
+    .p {
+        min-width: 70vw;
     }
 }
