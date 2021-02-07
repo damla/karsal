@@ -123,7 +123,7 @@ export default function HomePage ({
               </BlockQuote>
             }
             button={
-              <CustomButton href="/about-us">
+              <CustomButton href="/contact">
                 <span>{sections[2].content.button}</span>
                 <span>&#8594;</span>
               </CustomButton>
