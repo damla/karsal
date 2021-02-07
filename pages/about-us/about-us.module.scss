@@ -2,7 +2,7 @@
 
 .h1 {
     font-family: "Zaph Humanist", sans-serif;
-    font-size: 6rem;
+    font-size: 3rem;
     text-transform: uppercase;
     color: variables.$secondary-color;
     margin-bottom: 2.4rem;
@@ -10,7 +10,7 @@
 
 .h3 {
     font-family: "SuisseInt-Regular", sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: variables.$secondary-color;
     max-width: 70vw;
     text-align: justify;
@@ -33,13 +33,13 @@
 }
 
 @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
-    .h1 {
-        font-size: 5rem;
-    }
+    // .h1 {
+    //     font-size: 5rem;
+    // }
 
-    .h3 {
-        font-size: 1.6rem;
-    }
+    // .h3 {
+    //     font-size: 1.6rem;
+    // }
 
     .section {
         &_body {
