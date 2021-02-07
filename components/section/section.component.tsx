@@ -36,7 +36,7 @@ export default function Section ({
           banner !== undefined && styles.container__banner,
           relative !== undefined && styles.relative
         )}
-      style={ style }
+      style={style}
       id={id}
     >
       {children}
