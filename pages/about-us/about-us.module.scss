@@ -1,12 +1,73 @@
+@use "../../global/variables.scss" as variables;
+
 .h1 {
     font-family: "Zaph Humanist", sans-serif;
-    margin-left: 1.5rem;
     font-size: 3rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
     text-transform: uppercase;
-    color: white;
+    color: variables.$secondary-color;
+    margin-bottom: 2.4rem;
 }
-// TODO: media query for mobile
+
+.h3 {
+    font-family: "SuisseInt-Regular", sans-serif;
+    font-size: 1.4rem;
+    color: variables.$secondary-color;
+    max-width: 70vw;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    &_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100%;
+        padding: 2.4rem;
+    }
+    &_body {
+        display: flex;
+        justify-content: space-between;
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+    // .h1 {
+    //     font-size: 5rem;
+    // }
+
+    // .h3 {
+    //     font-size: 1.6rem;
+    // }
+
+    .section {
+        &_body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-paragraph) {
+    .section {
+        &_body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .h3 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-middle) {
+    .h1 {
+        font-size: 2.5rem;
+    }
+
+    .h3 {
+        font-size: 1rem;
+    }
+}
