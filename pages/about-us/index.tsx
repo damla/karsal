@@ -45,6 +45,7 @@ export default function AboutUs ({
             alt="banner-image"
             quality={75}
             objectFit="cover"
+            objectPosition="top"
             hero
             placeholderColor="#404040"
           />
