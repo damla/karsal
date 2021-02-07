@@ -8,14 +8,13 @@
     margin-bottom: 2.4rem;
 }
 
-// TODO: media query for mobile
-
 .h3 {
     font-family: "SuisseInt-Regular", sans-serif;
     font-size: 2rem;
     color: variables.$secondary-color;
     max-width: 70vw;
     text-align: justify;
+    margin-bottom: 1.5rem;
 }
 
 .section {
@@ -56,5 +55,19 @@
             display: flex;
             flex-direction: column;
         }
+    }
+
+    .h3 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: variables.$max-width-middle) {
+    .h1 {
+        font-size: 2.5rem;
+    }
+
+    .h3 {
+        font-size: 1rem;
     }
 }

@@ -1,12 +1,11 @@
 @use "../../global/variables.scss" as variables;
 
 .container {
-    // max-height: 60%;
     max-width: 30rem;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 
-    @media only screen and (max-width: variables.$max-width-mobile) {
-        margin: 1rem 0;
+    @media only screen and (max-width: variables.$max-width-paragraph) {
+        margin: 0.5rem 0;
     }
 
     .p {
@@ -16,17 +15,17 @@
         font-size: 1.2rem;
         font-weight: normal;
         line-height: 2rem;
-    }
-}
 
-@media only screen and (max-width: variables.$max-width-tabletOrMobile) {
-    .p {
-        font-size: 1rem;
-    }
-}
+        @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+            font-size: 1rem;
+        }
 
-@media only screen and (max-width: variables.$max-width-paragraph) {
-    .p {
-        min-width: 70vw;
+        @media only screen and (max-width: variables.$max-width-paragraph) {
+            min-width: 70vw;
+        }
+
+        @media only screen and (max-width: variables.$max-width-middle) {
+            line-height: 1.5rem;
+        }
     }
 }
