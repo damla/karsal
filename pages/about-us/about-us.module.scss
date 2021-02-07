@@ -1,12 +1,33 @@
+@use "../../global/variables.scss" as variables;
+
 .h1 {
     font-family: "Zaph Humanist", sans-serif;
-    margin-left: 10vw;
-    font-size: 3rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
+    font-size: 6rem;
     text-transform: uppercase;
-    color: white;
+    color: variables.$secondary-color;
+    margin-bottom: 2.4rem;
 }
 // TODO: media query for mobile
+
+.h2 {
+    font-family: "SuisseInt-Regular", sans-serif;
+    font-size: 2rem;
+    color: variables.$secondary-color;
+    max-width: 70vw;
+    text-align: justify;
+}
+
+.section {
+    &_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100%;
+        padding: 2.4rem;
+    }
+    &_body {
+        display: flex;
+        justify-content: space-between;
+        width: 70vw;
+    }
+}
