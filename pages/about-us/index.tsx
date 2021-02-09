@@ -10,6 +10,7 @@ import Paragraph from '../../components/paragraph/paragraph.component'
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
 import styles from './about-us.module.scss'
+import Grid from '../../components/grid/grid.component'
 
 interface Props {
   common: CommonModel
@@ -62,6 +63,7 @@ export default function AboutUs ({
               Bir Karsal müşterisi, sadece kumaş numunesi veya seçimi yaptıktan sonra hiçbir işlemin sorumluluğu ve terminini takip etmek zorunda kalmadan faaliyet konusuna yoğunlaşabilmektedir. Bu nedenle Karsal üretimi kolaylaştırmaktadır. Karsal; Rusya, Hırvatistan, Bulgaristan, İtalya, Almanya, Portekiz, İspanya başta olmak üzere, birçok Avrupa ve Doğu Bloku ülkesine doğrudan ihracat yapmaktadır. Aileden gelen tekstil tecrübesi ile entegre bir sistemde üretimin yapılması, Karsal’a; üretilen kumaşların kalitesinin tüm sorumluluğunu üstlenebilmesini sağlamaktadır. Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla müşteriye ulaştırmaktadır.
               </Paragraph>
             </div>
+            <Grid/>
           </div>
         </Section>
       </Layout>
