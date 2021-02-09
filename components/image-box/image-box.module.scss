@@ -3,7 +3,7 @@
 .container {
   position: relative;
   flex-grow: 1;
-  flex-basis: 50vw;
+  flex-basis: 50%;
 
   &_hero {
     position: fixed;
@@ -15,11 +15,11 @@
   }
 
   &__wider {
-    flex-basis: 55vw;
+    flex-basis: 50%;
   }
 
   @media only screen and (max-width: variables.$max-width-tablet) {
-    flex-basis: 100vw;
+    flex-basis: 100%;
     min-height: 70vh;
     order: 2;
   }
