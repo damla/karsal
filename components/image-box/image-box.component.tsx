@@ -1,8 +1,6 @@
 import React, { ReactElement, useState, useEffect } from 'react'
 import Image, { ImageProps } from 'next/image'
 
-import ThreeDots from '../three-dots/three-dots.component'
-
 import styles from './image-box.module.scss'
 import classNames from 'classnames'
 
@@ -14,7 +12,7 @@ interface Props {
   priority?: boolean
   quality?: number
   hero?: boolean
-  placeholderColor: string
+  lowQualitySrc: string
   objectPosition?: string
 }
 
@@ -26,7 +24,7 @@ export default function ImageBox ({
   priority,
   quality,
   hero,
-  placeholderColor,
+  lowQualitySrc,
   objectPosition
 }: Props
 ): ReactElement {
@@ -45,7 +43,15 @@ export default function ImageBox ({
       className={
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider !== undefined && styles.container__wider)}
     >
-      <ThreeDots isLoading={isLoading} placeholderColor={placeholderColor}/>
+      <Image
+        className={classNames(styles.image, styles.blur, isLoading ? styles.hide : undefined)}
+        src={lowQualitySrc}
+        alt={alt}
+        layout="fill"
+        objectFit={objectFit}
+        quality={0}
+        objectPosition={objectPosition}
+      />
       <Image
         onLoad={ handleLoad }
         className={classNames(styles.image, isLoading ? styles.hide : undefined)}

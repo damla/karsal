@@ -13,20 +13,29 @@ import Logo from '../components/logo/logo.component'
 import { CommonModel, HomePageModel } from '../interfaces/index'
 import { getData } from '../lib'
 import { useMediaQuery } from 'react-responsive'
+import axios from 'axios'
 
 interface Props {
   common: CommonModel
   page: HomePageModel
+  Base64Values: string
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<HomePageModel>('home-page', locale)
 
+  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+  const response = await axios.get(`http://localhost:${portVal}/api/images`).then(response => {
+    const val: string = response.data.section_1
+    return `data:image/png;base64,${val}`
+  })
+
   return {
     props: {
       common: commonData,
-      page: pageData
+      page: pageData,
+      Base64Values: response
     }
   }
 }
@@ -36,7 +45,8 @@ export default function HomePage ({
   page: {
     title,
     sections
-  }
+  },
+  Base64Values
 }: Props
 ): ReactElement {
   // $max-width-tabletOrMobile: ;
@@ -74,25 +84,25 @@ export default function HomePage ({
             }
           />
           <ImageBox
-            src="/assets/images/section-2.jpg"
+            src="/assets/images/section-1.jpg"
             alt={sections[0].image.alt}
             objectFit='cover'
             priority
             quality={100}
-            placeholderColor="#bed0bd20"
+            lowQualitySrc={Base64Values}
           />
         </Section>
 
         <Section id="section-2" marginBottom="10vh">
           <ImageBox
-            src="/assets/images/global.jpg"
+            src="/assets/images/section-2.jpg"
             alt={sections[1].image.alt}
             objectFit='cover'
             objectPosition="right"
             priority
             wider
             quality={75}
-            placeholderColor="#bed0bd20"
+            lowQualitySrc={Base64Values}
           />
 
           <Content
@@ -130,13 +140,12 @@ export default function HomePage ({
             }
           />
           <ImageBox
-            src="/assets/images/swatch.jpg"
+            src="/assets/images/section-3.jpg"
             alt={sections[2].image.alt}
             objectFit='cover'
-
             wider
             quality={75}
-            placeholderColor = "#bed0bd20"
+            lowQualitySrc={Base64Values}
           />
         </Section>
       </Layout>
