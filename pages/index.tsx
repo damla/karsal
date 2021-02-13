@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL !== undefined ? process.env.NEXT_PUBLIC_VERCEL_URL : 'http://localhost:3000'}/api/page-images/${section}.jpg`).then(response => {
       const base64Value: string = response.data.pid
       return `data:image/png;base64,${base64Value}`
-    })
+    }).catch((err) => console.log(err))
     base64Values.push(response)
   }
 
