@@ -21,7 +21,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "pages/api/page-images/index.js",
+    "pages/api/page-images/[pid].js"
   ],
   "exclude": [
     "node_modules"

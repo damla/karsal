@@ -18,7 +18,7 @@ import axios from 'axios'
 interface Props {
   common: CommonModel
   page: HomePageModel
-  Base64Values: string
+  Base64Values: string[]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -26,16 +26,23 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<HomePageModel>('home-page', locale)
 
   const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
-  const response = await axios.get(`http://localhost:${portVal}/api/images`).then(response => {
-    const val: string = response.data.section_1
-    return `data:image/png;base64,${val}`
-  })
+
+  const sections = ['section_1', 'section_2', 'section_3']
+  const images = []
+
+  for (const section of sections) {
+    const response = await axios.get(`http://localhost:${portVal}/api/page-images/${section}.jpg`).then(response => {
+      const base64Value: string = response.data.pid
+      return `data:image/png;base64,${base64Value}`
+    })
+    images.push(response)
+  }
 
   return {
     props: {
       common: commonData,
       page: pageData,
-      Base64Values: response
+      Base64Values: images
     }
   }
 }
@@ -49,7 +56,6 @@ export default function HomePage ({
   Base64Values
 }: Props
 ): ReactElement {
-  // $max-width-tabletOrMobile: ;
   const isTablet = useMediaQuery({
     query: '(min-width: 475px) and (max-width: 1130px)'
   })
@@ -89,7 +95,7 @@ export default function HomePage ({
             objectFit='cover'
             priority
             quality={100}
-            lowQualitySrc={Base64Values}
+            lowQualitySrc={Base64Values[0]}
           />
         </Section>
 
@@ -102,7 +108,7 @@ export default function HomePage ({
             priority
             wider
             quality={75}
-            lowQualitySrc={Base64Values}
+            lowQualitySrc={Base64Values[1]}
           />
 
           <Content
@@ -145,7 +151,7 @@ export default function HomePage ({
             objectFit='cover'
             wider
             quality={75}
-            lowQualitySrc={Base64Values}
+            lowQualitySrc={Base64Values[2]}
           />
         </Section>
       </Layout>
