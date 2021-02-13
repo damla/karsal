@@ -32,16 +32,6 @@
     margin-bottom: 1.5rem;
 }
 
-@media only screen and (max-width: variables.$max-width-tabletOrMobile) {
-    // .h1 {
-    //     font-size: 5rem;
-    // }
-
-    // .h3 {
-    //     font-size: 1.6rem;
-    // }
-}
-
 @media only screen and (max-width: variables.$max-width-paragraph) {
     .section {
         &_body {
