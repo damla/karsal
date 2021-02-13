@@ -28,21 +28,21 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
 
   const sections = ['section_1', 'section_2', 'section_3']
-  const images = []
+  const base64Values = []
 
   for (const section of sections) {
     const response = await axios.get(`http://localhost:${portVal}/api/page-images/${section}.jpg`).then(response => {
       const base64Value: string = response.data.pid
       return `data:image/png;base64,${base64Value}`
     })
-    images.push(response)
+    base64Values.push(response)
   }
 
   return {
     props: {
       common: commonData,
       page: pageData,
-      Base64Values: images
+      Base64Values: base64Values
     }
   }
 }
