@@ -10,20 +10,36 @@ import './factory.module.scss'
 
 import { getData } from '../../lib'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
+import axios from 'axios'
 
 interface Props {
   common: CommonModel
   page: FactoryModel
+  Base64Values: string[]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
+  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+
+  const images = ['factory_hero']
+  const base64Values = []
+
+  for (const image of images) {
+    const response = await axios.get(`http://localhost:${portVal}/api/page-images/${image}.jpg`).then(response => {
+      const base64Values: string = response.data.pid
+      return `data:image/png;base64,${base64Values}`
+    })
+    base64Values.push(response)
+  }
+
   return {
     props: {
       common: commonData,
-      page: pageData
+      page: pageData,
+      Base64Values: base64Values
     }
   }
 }
@@ -32,7 +48,8 @@ export default function Factory ({
   common,
   page: {
     title
-  }
+  },
+  Base64Values
 }: Props
 ): ReactElement {
   return (
@@ -48,7 +65,7 @@ export default function Factory ({
             quality={75}
             objectFit="cover"
             hero
-            placeholderColor="#404040"
+            lowQualitySrc={Base64Values[0]}
           />
         </Section>
         <Section relative>
