@@ -15,7 +15,7 @@ interface Props {
   page: ContactModel
   Base64Values: string[]
 }
-const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost:3000'
+// const hostname = typeof window !== 'undefined' ? process.env.API_URL : 'localhost:3000'
 const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const base64Values = []
 
   for (const image of images) { // http://localhost:${portVal}/api/page-images/${image}.jpg
-    const response = await axios.get(`${protocol}//${hostname}/api/page-images/${image}.jpg`).then(response => {
+    const response = await axios.get(`${protocol}//${process.env.API_URL !== undefined ? process.env.API_URL : 'localhost:3000'}/api/page-images/${image}.jpg`).then(response => {
       const base64Values: string = response.data.pid
       return `data:image/png;base64,${base64Values}`
     })
