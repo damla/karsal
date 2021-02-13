@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const base64Values = []
 
   for (const section of sections) { // http://localhost:${portVal}/api/page-images/${section}.jpg
-    const response = await axios.get(`https://karsal.vercel.app/api/page-images/${section}.jpg`).then(response => {
+    const response = await axios.get(`https://${window.location.hostname}/api/page-images/${section}.jpg`).then(response => {
       const base64Value: string = response.data.pid
       return `data:image/png;base64,${base64Value}`
     })
