@@ -35,6 +35,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
     base64Values.push(response)
   }
 
+  console.log('TOPLUM SAGLIGI ICIN HIZMET URL BU -> ', process.env.NEXT_PUBLIC_VERCEL_URL)
+
   return {
     props: {
       common: commonData,
