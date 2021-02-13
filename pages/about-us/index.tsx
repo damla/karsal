@@ -47,7 +47,9 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 
 export default function AboutUs ({
   common,
-  page: { title },
+  page: {
+    title
+  },
   Base64Values
 }: Props
 ): ReactElement {

@@ -3,25 +3,41 @@ import { GetStaticProps } from 'next'
 
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
+import Section from '../../components/section/section.component'
+import ImageBox from '../../components/image-box/image-box.component'
 
 import { getData } from '../../lib'
 import { CommonModel, ContactModel } from '../../interfaces/index'
-import Section from '../../components/section/section.component'
-import ImageBox from '../../components/image-box/image-box.component'
+import axios from 'axios'
 
 interface Props {
   common: CommonModel
   page: ContactModel
+  Base64Values: string[]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<ContactModel>('contact', locale)
 
+  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+
+  const images = ['contact_us_hero']
+  const base64Values = []
+
+  for (const image of images) {
+    const response = await axios.get(`http://localhost:${portVal}/api/page-images/${image}.jpg`).then(response => {
+      const base64Values: string = response.data.pid
+      return `data:image/png;base64,${base64Values}`
+    })
+    base64Values.push(response)
+  }
+
   return {
     props: {
       common: commonData,
-      page: pageData
+      page: pageData,
+      Base64Values: base64Values
     }
   }
 }
@@ -29,7 +45,8 @@ export default function Contact ({
   common,
   page: {
     title
-  }
+  },
+  Base64Values
 }: Props
 ): ReactElement {
   return (
@@ -40,12 +57,12 @@ export default function Contact ({
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
           <ImageBox
-            src="/assets/images/contact-us.jpg"
+            src="/assets/images/contact_us_hero.jpg"
             alt="banner-image"
             quality={75}
             objectFit="cover"
             hero
-            placeholderColor="#404040"
+            lowQualitySrc={Base64Values[0]}
             objectPosition="bottom"
           />
         </Section>
