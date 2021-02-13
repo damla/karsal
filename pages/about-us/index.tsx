@@ -7,31 +7,48 @@ import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 import Paragraph from '../../components/paragraph/paragraph.component'
 
+import styles from './about-us.module.scss'
+
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
-import styles from './about-us.module.scss'
+import axios from 'axios'
 // import Grid from '../../components/grid/grid.component'
 
 interface Props {
   common: CommonModel
   page: AboutUsModel
+  Base64Values: string[]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<AboutUsModel>('about-us', locale)
 
+  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+
+  const images = ['about_us_hero']
+  const base64Values = []
+
+  for (const image of images) {
+    const response = await axios.get(`http://localhost:${portVal}/api/page-images/${image}.jpg`).then(response => {
+      const base64Values: string = response.data.pid
+      return `data:image/png;base64,${base64Values}`
+    })
+    base64Values.push(response)
+  }
   return {
     props: {
       common: commonData,
-      page: pageData
+      page: pageData,
+      Base64Values: base64Values
     }
   }
 }
 
 export default function AboutUs ({
   common,
-  page: { title }
+  page: { title },
+  Base64Values
 }: Props
 ): ReactElement {
   return (
@@ -48,7 +65,7 @@ export default function AboutUs ({
             objectFit="cover"
             objectPosition="top"
             hero
-            placeholderColor="#404040"
+            lowQualitySrc={Base64Values[0]}
           />
         </Section>
         <Section relative>
