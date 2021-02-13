@@ -20,18 +20,20 @@ interface Props {
   page: HomePageModel
   Base64Values: string[]
 }
+const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost:3000'
+const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<HomePageModel>('home-page', locale)
 
-  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
 
   const sections = ['section_1', 'section_2', 'section_3']
   const base64Values = []
 
   for (const section of sections) { // http://localhost:${portVal}/api/page-images/${section}.jpg
-    const response = await axios.get(`https://${window.location.hostname}/api/page-images/${section}.jpg`).then(response => {
+    const response = await axios.get(`${protocol}//${hostname}/api/page-images/${section}.jpg`).then(response => {
       const base64Value: string = response.data.pid
       return `data:image/png;base64,${base64Value}`
     })

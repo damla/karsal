@@ -15,18 +15,20 @@ interface Props {
   page: ContactModel
   Base64Values: string[]
 }
+const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost:3000'
+const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<ContactModel>('contact', locale)
 
-  const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
 
   const images = ['contact_us_hero']
   const base64Values = []
 
   for (const image of images) { // http://localhost:${portVal}/api/page-images/${image}.jpg
-    const response = await axios.get(`https://${window.location.hostname}/api/page-images/${image}.jpg`).then(response => {
+    const response = await axios.get(`${protocol}//${hostname}/api/page-images/${image}.jpg`).then(response => {
       const base64Values: string = response.data.pid
       return `data:image/png;base64,${base64Values}`
     })
