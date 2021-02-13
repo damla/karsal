@@ -13,20 +13,38 @@ import Logo from '../components/logo/logo.component'
 import { CommonModel, HomePageModel } from '../interfaces/index'
 import { getData } from '../lib'
 import { useMediaQuery } from 'react-responsive'
+import axios from 'axios'
 
 interface Props {
   common: CommonModel
   page: HomePageModel
+  Base64Values: string[]
 }
+// const hostname = typeof window !== 'undefined' ? process.env.API_URL : 'localhost:3000'
+const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<HomePageModel>('home-page', locale)
 
+  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
+
+  const sections = ['section_1', 'section_2', 'section_3']
+  const base64Values = []
+
+  for (const section of sections) { // http://localhost:${portVal}/api/page-images/${section}.jpg
+    const response = await axios.get(`${protocol}//${process.env.API_URL !== undefined ? process.env.API_URL : 'localhost:3000'}/api/page-images/${section}.jpg`).then(response => {
+      const base64Value: string = response.data.pid
+      return `data:image/png;base64,${base64Value}`
+    })
+    base64Values.push(response)
+  }
+
   return {
     props: {
       common: commonData,
-      page: pageData
+      page: pageData,
+      Base64Values: base64Values
     }
   }
 }
@@ -36,10 +54,10 @@ export default function HomePage ({
   page: {
     title,
     sections
-  }
+  },
+  Base64Values
 }: Props
 ): ReactElement {
-  // $max-width-tabletOrMobile: ;
   const isTablet = useMediaQuery({
     query: '(min-width: 475px) and (max-width: 1130px)'
   })
@@ -74,25 +92,25 @@ export default function HomePage ({
             }
           />
           <ImageBox
-            src="/assets/images/section-2.jpg"
+            src="/assets/images/section-1.jpg"
             alt={sections[0].image.alt}
             objectFit='cover'
             priority
             quality={100}
-            placeholderColor="#bed0bd20"
+            lowQualitySrc={Base64Values[0]}
           />
         </Section>
 
         <Section id="section-2" marginBottom="10vh">
           <ImageBox
-            src="/assets/images/global.jpg"
+            src="/assets/images/section-2.jpg"
             alt={sections[1].image.alt}
             objectFit='cover'
             objectPosition="right"
             priority
             wider
             quality={75}
-            placeholderColor="#bed0bd20"
+            lowQualitySrc={Base64Values[1]}
           />
 
           <Content
@@ -130,13 +148,12 @@ export default function HomePage ({
             }
           />
           <ImageBox
-            src="/assets/images/swatch.jpg"
+            src="/assets/images/section-3.jpg"
             alt={sections[2].image.alt}
             objectFit='cover'
-
             wider
             quality={75}
-            placeholderColor = "#bed0bd20"
+            lowQualitySrc={Base64Values[2]}
           />
         </Section>
       </Layout>

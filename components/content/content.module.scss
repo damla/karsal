@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   flex-grow: 1;
-  flex-basis: 50vw;
+  flex-basis: 50%;
   min-height: 40vh;
 
   @media only screen and (max-width: variables.$max-width-tablet) {
@@ -45,7 +45,7 @@
   }
 
   &__narrower {
-    flex-basis: 45vw;
+    flex-basis: 45%;
     align-items: flex-start;
 
     .content {
@@ -53,7 +53,7 @@
     }
 
     @media only screen and (max-width: variables.$max-width-tablet) {
-      flex-basis: 100vw;
+      flex-basis: 100%;
       align-items: center;
       justify-content: center;
     }
