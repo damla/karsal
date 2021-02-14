@@ -13,31 +13,25 @@ import Logo from '../components/logo/logo.component'
 import { CommonModel, HomePageModel } from '../interfaces/index'
 import { getData } from '../lib'
 import { useMediaQuery } from 'react-responsive'
-import axios from 'axios'
+import fs from 'fs'
 
 interface Props {
   common: CommonModel
   page: HomePageModel
   Base64Values: string[]
 }
-// const hostname = typeof window !== 'undefined' ? process.env.API_URL : 'localhost:3000'
-const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<HomePageModel>('home-page', locale)
 
-  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
-
   const sections = ['section_1', 'section_2', 'section_3']
   const base64Values = []
 
-  for (const section of sections) { // http://localhost:${portVal}/api/page-images/${section}.jpg
-    const response = await axios.get(`${protocol}//karsal.vercel.app/api/page-images/${section}.jpg`).then(response => {
-      const base64Value: string = response.data.pid
-      return `data:image/png;base64,${base64Value}`
-    })
-    base64Values.push(response)
+  for (const section of sections) {
+    const val: string = fs.readFileSync(`public/assets/low-quality-images/${section}.jpg`, 'base64')
+    const res = `data:image/png;base64,${val}`
+    base64Values.push(res)
   }
 
   return {

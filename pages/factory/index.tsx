@@ -10,31 +10,25 @@ import './factory.module.scss'
 
 import { getData } from '../../lib'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
-import axios from 'axios'
+import fs from 'fs'
 
 interface Props {
   common: CommonModel
   page: FactoryModel
   Base64Values: string[]
 }
-// const hostname = typeof window !== 'undefined' ? process.env.API_URL : 'localhost:3000'
-const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
-  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
-
   const images = ['factory_hero']
   const base64Values = []
 
-  for (const image of images) { // http://localhost:${portVal}/api/page-images/${image}.jpg
-    const response = await axios.get(`${protocol}//karsal.vercel.app/api/page-images/${image}.jpg`).then(response => {
-      const base64Values: string = response.data.pid
-      return `data:image/png;base64,${base64Values}`
-    })
-    base64Values.push(response)
+  for (const image of images) {
+    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
+    const res = `data:image/png;base64,${val}`
+    base64Values.push(res)
   }
 
   return {
