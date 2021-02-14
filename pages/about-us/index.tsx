@@ -11,7 +11,7 @@ import styles from './about-us.module.scss'
 
 import { getData } from '../../lib'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
-import axios from 'axios'
+import fs from 'fs'
 // import Grid from '../../components/grid/grid.component'
 
 interface Props {
@@ -19,24 +19,18 @@ interface Props {
   page: AboutUsModel
   Base64Values: string[]
 }
-// const hostname = typeof window !== 'undefined' ? process.env.API_URL : 'localhost:3000'
-// const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<AboutUsModel>('about-us', locale)
 
-  // const portVal = process.env.PORT !== undefined ? process.env.PORT : 3000
-
   const images = ['about_us_hero']
   const base64Values = []
 
-  for (const image of images) { // http://localhost:${portVal}/api/page-images/${image}.jpg
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL !== undefined ? 'https://' + process.env.NEXT_PUBLIC_VERCEL_URL : 'http://localhost:3000'}/api/page-images/${image}.jpg`).then(response => {
-      const base64Values: string = response.data.pid
-      return `data:image/png;base64,${base64Values}`
-    }).catch((err) => console.log(err))
-    base64Values.push(response)
+  for (const image of images) {
+    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
+    const res = `data:image/png;base64,${val}`
+    base64Values.push(res)
   }
 
   return {
