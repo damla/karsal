@@ -44,7 +44,7 @@ export default function ImageBox ({
         classNames(hero !== undefined ? styles.container_hero : styles.container, wider !== undefined && styles.container__wider)}
     >
       <Image
-        className={classNames(styles.image, styles.blur, isLoading ? styles.hide : undefined)}
+        className={classNames(styles.image, styles.blur, isLoading && styles.hide)}
         src={lowQualitySrc}
         alt={alt}
         layout="fill"
@@ -54,7 +54,7 @@ export default function ImageBox ({
       />
       <Image
         onLoad={ handleLoad }
-        className={classNames(styles.image, isLoading ? styles.hide : undefined)}
+        className={classNames(styles.image, isLoading && styles.hide)}
         src={src}
         alt={alt}
         layout="fill"
@@ -63,7 +63,7 @@ export default function ImageBox ({
         quality={quality}
         objectPosition={objectPosition}
       />
-      <div className={classNames(styles.blackOverlay, isLoading || hero === undefined ? styles.hide : undefined)}></div>
+      <div className={classNames(styles.blackOverlay, (isLoading || hero === undefined) && styles.hide)}></div>
     </div>
   )
 }
