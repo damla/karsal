@@ -1,4 +1,4 @@
-import { connectToDatabase } from '../util/mongodb'
+import { connectToDatabase } from './mongodb'
 
 export async function getData<T> (page: string, lang: string): Promise<T> {
   const { db } = await connectToDatabase()
