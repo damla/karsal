@@ -49,7 +49,7 @@ export default function ImageBox ({
         alt={alt}
         layout="fill"
         objectFit={objectFit}
-        quality={1}
+        quality={10}
         objectPosition={objectPosition}
       />
       <Image

@@ -112,6 +112,8 @@ export interface AboutUsModel {
   _id: ObjectID
   lang: string
   title: string
+  subtitle: string
+  paragraphs: string[]
 }
 
 export interface CatalogModel {
