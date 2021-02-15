@@ -8,9 +8,9 @@ import ImageBox from '../../components/image-box/image-box.component'
 
 import './factory.module.scss'
 
-import { getData } from '../../lib'
+import { getData } from '../../utils/dbUtils'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
-import fs from 'fs'
+import { getBase64Values } from '../../utils/imageUtils'
 
 interface Props {
   common: CommonModel
@@ -23,13 +23,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<FactoryModel>('factory', locale)
 
   const images = ['factory_hero']
-  const base64Values = []
-
-  for (const image of images) {
-    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
-    const res = `data:image/png;base64,${val}`
-    base64Values.push(res)
-  }
+  const base64Values: string[] = getBase64Values(images)
 
   return {
     props: {

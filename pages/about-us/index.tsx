@@ -9,9 +9,9 @@ import Paragraph from '../../components/paragraph/paragraph.component'
 
 import styles from './about-us.module.scss'
 
-import { getData } from '../../lib'
+import { getData } from '../../utils/dbUtils'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
-import fs from 'fs'
+import { getBase64Values } from '../../utils/imageUtils'
 // import Grid from '../../components/grid/grid.component'
 
 interface Props {
@@ -25,13 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<AboutUsModel>('about-us', locale)
 
   const images = ['about_us_hero']
-  const base64Values = []
-
-  for (const image of images) {
-    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
-    const res = `data:image/png;base64,${val}`
-    base64Values.push(res)
-  }
+  const base64Values: string[] = getBase64Values(images)
 
   return {
     props: {
@@ -45,7 +39,9 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function AboutUs ({
   common,
   page: {
-    title
+    title,
+    subtitle,
+    paragraphs
   },
   Base64Values
 }: Props
@@ -70,13 +66,13 @@ export default function AboutUs ({
         <Section relative>
           <div className={styles.section_container}>
             <h1 className={styles.h1}>{title}</h1>
-            <h3 className={styles.h3}>Karsal Örme Tekstil San. A.Ş., 1970’li yıllarda Trabzon’da peştemal işleri ile tekstile başlayan KÖKSAL ailesinin ikinci kuşak aile fertleri tarafından 1995 yılında İstanbul’da kurulmuştur.</h3>
+            <h3 className={styles.h3}>{subtitle}</h3>
             <div className={styles.section_body}>
               <Paragraph>
-                Karsal; 165 adet Meyer & Cie vb. markalı örme makinesi ve toplam 400 çalışanı ile üç iplik, iki iplik, süprem, ribana, interlog gibi hertürlü örgüyi yapabilecek altyapıya sahiptir. 35.000 m2 kapalı alanda faaliyet gösteren Karsal; yıllık ortalama 8.000 Ton (Sekizbin Ton) ham ve boyalı kumaş üretimi yapmaktadır. Karsal Örme Tekstil San. Tic. ve A. Ş., Ergene / Tekirdağ’ da faaliyet göstermektedir. Güçlü finansal yapısı ve entegre işletme olmasının verdiği güç ile karsal, müşteri talepleri doğrultusunda, iplik tedariki sonrası tüm işlemleri kendi işletmesi ve kendi sorumluluğunda yürüterek, müşterisine, boyanmış, kesime hazır kumaş olarak teslim etmektedir.
+                {paragraphs[0]}
               </Paragraph>
               <Paragraph>
-              Bir Karsal müşterisi, sadece kumaş numunesi veya seçimi yaptıktan sonra hiçbir işlemin sorumluluğu ve terminini takip etmek zorunda kalmadan faaliyet konusuna yoğunlaşabilmektedir. Bu nedenle Karsal üretimi kolaylaştırmaktadır. Karsal; Rusya, Hırvatistan, Bulgaristan, İtalya, Almanya, Portekiz, İspanya başta olmak üzere, birçok Avrupa ve Doğu Bloku ülkesine doğrudan ihracat yapmaktadır. Aileden gelen tekstil tecrübesi ile entegre bir sistemde üretimin yapılması, Karsal’a; üretilen kumaşların kalitesinin tüm sorumluluğunu üstlenebilmesini sağlamaktadır. Karsal; işinin profesyonelleri sayesinde müşterilerine, sağladığı kaliteli hammaddeyi, titiz bir işçilik ve düzenli ve hızlı sunumla müşteriye ulaştırmaktadır.
+                {paragraphs[1]}
               </Paragraph>
             </div>
             {/* <Grid/> */}
