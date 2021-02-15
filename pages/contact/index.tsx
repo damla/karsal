@@ -6,9 +6,9 @@ import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 
-import { getData } from '../../lib'
+import { getData } from '../../utils/dbUtils'
 import { CommonModel, ContactModel } from '../../interfaces/index'
-import fs from 'fs'
+import { getBase64Values } from '../../utils/imageUtils'
 
 interface Props {
   common: CommonModel
@@ -21,13 +21,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<ContactModel>('contact', locale)
 
   const images = ['contact_us_hero']
-  const base64Values = []
-
-  for (const image of images) {
-    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
-    const res = `data:image/png;base64,${val}`
-    base64Values.push(res)
-  }
+  const base64Values: string[] = getBase64Values(images)
 
   return {
     props: {

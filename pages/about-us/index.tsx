@@ -9,9 +9,9 @@ import Paragraph from '../../components/paragraph/paragraph.component'
 
 import styles from './about-us.module.scss'
 
-import { getData } from '../../lib'
+import { getData } from '../../utils/dbUtils'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
-import fs from 'fs'
+import { getBase64Values } from '../../utils/imageUtils'
 // import Grid from '../../components/grid/grid.component'
 
 interface Props {
@@ -25,13 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<AboutUsModel>('about-us', locale)
 
   const images = ['about_us_hero']
-  const base64Values = []
-
-  for (const image of images) {
-    const val: string = fs.readFileSync(`public/assets/low-quality-images/${image}.jpg`, 'base64')
-    const res = `data:image/png;base64,${val}`
-    base64Values.push(res)
-  }
+  const base64Values: string[] = getBase64Values(images)
 
   return {
     props: {

@@ -6,7 +6,7 @@ import Layout from '../../components/layout/layout.component'
 
 import './catalog.module.scss'
 
-import { getData } from '../../lib'
+import { getData } from '../../utils/dbUtils'
 import { CommonModel, CatalogModel } from '../../interfaces/index'
 
 interface Props {

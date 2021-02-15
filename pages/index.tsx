@@ -11,9 +11,9 @@ import CustomButton from '../components/custom-button/custom-button.component'
 import Logo from '../components/logo/logo.component'
 
 import { CommonModel, HomePageModel } from '../interfaces/index'
-import { getData } from '../lib'
+import { getData } from '../utils/dbUtils'
 import { useMediaQuery } from 'react-responsive'
-import fs from 'fs'
+import { getBase64Values } from '../utils/imageUtils'
 
 interface Props {
   common: CommonModel
@@ -26,13 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const pageData = await getData<HomePageModel>('home-page', locale)
 
   const sections = ['section_1', 'section_2', 'section_3']
-  const base64Values = []
-
-  for (const section of sections) {
-    const val: string = fs.readFileSync(`public/assets/low-quality-images/${section}.jpg`, 'base64')
-    const res = `data:image/png;base64,${val}`
-    base64Values.push(res)
-  }
+  const base64Values: string[] = getBase64Values(sections)
 
   return {
     props: {
