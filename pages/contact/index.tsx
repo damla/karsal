@@ -6,9 +6,9 @@ import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 
-import { getData } from '../../utils/dbUtils'
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
+import { getData } from '../../utils/dbUtils'
 
 interface Props {
   common: CommonModel

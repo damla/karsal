@@ -11,9 +11,9 @@ import CustomButton from '../components/custom-button/custom-button.component'
 import Logo from '../components/logo/logo.component'
 
 import { CommonModel, HomePageModel } from '../interfaces/index'
+import { getBase64Values } from '../utils/imageUtils'
 import { getData } from '../utils/dbUtils'
 import { useMediaQuery } from 'react-responsive'
-import { getBase64Values } from '../utils/imageUtils'
 
 interface Props {
   common: CommonModel

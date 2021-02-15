@@ -7,8 +7,8 @@ import MenuItem from '../../menu-item/menu-item.component'
 
 import styles from './nav-bar.module.scss'
 import classNames from 'classnames'
-
 import { useMediaQuery } from 'react-responsive'
+
 import { CommonModel } from '../../../interfaces/index'
 
 const useIsomorphicLayoutEffect =

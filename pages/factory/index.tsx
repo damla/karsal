@@ -8,9 +8,9 @@ import ImageBox from '../../components/image-box/image-box.component'
 
 import './factory.module.scss'
 
-import { getData } from '../../utils/dbUtils'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
+import { getData } from '../../utils/dbUtils'
 
 interface Props {
   common: CommonModel
