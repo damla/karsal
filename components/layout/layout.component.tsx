@@ -10,8 +10,8 @@ import CustomButton from '../custom-button/custom-button.component'
 
 import styles from './layout.module.scss'
 import classNames from 'classnames'
-
 import { useMediaQuery } from 'react-responsive'
+
 import { CommonModel } from '../../interfaces/index'
 
 interface Props {

@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import Bar from '../../bar/bar.component'
 
 import styles from './footer.module.scss'
+
 import { CommonModel } from '../../../interfaces/index'
 
 interface Props {

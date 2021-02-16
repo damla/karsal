@@ -11,9 +11,8 @@ import CustomButton from '../components/custom-button/custom-button.component'
 import Logo from '../components/logo/logo.component'
 
 import { CommonModel, HomePageModel } from '../interfaces/index'
-import { getData } from '../utils/dbUtils'
-import { useMediaQuery } from 'react-responsive'
 import { getBase64Values } from '../utils/imageUtils'
+import { getData } from '../utils/dbUtils'
 
 interface Props {
   common: CommonModel
@@ -46,10 +45,6 @@ export default function HomePage ({
   Base64Values
 }: Props
 ): ReactElement {
-  const isTablet = useMediaQuery({
-    query: '(min-width: 475px) and (max-width: 1130px)'
-  })
-
   function scrollToSection (sectionId: string): void {
     if (typeof window !== 'undefined') {
       document?.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
@@ -62,7 +57,7 @@ export default function HomePage ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout data={common}>
-        <Section id="section-1" banner marginBottom="10vh" marginTop={isTablet ? 'calc(65px + 2rem)' : '4.1rem'}>
+        <Section id="section-1" banner marginBottom="10vh">
           <Content
             backgroundColor={'#F9F8F4'}
             left={<Logo width={90} height={60} />}

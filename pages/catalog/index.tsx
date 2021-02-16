@@ -6,8 +6,8 @@ import Layout from '../../components/layout/layout.component'
 
 import './catalog.module.scss'
 
-import { getData } from '../../utils/dbUtils'
 import { CommonModel, CatalogModel } from '../../interfaces/index'
+import { getData } from '../../utils/dbUtils'
 
 interface Props {
   common: CommonModel

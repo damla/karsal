@@ -9,8 +9,8 @@ import Paragraph from '../../components/paragraph/paragraph.component'
 
 import styles from './about-us.module.scss'
 
-import { getData } from '../../utils/dbUtils'
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
+import { getData } from '../../utils/dbUtils'
 import { getBase64Values } from '../../utils/imageUtils'
 // import Grid from '../../components/grid/grid.component'
 
