@@ -18,14 +18,12 @@ export default function Section ({
   banner,
   relative,
   minHeight,
-  marginBottom,
-  marginTop
+  marginBottom
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
     minHeight: minHeight,
-    marginBottom: marginBottom,
-    marginTop: marginTop
+    marginBottom: marginBottom
   }
 
   return (
