@@ -6,6 +6,8 @@ import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 
+import styles from './contact.module.scss'
+
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
@@ -57,8 +59,27 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <div style={{ minHeight: '100vh' }}>
+          <div className={styles.section_container}>
+            <h1 className={styles.h1}>Contact Us</h1>
+            <h3 className={styles.h3}>To get perfect fabric swatches, please reach us via phone, e-mail or contact form.</h3>
+            <div className={styles.section_body}>
+              <div className={styles.section_body__left}>
+                <ul style={{ display: 'flex', flexDirection: 'row' }}>
+                  <li>
+                    test
+                  </li>
+                  <li>
+                  test
+                  </li>
+                  <li>
+                  test
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.section_body__right}>
 
+              </div>
+            </div>
           </div>
         </Section>
       </Layout>
