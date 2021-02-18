@@ -22,8 +22,8 @@ export default function Section ({
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
-    minHeight: minHeight,
-    marginBottom: marginBottom
+    minHeight,
+    marginBottom
   }
 
   return (

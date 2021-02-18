@@ -5,6 +5,9 @@ import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
+import CustomContainer from '../../components/custom-container/custom-container.component'
+
+import styles from './contact.module.scss'
 
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
@@ -34,7 +37,9 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function Contact ({
   common,
   page: {
-    title
+    title,
+    maintitle,
+    subtitle
   },
   Base64Values
 }: Props
@@ -57,9 +62,16 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <div style={{ minHeight: '100vh' }}>
-
-          </div>
+          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='space-around'>
+            <div className={styles.left}>
+              <h4>test</h4>
+              <p>test</p>
+            </div>
+            <div className={styles.right}>
+              <h4>test</h4>
+              <p>test</p>
+            </div>
+          </CustomContainer>
         </Section>
       </Layout>
     </>

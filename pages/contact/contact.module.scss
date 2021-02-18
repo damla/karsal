@@ -1,0 +1,22 @@
+@use "../../global/variables.scss" as variables;
+
+.left {
+    border: 1px solid green;
+    flex-basis: 40%;
+    min-height: 50vh;
+    display: flex;
+
+    @media only screen and (max-width: variables.$max-width-tablet) {
+        min-height: 40vh;
+    }
+}
+
+.right {
+    border: 1px solid pink;
+    flex-basis: 40%;
+    min-height: 50vh;
+
+    @media only screen and (max-width: variables.$max-width-tablet) {
+        min-height: 40vh;
+    }
+}

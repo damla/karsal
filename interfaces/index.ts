@@ -126,6 +126,8 @@ export interface ContactModel {
   _id: ObjectID
   lang: string
   title: string
+  maintitle: string
+  subtitle: string
 }
 
 export interface FactoryModel {
