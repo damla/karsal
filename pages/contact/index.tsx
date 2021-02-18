@@ -39,7 +39,8 @@ export default function Contact ({
   page: {
     title,
     maintitle,
-    subtitle
+    subtitle,
+    informations
   },
   Base64Values
 }: Props
@@ -63,14 +64,19 @@ export default function Contact ({
         </Section>
         <Section relative>
           <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='space-around'>
-            <div className={styles.left}>
-              <h4>test</h4>
-              <p>test</p>
-            </div>
-            <div className={styles.right}>
-              <h4>test</h4>
-              <p>test</p>
-            </div>
+            {
+              informations.map((element, index) => (
+                <div key={index} className={styles.item}>
+                  <h3>{element.city}</h3>
+                  <h4>{element.address.field_name}</h4>
+                  <p>{element.address.value}</p>
+                  <h4>{element.phone.field_name}</h4>
+                  <p>{element.phone.value}</p>
+                  <h4>{element.email.field_name}</h4>
+                  <p>{element.email.value}</p>
+                </div>
+              ))
+            }
           </CustomContainer>
         </Section>
       </Layout>
