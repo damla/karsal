@@ -66,7 +66,7 @@ export default function AboutUs ({
         <Section relative>
           <div className={styles.section_container}>
             <h1 className={styles.h1}>{title}</h1>
-            <h3 className={styles.h3}>{subtitle}</h3>
+            <h2 className={styles.h2}>{subtitle}</h2>
             <div className={styles.section_body}>
               <Paragraph>
                 {paragraphs[0]}

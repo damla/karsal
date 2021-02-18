@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
+import CustomContainer from '../../components/custom-container/custom-container.component'
 
 import styles from './contact.module.scss'
 
@@ -59,28 +60,24 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <div className={styles.section_container}>
-            <h1 className={styles.h1}>Contact Us</h1>
-            <h3 className={styles.h3}>To get perfect fabric swatches, please reach us via phone, e-mail or contact form.</h3>
-            <div className={styles.section_body}>
-              <div className={styles.section_body__left}>
-                <ul style={{ display: 'flex', flexDirection: 'row' }}>
-                  <li>
+          <CustomContainer h1={'Contact Us'} h3={'To get perfect fabric swatches, please reach us via phone, e-mail or contact form'}>
+            <div className={styles.section_body__left}>
+              <ul style={{ display: 'flex', flexDirection: 'row' }}>
+                <li>
                     test
-                  </li>
-                  <li>
+                </li>
+                <li>
                   test
-                  </li>
-                  <li>
+                </li>
+                <li>
                   test
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.section_body__right}>
-
-              </div>
+                </li>
+              </ul>
             </div>
-          </div>
+            <div className={styles.section_body__right}>
+            </div>
+          </CustomContainer>
+
         </Section>
       </Layout>
     </>
