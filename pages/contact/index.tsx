@@ -37,7 +37,9 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function Contact ({
   common,
   page: {
-    title
+    title,
+    maintitle,
+    subtitle
   },
   Base64Values
 }: Props
@@ -60,24 +62,16 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <CustomContainer h1={'Contact Us'} h3={'To get perfect fabric swatches, please reach us via phone, e-mail or contact form'}>
-            <div className={styles.section_body__left}>
-              <ul style={{ display: 'flex', flexDirection: 'row' }}>
-                <li>
-                    test
-                </li>
-                <li>
-                  test
-                </li>
-                <li>
-                  test
-                </li>
-              </ul>
+          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='space-around'>
+            <div className={styles.left}>
+              <h4>test</h4>
+              <p>test</p>
             </div>
-            <div className={styles.section_body__right}>
+            <div className={styles.right}>
+              <h4>test</h4>
+              <p>test</p>
             </div>
           </CustomContainer>
-
         </Section>
       </Layout>
     </>

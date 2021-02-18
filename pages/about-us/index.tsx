@@ -7,11 +7,10 @@ import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 import Paragraph from '../../components/paragraph/paragraph.component'
 
-import styles from './about-us.module.scss'
-
 import { CommonModel, AboutUsModel } from '../../interfaces/index'
 import { getData } from '../../utils/dbUtils'
 import { getBase64Values } from '../../utils/imageUtils'
+import CustomContainer from '../../components/custom-container/custom-container.component'
 // import Grid from '../../components/grid/grid.component'
 
 interface Props {
@@ -64,19 +63,14 @@ export default function AboutUs ({
           />
         </Section>
         <Section relative>
-          <div className={styles.section_container}>
-            <h1 className={styles.h1}>{title}</h1>
-            <h2 className={styles.h2}>{subtitle}</h2>
-            <div className={styles.section_body}>
-              <Paragraph>
-                {paragraphs[0]}
-              </Paragraph>
-              <Paragraph>
-                {paragraphs[1]}
-              </Paragraph>
-            </div>
-            {/* <Grid/> */}
-          </div>
+          <CustomContainer page="about-us" h1={title} h2={subtitle} justifyContent='space-between'>
+            <Paragraph>
+              {paragraphs[0]}
+            </Paragraph>
+            <Paragraph>
+              {paragraphs[1]}
+            </Paragraph>
+          </CustomContainer>
         </Section>
       </Layout>
     </>
