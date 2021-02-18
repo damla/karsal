@@ -64,12 +64,13 @@ export default function AboutUs ({
         </Section>
         <Section relative>
           <CustomContainer page="about-us" h1={title} h2={subtitle} justifyContent='space-between'>
-            <Paragraph>
-              {paragraphs[0]}
-            </Paragraph>
-            <Paragraph>
-              {paragraphs[1]}
-            </Paragraph>
+            {
+              paragraphs.map((element, index) => (
+                <Paragraph key={index}>
+                  {element}
+                </Paragraph>
+              ))
+            }
           </CustomContainer>
         </Section>
       </Layout>
