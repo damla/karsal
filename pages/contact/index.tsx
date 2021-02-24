@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
+import Image from 'next/image'
 
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
@@ -39,7 +40,8 @@ export default function Contact ({
   page: {
     title,
     maintitle,
-    subtitle
+    subtitle,
+    informations
   },
   Base64Values
 }: Props
@@ -62,18 +64,58 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='space-around'>
-            <div className={styles.left}>
-              <h4>test</h4>
-              <p>test</p>
-            </div>
-            <div className={styles.right}>
-              <h4>test</h4>
-              <p>test</p>
-            </div>
+          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='center'>
+            {
+              informations.map((element, index) => (
+                <div key={index} className={styles.item}>
+                  <h3 className={styles.boxTitle}>{element.city}</h3>
+                  <div className={styles.boxSubtitle}>
+                    <Image
+                      src="/assets/svgs/map-pin-primary.svg"
+                      width={20}
+                      height={20}
+                      alt="map-pin-icon"
+                    />
+                    <h4 className={styles.h4}>{element.address.field_name}</h4>
+                  </div>
+                  <p className={styles.p}>{element.address.value}</p>
+                  <div className={styles.boxSubtitle}>
+                    <Image
+                      src="/assets/svgs/phone-primary.svg"
+                      width={20}
+                      height={20}
+                      alt="phone-icon"
+                    />
+                    <h4 className={styles.h4}>{element.phone.field_name}</h4>
+                  </div>
+                  <p className={styles.p}><a href={element.phone.link}>{element.phone.value}</a></p>
+                  <div className={styles.boxSubtitle}>
+                    <Image
+                      src="/assets/svgs/envelope-primary.svg"
+                      width={20}
+                      height={20}
+                      alt="envelope-icon"
+                    />
+                    <h4 className={styles.h4}>{element.email.field_name}</h4>
+                  </div>
+                  <p className={styles.p}><a href={element.email.link}>{element.email.value}</a></p>
+                  <div className={styles.boxSubtitle}>
+                    <Image
+                      src="/assets/svgs/fax-primary.svg"
+                      width={20}
+                      height={20}
+                      alt="fax-icon"
+                    />
+                    <h4 className={styles.h4}>{element.fax.field_name}</h4>
+                  </div>
+                  <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
+                </div>
+              ))
+            }
           </CustomContainer>
         </Section>
       </Layout>
     </>
   )
 }
+// lat: 41.231282, lng: 28.420897

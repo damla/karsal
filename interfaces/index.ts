@@ -122,12 +122,36 @@ export interface CatalogModel {
   title: string
 }
 
+export interface ItemModel {
+  city: string
+  address: {
+    field_name: string
+    value: string
+  }
+  phone: {
+    field_name: string
+    value: string
+    link: string
+  }
+  email: {
+    field_name: string
+    value: string
+    link: string
+  }
+  fax: {
+    field_name: string
+    value: string
+    link: string
+  }
+}
+
 export interface ContactModel {
   _id: ObjectID
   lang: string
   title: string
   maintitle: string
   subtitle: string
+  informations: ItemModel[]
 }
 
 export interface FactoryModel {
