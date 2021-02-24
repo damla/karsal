@@ -1,10 +1,6 @@
 @use "../../global/variables.scss" as variables;
 
 .item {
-    &:first-child {
-        border-right: 1px solid variables.$secondary-color;
-    }
-
     flex-basis: 45%;
     min-height: 50vh;
     display: flex;
@@ -12,6 +8,10 @@
     padding: 0 1rem;
     margin-bottom: 2.5rem;
     align-items: center;
+
+    &:first-child {
+        border-right: 1px solid variables.$secondary-color;
+    }
 
     @media only screen and (max-width: variables.$max-width-tablet) {
         min-height: 40vh;
@@ -34,6 +34,7 @@
     .boxSubtitle {
         display: flex;
         align-items: center;
+        margin-bottom: 0.5rem;
 
         .h4 {
             font-family: "SuisseInt-Regular", sans-serif;
@@ -41,7 +42,6 @@
             text-transform: uppercase;
             color: variables.$secondary-color;
             margin-left: 5px;
-            margin-bottom: 0.5rem;
 
             @media only screen and (max-width: variables.$max-width-middle) {
                 font-size: 1.5rem;
