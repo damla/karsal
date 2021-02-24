@@ -131,10 +131,17 @@ export interface ItemModel {
   phone: {
     field_name: string
     value: string
+    link: string
   }
   email: {
     field_name: string
     value: string
+    link: string
+  }
+  fax: {
+    field_name: string
+    value: string
+    link: string
   }
 }
 
