@@ -67,13 +67,15 @@ export default function Contact ({
             {
               informations.map((element, index) => (
                 <div key={index} className={styles.item}>
-                  <h3>{element.city}</h3>
-                  <h4>{element.address.field_name}</h4>
-                  <p>{element.address.value}</p>
-                  <h4>{element.phone.field_name}</h4>
-                  <p>{element.phone.value}</p>
-                  <h4>{element.email.field_name}</h4>
-                  <p>{element.email.value}</p>
+                  <h3 className={styles.boxTitle}>{element.city}</h3>
+                  <h4 className={styles.h4}>{element.address.field_name}</h4>
+                  <p className={styles.p}>{element.address.value}</p>
+                  <h4 className={styles.h4}>{element.phone.field_name}</h4>
+                  <p className={styles.p}>{element.phone.value}</p>
+                  <h4 className={styles.h4}>{element.email.field_name}</h4>
+                  <p className={styles.p}>{element.email.value}</p>
+                  <h4 className={styles.h4}>FAX</h4>
+                  <p className={styles.p}>+90 (212) 875 87 95</p>
                 </div>
               ))
             }
@@ -83,3 +85,4 @@ export default function Contact ({
     </>
   )
 }
+// lat: 41.231282, lng: 28.420897

@@ -1,12 +1,52 @@
 @use "../../global/variables.scss" as variables;
 
 .item {
-    border: 1px solid green;
+    border: 2px double black;
     flex-basis: 40%;
     min-height: 50vh;
     display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
 
     @media only screen and (max-width: variables.$max-width-tablet) {
         min-height: 40vh;
+        margin-bottom: 3rem;
+    }
+
+    .boxTitle {
+        font-family: "Zaph Humanist", sans-serif;
+        text-decoration: underline;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: variables.$secondary-color;
+        margin: 1rem 0;
+
+        @media only screen and (max-width: variables.$max-width-middle) {
+            font-size: 2rem;
+        }
+    }
+
+    .h4 {
+        font-family: "Zaph Humanist", sans-serif;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: variables.$secondary-color;
+        // margin-bottom: 2.4rem;
+
+        @media only screen and (max-width: variables.$max-width-middle) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .p {
+        font-family: "SuisseInt-Regular", sans-serif;
+
+        text-decoration: none;
+        font-weight: 200;
+        letter-spacing: 0.1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }

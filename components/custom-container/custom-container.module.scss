@@ -38,10 +38,14 @@
     .h3 {
         font-family: "SuisseInt-Regular", sans-serif;
         font-size: 1.7rem;
+        font-weight: 200;
+        letter-spacing: 0.1rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
         color: variables.$secondary-color;
         max-width: 70vw;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
 
         @media only screen and (max-width: variables.$max-width-tablet) {
             font-size: 1.3rem;
