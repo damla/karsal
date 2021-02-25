@@ -18,6 +18,7 @@ interface Props {
   common: CommonModel
   page: ContactModel
   Base64Values: string[]
+  locale: string
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -31,7 +32,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
     props: {
       common: commonData,
       page: pageData,
-      Base64Values: base64Values
+      Base64Values: base64Values,
+      locale: locale
     }
   }
 }
@@ -43,6 +45,7 @@ export default function Contact ({
     subtitle,
     informations
   },
+  locale,
   Base64Values
 }: Props
 ): ReactElement {
@@ -68,7 +71,7 @@ export default function Contact ({
             {
               informations.map((element, index) => (
                 <div key={index} className={styles.item}>
-                  <h3 className={styles.boxTitle}>{element.city}</h3>
+                  <h3 lang={locale} className={styles.boxTitle}>{element.city}</h3>
                   <div className={styles.boxSubtitle}>
                     <Image
                       src="/assets/svgs/map-pin-primary.svg"
