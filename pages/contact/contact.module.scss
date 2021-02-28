@@ -15,7 +15,11 @@
 
     @media only screen and (max-width: variables.$max-width-tablet) {
         min-height: 40vh;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
+
+        &:first-child {
+            border-right: unset;
+        }
     }
 
     .boxTitle {
@@ -39,6 +43,7 @@
         .h4 {
             font-family: "SuisseInt-Regular", sans-serif;
             font-size: 1.5rem;
+            font-weight: 200;
             text-transform: uppercase;
             color: variables.$secondary-color;
             margin-left: 5px;
@@ -58,5 +63,6 @@
         line-height: 1.5rem;
         margin-bottom: 1.5rem;
         margin-left: 25px;
+        text-align: center;
     }
 }

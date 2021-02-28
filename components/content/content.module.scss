@@ -13,6 +13,10 @@
     flex-basis: unset;
   }
 
+  @media only screen and (min-width: variables.$min-width-widescreen) {
+    justify-content: center;
+  }
+
   .body {
     margin: 68px 25px;
     // TODO: Convert px to rem
