@@ -4,7 +4,6 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
-// import ImageBox from '../../components/image-box/image-box.component'
 
 import styles from './factory.module.scss'
 
@@ -49,14 +48,6 @@ export default function Factory ({
       </Head>
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
-          {/* <ImageBox
-            src="/assets/images/factory_hero.jpg"
-            alt="banner-image"
-            quality={75}
-            objectFit="cover"
-            hero
-            lowQualitySrc={Base64Values[0]}
-          /> */}
           <div className={styles.container}>
             <video className={styles.video} autoPlay loop muted poster='assets/images/factory-1.jpg'>
               <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1614270816/karsal_factory_da1rr4.mp4' type='video/mp4' />
