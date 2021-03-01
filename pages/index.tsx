@@ -79,7 +79,7 @@ export default function HomePage ({
             alt={sections[0].image.alt}
             objectFit='cover'
             priority
-            quality={100}
+            quality={75}
             lowQualitySrc={Base64Values[0]}
           />
         </Section>
@@ -91,7 +91,6 @@ export default function HomePage ({
             objectFit='cover'
             objectPosition="right"
             priority
-            wider
             quality={75}
             lowQualitySrc={Base64Values[1]}
           />
@@ -134,7 +133,6 @@ export default function HomePage ({
             src="/assets/images/section-3.jpg"
             alt={sections[2].image.alt}
             objectFit='cover'
-            wider
             quality={75}
             lowQualitySrc={Base64Values[2]}
           />

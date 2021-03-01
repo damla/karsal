@@ -14,10 +14,6 @@
     overflow: hidden;
   }
 
-  &__wider {
-    flex-basis: 50%;
-  }
-
   @media only screen and (max-width: variables.$max-width-tablet) {
     flex-basis: 100%;
     min-height: 70vh;
