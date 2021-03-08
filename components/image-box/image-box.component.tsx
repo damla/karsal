@@ -8,7 +8,6 @@ interface Props {
   src: string
   alt: string
   objectFit: ImageProps['objectFit']
-  wider?: boolean
   priority?: boolean
   quality?: number
   hero?: boolean
@@ -20,7 +19,6 @@ export default function ImageBox ({
   src,
   alt,
   objectFit,
-  wider,
   priority,
   quality,
   hero,
@@ -41,10 +39,10 @@ export default function ImageBox ({
   return (
     <div
       className={
-        classNames(hero !== undefined ? styles.container_hero : styles.container, wider !== undefined && styles.container__wider)}
+        classNames(hero !== undefined ? styles.container_hero : styles.container)}
     >
       <Image
-        className={classNames(styles.image, styles.blur, isLoading && styles.hide)}
+        className={classNames(!isLoading && styles.hide, styles.image, styles.blur)}
         src={lowQualitySrc}
         alt={alt}
         layout="fill"
@@ -67,3 +65,5 @@ export default function ImageBox ({
     </div>
   )
 }
+
+// test commit

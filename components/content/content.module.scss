@@ -19,26 +19,33 @@
 
   .body {
     margin: 68px 25px;
-    // TODO: Convert px to rem
     display: flex;
+    flex-direction: column;
 
-    &__right {
+    &__logo {
+      margin-bottom: 3vh;
+    }
+
+    &__content {
       display: flex;
       flex-direction: column;
-      margin-left: 5vw;
 
       h1 {
         font-family: "Zaph Humanist", sans-serif;
         font-weight: 200;
         font-size: 2rem;
         color: variables.$secondary-color;
+
+        @media only screen and (min-width: variables.$max-width-tabletOrMobile) {
+          display: none;
+        }
       }
       @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
         margin-left: 0;
       }
     }
     @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
-      &__left {
+      &__logo {
         display: none;
       }
     }
@@ -51,6 +58,7 @@
   &__narrower {
     flex-basis: 45%;
     align-items: flex-start;
+    justify-content: center;
 
     .content {
       margin-top: 90px;
