@@ -60,7 +60,7 @@ export default function HomePage ({
         <Section id="section-1" banner marginBottom="10vh">
           <Content
             backgroundColor={'#F9F8F4'}
-            left={<Logo width={90} height={60} />}
+            logo={<Logo width={150} height={100} />}
             title={sections[0].content.title}
             blockquote={
               <BlockQuote>
