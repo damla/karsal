@@ -19,7 +19,7 @@ export default function Logo ({
     <Link href="/">
       <Image
         className={styles.logo}
-        src="/assets/images/karsal-logo.png"
+        src="/assets/svgs/karsal-logo.svg"
         alt="karsal-logo"
         width={width}
         height={height}

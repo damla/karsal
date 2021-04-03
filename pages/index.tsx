@@ -60,7 +60,7 @@ export default function HomePage ({
         <Section id="section-1" banner marginBottom="10vh">
           <Content
             backgroundColor={'#F9F8F4'}
-            left={<Logo width={90} height={60} />}
+            logo={<Logo width={120} height={80} />}
             title={sections[0].content.title}
             blockquote={
               <BlockQuote>
@@ -79,7 +79,7 @@ export default function HomePage ({
             alt={sections[0].image.alt}
             objectFit='cover'
             priority
-            quality={100}
+            quality={75}
             lowQualitySrc={Base64Values[0]}
           />
         </Section>
@@ -91,7 +91,6 @@ export default function HomePage ({
             objectFit='cover'
             objectPosition="right"
             priority
-            wider
             quality={75}
             lowQualitySrc={Base64Values[1]}
           />
@@ -134,7 +133,6 @@ export default function HomePage ({
             src="/assets/images/section-3.jpg"
             alt={sections[2].image.alt}
             objectFit='cover'
-            wider
             quality={75}
             lowQualitySrc={Base64Values[2]}
           />

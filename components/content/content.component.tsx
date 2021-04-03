@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 interface Props {
   backgroundColor?: string
-  left?: ReactNode
+  logo?: ReactNode
   title: string
   blockquote: ReactNode
   button: ReactNode
@@ -13,7 +13,7 @@ interface Props {
 
 export default function Content ({
   backgroundColor,
-  left,
+  logo,
   title,
   blockquote,
   button,
@@ -36,8 +36,8 @@ export default function Content ({
       }
     >
       <div className={styles.body}>
-        {left !== undefined && <div className={styles.body__left}>{left}</div>}
-        <div className={styles.body__right}>
+        {logo !== undefined && <div className={styles.body__logo}>{logo}</div>}
+        <div className={styles.body__content}>
           <h1>{title}</h1>
           {blockquote}
           {button}

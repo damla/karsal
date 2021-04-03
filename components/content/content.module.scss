@@ -19,13 +19,16 @@
 
   .body {
     margin: 68px 25px;
-    // TODO: Convert px to rem
     display: flex;
+    flex-direction: column;
 
-    &__right {
+    &__logo {
+      margin-bottom: 10vh;
+    }
+
+    &__content {
       display: flex;
       flex-direction: column;
-      margin-left: 5vw;
 
       h1 {
         font-family: "Zaph Humanist", sans-serif;
@@ -38,7 +41,7 @@
       }
     }
     @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
-      &__left {
+      &__logo {
         display: none;
       }
     }
@@ -51,6 +54,7 @@
   &__narrower {
     flex-basis: 45%;
     align-items: flex-start;
+    justify-content: center;
 
     .content {
       margin-top: 90px;

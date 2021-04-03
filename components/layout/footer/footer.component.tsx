@@ -19,7 +19,7 @@ export default function Footer ({
 }: Props
 ): ReactElement {
   return (
-    <Bar height={'7vh'} footer>
+    <Bar height={'6vh'} footer>
       <div className={styles.container__copyright}>
         <span>{text}&nbsp;</span>
         <span>
