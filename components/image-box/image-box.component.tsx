@@ -65,5 +65,3 @@ export default function ImageBox ({
     </div>
   )
 }
-
-// test commit
