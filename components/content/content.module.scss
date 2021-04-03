@@ -35,10 +35,6 @@
         font-weight: 200;
         font-size: 2rem;
         color: variables.$secondary-color;
-
-        // @media only screen and (min-width: variables.$max-width-tabletOrMobile) {
-        //   display: none;
-        // }
       }
       @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
         margin-left: 0;
