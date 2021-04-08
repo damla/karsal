@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
+import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery'
 
 import styles from './factory.module.scss'
 
@@ -41,6 +42,20 @@ export default function Factory ({
   Base64Values
 }: Props
 ): ReactElement {
+  const data: readonly ReactImageGalleryItem[] = [
+    {
+      original: 'https://picsum.photos/id/1018/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1018/250/150/'
+    },
+    {
+      original: 'https://picsum.photos/id/1015/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1015/250/150/'
+    },
+    {
+      original: 'https://picsum.photos/id/1019/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1019/250/150/'
+    }
+  ]
   return (
     <>
       <Head>
@@ -50,14 +65,14 @@ export default function Factory ({
         <Section relative minHeight={'60vh'}>
           <div className={styles.container}>
             <video className={styles.video} autoPlay loop muted poster='assets/images/factory-1.jpg'>
-              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1614270816/karsal_factory_da1rr4.mp4' type='video/mp4' />
+              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1614270816/karsal_factory_da1rr4.mp4' type='video/mp4'/>
               Your browser does not support the video tag.
             </video>
           </div>
         </Section>
         <Section relative>
           <div style={{ minHeight: '100vh' }}>
-
+            <ImageGallery items={data}/>
           </div>
         </Section>
       </Layout>
