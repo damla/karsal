@@ -123,7 +123,7 @@ export interface CatalogModel {
 }
 
 export interface ItemModel {
-  city: string
+  title: string
   address: {
     field_name: string
     value: string
