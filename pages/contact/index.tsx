@@ -71,7 +71,7 @@ export default function Contact ({
             {
               informations.map((element, index) => (
                 <div key={index} className={styles.item}>
-                  <h3 lang={locale} className={styles.boxTitle}>{element.city}</h3>
+                  <h3 lang={locale} className={styles.boxTitle}>{element.title}</h3>
                   <div className={styles.boxSubtitle}>
                     <Image
                       src="/assets/svgs/map-pin-primary.svg"
