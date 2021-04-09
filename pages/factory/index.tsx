@@ -11,6 +11,7 @@ import styles from './factory.module.scss'
 import { CommonModel, FactoryModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
+import CustomContainer from '../../components/custom-container/custom-container.component'
 
 interface Props {
   common: CommonModel
@@ -71,9 +72,9 @@ export default function Factory ({
           </div>
         </Section>
         <Section relative>
-          <div style={{ minHeight: '100vh' }}>
+          <CustomContainer h1="Fabrikamız">
             <ImageGallery items={data}/>
-          </div>
+          </CustomContainer>
         </Section>
       </Layout>
     </>
