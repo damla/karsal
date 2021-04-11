@@ -1,7 +1,6 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
-
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
@@ -13,12 +12,13 @@ import styles from './contact.module.scss'
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
-
+import mapboxgl from 'mapbox-gl'
 interface Props {
   common: CommonModel
   page: ContactModel
   Base64Values: string[]
   locale: string
+  mapApi: string
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -33,7 +33,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
       common: commonData,
       page: pageData,
       Base64Values: base64Values,
-      locale: locale
+      locale: locale,
+      mapApi: process.env.MAPBOXGL_API
     }
   }
 }
@@ -46,12 +47,26 @@ export default function Contact ({
     informations
   },
   locale,
-  Base64Values
+  Base64Values,
+  mapApi
 }: Props
 ): ReactElement {
+  const [pageIsMounted, setPageIsMounted] = useState(false)
+
+  mapboxgl.accessToken = mapApi
+
+  useEffect(() => {
+    setPageIsMounted(true)
+    const map = new mapboxgl.Map({
+      container: 'my-map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    })
+  }, [])
+
   return (
     <>
       <Head>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
@@ -112,10 +127,13 @@ export default function Contact ({
                     <h4 className={styles.h4}>{element.fax.field_name}</h4>
                   </div>
                   <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
+
                 </div>
               ))
             }
           </CustomContainer>
+          <div id="my-map" style={{ width: 500, height: 500 }}>
+          </div>
         </Section>
       </Layout>
     </>
