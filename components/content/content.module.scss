@@ -8,7 +8,7 @@
   min-height: 40vh;
 
   @media only screen and (max-width: variables.$max-width-tablet) {
-    min-height: 70vh;
+    min-height: 50vh;
     justify-content: center;
     flex-basis: unset;
   }
