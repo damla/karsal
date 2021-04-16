@@ -143,6 +143,11 @@ export interface ItemModel {
     value: string
     link: string
   }
+  map: {
+    id: string
+    coordinate: [number, number]
+    HTML: string
+  }
 }
 
 export interface ContactModel {

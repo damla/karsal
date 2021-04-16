@@ -1,14 +1,12 @@
-import React, { CSSProperties, ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 
-// import styles from './map.module.scss'
+import styles from './map.module.scss'
 
 import mapboxgl from 'mapbox-gl'
 
 interface Props {
   mapApi: string
   id: string
-  width: number
-  height: number
   coordinate: [number, number]
   HTML: string
 }
@@ -16,18 +14,11 @@ interface Props {
 export default function Map ({
   mapApi,
   id,
-  width,
-  height,
   coordinate,
   HTML
 }: Props
 ): ReactElement {
   const [pageIsMounted, setPageIsMounted] = useState(false)
-
-  const style: CSSProperties = {
-    width,
-    height
-  }
 
   mapboxgl.accessToken = mapApi
 
@@ -53,8 +44,9 @@ export default function Map ({
 
   return (
     <div
+      style={{ marginTop: '4vh' }}
       id={id}
-      style={style}
+      className={styles.map}
     />
   )
 }
