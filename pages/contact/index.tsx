@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Head from 'next/head'
@@ -6,13 +6,14 @@ import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 import CustomContainer from '../../components/custom-container/custom-container.component'
+import Map from '../../components/map/map.component'
 
 import styles from './contact.module.scss'
 
 import { CommonModel, ContactModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
-import mapboxgl from 'mapbox-gl'
+
 interface Props {
   common: CommonModel
   page: ContactModel
@@ -51,18 +52,6 @@ export default function Contact ({
   mapApi
 }: Props
 ): ReactElement {
-  const [pageIsMounted, setPageIsMounted] = useState(false)
-
-  mapboxgl.accessToken = mapApi
-
-  useEffect(() => {
-    setPageIsMounted(true)
-    const map = new mapboxgl.Map({
-      container: 'my-map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-    })
-  }, [])
-
   return (
     <>
       <Head>
@@ -132,11 +121,10 @@ export default function Contact ({
               ))
             }
           </CustomContainer>
-          <div id="my-map" style={{ width: 500, height: 500 }}>
-          </div>
+          <Map mapApi={mapApi} id="hq-map" coordinate={[28.656831, 40.990484]} width={500} height={500} HTML="<h2>Karsal Örme</h2>"/>
+          <Map mapApi={mapApi} id="factory-map" coordinate={[27.649564, 41.272214]} width={500} height={500} HTML="<h2>Fabrika</h2>"/>
         </Section>
       </Layout>
     </>
   )
 }
-// lat: 41.231282, lng: 28.420897
