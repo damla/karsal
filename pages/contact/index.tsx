@@ -74,55 +74,57 @@ export default function Contact ({
           <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='center'>
             {
               informations.map((element, index) => (
-                <div key={index} className={styles.item}>
-                  <h3 lang={locale} className={styles.boxTitle}>{element.title}</h3>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/map-pin-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="map-pin-icon"
-                    />
-                    <h4 className={styles.h4}>{element.address.field_name}</h4>
-                  </div>
-                  <p className={styles.p}>{element.address.value}</p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/phone-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="phone-icon"
-                    />
-                    <h4 className={styles.h4}>{element.phone.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.phone.link}>{element.phone.value}</a></p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/envelope-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="envelope-icon"
-                    />
-                    <h4 className={styles.h4}>{element.email.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.email.link}>{element.email.value}</a></p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/fax-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="fax-icon"
-                    />
-                    <h4 className={styles.h4}>{element.fax.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
 
+                <div key={index} className={styles.item}>
+                  <div className={styles.container}>
+                    <h3 lang={locale} className={styles.boxTitle}>{element.title}</h3>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/map-pin-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="map-pin-icon"
+                      />
+                      <h4 className={styles.h4}>{element.address.field_name}</h4>
+                    </div>
+                    <p className={styles.p}>{element.address.value}</p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/phone-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="phone-icon"
+                      />
+                      <h4 className={styles.h4}>{element.phone.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.phone.link}>{element.phone.value}</a></p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/envelope-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="envelope-icon"
+                      />
+                      <h4 className={styles.h4}>{element.email.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.email.link}>{element.email.value}</a></p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/fax-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="fax-icon"
+                      />
+                      <h4 className={styles.h4}>{element.fax.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
+                  </div>
+
+                  <Map mapApi={mapApi} id={element.map.id} coordinate={element.map.coordinate} HTML={element.map.HTML}/>
                 </div>
               ))
             }
           </CustomContainer>
-          <Map mapApi={mapApi} id="hq-map" coordinate={[28.656831, 40.990484]} width={500} height={500} HTML="<h2>Karsal Örme</h2>"/>
-          <Map mapApi={mapApi} id="factory-map" coordinate={[27.649564, 41.272214]} width={500} height={500} HTML="<h2>Fabrika</h2>"/>
         </Section>
       </Layout>
     </>
