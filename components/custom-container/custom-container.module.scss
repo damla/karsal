@@ -5,14 +5,13 @@
     flex-direction: column;
     align-items: center;
     min-width: 100%;
-    padding: 2.4rem 0;
+    padding: 6rem 0 10rem;
 
     .h1 {
         font-family: "Zaph Humanist", sans-serif;
         font-size: 3rem;
         text-transform: uppercase;
-        color: variables.$secondary-color;
-        margin-bottom: 2.4rem;
+        color: variables.$quaternary-color;
 
         @media only screen and (max-width: variables.$max-width-middle) {
             font-size: 2.5rem;
@@ -26,6 +25,7 @@
         max-width: 70vw;
         text-align: justify;
         margin-bottom: 1.5rem;
+        margin-top: 1rem;
 
         @media only screen and (max-width: variables.$max-width-middle) {
             font-size: 1rem;
@@ -37,18 +37,19 @@
 
     .h3 {
         font-family: "SuisseInt-Regular", sans-serif;
-        font-size: 1.7rem;
         font-weight: 200;
-        letter-spacing: 0.1rem;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        letter-spacing: 0.05em;
+        font-size: 1.375rem;
+        line-height: 1.5em;
         color: variables.$secondary-color;
         max-width: 70vw;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 6rem;
+        margin-top: 0.5rem;
 
         @media only screen and (max-width: variables.$max-width-tablet) {
             font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
     }
 

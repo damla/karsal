@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
-
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 import CustomContainer from '../../components/custom-container/custom-container.component'
+import Map from '../../components/map/map.component'
 
 import styles from './contact.module.scss'
 
@@ -19,6 +19,7 @@ interface Props {
   page: ContactModel
   Base64Values: string[]
   locale: string
+  mapApi: string
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -33,7 +34,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
       common: commonData,
       page: pageData,
       Base64Values: base64Values,
-      locale: locale
+      locale: locale,
+      mapApi: process.env.MAPBOXGL_API
     }
   }
 }
@@ -46,12 +48,14 @@ export default function Contact ({
     informations
   },
   locale,
-  Base64Values
+  Base64Values,
+  mapApi
 }: Props
 ): ReactElement {
   return (
     <>
       <Head>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
@@ -70,48 +74,53 @@ export default function Contact ({
           <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='center'>
             {
               informations.map((element, index) => (
+
                 <div key={index} className={styles.item}>
-                  <h3 lang={locale} className={styles.boxTitle}>{element.title}</h3>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/map-pin-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="map-pin-icon"
-                    />
-                    <h4 className={styles.h4}>{element.address.field_name}</h4>
+                  <div className={styles.container}>
+                    <h3 lang={locale} className={styles.boxTitle}>{element.title}</h3>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/map-pin-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="map-pin-icon"
+                      />
+                      <h4 className={styles.h4}>{element.address.field_name}</h4>
+                    </div>
+                    <p className={styles.p}>{element.address.value}</p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/phone-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="phone-icon"
+                      />
+                      <h4 className={styles.h4}>{element.phone.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.phone.link}>{element.phone.value}</a></p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/envelope-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="envelope-icon"
+                      />
+                      <h4 className={styles.h4}>{element.email.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.email.link}>{element.email.value}</a></p>
+                    <div className={styles.boxSubtitle}>
+                      <Image
+                        src="/assets/svgs/fax-primary.svg"
+                        width={20}
+                        height={20}
+                        alt="fax-icon"
+                      />
+                      <h4 className={styles.h4}>{element.fax.field_name}</h4>
+                    </div>
+                    <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
                   </div>
-                  <p className={styles.p}>{element.address.value}</p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/phone-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="phone-icon"
-                    />
-                    <h4 className={styles.h4}>{element.phone.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.phone.link}>{element.phone.value}</a></p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/envelope-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="envelope-icon"
-                    />
-                    <h4 className={styles.h4}>{element.email.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.email.link}>{element.email.value}</a></p>
-                  <div className={styles.boxSubtitle}>
-                    <Image
-                      src="/assets/svgs/fax-primary.svg"
-                      width={20}
-                      height={20}
-                      alt="fax-icon"
-                    />
-                    <h4 className={styles.h4}>{element.fax.field_name}</h4>
-                  </div>
-                  <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
+
+                  <Map mapApi={mapApi} id={element.map.id} coordinate={element.map.coordinate} HTML={element.map.HTML}/>
                 </div>
               ))
             }
@@ -121,4 +130,3 @@ export default function Contact ({
     </>
   )
 }
-// lat: 41.231282, lng: 28.420897
