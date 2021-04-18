@@ -120,7 +120,7 @@ export default function Contact ({
                     <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
                   </div>
 
-                  <Map mapApi={mapApi} id={element.map.id} coordinate={element.map.coordinate} HTML={element.map.HTML}/>
+                  <Map mapApi={mapApi} id={element.map.id} coordinate={element.map.coordinate} HTML={element.map.HTML} bounds={element.map.bounds}/>
                 </div>
               ))
             }

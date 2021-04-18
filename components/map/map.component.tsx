@@ -1,52 +1,78 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useEffect } from 'react'
+import RenderCompleted from '../../hooks/isMounted'
 
 import styles from './map.module.scss'
 
-import mapboxgl from 'mapbox-gl'
+import mapboxgl, { LngLatBoundsLike } from 'mapbox-gl'
 
 interface Props {
   mapApi: string
   id: string
   coordinate: [number, number]
   HTML: string
+  bounds: LngLatBoundsLike
 }
 
 export default function Map ({
   mapApi,
   id,
   coordinate,
-  HTML
+  HTML,
+  bounds
 }: Props
 ): ReactElement {
-  const [pageIsMounted, setPageIsMounted] = useState(false)
-
+  const isMounted = RenderCompleted()
   mapboxgl.accessToken = mapApi
 
   useEffect(() => {
-    setPageIsMounted(true)
-
     const map = new mapboxgl.Map({
       container: id,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: coordinate,
-      zoom: 14
-    })
+      zoom: 15,
+      maxBounds: bounds
+    }).setMinZoom(8)
 
-    var marker = new mapboxgl.Marker()
-      .setLngLat(coordinate)
-      .addTo(map)
-
-    var popup = new mapboxgl.Popup({ closeOnClick: false })
+    var popup = new mapboxgl.Popup({ offset: 15, closeOnClick: false })
       .setLngLat(coordinate)
       .setHTML(HTML)
+
+    var el = document.createElement('div')
+    el.id = 'marker'
+
+    new mapboxgl.Marker(el)
+      .setLngLat(coordinate)
+      .setPopup(popup)
       .addTo(map)
-  }, [])
+      .togglePopup()
+  }, [isMounted, HTML])
 
   return (
-    <div
-      style={{ marginTop: '4vh' }}
-      id={id}
-      className={styles.map}
-    />
+    <>
+      <style global jsx>{`
+        #marker {
+          background-image: url("/assets/favicon/apple-touch-icon.png");
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+          max-width: 200px;
+        }
+
+        .mapboxgl-popup-close-button {
+          padding: 0 7px;
+        }
+        
+      `}</style>
+      <div
+        style={{ marginTop: '4vh' }}
+        id={id}
+        className={styles.map}
+      />
+    </>
   )
 }
