@@ -2,11 +2,13 @@ import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Head from 'next/head'
+
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
 import CustomContainer from '../../components/custom-container/custom-container.component'
 import Map from '../../components/map/map.component'
+import Forms from '../../components/contact-form/contact-form.component'
 
 import styles from './contact.module.scss'
 
@@ -71,7 +73,7 @@ export default function Contact ({
           />
         </Section>
         <Section relative>
-          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='center'>
+          <CustomContainer page='contact' h1={maintitle} h3={subtitle} justifyContent='center' paddingBottom="0">
             {
               informations.map((element, index) => (
 
@@ -123,6 +125,9 @@ export default function Contact ({
                 </div>
               ))
             }
+          </CustomContainer>
+          <CustomContainer page='contact' h1="İletişim Formu"justifyContent='center'>
+            <Forms/>
           </CustomContainer>
         </Section>
       </Layout>

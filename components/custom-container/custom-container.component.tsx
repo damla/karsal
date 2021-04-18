@@ -10,6 +10,7 @@ interface Props {
   h2?: string
   h3?: string
   justifyContent?: string
+  paddingBottom?: string
 }
 
 export default function CustomContainer ({
@@ -18,14 +19,19 @@ export default function CustomContainer ({
   h1,
   h2,
   h3,
-  justifyContent
+  justifyContent,
+  paddingBottom
 }: Props
 ): ReactElement {
-  const style: CSSProperties = {
+  const bodyStyle: CSSProperties = {
     justifyContent
   }
+
+  const containerStyle: CSSProperties = {
+    paddingBottom
+  }
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={containerStyle}>
       {
         h1 !== undefined && <h1 className={styles.h1}>{h1}</h1>
       }
@@ -38,7 +44,7 @@ export default function CustomContainer ({
       <div className={classNames(
         styles.body,
         page === 'about-us' && styles.body_aboutUs,
-        page === 'contact' && styles.body_contact)} style={style}>
+        page === 'contact' && styles.body_contact)} style={bodyStyle}>
         {children}
       </div>
     </div>
