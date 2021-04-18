@@ -29,8 +29,9 @@ export default function Map ({
       container: id,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: coordinate,
-      zoom: 14
-    })
+      zoom: 15,
+      maxBounds: bounds
+    }).setMinZoom(8)
 
     var marker = new mapboxgl.Marker()
       .setLngLat(coordinate)

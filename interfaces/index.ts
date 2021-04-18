@@ -1,3 +1,4 @@
+import { LngLatBoundsLike } from 'mapbox-gl'
 import { ObjectID } from 'mongodb'
 
 export interface CommonModel {
@@ -145,6 +146,7 @@ export interface ItemModel {
   }
   map: {
     id: string
+    bounds: LngLatBoundsLike
     coordinate: [number, number]
     HTML: string
   }
