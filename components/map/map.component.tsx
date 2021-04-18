@@ -45,6 +45,10 @@ export default function Map ({
       .setPopup(popup)
       .addTo(map)
       .togglePopup()
+
+    setTimeout(function () {
+      window.scrollTo(0, 0)
+    }, 0)
   }, [isMounted, HTML])
 
   return (
