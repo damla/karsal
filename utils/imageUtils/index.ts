@@ -11,3 +11,10 @@ export function getBase64Values (sections: string[]): string[] {
 
   return base64Values
 }
+
+export function getFactoryImages (): void {
+
+}
+
+// todo: resim olaylarini hallet
+// todo: map entegrasyonu

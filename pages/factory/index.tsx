@@ -75,7 +75,7 @@ export default function Factory ({
         </Section>
         <Section relative>
           <CustomContainer h1="Fabrikamız">
-            <ImageGallery items={data} showThumbnails={false}/>
+            <ImageGallery items={data}/>
           </CustomContainer>
         </Section>
       </Layout>
