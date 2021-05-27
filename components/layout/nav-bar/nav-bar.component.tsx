@@ -76,7 +76,7 @@ export default function NavBar ({
                   <Menu align="center" equal>
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
-                    <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+                    {/* <MenuItem href={catalog.link}>{catalog.text}</MenuItem> */}
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
                   <Menu align="right" equal>
@@ -97,7 +97,7 @@ export default function NavBar ({
                   <Menu align="left">
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
-                    <MenuItem href={catalog.link}>{catalog.text}</MenuItem>
+                    {/* <MenuItem href={catalog.link}>{catalog.text}</MenuItem> */}
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
                   <Menu align="right">
