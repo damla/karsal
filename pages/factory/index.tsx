@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
+import ImageBox from '../../components/image-box/image-box.component'
 import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery'
 
 import styles from './factory.module.scss'
@@ -66,14 +67,23 @@ export default function Factory ({
       </Head>
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
-          <div className={styles.container}>
-            <video className={styles.video} autoPlay loop muted poster='assets/images/factory-1.jpg'>
-              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1614270816/karsal_factory_da1rr4.mp4' type='video/mp4'/>
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <ImageBox
+            src="/assets/images/factory_hero.jpg"
+            alt="banner-image"
+            quality={75}
+            objectFit="cover"
+            hero
+            lowQualitySrc={Base64Values[0]}
+            objectPosition="bottom"
+          />
         </Section>
         <Section relative>
+          <CustomContainer h1="Fabrikamız">
+            <video width="100%" controls poster='assets/images/factory-1.jpg'>
+              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1627919367/karsal-assets/karsal-factory_qa0xkl.mp4' type='video/mp4'/>
+              Your browser does not support the video tag.
+            </video>
+          </CustomContainer>
           <CustomContainer h1="Fabrikamız">
             <ImageGallery items={data} showThumbnails={false}/>
           </CustomContainer>
@@ -82,3 +92,6 @@ export default function Factory ({
     </>
   )
 }
+/* <div className={styles.container}>
+
+  </div> */
