@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   }
 }
 
-export default function Factory({
+export default function Factory ({
   common,
   page: {
     title
@@ -96,12 +96,12 @@ export default function Factory({
             title="degis"
             blockquote={
               <BlockQuote>
-                "degis"
+                degis
               </BlockQuote>
             }
             button={
               <CustomButton href="/degistir">
-                <span>"Test"</span>
+                <span>Test</span>
                 <span>&#8594;</span>
               </CustomButton>
             }

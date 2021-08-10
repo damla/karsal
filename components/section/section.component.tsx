@@ -12,7 +12,7 @@ interface Props {
   marginBottom?: string
 }
 
-export default function Section({
+export default function Section ({
   children,
   id,
   banner,

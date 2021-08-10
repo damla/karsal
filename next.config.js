@@ -9,5 +9,8 @@ module.exports = {
   },
   images: {
     domains: ['res.cloudinary.com'],
-  }
+  },
+  extends: [
+    'plugin:@next/next/recommended',
+  ],
 };

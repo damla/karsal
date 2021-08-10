@@ -27,5 +27,14 @@
             "version": "17.0.1"
         }
     },
-    "rules": {}
+    "rules": {
+        // "space-before-function-paren": [
+        //     "error",
+        //     {
+        //         "anonymous": "never",
+        //         "named": "never",
+        //         "asyncArrow": "never"
+        //     }
+        // ]
+    }
 }

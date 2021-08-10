@@ -2,4 +2,5 @@
     "typescript.tsdk": "node_modules/typescript/lib",
     "typescript.enablePromptUseWorkspaceTsdk": true,
     "editor.formatOnSave": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true
 }
