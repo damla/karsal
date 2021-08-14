@@ -5,7 +5,6 @@ import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 import ImageBox from '../../components/image-box/image-box.component'
-import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery'
 
 import styles from './factory.module.scss'
 
@@ -27,7 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
-  const images = ['factory_hero']
+  const images = ['factory_hero'] // 1'den fazla gorsel olacak
   const base64Values: string[] = getBase64Values(images)
 
   return {
@@ -47,22 +46,21 @@ export default function Factory ({
   Base64Values
 }: Props
 ): ReactElement {
-  const data: readonly ReactImageGalleryItem[] = [
+  // const data: readonly ReactImageGalleryItem[] = [
 
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg'
-    },
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg'
-    },
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071168/factory/3.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071168/factory/3.jpg'
-    }
-
-  ]
+  //   {
+  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg',
+  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg'
+  //   },
+  //   {
+  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg',
+  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg'
+  //   },
+  //   {
+  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071168/factory/3.jpg',
+  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071168/factory/3.jpg'
+  //   }
+  // ]
   return (
     <>
       <Head>
@@ -78,7 +76,7 @@ export default function Factory ({
           </div>
         </Section>
         <Section relative>
-          <h1 className={styles.h1}>Fabrikamiz</h1>
+          <h1 className={styles.h1}>{title}</h1>
         </Section>
         <Section relative>
           <ImageBox
@@ -107,7 +105,7 @@ export default function Factory ({
             }
           />
         </Section>
-        <Section relative paddingTop="10vh" marginBottom="10vh">
+        <Section relative paddingTop="10vh">
           <Content
             narrower
             backgroundColor={'#F9F8F4'}
@@ -130,6 +128,85 @@ export default function Factory ({
             objectFit='cover'
             quality={75}
             lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg"
+          />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <ImageBox
+            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg"
+            alt="degis"
+            objectFit='cover'
+            objectPosition="right"
+            priority
+            quality={75}
+            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg"
+          />
+          <Content
+            narrower
+            backgroundColor="#F9F8F4"
+            title="degis"
+            blockquote={
+              <BlockQuote>
+                degis
+              </BlockQuote>
+            }
+            button={
+              <CustomButton href="/degistir">
+                <span>Test</span>
+                <span>&#8594;</span>
+              </CustomButton>
+            }
+          />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <Content
+            narrower
+            backgroundColor={'#F9F8F4'}
+            title="Test"
+            blockquote={
+              <BlockQuote>
+                Test
+              </BlockQuote>
+            }
+            button={
+              <CustomButton href="/contact">
+                <span>Test</span>
+                <span>&#8594;</span>
+              </CustomButton>
+            }
+          />
+          <ImageBox
+            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg"
+            alt="test"
+            objectFit='cover'
+            quality={75}
+            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg"
+          />
+        </Section>
+        <Section relative paddingTop="10vh" marginBottom="10vh">
+          <ImageBox
+            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg"
+            alt="degis"
+            objectFit='cover'
+            objectPosition="right"
+            priority
+            quality={75}
+            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg"
+          />
+          <Content
+            narrower
+            backgroundColor="#F9F8F4"
+            title="degis"
+            blockquote={
+              <BlockQuote>
+                degis
+              </BlockQuote>
+            }
+            button={
+              <CustomButton href="/degistir">
+                <span>Test</span>
+                <span>&#8594;</span>
+              </CustomButton>
+            }
           />
         </Section>
       </Layout>

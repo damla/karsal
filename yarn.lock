@@ -272,13 +272,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-image-gallery@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react-image-gallery/-/react-image-gallery-1.0.2.tgz#9ab5b3692b41886d51aaa7c7de5d586f4c25c9f5"
-  integrity sha512-fKeK70TxqEBw3k8HtQCZ0mHoPnCSzuIKAb7quaHgL/RUx7f012AKWPXlav1JGfhrfSyfi160T8aMkFN1yDSFOA==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-responsive@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@types/react-responsive/-/react-responsive-8.0.2.tgz#959fdc32f72e38b807e32be617a74be2c315081b"
@@ -3393,11 +3386,6 @@ react-dom@17.0.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.1"
-
-react-image-gallery@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-1.2.6.tgz#51cfa208191b505d612f1073e6a63cdb8e3df022"
-  integrity sha512-+uL8RB3YrsXOtL95KY9oLWup2jww95qvvwsHOkRdV1SOImUO4qGuYh/0+M+vuqzBy7AB7G19+KhgucOPetn6+Q==
 
 react-is@17.0.2:
   version "17.0.2"
