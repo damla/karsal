@@ -4,7 +4,6 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
-import ImageBox from '../../components/image-box/image-box.component'
 
 import styles from './factory.module.scss'
 
@@ -15,6 +14,7 @@ import { getData } from '../../utils/dbUtils'
 import Content from '../../components/content/content.component'
 import BlockQuote from '../../components/block-quote/block-quote.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
+import EmblaCarousel from '../../components/emblaCarousel/emblaCarousel.component'
 
 interface Props {
   common: CommonModel
@@ -46,6 +46,12 @@ export default function Factory ({
   Base64Values
 }: Props
 ): ReactElement {
+  const slides: any[] = []
+
+  for (let i = 0; i < 5; i++) {
+    slides.push(<img src={`https://picsum.photos/id/${i + 1}/800/500`} alt="test" />)
+  }
+
   // const data: readonly ReactImageGalleryItem[] = [
 
   //   {
@@ -79,15 +85,26 @@ export default function Factory ({
           <h1 className={styles.h1}>{title}</h1>
         </Section>
         <Section relative>
-          <ImageBox
-            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg"
-            alt="degis"
-            objectFit='cover'
-            objectPosition="right"
-            priority
-            quality={75}
-            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg"
+          <Content
+            narrower
+            backgroundColor="#F9F8F4"
+            title="degis"
+            blockquote={
+              <BlockQuote>
+                degis
+              </BlockQuote>
+            }
+            button={
+              <CustomButton href="/degistir">
+                <span>Test</span>
+                <span>&#8594;</span>
+              </CustomButton>
+            }
           />
+          <EmblaCarousel slides={slides} />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <EmblaCarousel slides={slides} />
           <Content
             narrower
             backgroundColor="#F9F8F4"
@@ -122,24 +139,10 @@ export default function Factory ({
               </CustomButton>
             }
           />
-          <ImageBox
-            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg"
-            alt="test"
-            objectFit='cover'
-            quality={75}
-            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg"
-          />
+          <EmblaCarousel slides={slides} />
         </Section>
         <Section relative paddingTop="10vh">
-          <ImageBox
-            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg"
-            alt="degis"
-            objectFit='cover'
-            objectPosition="right"
-            priority
-            quality={75}
-            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg"
-          />
+          <EmblaCarousel slides={slides} />
           <Content
             narrower
             backgroundColor="#F9F8F4"
@@ -174,24 +177,10 @@ export default function Factory ({
               </CustomButton>
             }
           />
-          <ImageBox
-            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg"
-            alt="test"
-            objectFit='cover'
-            quality={75}
-            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg"
-          />
+          <EmblaCarousel slides={slides} />
         </Section>
         <Section relative paddingTop="10vh" marginBottom="10vh">
-          <ImageBox
-            src="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg"
-            alt="degis"
-            objectFit='cover'
-            objectPosition="right"
-            priority
-            quality={75}
-            lowQualitySrc="https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg"
-          />
+          <EmblaCarousel slides={slides} />
           <Content
             narrower
             backgroundColor="#F9F8F4"
