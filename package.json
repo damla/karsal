@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "embla-carousel": "^4.5.3",
     "mapbox-gl": "^2.2.0",
     "mongodb": "^3.6.3",
     "next": "11.0.1",
