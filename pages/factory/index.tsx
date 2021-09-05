@@ -4,33 +4,39 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
-import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery'
 
 import styles from './factory.module.scss'
 
 import { CommonModel, FactoryModel } from '../../interfaces/index'
-import { getBase64Values } from '../../utils/imageUtils'
+import { getFactoryImage } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
-import CustomContainer from '../../components/custom-container/custom-container.component'
+
+import Content from '../../components/content/content.component'
+import BlockQuote from '../../components/block-quote/block-quote.component'
+import EmblaCarousel from '../../components/emblaCarousel/emblaCarousel.component'
 
 interface Props {
   common: CommonModel
   page: FactoryModel
-  Base64Values: string[]
+  imageLocations: string[][]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
+  const imageLocations: string[][] = []
+
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
-  const images = ['factory_hero']
-  const base64Values: string[] = getBase64Values(images)
+  const sections = ['orme', 'boyama', 'kalite-kontrol-ve-lab', 'depo-ve-sevkiyat']
+  sections.forEach(item => {
+    (item) ? imageLocations.push(getFactoryImage(item)) : console.log('an error occured')
+  })
 
   return {
     props: {
       common: commonData,
       page: pageData,
-      Base64Values: base64Values
+      imageLocations: imageLocations
     }
   }
 }
@@ -38,45 +44,92 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function Factory ({
   common,
   page: {
-    title
+    title,
+    sections
   },
-  Base64Values
+  imageLocations
 }: Props
 ): ReactElement {
-  const data: readonly ReactImageGalleryItem[] = [
-
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg'
-    },
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg'
-    },
-    {
-      original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071168/factory/3.jpg',
-      thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071168/factory/3.jpg'
+  const getSlides = (index: number): any => {
+    const slides: any = []
+    for (let i = 0; i < imageLocations[index].length; i++) {
+      slides.push(<img key={`${i}`} src={`/assets/factory-images/${index}/${imageLocations[index][i]}.jpg`} width="800" height="500" alt={`${index}`} />)
     }
+    return slides
+  }
 
-  ]
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
-        <Section relative minHeight={'60vh'}>
+        <Section relative minHeight='60vh'>
           <div className={styles.container}>
-            <video className={styles.video} autoPlay loop muted poster='assets/images/factory-1.jpg'>
-              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1614270816/karsal_factory_da1rr4.mp4' type='video/mp4'/>
+            <video className={styles.video} controls poster='assets/images/factory_hero.jpg'>
+              <source src='https://res.cloudinary.com/dqht7aysn/video/upload/v1627919367/karsal-assets/karsal-factory_qa0xkl.mp4' type='video/mp4' />
               Your browser does not support the video tag.
             </video>
           </div>
         </Section>
         <Section relative>
-          <CustomContainer h1="Fabrikamız">
-            <ImageGallery items={data}/>
-          </CustomContainer>
+          <h1 className={styles.h1}>{title}</h1>
+        </Section>
+        <Section relative>
+          <Content
+            justifyContent="center"
+            backgroundColor="#F9F8F4"
+            biggerTitle
+            title={sections[0].title}
+            blockquote={
+              <BlockQuote bigger>
+                {sections[0].content}
+              </BlockQuote>
+            }
+          />
+          <EmblaCarousel slides={getSlides(0)} />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <EmblaCarousel slides={getSlides(1)} />
+          <Content
+            justifyContent="center"
+            backgroundColor="#F9F8F4"
+            biggerTitle
+            title={sections[1].title}
+            blockquote={
+              <BlockQuote bigger>
+                {sections[1].content}
+              </BlockQuote>
+            }
+          />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <Content
+            justifyContent="center"
+            backgroundColor={'#F9F8F4'}
+            biggerTitle
+            title={sections[2].title}
+            blockquote={
+              <BlockQuote bigger>
+                {sections[2].content}
+              </BlockQuote>
+            }
+          />
+          <EmblaCarousel slides={getSlides(2)} />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <EmblaCarousel slides={getSlides(3)} />
+          <Content
+            justifyContent="center"
+            backgroundColor="#F9F8F4"
+            biggerTitle
+            title={sections[3].title}
+            blockquote={
+              <BlockQuote bigger>
+                {sections[3].content}
+              </BlockQuote>
+            }
+          />
         </Section>
       </Layout>
     </>

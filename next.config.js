@@ -7,4 +7,10 @@ module.exports = {
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: "tr",
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
+  extends: [
+    'plugin:@next/next/recommended',
+  ],
 };

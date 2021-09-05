@@ -55,7 +55,7 @@ export default function Contact ({
   return (
     <>
       <Head>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
         <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
@@ -119,7 +119,6 @@ export default function Contact ({
                     </div>
                     <p className={styles.p}><a href={element.fax.link}>{element.fax.value}</a></p>
                   </div>
-
                   <Map mapApi={mapApi} id={element.map.id} coordinate={element.map.coordinate} HTML={element.map.HTML} bounds={element.map.bounds}/>
                 </div>
               ))
