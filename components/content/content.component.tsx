@@ -7,8 +7,9 @@ interface Props {
   logo?: ReactNode
   title: string
   blockquote: ReactNode
-  button: ReactNode
+  button?: ReactNode
   narrower?: boolean
+  justifyContent?: string
 }
 
 export default function Content ({
@@ -17,11 +18,13 @@ export default function Content ({
   title,
   blockquote,
   button,
-  narrower
+  narrower,
+  justifyContent
 }: Props
 ): ReactElement {
-  const bgColor: CSSProperties = {
-    backgroundColor // backgroundColor: backgroundColor
+  const style: CSSProperties = {
+    backgroundColor, // backgroundColor: backgroundColor
+    justifyContent
   }
 
   return (
@@ -29,10 +32,10 @@ export default function Content ({
       className={
         classNames(
           styles.container,
-          narrower !== undefined && styles.container__narrower
+          narrower && styles.container__narrower
         )}
       style={
-        bgColor
+        style
       }
     >
       <div className={styles.body}>

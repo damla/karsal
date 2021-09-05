@@ -8,32 +8,35 @@ import Section from '../../components/section/section.component'
 import styles from './factory.module.scss'
 
 import { CommonModel, FactoryModel } from '../../interfaces/index'
-import { getBase64Values } from '../../utils/imageUtils'
+import { getFactoryImage } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
 
 import Content from '../../components/content/content.component'
 import BlockQuote from '../../components/block-quote/block-quote.component'
-import CustomButton from '../../components/custom-button/custom-button.component'
 import EmblaCarousel from '../../components/emblaCarousel/emblaCarousel.component'
 
 interface Props {
   common: CommonModel
   page: FactoryModel
-  Base64Values: string[]
+  imageLocations: string[][]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
+  const imageLocations: string[][] = []
+
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
-  const images = ['factory_hero']
-  const base64Values: string[] = getBase64Values(images)
+  const sections = ['orme', 'boyama', 'kalite-kontrol-ve-lab', 'depo-ve-sevkiyat']
+  sections.forEach(item => {
+    (item) ? imageLocations.push(getFactoryImage(item)) : console.log('an error occured')
+  })
 
   return {
     props: {
       common: commonData,
       page: pageData,
-      Base64Values: base64Values
+      imageLocations: imageLocations
     }
   }
 }
@@ -43,30 +46,17 @@ export default function Factory ({
   page: {
     title
   },
-  Base64Values
+  imageLocations
 }: Props
 ): ReactElement {
-  const slides: any[] = []
-
-  for (let i = 0; i < 5; i++) {
-    slides.push(<img src={`https://picsum.photos/id/${i + 1}/800/500`} alt="test" />)
+  const getSlides = (index: number): any => {
+    const slides: any = []
+    for (let i = 0; i < imageLocations[index].length; i++) {
+      slides.push(<img key={`${i}`} src={`/assets/factory-images/${index}/${imageLocations[index][i]}.jpg`} width="800" height="500" alt={`${index}`} />)
+    }
+    return slides
   }
 
-  // const data: readonly ReactImageGalleryItem[] = [
-
-  //   {
-  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071726/factory/1.jpg',
-  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071726/factory/1.jpg'
-  //   },
-  //   {
-  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071729/factory/2.jpg',
-  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071729/factory/2.jpg'
-  //   },
-  //   {
-  //     original: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_600,w_1000/v1618071168/factory/3.jpg',
-  //     thumbnail: 'https://res.cloudinary.com/dqht7aysn/image/upload/c_scale,h_150,w_250/v1618071168/factory/3.jpg'
-  //   }
-  // ]
   return (
     <>
       <Head>
@@ -86,7 +76,22 @@ export default function Factory ({
         </Section>
         <Section relative>
           <Content
-            narrower
+            justifyContent="center"
+            backgroundColor="#F9F8F4"
+            title={'Örme'}
+            blockquote={
+              <BlockQuote>
+                Alaninda uzman kadrosuyla her cesit kumas uretimi
+                Mayer , orizio , pailung basta olmak uzere 200 e yakin makineden olusan genis orme parkuru ile her tur orme kumas cesidi yuksek standartlarda uretiyoruz
+              </BlockQuote>
+            }
+          />
+          <EmblaCarousel slides={getSlides(0)} />
+        </Section>
+        <Section relative paddingTop="10vh">
+          <EmblaCarousel slides={getSlides(1)} />
+          <Content
+            justifyContent="center"
             backgroundColor="#F9F8F4"
             title="degis"
             blockquote={
@@ -94,37 +99,11 @@ export default function Factory ({
                 degis
               </BlockQuote>
             }
-            button={
-              <CustomButton href="/degistir">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
-          />
-          <EmblaCarousel slides={slides} />
-        </Section>
-        <Section relative paddingTop="10vh">
-          <EmblaCarousel slides={slides} />
-          <Content
-            narrower
-            backgroundColor="#F9F8F4"
-            title="degis"
-            blockquote={
-              <BlockQuote>
-                degis
-              </BlockQuote>
-            }
-            button={
-              <CustomButton href="/degistir">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
           />
         </Section>
         <Section relative paddingTop="10vh">
           <Content
-            narrower
+            justifyContent="center"
             backgroundColor={'#F9F8F4'}
             title="Test"
             blockquote={
@@ -132,69 +111,19 @@ export default function Factory ({
                 Test
               </BlockQuote>
             }
-            button={
-              <CustomButton href="/contact">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
           />
-          <EmblaCarousel slides={slides} />
+          <EmblaCarousel slides={getSlides(2)} />
         </Section>
         <Section relative paddingTop="10vh">
-          <EmblaCarousel slides={slides} />
+          <EmblaCarousel slides={getSlides(3)} />
           <Content
-            narrower
+            justifyContent="center"
             backgroundColor="#F9F8F4"
             title="degis"
             blockquote={
               <BlockQuote>
                 degis
               </BlockQuote>
-            }
-            button={
-              <CustomButton href="/degistir">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
-          />
-        </Section>
-        <Section relative paddingTop="10vh">
-          <Content
-            narrower
-            backgroundColor={'#F9F8F4'}
-            title="Test"
-            blockquote={
-              <BlockQuote>
-                Test
-              </BlockQuote>
-            }
-            button={
-              <CustomButton href="/contact">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
-            }
-          />
-          <EmblaCarousel slides={slides} />
-        </Section>
-        <Section relative paddingTop="10vh" marginBottom="10vh">
-          <EmblaCarousel slides={slides} />
-          <Content
-            narrower
-            backgroundColor="#F9F8F4"
-            title="degis"
-            blockquote={
-              <BlockQuote>
-                degis
-              </BlockQuote>
-            }
-            button={
-              <CustomButton href="/degistir">
-                <span>Test</span>
-                <span>&#8594;</span>
-              </CustomButton>
             }
           />
         </Section>
