@@ -10,6 +10,7 @@ interface Props {
   button?: ReactNode
   narrower?: boolean
   justifyContent?: string
+  biggerTitle?: boolean
 }
 
 export default function Content ({
@@ -19,7 +20,8 @@ export default function Content ({
   blockquote,
   button,
   narrower,
-  justifyContent
+  justifyContent,
+  biggerTitle
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
@@ -41,7 +43,10 @@ export default function Content ({
       <div className={styles.body}>
         {logo !== undefined && <div className={styles.body__logo}>{logo}</div>}
         <div className={styles.body__content}>
-          <h1>{title}</h1>
+          <h1 className={
+            classNames(
+              biggerTitle && styles.bigger_title
+            )}>{title}</h1>
           {blockquote}
           {button}
         </div>

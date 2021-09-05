@@ -78,9 +78,10 @@ export default function Factory ({
           <Content
             justifyContent="center"
             backgroundColor="#F9F8F4"
+            biggerTitle
             title={'Örme'}
             blockquote={
-              <BlockQuote>
+              <BlockQuote bigger>
                 Alaninda uzman kadrosuyla her cesit kumas uretimi
                 Mayer , orizio , pailung basta olmak uzere 200 e yakin makineden olusan genis orme parkuru ile her tur orme kumas cesidi yuksek standartlarda uretiyoruz
               </BlockQuote>
