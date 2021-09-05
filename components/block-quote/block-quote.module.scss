@@ -5,10 +5,6 @@
   max-width: 30rem;
   margin: 2rem 0;
 
-  @media only screen and (max-width: variables.$max-width-mobile) {
-    margin: 1rem 0;
-  }
-
   blockquote {
     color: variables.$secondary-color;
     text-align: justify;
@@ -16,5 +12,14 @@
     font-size: 0.9rem;
     font-weight: normal;
     line-height: 1.4rem;
+  }
+
+  .bigger_font {
+    font-size: 1.1rem;
+    @media only screen and (max-width: variables.$max-width-mobile) {font-size: 0.9rem !important;}
+  }
+
+  @media only screen and (max-width: variables.$max-width-mobile) {
+    margin: 1rem 0;
   }
 }

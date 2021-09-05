@@ -27,5 +27,7 @@
             "version": "17.0.1"
         }
     },
-    "rules": {}
+    "rules": {
+        "@typescript-eslint/strict-boolean-expressions": 0
+    }
 }

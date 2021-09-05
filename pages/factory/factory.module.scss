@@ -20,3 +20,18 @@
         filter: brightness(90%);
     }
 }
+
+.h1 {
+    font-family: "Zaph Humanist", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: variables.$quaternary-color;
+    flex-basis: 100%;
+    text-align: center;
+    padding-top: 10vh;
+    margin-bottom: 10vh;
+
+    @media only screen and (max-width: variables.$max-width-middle) {
+        font-size: 2.5rem;
+    }
+}

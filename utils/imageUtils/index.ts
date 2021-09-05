@@ -11,3 +11,21 @@ export function getBase64Values (sections: string[]): string[] {
 
   return base64Values
 }
+
+export function getFactoryImage (section: string): string[] {
+  let locations: any[] = []
+
+  const sections = ['orme', 'boyama', 'kalite-kontrol-ve-lab', 'depo-ve-sevkiyat']
+
+  const data = fs.readdirSync(`public/assets/factory-images/${sections.indexOf(section)}/`)
+
+  data.forEach(file => {
+    file = file.replace('.jpg', '')
+    locations.push(parseInt(file))
+  })
+
+  locations = locations.sort((a, b) => (a - b))
+  locations.forEach(location => { location.toString() })
+
+  return locations
+}

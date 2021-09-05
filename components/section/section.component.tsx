@@ -8,8 +8,8 @@ interface Props {
   banner?: boolean
   relative?: boolean
   minHeight?: string
+  paddingTop?: string
   marginBottom?: string
-  marginTop?: string
 }
 
 export default function Section ({
@@ -18,11 +18,13 @@ export default function Section ({
   banner,
   relative,
   minHeight,
+  paddingTop,
   marginBottom
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
     minHeight,
+    paddingTop,
     marginBottom
   }
 

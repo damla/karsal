@@ -1,0 +1,95 @@
+@use "../../global/variables.scss" as variables;
+
+.embla {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-basis: 50%;
+
+    &__container {
+        display: flex;
+        
+        .embla__slide:first-child {
+            margin-left: 0;
+        }
+        
+        .embla__slide {
+            flex: 0 0 100%; /* Default slide covers 100% of the viewport */
+            max-width: 100%; /* Prevent from growing larger than viewport */
+            margin-right: 10px;
+            margin-left: 10px;
+
+            @media (min-width: 768px) {
+                margin-right: 20px; /* Breakpoint SM gap */
+            }
+        }
+    }
+
+    @media only screen and (max-width: variables.$max-width-tablet) {
+        flex-basis: 100%;
+        min-height: 50vh;
+        order: 2;
+    }
+
+    .prevButton {
+        outline: 0;
+        cursor: pointer;
+        background-color: transparent;
+        touch-action: manipulation;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        fill: variables.$border-color;
+        padding: 0;
+        left: 27px;
+
+        .svg {
+            width: 100%;
+            height: 100%;
+            stroke: variables.$border-color;
+            stroke-width: 2px; 
+        }
+    }
+
+    .nextButton {
+        outline: 0;
+        cursor: pointer;
+        background-color: transparent;
+        touch-action: manipulation;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        fill: variables.$border-color;
+        padding: 0;
+        right: 27px;
+
+        .svg {
+            transform: rotate(180deg);
+            width: 100%;
+            height: 100%;
+            stroke: variables.$border-color;
+            stroke-width: 2px;
+        }
+      }
+}
+
+.embla:before {
+    display: none;
+    content: '{ "draggable": true }';
+    
+    @media (min-width: 768px) {
+        content: '{"draggable": false }';
+    }
+}

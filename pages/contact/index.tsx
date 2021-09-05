@@ -129,3 +129,5 @@ export default function Contact ({
     </>
   )
 }
+// TODO: Apply deeplink to all
+// browser'dan tiklarsa farkli url lazim

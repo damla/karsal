@@ -7,8 +7,10 @@ interface Props {
   logo?: ReactNode
   title: string
   blockquote: ReactNode
-  button: ReactNode
+  button?: ReactNode
   narrower?: boolean
+  justifyContent?: string
+  biggerTitle?: boolean
 }
 
 export default function Content ({
@@ -17,11 +19,14 @@ export default function Content ({
   title,
   blockquote,
   button,
-  narrower
+  narrower,
+  justifyContent,
+  biggerTitle
 }: Props
 ): ReactElement {
-  const bgColor: CSSProperties = {
-    backgroundColor // backgroundColor: backgroundColor
+  const style: CSSProperties = {
+    backgroundColor, // backgroundColor: backgroundColor
+    justifyContent
   }
 
   return (
@@ -29,16 +34,19 @@ export default function Content ({
       className={
         classNames(
           styles.container,
-          narrower !== undefined && styles.container__narrower
+          narrower && styles.container__narrower
         )}
       style={
-        bgColor
+        style
       }
     >
       <div className={styles.body}>
         {logo !== undefined && <div className={styles.body__logo}>{logo}</div>}
         <div className={styles.body__content}>
-          <h1>{title}</h1>
+          <h1 className={
+            classNames(
+              biggerTitle && styles.bigger_title
+            )}>{title}</h1>
           {blockquote}
           {button}
         </div>
