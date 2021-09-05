@@ -44,7 +44,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 export default function Factory ({
   common,
   page: {
-    title
+    title,
+    sections
   },
   imageLocations
 }: Props
@@ -79,11 +80,10 @@ export default function Factory ({
             justifyContent="center"
             backgroundColor="#F9F8F4"
             biggerTitle
-            title={'Örme'}
+            title={sections[0].title}
             blockquote={
               <BlockQuote bigger>
-                Alaninda uzman kadrosuyla her cesit kumas uretimi
-                Mayer , orizio , pailung basta olmak uzere 200 e yakin makineden olusan genis orme parkuru ile her tur orme kumas cesidi yuksek standartlarda uretiyoruz
+                {sections[0].content}
               </BlockQuote>
             }
           />
@@ -94,10 +94,11 @@ export default function Factory ({
           <Content
             justifyContent="center"
             backgroundColor="#F9F8F4"
-            title="degis"
+            biggerTitle
+            title={sections[1].title}
             blockquote={
-              <BlockQuote>
-                degis
+              <BlockQuote bigger>
+                {sections[1].content}
               </BlockQuote>
             }
           />
@@ -106,10 +107,11 @@ export default function Factory ({
           <Content
             justifyContent="center"
             backgroundColor={'#F9F8F4'}
-            title="Test"
+            biggerTitle
+            title={sections[2].title}
             blockquote={
-              <BlockQuote>
-                Test
+              <BlockQuote bigger>
+                {sections[2].content}
               </BlockQuote>
             }
           />
@@ -120,10 +122,11 @@ export default function Factory ({
           <Content
             justifyContent="center"
             backgroundColor="#F9F8F4"
-            title="degis"
+            biggerTitle
+            title={sections[3].title}
             blockquote={
-              <BlockQuote>
-                degis
+              <BlockQuote bigger>
+                {sections[3].content}
               </BlockQuote>
             }
           />

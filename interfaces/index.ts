@@ -91,7 +91,7 @@ export interface CommonModel {
   }
 }
 
-export interface SectionModel{
+export interface SectionModel {
   content: {
     title: string
     blockquote: string
@@ -161,8 +161,14 @@ export interface ContactModel {
   informations: ItemModel[]
 }
 
+export interface FactorySectionModel {
+  title: string
+  content: string
+}
+
 export interface FactoryModel {
   _id: ObjectID
   lang: string
   title: string
+  sections: FactorySectionModel[]
 }
