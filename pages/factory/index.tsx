@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
 
-  const images = ['factory_hero'] // 1'den fazla gorsel olacak
+  const images = ['factory_hero']
   const base64Values: string[] = getBase64Values(images)
 
   return {
