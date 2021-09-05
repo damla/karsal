@@ -45,14 +45,14 @@
         height: 30px;
         justify-content: center;
         align-items: center;
-        fill: #f9f8f4;
+        fill: variables.$border-color;
         padding: 0;
         left: 27px;
 
         .svg {
             width: 100%;
             height: 100%;
-            stroke: #f9f8f4;
+            stroke: variables.$border-color;
             stroke-width: 2px; 
         }
     }
@@ -71,7 +71,7 @@
         height: 30px;
         justify-content: center;
         align-items: center;
-        fill: #f9f8f4;
+        fill: variables.$border-color;
         padding: 0;
         right: 27px;
 
@@ -79,7 +79,7 @@
             transform: rotate(180deg);
             width: 100%;
             height: 100%;
-            stroke: #f9f8f4; 
+            stroke: variables.$border-color;
             stroke-width: 2px;
         }
       }

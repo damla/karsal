@@ -9,7 +9,7 @@ interface Props {
   slides: any[] // degisecek
 }
 
-const AUTOPLAY_INTERVAL: number = 3000
+const AUTOPLAY_INTERVAL: number = 4000
 
 export default function EmblaCarousel (
   { slides }: Props
