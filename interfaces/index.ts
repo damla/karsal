@@ -26,6 +26,10 @@ export interface CommonModel {
       link: string
       text: string
     }
+    socialPolicy: {
+      link: string
+      text: string
+    }
     catalog: {
       link: string
       text: string
@@ -51,6 +55,10 @@ export interface CommonModel {
   }
   navbar: {
     aboutUs: {
+      link: string
+      text: string
+    }
+    socialPolicy: {
       link: string
       text: string
     }
@@ -171,4 +179,10 @@ export interface FactoryModel {
   lang: string
   title: string
   sections: FactorySectionModel[]
+}
+
+export interface SocialPolicyModel {
+  _id: ObjectID
+  lang: string
+  title: string
 }

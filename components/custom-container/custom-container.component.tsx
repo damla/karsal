@@ -10,6 +10,7 @@ interface Props {
   h2?: string
   h3?: string
   justifyContent?: string
+  backgroundColor?: string
 }
 
 export default function CustomContainer ({
@@ -18,14 +19,16 @@ export default function CustomContainer ({
   h1,
   h2,
   h3,
-  justifyContent
+  justifyContent,
+  backgroundColor
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
-    justifyContent
+    justifyContent,
+    backgroundColor
   }
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ backgroundColor }}>
       {
         h1 !== undefined && <h1 className={styles.h1}>{h1}</h1>
       }

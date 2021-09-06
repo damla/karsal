@@ -10,6 +10,7 @@ interface Props {
   minHeight?: string
   paddingTop?: string
   marginBottom?: string
+  backgroundColor?: string
 }
 
 export default function Section ({
@@ -19,13 +20,15 @@ export default function Section ({
   relative,
   minHeight,
   paddingTop,
-  marginBottom
+  marginBottom,
+  backgroundColor
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
     minHeight,
     paddingTop,
-    marginBottom
+    marginBottom,
+    backgroundColor
   }
 
   return (

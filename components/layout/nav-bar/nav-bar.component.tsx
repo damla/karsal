@@ -25,7 +25,8 @@ export default function NavBar ({
   data: {
     aboutUs,
     factory,
-    catalog,
+    // catalog,
+    socialPolicy,
     contact,
     english,
     turkish
@@ -76,6 +77,7 @@ export default function NavBar ({
                   <Menu align="center" equal>
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
+                    <MenuItem href={socialPolicy.link}>{socialPolicy.text}</MenuItem>
                     {/* <MenuItem href={catalog.link}>{catalog.text}</MenuItem> */}
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
@@ -97,6 +99,7 @@ export default function NavBar ({
                   <Menu align="left">
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
+                    <MenuItem href={socialPolicy.link}>{socialPolicy.text}</MenuItem>
                     {/* <MenuItem href={catalog.link}>{catalog.text}</MenuItem> */}
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
