@@ -66,7 +66,7 @@ export default function Factory ({
         width="800"
         height="500"
         loading="eager"
-        objectPosition="bottom"
+        objectPosition="top"
         alt={`${index}`} />)
     }
     return slides
