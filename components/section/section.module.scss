@@ -27,3 +27,9 @@
     margin-bottom: 0 !important;
   }
 }
+
+.mobileNone {
+  @media only screen and (max-width: variables.$max-width-tablet) {
+    display: none;
+  }
+}

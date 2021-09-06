@@ -16,7 +16,7 @@
 
   .bigger_font {
     font-size: 1.1rem;
-    @media only screen and (max-width: variables.$max-width-mobile) {font-size: 0.9rem !important;}
+    @media only screen and (max-width: variables.$max-width-tabletOrMobile) {font-size: 0.9rem !important;}
   }
 
   @media only screen and (max-width: variables.$max-width-mobile) {
