@@ -62,6 +62,7 @@ export default function Factory ({
         src={`/assets/factory-images/${index}/${imageLocations[index][i]}.jpg`}
         placeholder="blur"
         blurDataURL={Base64Values[0]}
+        layout="fixed"
         width="800"
         height="500"
         loading="eager"
@@ -85,9 +86,7 @@ export default function Factory ({
             </video>
           </div>
         </Section>
-        <Section relative>
-          <h1 className={styles.h1}>{title}</h1>
-        </Section>
+        <Section relative minHeight='10vh' mobileNone />
         <Section relative>
           <Content
             justifyContent="center"
@@ -102,7 +101,8 @@ export default function Factory ({
           />
           <EmblaCarousel slides={getSlides(0)} />
         </Section>
-        <Section relative paddingTop="10vh">
+        <Section relative minHeight='10vh' mobileNone />
+        <Section relative>
           <EmblaCarousel slides={getSlides(1)} />
           <Content
             justifyContent="center"
@@ -116,7 +116,8 @@ export default function Factory ({
             }
           />
         </Section>
-        <Section relative paddingTop="10vh">
+        <Section relative minHeight='10vh' mobileNone />
+        <Section relative>
           <Content
             justifyContent="center"
             backgroundColor={'#F9F8F4'}
@@ -130,7 +131,8 @@ export default function Factory ({
           />
           <EmblaCarousel slides={getSlides(2)} />
         </Section>
-        <Section relative paddingTop="10vh">
+        <Section relative minHeight='10vh' mobileNone />
+        <Section relative>
           <EmblaCarousel slides={getSlides(3)} />
           <Content
             justifyContent="center"
