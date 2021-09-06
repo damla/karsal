@@ -3,7 +3,7 @@ import styles from './section.module.scss'
 import classNames from 'classnames'
 
 interface Props {
-  children: ReactNode
+  children?: ReactNode
   id?: string
   banner?: boolean
   relative?: boolean
@@ -11,6 +11,7 @@ interface Props {
   paddingTop?: string
   marginBottom?: string
   backgroundColor?: string
+  mobileNone?: boolean
 }
 
 export default function Section ({
@@ -21,7 +22,8 @@ export default function Section ({
   minHeight,
   paddingTop,
   marginBottom,
-  backgroundColor
+  backgroundColor,
+  mobileNone
 }: Props
 ): ReactElement {
   const style: CSSProperties = {
@@ -37,7 +39,9 @@ export default function Section ({
         classNames(
           styles.container,
           banner !== undefined && styles.container__banner,
-          relative !== undefined && styles.relative
+          relative !== undefined && styles.relative,
+          paddingTop !== undefined && styles.paddingTop,
+          mobileNone !== undefined && styles.mobileNone
         )}
       style={style}
       id={id}
