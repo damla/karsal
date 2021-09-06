@@ -2,13 +2,14 @@ import React, { ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 
 import Head from 'next/head'
+import Image from 'next/image'
 import Layout from '../../components/layout/layout.component'
 import Section from '../../components/section/section.component'
 
 import styles from './factory.module.scss'
 
 import { CommonModel, FactoryModel } from '../../interfaces/index'
-import { getFactoryImage } from '../../utils/imageUtils'
+import { getBase64Values, getFactoryImage } from '../../utils/imageUtils'
 import { getData } from '../../utils/dbUtils'
 
 import Content from '../../components/content/content.component'
@@ -19,6 +20,7 @@ interface Props {
   common: CommonModel
   page: FactoryModel
   imageLocations: string[][]
+  Base64Values: string[]
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
@@ -26,6 +28,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 
   const commonData = await getData<CommonModel>('common', locale)
   const pageData = await getData<FactoryModel>('factory', locale)
+  const base64Values: string[] = getBase64Values(['factory_hero'])
 
   const sections = ['orme', 'boyama', 'kalite-kontrol-ve-lab', 'depo-ve-sevkiyat']
   sections.forEach(item => {
@@ -36,7 +39,8 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
     props: {
       common: commonData,
       page: pageData,
-      imageLocations: imageLocations
+      imageLocations: imageLocations,
+      Base64Values: base64Values
     }
   }
 }
@@ -47,13 +51,22 @@ export default function Factory ({
     title,
     sections
   },
-  imageLocations
+  imageLocations,
+  Base64Values
 }: Props
 ): ReactElement {
   const getSlides = (index: number): any => {
     const slides: any = []
     for (let i = 0; i < imageLocations[index].length; i++) {
-      slides.push(<img key={`${i}`} src={`/assets/factory-images/${index}/${imageLocations[index][i]}.jpg`} width="800" height="500" alt={`${index}`} />)
+      slides.push(<Image key={`${i}`}
+        src={`/assets/factory-images/${index}/${imageLocations[index][i]}.jpg`}
+        placeholder="blur"
+        blurDataURL={Base64Values[0]}
+        width="800"
+        height="500"
+        loading="eager"
+        objectPosition="bottom"
+        alt={`${index}`} />)
     }
     return slides
   }
