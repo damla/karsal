@@ -11,6 +11,8 @@ interface Props {
   inverted?: boolean
   scrollUp?: boolean
   atBottom?: boolean
+  openTab?: boolean
+  center?: boolean
 }
 
 export default function CustomButton ({
@@ -19,21 +21,46 @@ export default function CustomButton ({
   href,
   inverted,
   scrollUp,
-  atBottom
+  atBottom,
+  openTab,
+  center
 }: Props
 ): ReactElement {
   return (
     <>
       {href !== undefined ? (
         <Link href={href}>
-          <a
-            className={classNames(
-              styles.container,
-              inverted !== undefined && styles.container__inverted
-            )}
-          >
-            <div className={styles.body}>{children}</div>
-          </a>
+          {openTab !== undefined
+            ? (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ minWidth: '100%' }}
+                className={classNames(
+                  styles.container,
+                  inverted !== undefined && styles.container__inverted
+                )}
+              >
+                <div className={classNames(
+                  styles.body,
+                  center !== undefined && styles.body_center
+                )}>{children}</div>
+              </a>
+            ) : (
+              <a
+                className={classNames(
+                  styles.container,
+                  inverted !== undefined && styles.container__inverted
+                )}
+              >
+                <div className={classNames(
+                  styles.body,
+                  center !== undefined && styles.body_center
+                )}>{children}</div>
+              </a>
+            )
+          }
+
         </Link>
       ) : (
         <button
@@ -46,7 +73,8 @@ export default function CustomButton ({
           style={atBottom !== undefined && atBottom ? { marginBottom: 'calc(7vh - 0.7rem)' } : {}}>
           <div className={styles.body}>{children}</div>
         </button>
-      )}
+      )
+      }
     </>
   )
 }
