@@ -30,6 +30,10 @@ export interface CommonModel {
       link: string
       text: string
     }
+    policies: {
+      link: string
+      text: string
+    }
     contact: {
       link: string
       text: string
@@ -59,6 +63,10 @@ export interface CommonModel {
       text: string
     }
     catalog: {
+      link: string
+      text: string
+    }
+    policies: {
       link: string
       text: string
     }

@@ -2,14 +2,14 @@
   display: flex;
 
   &__left {
-    flex-basis: 25%;
+    flex-basis: 35%;
     flex-direction: row;
     justify-content: space-between;
   }
 
   &__right {
     flex-direction: row-reverse;
-    flex-basis: 75%;
+    flex-basis: 65%;
   }
 }
 
