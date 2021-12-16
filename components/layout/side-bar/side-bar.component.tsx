@@ -21,7 +21,7 @@ export default function SideBar ({
   {
     aboutUs,
     factory,
-    catalog,
+    policies,
     contact,
     turkish,
     english,
@@ -44,7 +44,7 @@ export default function SideBar ({
         <div className={styles.container_body}>
           <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
-          {/* <MenuItem href={catalog.link}>{catalog.text}</MenuItem> */}
+          <MenuItem href={policies.link}>{policies.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
           <MenuItem href={route.pathname} lang={turkish.locale}>
             {turkish.text}

@@ -1,0 +1,17 @@
+@use "../../global/variables.scss" as variables;
+
+.container {
+    width: 85vw;
+    margin: 15vh 0 auto;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+    gap: 5vh;
+    justify-items: center;
+    align-items: center;
+
+    span {
+        text-align: center;
+    }
+
+}
+   
