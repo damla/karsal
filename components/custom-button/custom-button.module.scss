@@ -47,6 +47,10 @@
     display: flex;
     justify-content: space-between;
 
+    &_center {
+      justify-content: center;
+    }
+
     span {
       font-size: 1rem;
       font-family: "SuisseInt-Regular", sans-serif;

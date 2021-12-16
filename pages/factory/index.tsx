@@ -65,7 +65,6 @@ export default function Factory ({
         layout="fixed"
         width="800"
         height="500"
-        loading="eager"
         objectPosition="top"
         alt={`${index}`} />)
     }
