@@ -50,7 +50,7 @@ export default function Policies ({
     },
     {
       link: 'FRM-028-CEREZ-BILGILENDIRME-METNI.pdf',
-      name: 'Çerez Politikası'
+      name: 'Çerez Bilgilendirme Metni'
     },
     {
       link: 'FRM-030-MUSTERI-ACIK-RIZA-BEYANI-METNI.pdf',
