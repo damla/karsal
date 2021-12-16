@@ -76,7 +76,6 @@ export default function Policies ({
       link: 'KISISEL-VERILERI-KORUMA-KISISEL-VERI-SAKLAMA-VE-IMHA-POLITIKASI.pdf',
       name: 'Kişisel Verileri Koruma, Kişisel Veri Saklama ve İmha Politikası'
     }]
-
   return (
     <>
       <Head>
@@ -90,6 +89,7 @@ export default function Policies ({
             blurDataURL={Base64Values[0]}
             objectFit="cover"
             layout="fill"
+            loading="eager"
             objectPosition="center"
             alt="banner-image"
           />
