@@ -7,7 +7,7 @@ import CustomContainer from '../../components/custom-container/custom-container.
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Image from 'next/dist/client/image'
 
-import styles from './kvkk.module.scss'
+import styles from './integrated-policy.module.scss'
 
 import { CommonModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
@@ -23,14 +23,9 @@ interface Props {
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
 
-  const images = ['kvkk_hero']
+  const images = ['kvkk_hero'] // TODO: add hero
   const title =
-    locale === 'tr'
-      ? 'Kişisel Verilerin Korunması'
-      : 'Protection of Personal Data'
-
-  // TODO: add english values of links
-
+    locale === 'tr' ? 'Entegre Politikamız' : 'Our Entegrated Policy'
   const base64Values: string[] = getBase64Values(images)
 
   return {
@@ -42,49 +37,11 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
     }
   }
 }
-export default function KVKK ({
+export default function IntegratedPolicy ({
   common,
   Base64Values,
   title
 }: Props): ReactElement {
-  const links: Array<{ link: string, name: string }> = [
-    {
-      link: 'CEREZ-POLITIKASI.pdf',
-      name: 'Çerez Politikası'
-    },
-    {
-      link: 'FRM-026-ZIYARETCI-AYDINLATMA-METNI.pdf',
-      name: 'Ziyaretçi Aydınlatma Metni'
-    },
-    {
-      link: 'FRM-028-CEREZ-BILGILENDIRME-METNI.pdf',
-      name: 'Çerez Bilgilendirme Metni'
-    },
-    {
-      link: 'FRM-030-MUSTERI-ACIK-RIZA-BEYANI-METNI.pdf',
-      name: 'Müşteri Açık Rıza Beyanı Metni'
-    },
-    {
-      link: 'FRM-032-TEDARIKCI-AYDINLATMA-METNI-KVKK.pdf',
-      name: 'Tedarikçi Aydınlatma Metni KVKK'
-    },
-    {
-      link: 'FRM-035-KAPALI-DEVRE-KAMERA-KAYIT-SISTEMI-AYDINLATMA-METNI.pdf',
-      name: 'Kapalı Devre Kamera Kayıt Sistemi Aydınlatma Metni'
-    },
-    {
-      link: 'FRM-209-AYDINLATMA-METNI.pdf',
-      name: 'Aydınlatma Metni'
-    },
-    {
-      link: 'FRM-210-BASVURU-FORMU.pdf',
-      name: 'Başvuru Formu'
-    },
-    {
-      link: 'KISISEL-VERILERI-KORUMA-KISISEL-VERI-SAKLAMA-VE-IMHA-POLITIKASI.pdf',
-      name: 'Kişisel Verileri Koruma, Kişisel Veri Saklama ve İmha Politikası'
-    }
-  ]
   return (
     <>
       <Head>
@@ -106,17 +63,14 @@ export default function KVKK ({
         <Section relative>
           <CustomContainer page='policies' h1={title} justifyContent='center'>
             <div className={styles.container}>
-              {links.map((element, index) => (
-                <CustomButton
-                  key={index}
-                  center
-                  inverted
-                  openTab
-                  href={`/kvkk/${element.link}`}
-                >
-                  <span>{element.name}</span>
-                </CustomButton>
-              ))}
+              <CustomButton
+                center
+                inverted
+                openTab
+                href={'/integrated-policy/ENTEGRE-POLITIKASI.pdf'}
+              >
+                <span>{title}</span>
+              </CustomButton>
             </div>
           </CustomContainer>
         </Section>

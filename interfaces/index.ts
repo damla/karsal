@@ -34,6 +34,10 @@ export interface CommonModel {
       link: string
       text: string
     }
+    integratedPolicy: {
+      link: string
+      text: string
+    }
     contact: {
       link: string
       text: string
@@ -67,6 +71,10 @@ export interface CommonModel {
       text: string
     }
     kvkk: {
+      link: string
+      text: string
+    }
+    integratedPolicy: {
       link: string
       text: string
     }

@@ -22,6 +22,7 @@ export default function SideBar ({
     aboutUs,
     factory,
     kvkk,
+    integratedPolicy,
     contact,
     turkish,
     english,
@@ -45,6 +46,7 @@ export default function SideBar ({
           <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
           <MenuItem href={factory.link}>{factory.text}</MenuItem>
           <MenuItem href={kvkk.link}>{kvkk.text}</MenuItem>
+          <MenuItem href={integratedPolicy.link}>{integratedPolicy.text}</MenuItem>
           <MenuItem href={contact.link}>{contact.text}</MenuItem>
           <MenuItem href={route.pathname} lang={turkish.locale}>
             {turkish.text}
