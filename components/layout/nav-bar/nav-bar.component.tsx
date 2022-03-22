@@ -26,7 +26,7 @@ export default function NavBar ({
     aboutUs,
     factory,
     catalog,
-    policies,
+    kvkk,
     contact,
     english,
     turkish
@@ -77,7 +77,7 @@ export default function NavBar ({
                   <Menu align="center" equal>
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
-                    <MenuItem href={policies.link}>{policies.text}</MenuItem>
+                    <MenuItem href={kvkk.link}>{kvkk.text}</MenuItem>
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
                   <Menu align="right" equal>
@@ -98,7 +98,7 @@ export default function NavBar ({
                   <Menu align="left">
                     <MenuItem href={aboutUs.link}>{aboutUs.text}</MenuItem>
                     <MenuItem href={factory.link}>{factory.text}</MenuItem>
-                    <MenuItem href={policies.link}>{policies.text}</MenuItem>
+                    <MenuItem href={kvkk.link}>{kvkk.text}</MenuItem>
                     <MenuItem href={contact.link}>{contact.text}</MenuItem>
                   </Menu>
                   <Menu align="right">

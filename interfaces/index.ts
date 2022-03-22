@@ -30,7 +30,7 @@ export interface CommonModel {
       link: string
       text: string
     }
-    policies: {
+    kvkk: {
       link: string
       text: string
     }
@@ -66,7 +66,7 @@ export interface CommonModel {
       link: string
       text: string
     }
-    policies: {
+    kvkk: {
       link: string
       text: string
     }

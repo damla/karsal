@@ -7,7 +7,7 @@ import CustomContainer from '../../components/custom-container/custom-container.
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Image from 'next/dist/client/image'
 
-import styles from './policies.module.scss'
+import styles from './integration-policy.module.scss'
 
 import { CommonModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
@@ -18,27 +18,33 @@ interface Props {
   Base64Values: string[]
   locale: string
   mapApi: string
+  title: string
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
 
-  const images = ['policies_hero']
+  const images = ['kvkk_hero']
+  const title =
+    locale === 'tr'
+      ? 'Kişisel Verilerin Korunması'
+      : 'Protection of Personal Data'
   const base64Values: string[] = getBase64Values(images)
 
   return {
     props: {
       common: commonData,
       Base64Values: base64Values,
-      locale: locale
+      locale: locale,
+      title
     }
   }
 }
-export default function Policies ({
+export default function KVKK ({
   common,
-  Base64Values
-}: Props
-): ReactElement {
+  Base64Values,
+  title
+}: Props): ReactElement {
   const links: Array<{ link: string, name: string }> = [
     {
       link: 'CEREZ-POLITIKASI.pdf',
@@ -75,35 +81,40 @@ export default function Policies ({
     {
       link: 'KISISEL-VERILERI-KORUMA-KISISEL-VERI-SAKLAMA-VE-IMHA-POLITIKASI.pdf',
       name: 'Kişisel Verileri Koruma, Kişisel Veri Saklama ve İmha Politikası'
-    }]
+    }
+  ]
   return (
     <>
       <Head>
-        <title>Politikalarımız</title>
+        <title>{title}</title>
       </Head>
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
           <Image
-            src={'/assets/images/policies_hero.jpg'}
-            placeholder="blur"
+            src={'/assets/images/kvkk_hero.jpg'}
+            placeholder='blur'
             blurDataURL={Base64Values[0]}
-            objectFit="cover"
-            layout="fill"
-            loading="eager"
-            objectPosition="center"
-            alt="banner-image"
+            objectFit='cover'
+            layout='fill'
+            loading='eager'
+            objectPosition='center'
+            alt='banner-image'
           />
         </Section>
         <Section relative>
-          <CustomContainer page='policies' h1="Politikalarımız" justifyContent="center">
+          <CustomContainer page='policies' h1={title} justifyContent='center'>
             <div className={styles.container}>
-              {
-                links.map((element, index) => (
-                  <CustomButton key={index} center inverted openTab href={`/policies/${element.link}`}>
-                    <span>{element.name}</span>
-                  </CustomButton>
-                ))
-              }
+              {links.map((element, index) => (
+                <CustomButton
+                  key={index}
+                  center
+                  inverted
+                  openTab
+                  href={`/kvkk/${element.link}`}
+                >
+                  <span>{element.name}</span>
+                </CustomButton>
+              ))}
             </div>
           </CustomContainer>
         </Section>
