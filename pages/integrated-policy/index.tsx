@@ -23,7 +23,7 @@ interface Props {
 export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
   const commonData = await getData<CommonModel>('common', locale)
 
-  const images = ['kvkk_hero'] // TODO: add hero
+  const images = ['integrated_policy_hero']
   const title =
     locale === 'tr' ? 'Entegre Politikamız' : 'Our Integrated Policy'
   const base64Values: string[] = getBase64Values(images)
@@ -50,7 +50,7 @@ export default function IntegratedPolicy ({
       <Layout data={common} navbarBg>
         <Section relative minHeight={'60vh'}>
           <Image
-            src={'/assets/images/kvkk_hero.jpg'}
+            src={'/assets/images/integrated_policy_hero.jpg'}
             placeholder='blur'
             blurDataURL={Base64Values[0]}
             objectFit='cover'
