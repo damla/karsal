@@ -7,7 +7,7 @@ import CustomContainer from '../../components/custom-container/custom-container.
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Image from 'next/dist/client/image'
 
-import styles from './integration-policy.module.scss'
+import styles from './kvkk.module.scss'
 
 import { CommonModel } from '../../interfaces/index'
 import { getBase64Values } from '../../utils/imageUtils'
