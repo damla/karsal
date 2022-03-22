@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'tr' }) => {
 
   const images = ['kvkk_hero'] // TODO: add hero
   const title =
-    locale === 'tr' ? 'Entegre Politikamız' : 'Our Entegrated Policy'
+    locale === 'tr' ? 'Entegre Politikamız' : 'Our Integrated Policy'
   const base64Values: string[] = getBase64Values(images)
 
   return {
